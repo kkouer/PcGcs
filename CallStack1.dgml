@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@1 @18 @19 Member=InitializeComponent)" Category="CodeSchema_Method" Bounds="558.76,272.544166666666,151.766666666667,25.8366666666667" CodeSchemaProperty_IsPrivate="True" CommonLabel="InitializeComponent" FunctionTypeFlags="Method" Label="InitializeComponent" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/GCSViews/FlightData.Designer.cs StartLineNumber=231 StartCharacterOffset=0 EndLineNumber=231 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="(@1 @2 @14 Member=(Name=generatePacket OverloadingParameters=[(@3 @4 Type=Byte),(@3 @4 Type=Object)]))" Category="CodeSchema_Method" Bounds="11.1466666666667,445.116666666666,124.993333333333,25.8366666666666" CodeSchemaProperty_IsPrivate="True" CommonLabel="generatePacket" FunctionTypeFlags="Method" Label="generatePacket" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/Mavlink/MAVLinkInterface.cs StartLineNumber=562 StartCharacterOffset=0 EndLineNumber=562 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="(@1 @2 @14 Member=(Name=setParam OverloadingParameters=[(@3 @4 Type=String),(@3 @4 Type=Single),(@3 @4 Type=Boolean)]))" Category="CodeSchema_Method" Bounds="209.008333333333,330.068333333333,89.27,25.8366666666666" CodeSchemaProperty_IsPublic="True" CommonLabel="setParam" FunctionTypeFlags="Method" Label="setParam" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/Mavlink/MAVLinkInterface.cs StartLineNumber=652 StartCharacterOffset=0 EndLineNumber=652 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="(@1 @2 Type=CurrentState Member=(Name=UpdateCurrentSettings OverloadingParameters=[(@8 Namespace=System.Windows.Forms Type=BindingSource)]))" Category="CodeSchema_Method" Bounds="360.66,272.544166666666,167.966666666667,25.8366666666667" CodeSchemaProperty_IsPublic="True" CommonLabel="UpdateCurrentSettings" FunctionTypeFlags="Method" Label="UpdateCurrentSettings" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/CurrentState.cs StartLineNumber=651 StartCharacterOffset=0 EndLineNumber=651 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="(Name=System.AppDomain.nExecuteAssembly @27 Type=int OverloadingParameters=[(Type=System.Reflection.RuntimeAssembly Name=assembly),(Type=&quot;string[]&quot; Name=args)] IsUnresolved=True)" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="429.451666666667,57.5241666666666,142.383333333333,25.8366666666667" CodeSchemaProperty_IsExternal="True" Label="nExecuteAssembly">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="ExternalCallStackEntry" />
+    </Node>
+    <Node Id="@11" Category="CodeSchema_Method" Bounds="213.575,200.870833333333,80.1366666666667,25.8366666666667" CodeSchemaProperty_IsProtected="True" CommonLabel="OnClick" FunctionTypeFlags="Method" IsOverloaded="True" Label="OnClick" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/ExtLibs/Controls/MyButton.cs StartLineNumber=147 StartCharacterOffset=0 EndLineNumber=147 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@13" Category="CodeSchema_Method" Bounds="228.19,129.1975,108.906666666667,25.8366666666667" CodeSchemaProperty_IsProtected="True" CommonLabel="OnMouseUp" FunctionTypeFlags="Method" IsOverloaded="True" Label="OnMouseUp" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/ExtLibs/Controls/MyButton.cs StartLineNumber=176 StartCharacterOffset=0 EndLineNumber=176 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@15" Category="CodeSchema_Method" Bounds="30.3066666666667,330.068333333333,86.6733333333333,25.8366666666666" CodeSchemaProperty_IsPublic="True" CommonLabel="setMode" FunctionTypeFlags="Method" Label="setMode" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/Mavlink/MAVLinkInterface.cs StartLineNumber=2221 StartCharacterOffset=0 EndLineNumber=2221 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@17" Category="CodeSchema_Method" Bounds="30.3066666666667,387.592499999999,86.6733333333333,25.8366666666666" CodeSchemaProperty_IsPublic="True" CommonLabel="setMode" FunctionTypeFlags="Method" Label="setMode" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/Mavlink/MAVLinkInterface.cs StartLineNumber=2233 StartCharacterOffset=0 EndLineNumber=2233 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@20" Category="CodeSchema_Method" Bounds="0,272.544166666666,147.286666666667,25.8366666666666" CodeSchemaProperty_IsPrivate="True" CommonLabel="BUT_setmode_Click" FunctionTypeFlags="Method" Label="BUT_setmode_Click" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/GCSViews/FlightData.cs StartLineNumber=2000 StartCharacterOffset=0 EndLineNumber=2000 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@21" Category="CodeSchema_Method" Bounds="177.363333333333,272.544166666666,152.56,25.8366666666667" CodeSchemaProperty_IsPrivate="True" CommonLabel="BUT_writePIDS_Click" FunctionTypeFlags="Method" Label="BUT_writePIDS_Click" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/GCSViews/ConfigurationView/ConfigRawParams.cs StartLineNumber=175 StartCharacterOffset=0 EndLineNumber=175 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@22" Category="CodeSchema_Method" Bounds="587.056666666667,200.870833333333,95.1733333333333,25.8366666666667" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CommonLabel="FlightData" FunctionTypeFlags="Constructor" Label="FlightData" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/GCSViews/FlightData.cs StartLineNumber=165 StartCharacterOffset=0 EndLineNumber=165 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@23" Category="CodeSchema_Method" Bounds="594.595,129.1975,80.0966666666667,25.8366666666667" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CommonLabel="MainV2" FunctionTypeFlags="Constructor" Label="MainV2" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/MainV2.cs StartLineNumber=502 StartCharacterOffset=0 EndLineNumber=502 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@24" Category="CodeSchema_Method" Bounds="323.861666666667,200.870833333333,175.563333333333,25.8366666666667" CodeSchemaProperty_IsAnonymous="True" Label="AnonymousMethod__17" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/GCSViews/FlightData.cs StartLineNumber=1325 StartCharacterOffset=0 EndLineNumber=1325 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@26" Category="CodeSchema_CallStackUnresolvedMethod" Bounds="367.216666666667,129.1975,88.8533333333334,25.8366666666667" Label="WndProc" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/ExtLibs/Controls/MyUserControl.cs StartLineNumber=39 StartCharacterOffset=0 EndLineNumber=39 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@5" Category="CodeSchema_Method" Bounds="334.171666666667,57.5241666666666,64.9433333333333,25.8366666666667" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="Main" FunctionTypeFlags="Method" Label="Main" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/Program.cs StartLineNumber=211 StartCharacterOffset=0 EndLineNumber=211 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="@7" Category="CodeSchema_Method" Bounds="602.171666666667,57.5241666666666,64.9433333333333,25.8366666666667" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="Main" FunctionTypeFlags="Method" Label="Main" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///d:/MissionPlanner/MissionPlanner/Program.cs StartLineNumber=211 StartCharacterOffset=0 EndLineNumber=211 EndCharacterOffset=0)">
+      <Category Ref="CallStackEntry" />
+      <Category Ref="CodeSchema_SourceLocation" />
+    </Node>
+    <Node Id="ExternalCodeRootNode" Category="ExternalCallStackEntry" Bounds="450.915,0,99.4566666666667,25.8366666666667" Label="External Code">
+      <Category Ref="CallStackEntry" />
+    </Node>
+  </Nodes>
+  <Links>
+    <Link Source="@11" Target="@20" Category="CallStackIndirectCall" Bounds="114.447878688363,226.707502644857,106.752422231249,42.5072278267286" Label="External Code" LabelBounds="163.157632492971,251.971951014104,79.4566666666667,15.8366666666666" />
+    <Link Source="@11" Target="@21" Category="CallStackIndirectCall" Bounds="253.643333435059,226.707502644857,0,36.8366579182943" Label="External Code" LabelBounds="257.643333435059,237.207498270671,79.4566666666667,15.8366666666666" />
+    <Link Source="@13" Target="@11" Category="CallStackIndirectCall" Bounds="262.245938337768,155.034162801107,15.1704694479732,37.4937215958419" Label="External Code" LabelBounds="271.685162302031,174.531172848805,79.4566666666667,15.8366666666666" />
+    <Link Source="@15" Target="@17" Category="CallStackDirectCall" Bounds="73.64333152771,355.904997151693,0,22.6875032552084" />
+    <Link Source="@17" Target="(@1 @2 @14 Member=(Name=generatePacket OverloadingParameters=[(@3 @4 Type=Byte),(@3 @4 Type=Object)]))" Category="CallStackDirectCall" Bounds="73.6433318489632,413.429167073568,5.64192987440038E-07,22.6875032552083" />
+    <Link Source="@20" Target="@15" Category="CallStackDirectCall" Bounds="73.6433322544637,298.380827229818,7.52257321323668E-07,22.6875032552084" />
+    <Link Source="@21" Target="(@1 @2 @14 Member=(Name=setParam OverloadingParameters=[(@3 @4 Type=String),(@3 @4 Type=Single),(@3 @4 Type=Boolean)]))" Category="CallStackDirectCall" Bounds="253.643328712679,298.380827229818,3.00902928529467E-06,22.6875032552084" />
+    <Link Source="@22" Target="(@1 @18 @19 Member=InitializeComponent)" Category="CallStackDirectCall" Bounds="634.643316047335,226.707502644857,1.56845743504164E-05,36.8366579182951" />
+    <Link Source="@23" Target="@22" Category="CallStackDirectCall" Bounds="634.643310546875,155.034162801107,0,36.8366731770834" />
+    <Link Source="@24" Target="(@1 @2 Type=CurrentState Member=(Name=UpdateCurrentSettings OverloadingParameters=[(@8 Namespace=System.Windows.Forms Type=BindingSource)]))" Category="CallStackDirectCall" Bounds="417.591215100162,226.707502644857,17.3402214680067,37.6615552015621" />
+    <Link Source="@26" Target="@24" Category="CallStackIndirectCall" Bounds="411.643330471935,155.034162801107,7.84228876682391E-06,36.8366731770835" Label="External Code" LabelBounds="415.643334393079,165.534166482102,79.4566666666667,15.8366666666666" />
+    <Link Source="@5" Target="@13" Category="CallStackIndirectCall" Bounds="304.629866647502,83.3608324940999,46.8733812765599,39.9949041561304" Label="External Code" LabelBounds="247.311721844846,86.0001850829548,79.4566666666667,15.8366666666666" />
+    <Link Source="@5" Target="@23" Category="CallStackDirectCall" Bounds="399.114992472331,79.1266507396049,186.884861969778,49.9800791193088" />
+    <Link Source="@5" Target="@26" Category="CallStackIndirectCall" Bounds="374.754086037232,83.3608324940999,23.9928995852875,38.214454086508" Label="External Code" LabelBounds="397.441697519655,99.8983475508245,79.4566666666667,15.8366666666666" />
+    <Link Source="@7" Target="@23" Category="CallStackDirectCall" Bounds="634.643329211961,83.3608324940999,3.13691509745695E-05,36.8366636403434" />
+    <Link Source="ExternalCodeRootNode" Target="(Name=System.AppDomain.nExecuteAssembly @27 Type=int OverloadingParameters=[(Type=System.Reflection.RuntimeAssembly Name=assembly),(Type=&quot;string[]&quot; Name=args)] IsUnresolved=True)" Category="CallStackIndirectCall" Bounds="500.643327988965,25.8366663869222,1.80541740064655E-05,22.6874994405139" />
+    <Link Source="ExternalCodeRootNode" Target="@5" Category="CallStackIndirectCall" Bounds="404.901784506682,25.8366663869222,65.6488789876428,28.1820608924398" />
+    <Link Source="ExternalCodeRootNode" Target="@7" Category="CallStackIndirectCall" Bounds="530.736045725458,25.8366663869222,65.6488697287109,28.1820601268562" />
+  </Links>
+  <Categories>
+    <Category Id="CallStackDirectCall" Label="Call Stack direct call" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Call Stack direct call" OutgoingActionLabel="Call Stack direct call" />
+    <Category Id="CallStackEntry" Label="Call Stack Entry" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Call Stack Entry" />
+    <Category Id="CallStackIndirectCall" Label="Call Stack indirect call" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Call Stack indirect call" OutgoingActionLabel="Call Stack indirect call" />
+    <Category Id="CodeSchema_CallStackUnresolvedMethod" Label="Unresolved Method" CanBeDataDriven="True" DefaultAction="Microsoft.AllOutBoundLinks" IsProviderRoot="False" NavigationActionLabel="Unresolved Method" />
+    <Category Id="CodeSchema_Member" Label="Member" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" NavigationActionLabel="Members" />
+    <Category Id="CodeSchema_Method" Label="Method" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Link:Forward:CodeSchema_Calls" Icon="CodeSchema_Method" NavigationActionLabel="Methods" />
+    <Category Id="CodeSchema_SourceLocation" Label="Source Location" Icon="File" />
+    <Category Id="ExternalCallStackEntry" Label="External Call Stack Entry" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="External Call Stack Entry" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsAnonymous" Label="Is Anonymous" Description="Flag indicating if this delegate, type, or method is anonymous" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsConstructor" Label="Is Constructor" Description="Flag to indicate the method is a constructor" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsExternal" Label="Is External" Description="Flag indicating whether this node is considered external" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPrivate" Label="Is Private" Description="Flag to indicate the scope is Private" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsProtected" Label="Is Protected" Description="Flag to indicate the scope is Protected" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsStatic" Label="Is Static" Description="Flag to indicate the member is a static member" DataType="System.Boolean" />
+    <Property Id="CommonLabel" DataType="System.String" />
+    <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="FunctionTypeFlags" Label="FunctionTypeFlags" Description="FunctionTypeFlags" DataType="System.String" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsOverloaded" Label="IsOverloaded" Description="IsOverloaded" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="LabelBounds" DataType="System.Windows.Rect" />
+    <Property Id="Language" Label="Language" Description="Language" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="SourceLocation" Label="Start Line Number" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="ArrayRank" Label="Array Rank" ValueType="System.String" />
+    <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
+    <Name Id="IsUnresolved" Label="Is Unresolved" ValueType="System.String" />
+    <Name Id="Member" Label="Member" ValueType="System.Object" />
+    <Name Id="Name" Label="Name" ValueType="System.String" />
+    <Name Id="Namespace" Label="Namespace" ValueType="System.String" />
+    <Name Id="OverloadingParameters" Label="Parameter" ValueType="Microsoft.VisualStudio.GraphModel.GraphNodeIdCollection" Formatter="NameValueNoEscape" />
+    <Name Id="ParentType" Label="Parent Type" ValueType="System.Object" />
+    <Name Id="Type" Label="Type" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(a2e22272-95fe-47b6-b050-9ae7e2055bf5.OutputPathUri)" />
+    <Alias n="2" Id="Namespace=MissionPlanner" />
+    <Alias n="3" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.0/mscorlib.dll" />
+    <Alias n="4" Id="Namespace=System" />
+    <Alias n="5" Id="(@1 @2 Type=Program Member=(Name=Main OverloadingParameters=[(@3 @4 Type=(Name=String ArrayRank=1 ParentType=String))]))" />
+    <Alias n="6" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll" />
+    <Alias n="7" Id="(@1 @2 Type=Program Member=(Name=Main OverloadingParameters=[(@6 @4 Type=(Name=String ArrayRank=1 ParentType=String))]))" />
+    <Alias n="8" Uri="Assembly=$(FxReferenceAssembliesUri)/.NETFramework/v4.0/System.Windows.Forms.dll" />
+    <Alias n="9" Uri="Assembly=$(c8b88795-6d01-494d-83ad-6944bd4c5023.OutputPathUri)" />
+    <Alias n="10" Uri="Assembly=$(FxRootUri)/v2.0.50727/mscorlib.dll" />
+    <Alias n="11" Id="(@9 Namespace=MissionPlanner.Controls Type=MyButton Member=(Name=OnClick OverloadingParameters=[(@10 @4 Type=EventArgs)]))" />
+    <Alias n="12" Uri="Assembly=$(FxRootUri)/v2.0.50727/System.Windows.Forms.dll" />
+    <Alias n="13" Id="(@9 Namespace=MissionPlanner.Controls Type=MyButton Member=(Name=OnMouseUp OverloadingParameters=[(@12 Namespace=System.Windows.Forms Type=MouseEventArgs)]))" />
+    <Alias n="14" Id="Type=MAVLinkInterface" />
+    <Alias n="15" Id="(@1 @2 @14 Member=(Name=setMode OverloadingParameters=[(@3 @4 Type=String)]))" />
+    <Alias n="16" Uri="Assembly=$(20296734-5f3c-4593-a0d5-dd20b440b13a.OutputPathUri)" />
+    <Alias n="17" Id="(@1 @2 @14 Member=(Name=setMode OverloadingParameters=[(@16 Type=(Name=mavlink_set_mode_t ParentType=MAVLink)),(@16 Type=(Name=MAV_MODE_FLAG ParentType=MAVLink))]))" />
+    <Alias n="18" Id="Namespace=MissionPlanner.GCSViews" />
+    <Alias n="19" Id="Type=FlightData" />
+    <Alias n="20" Id="(@1 @18 @19 Member=(Name=BUT_setmode_Click OverloadingParameters=[(@3 @4 Type=Object),(@3 @4 Type=EventArgs)]))" />
+    <Alias n="21" Id="(@1 Namespace=MissionPlanner.GCSViews.ConfigurationView Type=ConfigRawParams Member=(Name=BUT_writePIDS_Click OverloadingParameters=[(@3 @4 Type=Object),(@3 @4 Type=EventArgs)]))" />
+    <Alias n="22" Id="(@1 @18 @19 Member=.ctor)" />
+    <Alias n="23" Id="(@1 @2 Type=MainV2 Member=.ctor)" />
+    <Alias n="24" Id="(@1 @18 @19 Member=AnonymousMethod__17)" />
+    <Alias n="25" Uri="Assembly=MissionPlanner.Controls.dll" />
+    <Alias n="26" Id="(Name=System.Windows.Forms.MyUserControl.WndProc @25 Type=void OverloadingParameters=[(Type=System.Windows.Forms.Message Name=m)] IsUnresolved=True)" />
+    <Alias n="27" Uri="Assembly=mscorlib.dll" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Link" GroupLabel="Current Call Stack Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CurrentCallStackCall')" />
+      <Setter Property="Stroke" Value="#FFD93701" />
+      <Setter Property="Weight" Value="1" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Call Stack Indirect Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CallStackIndirectCall')" />
+      <Setter Property="Stroke" Value="#FFB8B8B8" />
+      <Setter Property="StrokeDashArray" Value="4 1" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Call Stack Direct Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('CallStackDirectCall')" />
+      <Setter Property="Stroke" Value="#FFB8B8B8" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="External And Current" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('ExternalCallStackEntry') And HasCategory('CurrentCallStackEntry')" />
+      <Setter Property="Background" Value="#FFFFF8F0" />
+      <Setter Property="Stroke" Value="#FFCE5100" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Call Stack Node" ValueLabel="True">
+      <Condition Expression="HasCategory('CurrentCallStackEntry') And !HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFFFE3C6" />
+      <Setter Property="Stroke" Value="#FFD93701" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="External Call Stack Entry" ValueLabel="True">
+      <Condition Expression="HasCategory('ExternalCallStackEntry')" />
+      <Setter Property="Background" Value="#FFF7F7F7" />
+      <Setter Property="StrokeDashArray" Value="1 3" />
+      <Setter Property="Foreground" Value="#FFA5A5A5" />
+      <Setter Property="Stroke" Value="#FFA5A5A5" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
+      <Condition Expression="HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFBCFFBE" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Assembly" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Assembly')" />
+      <Setter Property="Background" Value="#FF094167" />
+      <Setter Property="Stroke" Value="#FF094167" />
+      <Setter Property="Icon" Value="CodeSchema_Assembly" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Namespace" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+      <Setter Property="Background" Value="#FF0E619A" />
+      <Setter Property="Stroke" Value="#FF0E619A" />
+      <Setter Property="Icon" Value="CodeSchema_Namespace" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Interface" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Interface')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Interface" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Struct" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Struct')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Struct" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enumeration" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Enum')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Enum" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Delegate" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Delegate')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Delegate" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Class" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Type')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Class" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Property')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Property" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Method" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Method') Or HasCategory('CodeSchema_CallStackUnresolvedMethod')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Method" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Event" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Event')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Event" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Field')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Field" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Out Parameter" ValueLabel="Has category">
+      <Condition Expression="CodeSchemaProperty_IsOut = 'True'" />
+      <Setter Property="Icon" Value="CodeSchema_OutParameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Parameter" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Parameter')" />
+      <Setter Property="Icon" Value="CodeSchema_Parameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Local Variable" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_LocalExpression')" />
+      <Setter Property="Icon" Value="CodeSchema_LocalExpression" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Externals" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FF424242" />
+      <Setter Property="Stroke" Value="#FF424242" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="Has category">
+      <Condition Expression="HasCategory('InheritsFrom')" />
+      <Setter Property="Stroke" Value="#FF00A600" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Implements')" />
+      <Setter Property="Stroke" Value="#8000A600" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Calls" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Calls')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 0" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Function Pointer" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_FunctionPointer')" />
+      <Setter Property="Stroke" Value="#FFFF00FF" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Field Reference" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_FieldReference')" />
+      <Setter Property="Stroke" Value="#FF00AEEF" />
+      <Setter Property="DrawArrow" Value="true" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('InheritsFrom') And Target.HasCategory('CodeSchema_Class')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('Implements') And Target.HasCategory('CodeSchema_Interface')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Field Read" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Target.HasCategory('CodeSchema_Field') And HasCategory('CodeSchema_FieldRead')" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Comment Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Source.HasCategory('Comment')" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Cursor Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCursorLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Disabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="DisabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="EnabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Instruction Pointer Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsInstructionPointerLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Callstack Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCurrentCallstackFrame" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Comment" ValueLabel="Has comment">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="20296734-5f3c-4593-a0d5-dd20b440b13a.OutputPathUri" Value="file:///D:/MissionPlanner/MissionPlanner/ExtLibs/Mavlink/bin/Debug/MAVLink.dll" />
+    <Path Id="a2e22272-95fe-47b6-b050-9ae7e2055bf5.OutputPathUri" Value="file:///D:/MissionPlanner/MissionPlanner/bin/Debug/MissionPlanner.exe" />
+    <Path Id="c8b88795-6d01-494d-83ad-6944bd4c5023.OutputPathUri" Value="file:///D:/MissionPlanner/MissionPlanner/ExtLibs/Controls/bin/Debug/MissionPlanner.Controls.dll" />
+    <Path Id="FxReferenceAssembliesUri" Value="file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework" />
+    <Path Id="FxRootUri" Value="file:///C:/Windows/Microsoft.NET/Framework" />
+  </Paths>
+</DirectedGraph>

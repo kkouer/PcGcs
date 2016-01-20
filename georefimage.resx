@@ -1,0 +1,2606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="TXT_logfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 14</value>
+  </data>
+  <data name="TXT_logfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 21</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TXT_logfile.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TXT_logfile.Name" xml:space="preserve">
+    <value>TXT_logfile</value>
+  </data>
+  <data name="&gt;&gt;TXT_logfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TXT_logfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TXT_logfile.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="TXT_jpgdir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 49</value>
+  </data>
+  <data name="TXT_jpgdir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 21</value>
+  </data>
+  <data name="TXT_jpgdir.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;TXT_jpgdir.Name" xml:space="preserve">
+    <value>TXT_jpgdir</value>
+  </data>
+  <data name="&gt;&gt;TXT_jpgdir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TXT_jpgdir.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TXT_jpgdir.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="TXT_offsetseconds.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 21</value>
+  </data>
+  <data name="TXT_offsetseconds.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 21</value>
+  </data>
+  <data name="TXT_offsetseconds.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="TXT_offsetseconds.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TXT_offsetseconds.Name" xml:space="preserve">
+    <value>TXT_offsetseconds</value>
+  </data>
+  <data name="&gt;&gt;TXT_offsetseconds.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TXT_offsetseconds.Parent" xml:space="preserve">
+    <value>PANEL_TIME_OFFSET</value>
+  </data>
+  <data name="&gt;&gt;TXT_offsetseconds.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>297, 17</value>
+  </metadata>
+  <data name="TXT_outputlog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 197</value>
+  </data>
+  <data name="TXT_outputlog.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TXT_outputlog.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="TXT_outputlog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>601, 186</value>
+  </data>
+  <data name="TXT_outputlog.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;TXT_outputlog.Name" xml:space="preserve">
+    <value>TXT_outputlog</value>
+  </data>
+  <data name="&gt;&gt;TXT_outputlog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TXT_outputlog.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TXT_outputlog.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 24</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 12</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Seconds offset</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>PANEL_TIME_OFFSET</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BUT_Geotagimages.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BUT_Geotagimages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>412, 84</value>
+  </data>
+  <data name="BUT_Geotagimages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 40</value>
+  </data>
+  <data name="BUT_Geotagimages.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="BUT_Geotagimages.Text" xml:space="preserve">
+    <value>GeoTag Images</value>
+  </data>
+  <data name="&gt;&gt;BUT_Geotagimages.Name" xml:space="preserve">
+    <value>BUT_Geotagimages</value>
+  </data>
+  <data name="&gt;&gt;BUT_Geotagimages.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_Geotagimages.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BUT_Geotagimages.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="BUT_estoffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 18</value>
+  </data>
+  <data name="BUT_estoffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="BUT_estoffset.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="BUT_estoffset.Text" xml:space="preserve">
+    <value>估算偏移</value>
+  </data>
+  <data name="&gt;&gt;BUT_estoffset.Name" xml:space="preserve">
+    <value>BUT_estoffset</value>
+  </data>
+  <data name="&gt;&gt;BUT_estoffset.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_estoffset.Parent" xml:space="preserve">
+    <value>PANEL_TIME_OFFSET</value>
+  </data>
+  <data name="&gt;&gt;BUT_estoffset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BUT_doit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 84</value>
+  </data>
+  <data name="BUT_doit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 40</value>
+  </data>
+  <data name="BUT_doit.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="BUT_doit.Text" xml:space="preserve">
+    <value>Pre-process</value>
+  </data>
+  <data name="&gt;&gt;BUT_doit.Name" xml:space="preserve">
+    <value>BUT_doit</value>
+  </data>
+  <data name="&gt;&gt;BUT_doit.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_doit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BUT_doit.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="BUT_browsedir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>523, 44</value>
+  </data>
+  <data name="BUT_browsedir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 28</value>
+  </data>
+  <data name="BUT_browsedir.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BUT_browsedir.Text" xml:space="preserve">
+    <value>Browse Pictures</value>
+  </data>
+  <data name="&gt;&gt;BUT_browsedir.Name" xml:space="preserve">
+    <value>BUT_browsedir</value>
+  </data>
+  <data name="&gt;&gt;BUT_browsedir.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_browsedir.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BUT_browsedir.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="BUT_browselog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>523, 9</value>
+  </data>
+  <data name="BUT_browselog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 29</value>
+  </data>
+  <data name="BUT_browselog.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="BUT_browselog.Text" xml:space="preserve">
+    <value>Browse Log</value>
+  </data>
+  <data name="&gt;&gt;BUT_browselog.Name" xml:space="preserve">
+    <value>BUT_browselog</value>
+  </data>
+  <data name="&gt;&gt;BUT_browselog.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_browselog.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BUT_browselog.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="NUM_latpos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 92</value>
+  </data>
+  <data name="NUM_latpos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_latpos.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;NUM_latpos.Name" xml:space="preserve">
+    <value>NUM_latpos</value>
+  </data>
+  <data name="&gt;&gt;NUM_latpos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_latpos.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_latpos.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="NUM_lngpos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 92</value>
+  </data>
+  <data name="NUM_lngpos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_lngpos.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;NUM_lngpos.Name" xml:space="preserve">
+    <value>NUM_lngpos</value>
+  </data>
+  <data name="&gt;&gt;NUM_lngpos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_lngpos.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_lngpos.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="NUM_altpos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 92</value>
+  </data>
+  <data name="NUM_altpos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_altpos.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;NUM_altpos.Name" xml:space="preserve">
+    <value>NUM_altpos</value>
+  </data>
+  <data name="&gt;&gt;NUM_altpos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_altpos.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_altpos.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="NUM_ATT_Heading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>453, 49</value>
+  </data>
+  <data name="NUM_ATT_Heading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_ATT_Heading.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Heading.Name" xml:space="preserve">
+    <value>NUM_ATT_Heading</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Heading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Heading.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Heading.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 76</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 12</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Lat</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 76</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 12</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Lon</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 76</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 12</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>453, 33</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Head</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="BUT_networklinkgeoref.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 84</value>
+  </data>
+  <data name="BUT_networklinkgeoref.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 40</value>
+  </data>
+  <data name="BUT_networklinkgeoref.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="BUT_networklinkgeoref.Text" xml:space="preserve">
+    <value>Location Kml</value>
+  </data>
+  <data name="BUT_networklinkgeoref.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;BUT_networklinkgeoref.Name" xml:space="preserve">
+    <value>BUT_networklinkgeoref</value>
+  </data>
+  <data name="&gt;&gt;BUT_networklinkgeoref.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_networklinkgeoref.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BUT_networklinkgeoref.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="NUM_time.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 49</value>
+  </data>
+  <data name="NUM_time.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_time.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;NUM_time.Name" xml:space="preserve">
+    <value>NUM_time</value>
+  </data>
+  <data name="&gt;&gt;NUM_time.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_time.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_time.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 33</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 12</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>GPS Millis</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 98</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 17</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="label11.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 96</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 17</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="label12.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="RDIO_TimeOffset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RDIO_TimeOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 92</value>
+  </data>
+  <data name="RDIO_TimeOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 16</value>
+  </data>
+  <data name="RDIO_TimeOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="RDIO_TimeOffset.Text" xml:space="preserve">
+    <value>Time offset</value>
+  </data>
+  <data name="RDIO_TimeOffset.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;RDIO_TimeOffset.Name" xml:space="preserve">
+    <value>RDIO_TimeOffset</value>
+  </data>
+  <data name="&gt;&gt;RDIO_TimeOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RDIO_TimeOffset.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RDIO_TimeOffset.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="RDIO_CAMMsgSynchro.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RDIO_CAMMsgSynchro.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RDIO_CAMMsgSynchro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 92</value>
+  </data>
+  <data name="RDIO_CAMMsgSynchro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 16</value>
+  </data>
+  <data name="RDIO_CAMMsgSynchro.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="RDIO_CAMMsgSynchro.Text" xml:space="preserve">
+    <value>CAM Message Synchro</value>
+  </data>
+  <data name="RDIO_CAMMsgSynchro.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;RDIO_CAMMsgSynchro.Name" xml:space="preserve">
+    <value>RDIO_CAMMsgSynchro</value>
+  </data>
+  <data name="&gt;&gt;RDIO_CAMMsgSynchro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RDIO_CAMMsgSynchro.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RDIO_CAMMsgSynchro.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="PANEL_TIME_OFFSET.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 130</value>
+  </data>
+  <data name="PANEL_TIME_OFFSET.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 55</value>
+  </data>
+  <data name="PANEL_TIME_OFFSET.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="PANEL_TIME_OFFSET.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PANEL_TIME_OFFSET.Name" xml:space="preserve">
+    <value>PANEL_TIME_OFFSET</value>
+  </data>
+  <data name="&gt;&gt;PANEL_TIME_OFFSET.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PANEL_TIME_OFFSET.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PANEL_TIME_OFFSET.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 33</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 12</value>
+  </data>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Lat</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 33</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 12</value>
+  </data>
+  <data name="label14.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Lon</value>
+  </data>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="NUM_CAM_Alt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 49</value>
+  </data>
+  <data name="NUM_CAM_Alt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_CAM_Alt.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Alt.Name" xml:space="preserve">
+    <value>NUM_CAM_Alt</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Alt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Alt.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Alt.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 33</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 12</value>
+  </data>
+  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="NUM_CAM_Lon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 49</value>
+  </data>
+  <data name="NUM_CAM_Lon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_CAM_Lon.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Lon.Name" xml:space="preserve">
+    <value>NUM_CAM_Lon</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Lon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Lon.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Lon.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="NUM_CAM_Lat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 49</value>
+  </data>
+  <data name="NUM_CAM_Lat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_CAM_Lat.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Lat.Name" xml:space="preserve">
+    <value>NUM_CAM_Lat</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Lat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Lat.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Lat.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 9</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 12</value>
+  </data>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>CAM Message Offsets</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Week.Name" xml:space="preserve">
+    <value>NUM_CAM_Week</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Week.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Week.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Week.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label26.Name" xml:space="preserve">
+    <value>label26</value>
+  </data>
+  <data name="&gt;&gt;label26.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label26.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label26.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Roll.Name" xml:space="preserve">
+    <value>NUM_ATT_Roll</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Roll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Roll.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Roll.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label25.Name" xml:space="preserve">
+    <value>label25</value>
+  </data>
+  <data name="&gt;&gt;label25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label25.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Pitch.Name" xml:space="preserve">
+    <value>NUM_ATT_Pitch</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Pitch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Pitch.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Pitch.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label24.Name" xml:space="preserve">
+    <value>label24</value>
+  </data>
+  <data name="&gt;&gt;label24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label24.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label23.Name" xml:space="preserve">
+    <value>label23</value>
+  </data>
+  <data name="&gt;&gt;label23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label23.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_Week.Name" xml:space="preserve">
+    <value>NUM_GPS_Week</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_Week.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_Week.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_Week.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Time.Name" xml:space="preserve">
+    <value>NUM_CAM_Time</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Time.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Time.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Time.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;label22.Name" xml:space="preserve">
+    <value>label22</value>
+  </data>
+  <data name="&gt;&gt;label22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label22.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;label21.Name" xml:space="preserve">
+    <value>label21</value>
+  </data>
+  <data name="&gt;&gt;label21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_AMSL_Alt.Name" xml:space="preserve">
+    <value>NUM_GPS_AMSL_Alt</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_AMSL_Alt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_AMSL_Alt.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_AMSL_Alt.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;label20.Name" xml:space="preserve">
+    <value>label20</value>
+  </data>
+  <data name="&gt;&gt;label20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Pitch.Name" xml:space="preserve">
+    <value>NUM_CAM_Pitch</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Pitch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Pitch.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Pitch.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;label19.Name" xml:space="preserve">
+    <value>label19</value>
+  </data>
+  <data name="&gt;&gt;label19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Roll.Name" xml:space="preserve">
+    <value>NUM_CAM_Roll</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Roll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Roll.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Roll.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;label18.Name" xml:space="preserve">
+    <value>label18</value>
+  </data>
+  <data name="&gt;&gt;label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Heading.Name" xml:space="preserve">
+    <value>NUM_CAM_Heading</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Heading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Heading.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Heading.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="PANEL_CAM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 184</value>
+  </data>
+  <data name="PANEL_CAM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>597, 136</value>
+  </data>
+  <data name="PANEL_CAM.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="PANEL_CAM.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PANEL_CAM.Name" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;PANEL_CAM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PANEL_CAM.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PANEL_CAM.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="NUM_CAM_Week.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 93</value>
+  </data>
+  <data name="NUM_CAM_Week.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_CAM_Week.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Week.Name" xml:space="preserve">
+    <value>NUM_CAM_Week</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Week.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Week.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Week.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label26.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label26.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 77</value>
+  </data>
+  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label26.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>GPS Week</value>
+  </data>
+  <data name="&gt;&gt;label26.Name" xml:space="preserve">
+    <value>label26</value>
+  </data>
+  <data name="&gt;&gt;label26.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label26.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label26.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>428, 27</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1, 80</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="NUM_ATT_Roll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 49</value>
+  </data>
+  <data name="NUM_ATT_Roll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_ATT_Roll.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Roll.Name" xml:space="preserve">
+    <value>NUM_ATT_Roll</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Roll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Roll.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Roll.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label25.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label25.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 33</value>
+  </data>
+  <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="label25.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Roll</value>
+  </data>
+  <data name="&gt;&gt;label25.Name" xml:space="preserve">
+    <value>label25</value>
+  </data>
+  <data name="&gt;&gt;label25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label25.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="NUM_ATT_Pitch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>453, 93</value>
+  </data>
+  <data name="NUM_ATT_Pitch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_ATT_Pitch.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Pitch.Name" xml:space="preserve">
+    <value>NUM_ATT_Pitch</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Pitch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Pitch.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_ATT_Pitch.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label24.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label24.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label24.Location" type="System.Drawing.Point, System.Drawing">
+    <value>453, 77</value>
+  </data>
+  <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 12</value>
+  </data>
+  <data name="label24.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Pitch</value>
+  </data>
+  <data name="&gt;&gt;label24.Name" xml:space="preserve">
+    <value>label24</value>
+  </data>
+  <data name="&gt;&gt;label24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label24.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>458, 9</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 12</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>ATT Message Offsets</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label23.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label23.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 33</value>
+  </data>
+  <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label23.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>GPS Week</value>
+  </data>
+  <data name="&gt;&gt;label23.Name" xml:space="preserve">
+    <value>label23</value>
+  </data>
+  <data name="&gt;&gt;label23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label23.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="NUM_GPS_Week.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 49</value>
+  </data>
+  <data name="NUM_GPS_Week.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_GPS_Week.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_Week.Name" xml:space="preserve">
+    <value>NUM_GPS_Week</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_Week.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_Week.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_Week.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 27</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1, 80</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="NUM_CAM_Time.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 49</value>
+  </data>
+  <data name="NUM_CAM_Time.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_CAM_Time.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Time.Name" xml:space="preserve">
+    <value>NUM_CAM_Time</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Time.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Time.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Time.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label22.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label22.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label22.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>GPS 毫秒</value>
+  </data>
+  <data name="&gt;&gt;label22.Name" xml:space="preserve">
+    <value>label22</value>
+  </data>
+  <data name="&gt;&gt;label22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label22.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="label21.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label21.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 33</value>
+  </data>
+  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label21.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>AMSL Alt</value>
+  </data>
+  <data name="&gt;&gt;label21.Name" xml:space="preserve">
+    <value>label21</value>
+  </data>
+  <data name="&gt;&gt;label21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="NUM_GPS_AMSL_Alt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 49</value>
+  </data>
+  <data name="NUM_GPS_AMSL_Alt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_GPS_AMSL_Alt.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_AMSL_Alt.Name" xml:space="preserve">
+    <value>NUM_GPS_AMSL_Alt</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_AMSL_Alt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_AMSL_Alt.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_GPS_AMSL_Alt.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 9</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 12</value>
+  </data>
+  <data name="label20.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>GPS Message Offsets</value>
+  </data>
+  <data name="&gt;&gt;label20.Name" xml:space="preserve">
+    <value>label20</value>
+  </data>
+  <data name="&gt;&gt;label20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="NUM_CAM_Pitch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 93</value>
+  </data>
+  <data name="NUM_CAM_Pitch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_CAM_Pitch.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Pitch.Name" xml:space="preserve">
+    <value>NUM_CAM_Pitch</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Pitch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Pitch.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Pitch.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 77</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 12</value>
+  </data>
+  <data name="label19.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Pitch</value>
+  </data>
+  <data name="&gt;&gt;label19.Name" xml:space="preserve">
+    <value>label19</value>
+  </data>
+  <data name="&gt;&gt;label19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="NUM_CAM_Roll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 93</value>
+  </data>
+  <data name="NUM_CAM_Roll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_CAM_Roll.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Roll.Name" xml:space="preserve">
+    <value>NUM_CAM_Roll</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Roll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Roll.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Roll.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 77</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="label18.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Roll</value>
+  </data>
+  <data name="&gt;&gt;label18.Name" xml:space="preserve">
+    <value>label18</value>
+  </data>
+  <data name="&gt;&gt;label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="NUM_CAM_Heading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 93</value>
+  </data>
+  <data name="NUM_CAM_Heading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="NUM_CAM_Heading.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Heading.Name" xml:space="preserve">
+    <value>NUM_CAM_Heading</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Heading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Heading.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;NUM_CAM_Heading.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 77</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Head</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>PANEL_CAM</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 9</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Rotation</value>
+  </data>
+  <data name="label9.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="num_camerarotation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 25</value>
+  </data>
+  <data name="num_camerarotation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="num_camerarotation.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="num_camerarotation.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;num_camerarotation.Name" xml:space="preserve">
+    <value>num_camerarotation</value>
+  </data>
+  <data name="&gt;&gt;num_camerarotation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;num_camerarotation.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;num_camerarotation.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 9</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 12</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Cross fov</value>
+  </data>
+  <data name="label8.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 10</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 12</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Dir fov</value>
+  </data>
+  <data name="label7.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="num_hfov.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 25</value>
+  </data>
+  <data name="num_hfov.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="num_hfov.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="num_hfov.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;num_hfov.Name" xml:space="preserve">
+    <value>num_hfov</value>
+  </data>
+  <data name="&gt;&gt;num_hfov.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;num_hfov.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;num_hfov.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="num_vfov.Location" type="System.Drawing.Point, System.Drawing">
+    <value>205, 26</value>
+  </data>
+  <data name="num_vfov.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="num_vfov.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="num_vfov.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;num_vfov.Name" xml:space="preserve">
+    <value>num_vfov</value>
+  </data>
+  <data name="&gt;&gt;num_vfov.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;num_vfov.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;num_vfov.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txt_basealt.Name" xml:space="preserve">
+    <value>txt_basealt</value>
+  </data>
+  <data name="&gt;&gt;txt_basealt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_basealt.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;txt_basealt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label28.Name" xml:space="preserve">
+    <value>label28</value>
+  </data>
+  <data name="&gt;&gt;label28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label28.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CHECK_AMSLAlt_Use.Name" xml:space="preserve">
+    <value>CHECK_AMSLAlt_Use</value>
+  </data>
+  <data name="&gt;&gt;CHECK_AMSLAlt_Use.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CHECK_AMSLAlt_Use.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;CHECK_AMSLAlt_Use.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 130</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>597, 51</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txt_basealt.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="txt_basealt.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txt_basealt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 13</value>
+  </data>
+  <data name="txt_basealt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 21</value>
+  </data>
+  <data name="txt_basealt.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="txt_basealt.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txt_basealt.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;txt_basealt.Name" xml:space="preserve">
+    <value>txt_basealt</value>
+  </data>
+  <data name="&gt;&gt;txt_basealt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_basealt.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;txt_basealt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label28.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label28.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 16</value>
+  </data>
+  <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 12</value>
+  </data>
+  <data name="label28.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>相对地面高度</value>
+  </data>
+  <data name="label28.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label28.Name" xml:space="preserve">
+    <value>label28</value>
+  </data>
+  <data name="&gt;&gt;label28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label28.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CHECK_AMSLAlt_Use.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="CHECK_AMSLAlt_Use.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CHECK_AMSLAlt_Use.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 16</value>
+  </data>
+  <data name="CHECK_AMSLAlt_Use.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 16</value>
+  </data>
+  <data name="CHECK_AMSLAlt_Use.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="CHECK_AMSLAlt_Use.Text" xml:space="preserve">
+    <value>使用海拔高度</value>
+  </data>
+  <data name="&gt;&gt;CHECK_AMSLAlt_Use.Name" xml:space="preserve">
+    <value>CHECK_AMSLAlt_Use</value>
+  </data>
+  <data name="&gt;&gt;CHECK_AMSLAlt_Use.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CHECK_AMSLAlt_Use.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;CHECK_AMSLAlt_Use.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TXT_shutterLag.Name" xml:space="preserve">
+    <value>TXT_shutterLag</value>
+  </data>
+  <data name="&gt;&gt;TXT_shutterLag.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TXT_shutterLag.Parent" xml:space="preserve">
+    <value>PANEL_SHUTTER_LAG</value>
+  </data>
+  <data name="&gt;&gt;TXT_shutterLag.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label27.Name" xml:space="preserve">
+    <value>label27</value>
+  </data>
+  <data name="&gt;&gt;label27.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label27.Parent" xml:space="preserve">
+    <value>PANEL_SHUTTER_LAG</value>
+  </data>
+  <data name="&gt;&gt;label27.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PANEL_SHUTTER_LAG.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 130</value>
+  </data>
+  <data name="PANEL_SHUTTER_LAG.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 55</value>
+  </data>
+  <data name="PANEL_SHUTTER_LAG.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="PANEL_SHUTTER_LAG.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PANEL_SHUTTER_LAG.Name" xml:space="preserve">
+    <value>PANEL_SHUTTER_LAG</value>
+  </data>
+  <data name="&gt;&gt;PANEL_SHUTTER_LAG.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PANEL_SHUTTER_LAG.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PANEL_SHUTTER_LAG.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="TXT_shutterLag.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 19</value>
+  </data>
+  <data name="TXT_shutterLag.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 21</value>
+  </data>
+  <data name="TXT_shutterLag.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="TXT_shutterLag.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TXT_shutterLag.Name" xml:space="preserve">
+    <value>TXT_shutterLag</value>
+  </data>
+  <data name="&gt;&gt;TXT_shutterLag.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TXT_shutterLag.Parent" xml:space="preserve">
+    <value>PANEL_SHUTTER_LAG</value>
+  </data>
+  <data name="&gt;&gt;TXT_shutterLag.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label27.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label27.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label27.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 22</value>
+  </data>
+  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 12</value>
+  </data>
+  <data name="label27.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Shutter lag (ms)</value>
+  </data>
+  <data name="&gt;&gt;label27.Name" xml:space="preserve">
+    <value>label27</value>
+  </data>
+  <data name="&gt;&gt;label27.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label27.Parent" xml:space="preserve">
+    <value>PANEL_SHUTTER_LAG</value>
+  </data>
+  <data name="&gt;&gt;label27.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chk_cammsg.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk_cammsg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>179, 110</value>
+  </data>
+  <data name="chk_cammsg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 16</value>
+  </data>
+  <data name="chk_cammsg.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="chk_cammsg.Text" xml:space="preserve">
+    <value>Use Cam Messages</value>
+  </data>
+  <data name="chk_cammsg.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;chk_cammsg.Name" xml:space="preserve">
+    <value>chk_cammsg</value>
+  </data>
+  <data name="&gt;&gt;chk_cammsg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk_cammsg.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chk_cammsg.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>654, 396</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAQEAAAAEAIAAoQgAAFgAAACgAAABAAAAAgAAAAAEAIAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA
+        AAD6+vr/7e3t//Pz8//09PT/8fHx//Pz8//v7+//8fHx/+3t7f/09PT/8/Pz/+7u7v/w8PD/8fHx//Dw
+        8P/z8/P/7e3t//Pz8//z8/P/8fHx//Dw8P/w8PD/8vLy//Dw8P/w8PD/8fHx/+/v7//x8fH/9fX1//Dw
+        8P/u7u7/9vb2//b29v/z8/P/8fHx//b29v/y8vL/8fHx//X19f/s7Oz/8/Pz/+7u7v/29vb/8vLy/+3t
+        7f/09PT/8vLy//Ly8v/w8PD/7e3t//n5+f/t7e3/8/Pz//X19f/u7u7/9vb2//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/7e3t/+rq6v/z8/P/8vLy//Hx8f/z8/P/8PDw//Hx8f/29vb/9PT0//T0
+        9P/z8/P/8fHx//Pz8//09PT/7+/v//Pz8//19fX/8fHx/+/v7//09PT/9vb2//T09P/w8PD/8/Pz//T0
+        9P/x8fH/7u7u/+7u7v/u7u7/7+/v//Pz8//u7u7/7+/v//Dw8P/y8vL/8vLy//Ly8v/19fX/9PT0//T0
+        9P/x8fH/9vb2//Hx8f/t7e3/8fHx/+7u7v/v7+//8vLy//j4+P/t7e3/+vr6/+vr6//19fX/9/f3/+rq
+        6v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Pz8//z8/P/9fX1/+/v7//w8PD/9PT0//Dw
+        8P/y8vL/8/Pz/+/v7//y8vL/9fX1//Hx8f/y8vL/9PT0//Hx8f/y8vL/8vLy//Pz8//x8fH/8PDw//Pz
+        8//z8/P/8fHx/+3t7f/y8vL/9/f3//b29v/y8vL/8/Pz//b29v/19fX/9PT0//T09P/09PT/8fHx//Ly
+        8v/y8vL/8PDw//Pz8//u7u7/7u7u//Pz8//y8vL/8fHx/+/v7//u7u7/9vb2//Dw8P/r6+v/8PDw//Pz
+        8//+/v7/5eXl//j4+P/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/09PT/8vLy/+/v
+        7//u7u7/8/Pz//X19f/y8vL/8/Pz//Dw8P/v7+//8fHx//Ly8v/u7u7/7e3t//Hx8f/19fX/8/Pz/+/v
+        7//y8vL/7+/v/+zs7P/w8PD/8fHx//Pz8//19fX/8vLy//Ly8v/y8vL/8fHx//Ly8v/z8/P/8PDw//X1
+        9f/w8PD/8PDw//Dw8P/y8vL/9vb2//Ly8v/y8vL/9/f3//Pz8//y8vL/9fX1//j4+P/z8/P/7+/v//X1
+        9f/w8PD/+vr6//b29v/o6Oj/8vLy//j4+P/r6+v/8PDw//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8fHx//Hx8f/w8PD/8/Pz//T09P/v7+//7u7u/+7u7v/09PT/8vLy//f39//6+vr/9fX1//T0
+        9P/09PT/8PDw//Hx8f/09PT/9/f3//Pz8//6+vr/+fn5/+3t7f/19fX/9PT0/+/v7//u7u7/8vLy//X1
+        9f/09PT/8fHx//Dw8P/09PT/8fHx//Ly8v/z8/P/8vLy//Pz8//19fX/8vLy//Dw8P/x8fH/7u7u/+7u
+        7v/y8vL/9PT0//Pz8//t7e3/7+/v//r6+v/W1tb/lJSU/6Kiov/l5eX///////Pz8//y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Pz8//09PT/9PT0//X19f/v7+//7u7u//b29v/09PT/9PT0/+/v
+        7//v7+//7u7u/+3t7f/z8/P/9/f3/+/v7//w8PD/9PT0//T09P/q6ur/8fHx//Hx8f/o6Oj/+/v7/+/v
+        7//29vb/9vb2//Ly8v/x8fH/7u7u/+/v7//39/f/7Ozs//Pz8//w8PD/8/Pz//Hx8f/s7Oz/8fHx//Dw
+        8P/t7e3/9PT0//b29v/z8/P/6+vr/+7u7v/4+Pj/8vLy//f39//m5ub/tLS0/2BgYP9WVlb/fn5+/+7u
+        7v/z8/P/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/v7+//8PDw//Dw8P/y8vL/7u7u//b2
+        9v/+/v7/6Ojo/+np6f/8/Pz/+vr6//Dw8P/19fX/8/Pz/+zs7P/w8PD//Pz8/+fn5//y8vL/8/Pz/+/v
+        7//5+fn/8/Pz/+/v7//s7Oz/+fn5//Ly8v/p6en/9vb2//r6+v/w8PD/7Ozs/+3t7f/9/f3/6urq//Dw
+        8P//////9fX1//T09P/y8vL//Pz8/+rq6v/n5+f/+Pj4//Pz8//t7e3/9/f3//Pz8//19fX/8vLy/93d
+        3f/Jycn/gICA/1paWv+vr6//9/f3//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8fHx//Ly
+        8v/y8vL/8/Pz/+7u7v/09PT/6Ojo/7Ozs/+dnZ3/4eHh//T09P/u7u7/9/f3/9LS0v+jo6P/qKio/83N
+        zf+jo6P/zc3N//Pz8//s7Oz/8/Pz/9LS0v+SkpL/mZmZ/6mpqf+oqKj/t7e3/+jo6P/29vb/ysrK/5+f
+        n/+ampr/s7Oz/52dnf+4uLj/7e3t//Dw8P/y8vL/9PT0//Hx8f+zs7P/paWl/93d3f/39/f/7+/v//Hx
+        8f/p6en/l5eX/7W1tf/x8fH/9fX1/8TExP9ZWVn/g4OD/+7u7v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy/+3t7f/19fX/9fX1//Pz8//y8vL/9vb2/+np6f+Hh4f/X11c/7Gvrv/18/L/9fPy//Px
+        8P+fnZz/YV9e/5uZmP+5t7f/V1VV/7e1tf/z8fH/9PLy/9rY2P9aWFj/XFpa/1xaWf9eXFv/Xlxb/3Bu
+        bf/08vH/3tzb/11bWv9dW1r/XFxc/1dXV/9cXFz/mJiY/+7u7v/6+vr/8vLy//Dw8P/w8PD/lZWV/1tb
+        W//b29v/9PT0/+zs7P/29vb/39/f/2BeXf+UkpH/7uzr//b08/+xr67/VlRT/11bWv/T0dD/8vLy/+7u
+        7v/y8vL/8/Pz/+/v7//6+vr/7e3t//T09P/y8vL/8/Pz//Pz8//x8fH/8PDw//X19f/19fX/tLS0/1NR
+        UP98enn/nZua/42Liv+Zl5b/bWtq/1RSUf/Mysn/srCw/2ZkZP+urKz/+ff3/+/t7f+PjY3/WlhY/5mX
+        l//49vX/srCv/1dVVP9vbWz/8O7t/7Gvrv9YVlX/jIqJ//Dw8P+ioqL/WFhY/5eXl//o6Oj/7+/v//Ly
+        8v/y8vL/9PT0/5iYmP9WVlb/4uLi//Ly8v/x8fH/7+/v/9ra2v9cWln/lpST//37+v/l4+L/dnRz/2Be
+        Xf9XVVT/nZua//b29v/09PT/8PDw//T09P/t7e3/8/Pz/+/v7//w8PD/9fX1//Hx8f/y8vL/8fHx/+/v
+        7//y8vL/+/v7/+Li4v9pZ2b/TkxL/1ZUU/9lY2L/XVta/1FPTv93dXT/9vTz/7u5uf9XVVX/tbOz//Ty
+        8v/18/P/i4mJ/1tZWf/l4+P/9vTz/+/t7P9ycG//cnBv//78+/+koqH/XFpZ/8zKyf/w8PD/0dHR/1pa
+        Wv+YmJj/+fn5//f39//t7e3/9/f3/+/v7/+VlZX/WVlZ/9bW1v/z8/P/8/Pz//f39//e3t7/ZmRj/5CO
+        jf/18/L/w8HA/1lXVv+Zl5b/c3Fw/2VjYv/g4OD/+vr6//Pz8//4+Pj/8PDw//Dw8P/29vb/9fX1//Ly
+        8v/v7+//8/Pz//Ly8v/v7+//7+/v//T09P/y8vL/lZOS/2VjYv+hn57/9vTz/4qIh/9eXFv/s7Gw/+/t
+        7P+zsbH/V1VV/5mXl//y8PD/8O7u/358fP9ZV1f/0c/P/+zq6f/h397/dHJx/2VjYv/p5+b/qKal/2Ff
+        Xv/GxMP/6+vr/9/f3/9fX1//mZmZ/+Tk5P/r6+v/8PDw/+rq6v/o6Oj/l5eX/2JiYv+Tk5P/mpqa/46O
+        jv/R0dH/29vb/1lXVv+Zl5b/8/Hw/5COjf9SUE//y8nI/6+trP9dW1r/rKys//X19f/u7u7/7+/v//Pz
+        8//w8PD/9fX1//Dw8P/w8PD/8fHx//T09P/y8vL/7+/v//Hx8f/v7+//8vLy/8jGxf9cWln/goB//+bk
+        4/9cWln/YmBf/+Lg3//39fT/trS0/1ZUVP9gXl7/jIqK/6mnp/+wrq7/YF5e/2BeXv+Rj47/fXt6/1dV
+        VP9vbWz/7evq/6impf9TUVD/w8HA/+Dg4P/Kysr/UFBQ/5SUlP/d3d3/3Nzc/9/f3//i4uL/6urq/5GR
+        kf9JSUn/Xl5e/1hYWP9VVVX/sbGx/9fX1/9YVlX/npyb/9LQz/9XVVT/dnRz//f19P/m5OP/Xlxb/2xs
+        bP/q6ur/9/f3//Pz8//5+fn/8vLy//Pz8//29vb/8vLy//T09P/z8/P/8vLy/+7u7v/09PT/8vLy//Pz
+        8//y8O//cG5t/1hWVf+ioJ//WVdW/6OhoP/y8O//7evq/7e1tf9mZGT/amho/19dXf+HhYX/8vDw/5iW
+        lv9oZmb/XFpZ/2VjYv9UUlH/bGpp/+Ti4f+urKv/YmBf/8PBwP/y8vL/1NTU/2VlZf+Tk5P/7e3t//n5
+        +f/t7e3/7+/v/+/v7/+ampr/ZWVl/9nZ2f/y8vL/8PDw/+zs7P/f39//YmBf/4+NjP+0srH/ZGJh/66s
+        q//x7+7/9fPy/5qYl/9fX1//2dnZ//Dw8P/w8PD/9vb2//Hx8f/u7u7/8/Pz//Ly8v/09PT/8PDw//T0
+        9P/u7u7/8/Pz//T09P/09PT/9/X0/7Kwr/9UUlH/ZmRj/1pYV//Jx8b/8e/u//f19P/59/f/7evr/+/t
+        7f/6+Pj/7Orq//j29v/18/P/7evr//n39v/h397/fnx7/3h2df/w7u3/+ff2/+7s6//08vH/7+/v//j4
+        +P/y8vL/9PT0//Pz8//v7+//9fX1//Hx8f/w8PD/lJSU/1dXV//b29v/9PT0//j4+P/o6Oj/4eHh/1hW
+        Vf+Zl5b/9fPy/+Ti4f/18/L/6ujn//r49//39fT/5eXl///////x8fH/6enp/+jo6P/w8PD/9PT0//Pz
+        8//x8fH/8/Pz/+7u7v/4+Pj/7u7u/+/v7//y8vL/8fHx//Lw7//r6ej/XVta/1tZWP98enn/7+3s//v5
+        +P/u7Ov/8vDw/+zq6v/6+Pj/8e/v//Hv7//z8fH/8vDw//Ty8v/v7ez//Pr5/21rav9vbWz/9PLx/+7s
+        6//8+vn/8e/u//Hx8f/v7+//9fX1/+rq6v/19fX/8/Pz/+3t7f/19fX/8/Pz/5iYmP9RUVH/m5ub/5SU
+        lP+SkpL/t7e3/9vb2/9fXVz/mJaV//Lw7//59/b/9vTz//Xz8v/z8fD/8/Hw//f39//u7u7/7Ozs//v7
+        +//w8PD/9PT0//b29v/v7+//8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/09PT/6Ojo/4uL
+        i/9bW1v/rKys//Hx8f/x8fH/8/Pz//Ly8v/y8vL/8vLy//Hx8f/x8fH/8fHx//Hx8f/x8fH/8fHx//Hx
+        8f9xcXH/bW1t//Ly8v/w8PD/7u7u/+3t7f/x8fH/8fHx//Ly8v/y8vL/8vLy//Ly8v/x8fH/8fHx//Hx
+        8f+YmJj/Wlpa/11dXf9YWFj/XFxc/5mZmf/Z2dn/XFxc/52dnf/v7+//8/Pz//Hx8f/09PT/8fHx//Hx
+        8f/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/7+/v///////39/f/6enp//Hx8f/5+fn/8/Pz//Hx8f/y8vL/8vLy//Ly8v/x8fH/8fHx//Hx
+        8f/x8fH/8fHx/+vr6//39/f/bGxs/3Fxcf/w8PD/6+vr//r6+v/29vb/8fHx//Hx8f/y8vL/8vLy//Ly
+        8v/y8vL/8fHx//Hx8f/09PT/7Ozs/+/v7//39/f/8vLy/+zs7P/s7Oz/5eXl/1dXV/+VlZX/5+fn//Pz
+        8//09PT/9PT0//Hx8f/09PT/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Hx8f/s7Oz/9vb2//r6+v/t7e3/7u7u//X19f/u7u7/8vLy//Ly
+        8v/y8vL/8fHx//Hx8f/x8fH/8fHx//Hx8f/39/f/7e3t/+zs7P/n5+f/9/f3//T09P/q6ur/9PT0//Hx
+        8f/x8fH/8vLy//Ly8v/y8vL/8vLy//Hx8f/x8fH/8fHx//X19f/29vb/7+/v//Hx8f/6+vr/9fX1/+fn
+        5//w8PD/8vLy//7+/v/u7u7/7Ozs//Hx8f/u7u7/8PDw//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/39/f/7u7u//Dw8P/y8vL/7e3t//Ly
+        8v/4+Pj/8vLy//Ly8v/y8vL/8vLy//Hx8f/x8fH/8fHx//Hx8f/x8fH/7e3t/+3t7f///////Pz8/+3t
+        7f/z8/P/8PDw//Dw8P/x8fH/8fHx//Ly8v/y8vL/8vLy//Ly8v/x8fH/8fHx//Pz8//w8PD/8PDw/+/v
+        7//y8vL/8/Pz/+/v7//y8vL/9/f3/+/v7//x8fH/7e3t//Hx8f/19fX/8PDw//Pz8//y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/6urq//Ly
+        8v/29vb/9PT0//Hx8f/w8PD/7+/v//Dw8P/y8vL/8vLy//Ly8v/x8fH/8fHx//Hx8f/x8fH/8fHx//Dw
+        8P/6+vr/8/Pz/7a2tv+tra3/+/v7//Pz8//q6ur/8fHx//Hx8f/y8vL/8vLy//Ly8v/y8vL/8fHx//Hx
+        8f/w8PD/9PT0//X19f/z8/P/8vLy//Dw8P/y8vL/9vb2/+/v7//t7e3/8vLy//X19f/z8/P/8vLy/+3t
+        7f/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//b29v/y8vL/7u7u/+7u7v/x8fH/8/Pz//T09P/4+Pj/8vLy//Ly8v/y8vL/8fHx//Hx
+        8f/x8fH/8fHx//Hx8f/q6ur/9/f3/93d3f9fX1//UlJS/+rq6v/s7Oz/9fX1//Hx8f/x8fH/8vLy//Ly
+        8v/y8vL/8vLy//Hx8f/x8fH/7+/v//Pz8//u7u7/8PDw//Hx8f/x8fH/9PT0/+rq6v/19fX/8fHx/+3t
+        7f/y8vL/8vLy//b29v/w8PD/8PDw//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/29vb/8vLy//Ly8v/19fX/8/Pz//Dw8P/v7+//7+/v//Ly
+        8v/y8vL/8vLy//Hx8f/x8fH/8fHx//Hx8f/x8fH/7e3t//Ly8v+Hh4f/R0dH/15eXv/W1tb/9fX1/+7u
+        7v/x8fH/8fHx//Ly8v/y8vL/8vLy//Ly8v/x8fH/8fHx//X19f/29vb/7+/v//v7+//39/f/7u7u//n5
+        +f/r6+v/8fHx//X19f/w8PD/8vLy/+3t7f/09PT/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/7+/v//Pz8//09PT/8vLy//Hx
+        8f/y8vL/8vLy//Dw8P/y8vL/8vLy//Ly8v/x8fH/8fHx//Hx8f/x8fH/8fHx//////+goKD/Tk5O/1lZ
+        Wf9lZWX/1NTU//r6+v/y8vL/8fHx//Hx8f/y8vL/8vLy//Ly8v/y8vL/8fHx//Hx8f/u7u7/9PT0/+np
+        6f/s7Oz/1tbW/83Nzf/z8/P/9/f3/+vr6//19fX/8PDw//Dw8P/q6ur/9PT0//Pz8//x8fH/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Hx8f/x8fH/8fHx//Hx8f/x8fH/8vLy//Pz8//z8/P/7u7u//Ly8v/5+fn/6urq//b2
+        9v/Hx8f/V1dX/1hYWP9ZWVn/Y2Nj/+Hh4f/4+Pj/9fX1//Hx8f/x8fH/8/Pz//Hx8f/y8vL/9fX1//Hx
+        8f/w8PD/+Pb1/+nn5v/z8fD/8e/u/2ZkY/9WVFP/qaem//b08//4+Pj/7+/v/+/v7//y8vL/7+/v/+/v
+        7//y8vL/8fHx//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/x8fH/8fHx//Hx8f/x8fH/8fHx//Ly8v/w8PD/8fHx//Pz
+        8//y8vL/4ODg//b29v/z8/P/cXFx/1RUVP9eXl7/S0tL/3Z2dv/09PT/8fHx/+3t7f/y8vL/8fHx//Ly
+        8v/u7u7/7+/v//Ly8v/v7+//9fX1//Lw7//x7+7//fv6/4uJiP9SUE//WlhX/1JQT//Lycj/9/f3/+/v
+        7//v7+//8vLy//Dw8P/w8PD/8vLy//Hx8f/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8fHx//Hx8f/x8fH/8fHx//Hx
+        8f/19fX/7e3t//Hx8f/09PT/+fn5//r6+v/39/f/gICA/0pKSv9SUlL/Y2Nj/1FRUf+JiYn/8/Pz/+vr
+        6//4+Pj/8fHx//Ly8v/z8/P/7u7u//Ly8v/39/f/8fHx//X19f/w7u3/+ff2/7m3tv9PTUz/Xlxb/1tZ
+        WP9SUE//ysjH//X19f/w8PD/8PDw//Ly8v/w8PD/8PDw//Ly8v/x8fH/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Hx
+        8f/x8fH/8fHx//Hx8f/x8fH/8fHx//Hx8f/w8PD/0dHR/7Gxsf/e3t7/7+/v/52dnf9dXV3/T09P/1JS
+        Uv9TU1P/oaGh//39/f/u7u7/6+vr//Hx8f/z8/P/9PT0/+/v7//09PT/9/f3/+7u7v/u7u7////+/8vJ
+        yP9hX17/VFJR/2RiYf9QTk3/dHJx/+Ph4P/z8/P/8fHx//Hx8f/x8fH/8PDw//Hx8f/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/x8fH/8fHx//Hx8f/x8fH/8fHx/+jo6P/w8PD/9/f3/7+/v/9CQkL/Xl5e/5eX
+        l//a2tr/2dnZ/5eXl/9UVFT/SEhI/6+vr//39/f/6Ojo//b29v/19fX/8vLy//Dw8P/x8fH/7+/v/+zs
+        7P/v7+//8/Pz/+zq6f91c3L/VFJR/15cW/9bWVj/UlBP/399fP/9+/r/8fHx//Ly8v/x8fH/8PDw//Hx
+        8f/x8fH/8fHx//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8fHx//Hx8f/x8fH/8fHx//Hx8f/6+vr/5OTk//Ly
+        8v/n5+f/Z2dn/1RUVP9PT0//UVFR/6mpqf/29vb/ycnJ/21tbf/BwcH//////+/v7//09PT/9fX1//Ly
+        8v/t7e3/9vb2//Dw8P/t7e3//Pz8//X19f+Vk5L/T01M/2BeXf9bWVj/YV9e/1BOTf+qqKf////+/+7u
+        7v/z8/P/8vLy//Dw8P/x8fH/8vLy//Hx8f/z8/P/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Hx8f/x8fH/8fHx//Hx
+        8f/x8fH/6enp//r6+v/y8vL/8vLy/6CgoP9KSkr/X19f/1JSUv9FRUX/bm5u/83Nzf/s7Oz/7u7u/+zs
+        7P/39/f/6urq/+/v7//39/f/7e3t//X19f/y8vL/9fX1//X19f+5ubn/VlRT/1lXVv9aWFf/VlRT/19d
+        XP9QTk3/29nY//Xz8v/t7e3/9PT0//Pz8//v7+//8vLy//Ly8v/x8fH/8/Pz//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/x8fH/8fHx//Hx8f/x8fH/8fHx//X19f/w8PD/d3d3/5qamv/s7Oz/Wlpa/1paWv9XV1f/YGBg/0tL
+        S/9SUlL/ioqK//T09P/4+Pj/5ubm//T09P/n5+f//f39/+/v7//v7+//7u7u//b29v/Z2dn/YWFh/1lX
+        Vv9aWFf/XVta/1hWVf9SUE//cnBv//Du7f/08vH/7Ozs//T09P/z8/P/7+/v//Ly8v/z8/P/8fHx//Pz
+        8//y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/7e3t/+7u7v/09PT/8vLy/+np6f/n5+f/8fHx//7+/v/Oy8f/a2hk/05LR/9fXFj/3NnV/7Ow
+        rP9ST0v/Yl9b/1tZWP9ZV1b/Y2Fg/1BOTf9mZGP/z83M/////v/v7ez/9fPy/+zq6f/39fT/8O7t//r4
+        9//08vH/dnRz/1JQT/9XVVT/X11c/1VTUv9jYWD/TUtK/5ORkP///fz/7+3s/+/v7//19fX/8vLy/+/v
+        7//y8vL/8vLy/+/v7//v7+//8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//n5+f/u7u7/8fHx/+7u7v/r6+v///////Ly8v+kpKT/XltX/1ZT
+        T/9iX1v/Uk9L/4mGgv///Pj/bmtn/1JPS/9XVVT/Xlxb/1FPTv9ZV1b/U1FQ/1tZWP+ysK///vz7/+/t
+        7P/59/b/7evq//Xz8v/w7u3/p6Wk/0tJSP9YVlX/Xlxb/1pYV/9bWVj/XFpZ/0xKSf+5t7b//vz7/+3r
+        6v/29vb/7+/v/+3t7f/19fX/9PT0/+vr6//w8PD/9fX1//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/t7e3/9/f3/+zs7P/29vb//v7+/9HR
+        0f+EhIT/RERE/1VSTv9jYFz/amdj/1xZVf9WU0//wr+7/9HOyv9dWlb/Xlxb/1VTUv9gXl3/VVNS/1xa
+        Wf9VU1L/VFJR/6yqqf///v3/8e/u//Px8P////7/xcPC/0dFRP9jYWD/XVta/1pYV/9UUlH/Y2Fg/1pY
+        V/9fXVz/5OLh/+zq6f////7/6urq//Ly8v/09PT/8PDw/+zs7P/u7u7//Pz8//Hx8f/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8/Pz/+np
+        6f/x8fH/+/v7/7Ozs/9aWlr/UVFR/15eXv9bWVj/UE5N/0pIR/9UUlH/UE5N/2JgX//08vH/mpiX/0dF
+        RP9dW1r/XVta/1VTUv9dW1r/YF5d/1dVVP9VU1L/rKqp//Px8P/x7+7/3NrZ/2BeXf9ZV1b/WlhX/1xa
+        Wf9YVlX/V1VU/2FfXv9TUVD/f318/+Ti4f+SkI//z83M//7+/v/z8/P/6enp/+/v7//5+fn/7u7u//X1
+        9f/w8PD/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy/+/v7//v7+//9vb2//b29v+vr6//XV1d/1ZWVv9fX1//Z2Vk/3h2df+Rj47/p6Wk/7Wz
+        sv/Ny8r/5OLh//n39v9zcXD/WVdW/1pYV/9jYWD/UlBP/1RSUf9jYWD/U1FQ/1NRUP+wrq3////+/5aU
+        k/9JR0b/YV9e/1hWVf9YVlX/WVdW/2BeXf9YVlX/TEpJ/6upqP/Z19b/RkRD/3Jwb//h4eH/8/Pz//b2
+        9v/s7Oz/9vb2/+zs7P/x8fH/8PDw//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/x8fH/+fn5/+rq6v/x8fH//v7+/+np6f/b29v/4eHh/+fn
+        5//4+Pj/+Pj4///////6+vr//////+Tk5P/+/v7/3dva/2VjYv9NS0r/YF5d/1pYV/9bWVj/WFZV/2Be
+        Xf9dW1r/VVNS/62rqv/t6+r/fXt6/01LSv9gXl3/XVta/1VTUv9kYmH/VVNS/1FPTv/Qzs3/xsTD/0pI
+        R/9XVVT/dnZ2/83Nzf//////6urq/+zs7P/w8PD/9/f3//Pz8//y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/9fX1/+jo6P/w8PD/+fn5/+np
+        6f/q6ur/+/v7//b29v/09PT/8/Pz/+fn5//29vb/9PT0/+Li4v/8/Pz/6urq//j29f+5t7b/WFZV/1RS
+        Uf9eXFv/UE5N/2VjYv9bWVj/V1VU/1pYV/9bWVj/trSz//Xz8v91c3L/RkRD/2hmZf9XVVT/Y2Fg/1NR
+        UP9kYmH/4uDf/4yKif9YVlX/YF5d/0NDQ/+Xl5f/8PDw//Dw8P/4+Pj/8fHx//Hx8f/29vb/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy/+/v
+        7//29vb/8vLy/+7u7v/19fX/9PT0/+vr6//t7e3/8vLy/+3t7f/z8/P/7Ozs//Pz8//09PT/7+/v//f3
+        9//m5OP////+/7e1tP9ZV1b/VVNS/19dXP9WVFP/V1VU/1tZWP9dW1r/T01M/1dVVP+urKv/+vj3/358
+        e/9LSUj/Xlxb/2BeXf9TUVD/f318//f19P9bWVj/VVNS/2ZkY/9MTEz/m5ub//f39//u7u7/8PDw//Hx
+        8f/x8fH/7+/v//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/x8fH/8fHx//Hx8f/x8fH/8fHx//Hx8f/x8fH/8fHx//Hx8f/x8fH/8/Pz//Hx
+        8f/u7u7/9PT0//Pz8//o6Oj/+ff2/+7s6////v3/uLa1/1RSUf9WVFP/WlhX/11bWv9XVVT/VVNS/15c
+        W/9eXFv/TEpJ/7a0s//u7Ov/e3l4/1BOTv9jYWH/T01N/7Gvr//39fX/fnx8/1BOTv9MSkr/gYGB/+jo
+        6P/7+/v/7u7u//Hx8f/t7e3/9PT0/+/v7//y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8fHx//Hx8f/x8fH/8fHx//Hx8f/x8fH/8fHx//Hx
+        8f/y8vL/8PDw//Dw8P/x8fH/8PDw//Hx8f/y8vL/8PDw//Lw7//x7+7/7uzr//78+/+9u7r/VFJR/1pY
+        V/9bWVj/WlhX/2FfXv9WVFP/XFpZ/1ZUU/9NS0r/vLq5/+3r6v96eHj/VlRU/1pYWP/DwcH//////+Xj
+        4/+enJz/mpiY/+Hh4f//////8fHx/+vr6//19fX/8/Pz//j4+P/09PT/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Hx8f/x8fH/8fHx//Hx
+        8f/x8fH/8fHx//Hx8f/x8fH/8/Pz//T09P/y8vL/7+/v/+3t7f/s7Oz/7+/v//T09P/18/L/8e/u/+/t
+        7P/x7+7////+/7Wzsv9VU1L/U1FQ/2JgX/9YVlX/V1VU/1lXVv9nZWT/UlBP/0xKSf+3tbT/8vDw/3t5
+        ef9YVlb/8O7u//Lw8P/x7+////////f19f/4+Pj/8vLy/+jo6P/x8fH/+Pj4//Ly8v/09PT/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/x8fH/8fHx//Hx8f/x8fH/8fHx//Hx8f/x8fH/8fHx//Dw8P/09PT/8vLy//Dw8P/09PT/9fX1//Pz
+        8//x8fH/+/n4/+bk4/////7/2dfW/4eFhP/t6+r/x8XE/1VTUv9eXFv/XFpZ/1lXVv9cWln/U1FQ/2Vj
+        Yv9UUlH/TkxL/727u//h39//trS0//b09P/49vb/7+3t//Du7v/49vb/8PDw/+7u7v/z8/P/9fX1//Dw
+        8P/u7u7/8fHx//Pz8//y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8fHx//Hx8f/x8fH/8fHx//Hx8f/x8fH/8fHx//Hx8f/x8fH/7+/v/+7u
+        7v/v7+//8vLy//Ly8v/u7u7/7Ozs//Hv7v/39fT/xMLB/1hWVf9FQ0L/enh3/+Xj4v+/vbz/UlBP/1dV
+        VP9lY2L/UU9O/1pYV/9ZV1b/XFpZ/1xaWf9HRUX/tbOz///9/f/18/P/7evr///////m5OT/8e/v//Dw
+        8P/z8/P/9vb2//Dw8P/v7+//9PT0//Pz8//y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/9PT0/+/v7//x8fH/8vLy/+vr6//t7e3/9/f3//39/f/q6Of/oqCf/05MS/9aWFf/Y2Fg/0dF
+        RP9wbm3/9/X0/8XDwv9UUlH/UE5N/2JgX/9YVlX/W1lY/1dVVP9YVlX/YV9f/1JQUP+ysLD/+vj4//Du
+        7v/s6ur///39//Du7v/s7Oz/7u7u//Dw8P/v7+//9PT0//f39//y8vL/8PDw//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Pz8//x8fH/9/f3//b29v/w8PD/9/f3//Ly8v/X19f/eHZ1/0hG
+        Rf9eXFv/Xlxb/1tZWP9pZ2b/SEZF/2xqaf/y8O//xMLB/1FPTv9UUlH/WlhX/1lXVv9hX17/VFJR/19d
+        Xf9TUVH/WFZW/6+trf///f3/8vDw//Ty8v/u7Oz/9vb2//X19f/y8vL/8/Pz//Ly8v/w8PD/8/Pz//Pz
+        8//y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/19fX/8PDw//Hx8f/t7e3/7u7u//Dw
+        8P+4uLj/XFxc/1VTUv9iYF//W1lY/1tZWP9fXVz/VlRT/2FfXv9PTUz/bWtq//Hv7v/DwcD/UlBP/1pY
+        V/9aWFf/WFZV/15cW/9YVlb/WFZW/1pYWP9WVFT/rKqq//v5+f/s6ur/9fPz//Dw8P/v7+//8PDw//b2
+        9v/x8fH/7e3t//T09P/v7+//8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//X19f/t7e3/8fHx//T09P/s7Oz/7u7u//Pz8//s7Oz/8vLy/+/v
+        7//t7e3/+/v7/+Xl5f+Pj4//U1NT/1hYWP9VUVD/YV1c/1VRUP9aVlX/X1ta/1hUU/9iXl3/Y19e/1BM
+        S/9uamn/+PTz/8vHxv9RTUz/W1dW/2VhYP9XU1L/XVta/1lXVv9YVlX/V1VU/1xaWf+vraz/8e/u//Px
+        8P/u7u7/+fn5/+3t7f/r6+v/9/f3/+vr6//19fX/8PDw//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8PDw//X19f/5+fn/9fX1//Ly
+        8v/z8/P/8/Pz//Pz8//09PT/9/f3/8zMzP93d3f/Tk5O/1dXV/9aWlr/W1dW/1tXVv9eWln/WFRT/15a
+        Wf9pZWT/XFhX/1NPTv9iXl3/TUlI/2VhYP/v6+r/xsLB/05KSf9bV1b/YV1c/1ZUU/9WVFP/XFpZ/1xa
+        Wf9VU1L/UU9O/7e1tP/6+Pf/+Pj4/+jo6P/z8/P/8vLy//X19f/y8vL/8/Pz//Pz8//y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/w8PD/7+/v/+7u7v/r6+v/7e3t//T09P/u7u7/+fn5/7Kysv9WVlb/TExM/11dXf9XV1f/VFRU/1dT
+        Uv9kYF//W1dW/2JeXf9cWFf/Uk5N/2FdXP9WUlH/T0tK/2ZiYf9mYmH/npqZ/////v+9ubj/WVVU/1dT
+        Uv9ZV1b/XVta/1pYV/9UUlH/Xlxb/1JQT/9VU1L/rqyr//b29v/29vb//f39//Hx8f/z8/P/7u7u/+/v
+        7//y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Hx8f/x8fH/8PDw/+7u7v/v7+//9PT0//X19f/z8/P/7+/v/4qKiv9PT0//VVVV/15e
+        Xv9bW1v/WVlZ/2BgYP9gXl3/U1FQ/1BOTf9QTk3/UE5N/1ZUU/9mZGP/gX9+/6+trP/S0M//9PLx//b0
+        8//u7Ov//Pr5/7a0s/9ZV1b/VlRT/15cW/9YVlX/XFpZ/1VTUv9kYmH/V1VU/1JQT/+rq6v/8vLy//f3
+        9//m5ub/+Pj4/+zs7P/y8vL/9/f3//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/x8fH/8vLy//f39//09PT/8PDw//f39//x8fH/2tra/2Fh
+        Yf9NTU3/W1tb/2FhYf9WVlb/WVlZ/1lZWf9QUFD/UU9O/1NRUP9oZmX/hoSD/7Gvrv/V09L/4uDf//Du
+        7f/y8O///Pr5//r49//08vH/8vDv/+Ph4P////7/ube2/1dVVP9XVVT/YV9e/1ZUU/9dW1r/VVNS/11b
+        Wv9bWVj/VVVV/8DAwP/x8fH/6urq//j4+P/u7u7/7+/v//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8/Pz//Hx8f/19fX/8fHx/+vr
+        6//z8/P/7e3t/9LS0v9UVFT/Wlpa/1lZWf9MTEz/UFBQ/1NTU/9RUVH/bm5u/5KTkf/DxML/3+De/+Lj
+        4f/Oz83/r7Cu/4mKiP9XWFb/cHFv/97f3f/09fP/5OXj//j59//09fP/6uvp/////v+6uLf/V1VU/1BO
+        Tf9hX17/VlRT/1ZUU/9bWVj/YV9e/0dHR/+Dg4P/7e3t//r6+v/v7+//8PDw/+vr6//v7+//8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/w8PD/8fHx//Dw8P/v7+//9/f3//n5+f/v7+//rq6u/1FRUf9QUFD/dnZ2/4SEhP+srKz/29vb//Ly
+        8v////7/9/j2/+7v7f+UlZP/REVD/0VGRP9QUU//XV5c/0lKSP+QkY///P37/+zt6//s7ev/8/Ty//r7
+        +f/q6+n////+/727uv9VU1L/V1VU/11bWv9cWln/VlRT/1lXVv9XV1f/V1dX/9DQ0P/+/v7/7e3t//Pz
+        8//19fX/9/f3//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/z8/P/8fHx/+7u7v/t7e3/8PDw//39/f/U1NT/1NTU/+fn
+        5//9/f3///////Ly8v/w8PD/7u/t//Dx7/////7/1NXT/3l6eP9WV1X/X2Be/1laWP9LTEr/kpOR//7/
+        /f/29/X/7u/t//Lz8f/p6uj/8/Ty//j29f/9+/r/uri3/11bWv9XVVT/XVta/1xaWf9YVlX/Xl5e/0dH
+        R/+urq7/+fn5//Pz8//u7u7/9/f3/+7u7v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/r6+v/8vLy//f39//09PT/7e3t/+rq6v/v7+//9vb2//Ly8v/y8vL/8fHx//z8/P/j4+P/hYWF/0ND
+        Q/9PT0//g4OD/97e3v/29vb/7e3t//T09P/w8PD/8fHx//T09P/p6en/9fX1//v7+/+7u7v/V1dX/0BA
+        QP9bW1v/WVlZ/2ZmZv9GRkb/m5ub//r6+v/w8PD/8PDw//Ly8v/w8PD/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/7+/v//Hx8f/z8/P/8vLy/+/v7//u7u7/8PDw//Pz8//4+Pj/9vb2/+3t
+        7f/19fX//Pz8/9TU1P+jo6P/mJiY/+Tk5P//////9fX1/+3t7f/z8/P/7u7u//Ly8v/y8vL/+fn5/+Pj
+        4//y8vL//////9LS0v+Li4v/Xl5e/0pKSv9JSUn/R0dH/6Kiov/09PT/7u7u//Ly8v/y8vL/7+/v//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/x8fH/8PDw//Dw8P/y8vL/8vLy//Hx
+        8f/w8PD/6urq//Pz8//u7u7/6+vr//f39//9/f3/9/f3//T09P/29vb/9vb2/+vr6//x8fH/9fX1/+7u
+        7v/z8/P/7+/v//Ly8v/u7u7/7u7u//T09P/6+vr/8/Pz/9bW1v+3t7f/pKSk/6mpqf/c3Nz//Pz8/+3t
+        7f/y8vL/8fHx/+/v7//y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8fHx//Dw
+        8P/w8PD/8vLy//Pz8//x8fH/8PDw//T09P/29vb/9fX1//Hx8f/w8PD/8vLy//Pz8//y8vL/7u7u//Dw
+        8P/u7u7/9PT0//Ly8v/v7+//9vb2//Hx8f/y8vL/+vr6//Pz8//o6Oj/7u7u//z8/P/9/f3/9vb2//n5
+        +f/39/f//f39//X19f/s7Oz/8/Pz//Hx8f/w8PD/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8fHx//Ly8v/y8vL/8vLy//Hx8f/w8PD/8fHx//Ly8v/z8/P/7Ozs/+/v7//19fX/8/Pz//Hx
+        8f/y8vL/8vLy//T09P/39/f/8/Pz//Ly8v/x8fH/8fHx//Pz8//t7e3/7e3t/+zs7P/v7+//9PT0//Ly
+        8v/s7Oz/7Ozs//Ly8v/y8vL/8vLy//Ly8v/r6+v/8fHx//X19f/w8PD/7+/v//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Dw8P/y8vL/9PT0//Pz8//w8PD/7+/v//Hx8f/09PT/9PT0//Dw
+        8P/z8/P/9fX1/+/v7//v7+//9fX1//n5+f/u7u7/8vLy//Hx8f/z8/P/9PT0//Hx8f/v7+//8PDw//T0
+        9P/w8PD/7+/v/+7u7v/u7u7/8fHx//Pz8//x8fH/7+/v//Dw8P/x8fH/7u7u//X19f/w8PD/7+/v//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/x8fH/8vLy//Pz8//y8vL/8fHx//Hx
+        8f/y8vL/8/Pz//Hx8f/x8fH/8/Pz//T09P/z8/P/9PT0//Pz8//u7u7/9PT0//X19f/29vb/9PT0//Dw
+        8P/x8fH/8/Pz//b29v/z8/P/7u7u/+3t7f/y8vL/9PT0/+7u7v/u7u7/9fX1//b29v/y8vL/8/Pz/+7u
+        7v/x8fH/6+vr//Ly8v/19fX/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly8v/y8vL/8/Pz//Ly
+        8v/x8fH/8fHx//Pz8//z8/P/8vLy//Hx8f/y8vL/8vLy//Hx8f/v7+//7+/v//Ly8v/z8/P/8vLy//Dw
+        8P/v7+//9PT0//Hx8f/u7u7/9vb2//b29v/s7Oz/7Ozs//b29v/19fX/7u7u//Ly8v/09PT/8vLy//Ly
+        8v/x8fH/7Ozs//Ly8v/y8vL/9/f3/+/v7//09PT/7+/v//Ly8v/y8vL/8vLy//Ly8v/y8vL/8vLy//Ly
+        8v/y8vL/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Geo Ref Images</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
+    <value>openFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;folderBrowserDialog1.Name" xml:space="preserve">
+    <value>folderBrowserDialog1</value>
+  </data>
+  <data name="&gt;&gt;folderBrowserDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Georefimage</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
