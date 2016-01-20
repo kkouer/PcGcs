@@ -223,7 +223,8 @@ namespace MissionPlanner
                 //System.Diagnostics.Process.GetCurrentProcess().PriorityClass = System.Diagnostics.ProcessPriorityClass.RealTime;
                 Thread.CurrentThread.Name = "Base Thread";
                 //Application.Run(new MainV2());
-                Application.Run(new GCSMainForm());
+                //Application.Run(new GCSMainForm());
+                Application.Run(new GCS());
             }
             catch (Exception ex)
             {

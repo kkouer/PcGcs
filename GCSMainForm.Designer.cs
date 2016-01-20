@@ -53,18 +53,19 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3Command = new BSE.Windows.Forms.Panel();
             this.metroDMButton13 = new DMSkin.MetroDMButton();
-            this.dmButton2 = new DMSkin.Controls.DMButton();
             this.metroDMButton5 = new DMSkin.MetroDMButton();
-            this.dmButton4 = new DMSkin.Controls.DMButton();
             this.metroDMButton4 = new DMSkin.MetroDMButton();
-            this.dmButton3 = new DMSkin.Controls.DMButton();
             this.metroDMButton3 = new DMSkin.MetroDMButton();
-            this.dmButton1 = new DMSkin.Controls.DMButton();
-            this.myButtonRTL = new DMSkin.Controls.DMButton();
-            this.myButtonAuto = new DMSkin.Controls.DMButton();
             this.panelAttitude = new BSE.Windows.Forms.Panel();
             this.hud1 = new MissionPlanner.Controls.HUD();
+            this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
             this.panelStates = new BSE.Windows.Forms.Panel();
+            this.extQuickView1 = new MissionPlanner.GCSViews.ExtQuickView();
+            this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
+            this.extQuickView2 = new MissionPlanner.GCSViews.ExtQuickView();
+            this.extQuickView5 = new MissionPlanner.GCSViews.ExtQuickView();
+            this.extQuickView4 = new MissionPlanner.GCSViews.ExtQuickView();
+            this.extQuickView3 = new MissionPlanner.GCSViews.ExtQuickView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Commands = new System.Windows.Forms.DataGridView();
             this.Command = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -107,9 +108,6 @@
             this.metroDMButton9 = new DMSkin.MetroDMButton();
             this.metroDMButton8 = new DMSkin.MetroDMButton();
             this.metroDMButton7 = new DMSkin.MetroDMButton();
-            this.dmButtonGridUI = new DMSkin.Controls.DMButton();
-            this.dmButtonClreaGird = new DMSkin.Controls.DMButton();
-            this.dmButtonCreatGrid = new DMSkin.Controls.DMButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel5 = new BSE.Windows.Forms.Panel();
             this.metroDMButton18 = new DMSkin.MetroDMButton();
@@ -144,6 +142,7 @@
             this.dmLabel5 = new DMSkin.Controls.DMLabel();
             this.dmButton9 = new DMSkin.Controls.DMButton();
             this.metroComboBoxSPort = new DMSkin.Metro.Controls.MetroComboBox();
+            this.metroComboBox1 = new DMSkin.Metro.Controls.MetroComboBox();
             this.panelControl = new BSE.Windows.Forms.Panel();
             this.metroDMButton12 = new DMSkin.MetroDMButton();
             this.dmLabel3 = new DMSkin.Controls.DMLabel();
@@ -151,14 +150,6 @@
             this.labelHomeDisToPlane = new System.Windows.Forms.Label();
             this.dmLabel1 = new DMSkin.Controls.DMLabel();
             this.BUT_Connect = new DMSkin.Controls.DMButton();
-            this.metroComboBox1 = new DMSkin.Metro.Controls.MetroComboBox();
-            this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
-            this.extQuickView1 = new MissionPlanner.GCSViews.ExtQuickView();
-            this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
-            this.extQuickView2 = new MissionPlanner.GCSViews.ExtQuickView();
-            this.extQuickView5 = new MissionPlanner.GCSViews.ExtQuickView();
-            this.extQuickView4 = new MissionPlanner.GCSViews.ExtQuickView();
-            this.extQuickView3 = new MissionPlanner.GCSViews.ExtQuickView();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -169,7 +160,9 @@
             this.tabPage1.SuspendLayout();
             this.panel3Command.SuspendLayout();
             this.panelAttitude.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             this.panelStates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -182,8 +175,6 @@
             this.panel3.SuspendLayout();
             this.metroTile1.SuspendLayout();
             this.panelControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -405,15 +396,9 @@
             this.panel3Command.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold);
             this.panel3Command.CaptionHeight = 27;
             this.panel3Command.Controls.Add(this.metroDMButton13);
-            this.panel3Command.Controls.Add(this.dmButton2);
             this.panel3Command.Controls.Add(this.metroDMButton5);
-            this.panel3Command.Controls.Add(this.dmButton4);
             this.panel3Command.Controls.Add(this.metroDMButton4);
-            this.panel3Command.Controls.Add(this.dmButton3);
             this.panel3Command.Controls.Add(this.metroDMButton3);
-            this.panel3Command.Controls.Add(this.dmButton1);
-            this.panel3Command.Controls.Add(this.myButtonRTL);
-            this.panel3Command.Controls.Add(this.myButtonAuto);
             this.panel3Command.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.panel3Command.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
             this.panel3Command.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
@@ -457,25 +442,6 @@
             this.metroDMButton13.UseVisualStyleBackColor = false;
             this.metroDMButton13.Click += new System.EventHandler(this.metroDMButton13_Click);
             // 
-            // dmButton2
-            // 
-            this.dmButton2.BackColor = System.Drawing.Color.Transparent;
-            this.dmButton2.DM_DisabledColor = System.Drawing.Color.Empty;
-            this.dmButton2.DM_DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dmButton2.DM_MoveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dmButton2.DM_NormalColor = System.Drawing.Color.Coral;
-            this.dmButton2.DM_Radius = 5;
-            this.dmButton2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dmButton2.Image = null;
-            this.dmButton2.Location = new System.Drawing.Point(171, 161);
-            this.dmButton2.Name = "dmButton2";
-            this.dmButton2.Size = new System.Drawing.Size(89, 33);
-            this.dmButton2.TabIndex = 90;
-            this.dmButton2.Text = "拍照测试";
-            this.dmButton2.UseVisualStyleBackColor = false;
-            this.dmButton2.Visible = false;
-            this.dmButton2.Click += new System.EventHandler(this.dmButton2_Click);
-            // 
             // metroDMButton5
             // 
             this.metroDMButton5.BackColor = System.Drawing.Color.Transparent;
@@ -492,25 +458,6 @@
             this.metroDMButton5.Text = "解锁/加锁";
             this.metroDMButton5.UseVisualStyleBackColor = false;
             this.metroDMButton5.Click += new System.EventHandler(this.metroDMButton5_Click);
-            // 
-            // dmButton4
-            // 
-            this.dmButton4.BackColor = System.Drawing.Color.Transparent;
-            this.dmButton4.DM_DisabledColor = System.Drawing.Color.Empty;
-            this.dmButton4.DM_DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dmButton4.DM_MoveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dmButton4.DM_NormalColor = System.Drawing.Color.Coral;
-            this.dmButton4.DM_Radius = 5;
-            this.dmButton4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dmButton4.Image = null;
-            this.dmButton4.Location = new System.Drawing.Point(171, 161);
-            this.dmButton4.Name = "dmButton4";
-            this.dmButton4.Size = new System.Drawing.Size(89, 33);
-            this.dmButton4.TabIndex = 89;
-            this.dmButton4.Text = "下载航点";
-            this.dmButton4.UseVisualStyleBackColor = false;
-            this.dmButton4.Visible = false;
-            this.dmButton4.Click += new System.EventHandler(this.myButton_downloadWPs_Click);
             // 
             // metroDMButton4
             // 
@@ -529,25 +476,6 @@
             this.metroDMButton4.UseVisualStyleBackColor = false;
             this.metroDMButton4.Click += new System.EventHandler(this.metroDMButton4_Click);
             // 
-            // dmButton3
-            // 
-            this.dmButton3.BackColor = System.Drawing.Color.Transparent;
-            this.dmButton3.DM_DisabledColor = System.Drawing.Color.Empty;
-            this.dmButton3.DM_DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dmButton3.DM_MoveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dmButton3.DM_NormalColor = System.Drawing.Color.Coral;
-            this.dmButton3.DM_Radius = 5;
-            this.dmButton3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dmButton3.Image = null;
-            this.dmButton3.Location = new System.Drawing.Point(171, 161);
-            this.dmButton3.Name = "dmButton3";
-            this.dmButton3.Size = new System.Drawing.Size(89, 33);
-            this.dmButton3.TabIndex = 88;
-            this.dmButton3.Text = "上传航点";
-            this.dmButton3.UseVisualStyleBackColor = false;
-            this.dmButton3.Visible = false;
-            this.dmButton3.Click += new System.EventHandler(this.myButton_uploadWPs_Click);
-            // 
             // metroDMButton3
             // 
             this.metroDMButton3.BackColor = System.Drawing.Color.Transparent;
@@ -564,63 +492,6 @@
             this.metroDMButton3.Text = "回家";
             this.metroDMButton3.UseVisualStyleBackColor = false;
             this.metroDMButton3.Click += new System.EventHandler(this.metroDMButton3_Click);
-            // 
-            // dmButton1
-            // 
-            this.dmButton1.BackColor = System.Drawing.Color.Transparent;
-            this.dmButton1.DM_DisabledColor = System.Drawing.Color.Empty;
-            this.dmButton1.DM_DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dmButton1.DM_MoveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dmButton1.DM_NormalColor = System.Drawing.Color.Coral;
-            this.dmButton1.DM_Radius = 5;
-            this.dmButton1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dmButton1.Image = null;
-            this.dmButton1.Location = new System.Drawing.Point(171, 161);
-            this.dmButton1.Name = "dmButton1";
-            this.dmButton1.Size = new System.Drawing.Size(89, 33);
-            this.dmButton1.TabIndex = 86;
-            this.dmButton1.Text = "解锁/加锁";
-            this.dmButton1.UseVisualStyleBackColor = false;
-            this.dmButton1.Visible = false;
-            this.dmButton1.Click += new System.EventHandler(this.myButton1_Click);
-            // 
-            // myButtonRTL
-            // 
-            this.myButtonRTL.BackColor = System.Drawing.Color.Transparent;
-            this.myButtonRTL.DM_DisabledColor = System.Drawing.Color.Empty;
-            this.myButtonRTL.DM_DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.myButtonRTL.DM_MoveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.myButtonRTL.DM_NormalColor = System.Drawing.Color.Coral;
-            this.myButtonRTL.DM_Radius = 5;
-            this.myButtonRTL.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.myButtonRTL.Image = null;
-            this.myButtonRTL.Location = new System.Drawing.Point(171, 161);
-            this.myButtonRTL.Name = "myButtonRTL";
-            this.myButtonRTL.Size = new System.Drawing.Size(89, 33);
-            this.myButtonRTL.TabIndex = 84;
-            this.myButtonRTL.Text = "回家";
-            this.myButtonRTL.UseVisualStyleBackColor = false;
-            this.myButtonRTL.Visible = false;
-            this.myButtonRTL.Click += new System.EventHandler(this.myButton4_Click);
-            // 
-            // myButtonAuto
-            // 
-            this.myButtonAuto.BackColor = System.Drawing.Color.Transparent;
-            this.myButtonAuto.DM_DisabledColor = System.Drawing.Color.Empty;
-            this.myButtonAuto.DM_DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.myButtonAuto.DM_MoveColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.myButtonAuto.DM_NormalColor = System.Drawing.Color.Coral;
-            this.myButtonAuto.DM_Radius = 5;
-            this.myButtonAuto.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.myButtonAuto.Image = null;
-            this.myButtonAuto.Location = new System.Drawing.Point(171, 161);
-            this.myButtonAuto.Name = "myButtonAuto";
-            this.myButtonAuto.Size = new System.Drawing.Size(89, 33);
-            this.myButtonAuto.TabIndex = 85;
-            this.myButtonAuto.Text = "自动";
-            this.myButtonAuto.UseVisualStyleBackColor = false;
-            this.myButtonAuto.Visible = false;
-            this.myButtonAuto.Click += new System.EventHandler(this.myButton2_Click);
             // 
             // panelAttitude
             // 
@@ -744,6 +615,10 @@
             this.hud1.wpno = 0;
             this.hud1.xtrack_error = 0F;
             // 
+            // bindingSourceHud
+            // 
+            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
             // panelStates
             // 
             this.panelStates.AssociatedSplitter = null;
@@ -781,6 +656,100 @@
             this.panelStates.ToolTipTextCloseIcon = null;
             this.panelStates.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelStates.ToolTipTextExpandIconPanelExpanded = null;
+            // 
+            // extQuickView1
+            // 
+            this.extQuickView1.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "alt", true));
+            this.extQuickView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.extQuickView1.LabelExtValue = null;
+            this.extQuickView1.LabelExtValueUnit = null;
+            this.extQuickView1.LabelIcon = null;
+            this.extQuickView1.LabelName = "气压高度";
+            this.extQuickView1.LabelValue = "0.0";
+            this.extQuickView1.LabelValueUnit = null;
+            this.extQuickView1.Location = new System.Drawing.Point(1, 188);
+            this.extQuickView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.extQuickView1.Name = "extQuickView1";
+            this.extQuickView1.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.extQuickView1.Size = new System.Drawing.Size(263, 38);
+            this.extQuickView1.TabIndex = 82;
+            this.extQuickView1.Visible = false;
+            // 
+            // bindingSourceState
+            // 
+            this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
+            // extQuickView2
+            // 
+            this.extQuickView2.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "mode", true));
+            this.extQuickView2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.extQuickView2.LabelExtValue = null;
+            this.extQuickView2.LabelExtValueUnit = null;
+            this.extQuickView2.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView2.LabelIcon")));
+            this.extQuickView2.LabelName = "模式";
+            this.extQuickView2.LabelValue = "无";
+            this.extQuickView2.LabelValueUnit = null;
+            this.extQuickView2.Location = new System.Drawing.Point(1, 148);
+            this.extQuickView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.extQuickView2.Name = "extQuickView2";
+            this.extQuickView2.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.extQuickView2.Size = new System.Drawing.Size(263, 40);
+            this.extQuickView2.TabIndex = 83;
+            // 
+            // extQuickView5
+            // 
+            this.extQuickView5.BackColor = System.Drawing.Color.Gainsboro;
+            this.extQuickView5.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "airspeed", true));
+            this.extQuickView5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.extQuickView5.LabelExtValue = null;
+            this.extQuickView5.LabelExtValueUnit = null;
+            this.extQuickView5.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView5.LabelIcon")));
+            this.extQuickView5.LabelName = "空速";
+            this.extQuickView5.LabelValue = "0.0";
+            this.extQuickView5.LabelValueUnit = "米/秒";
+            this.extQuickView5.Location = new System.Drawing.Point(1, 108);
+            this.extQuickView5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.extQuickView5.Name = "extQuickView5";
+            this.extQuickView5.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.extQuickView5.Size = new System.Drawing.Size(263, 40);
+            this.extQuickView5.TabIndex = 86;
+            // 
+            // extQuickView4
+            // 
+            this.extQuickView4.DataBindings.Add(new System.Windows.Forms.Binding("LabelExtValue", this.bindingSourceState, "gpshdop", true));
+            this.extQuickView4.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "satcount", true));
+            this.extQuickView4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.extQuickView4.LabelExtValue = null;
+            this.extQuickView4.LabelExtValueUnit = null;
+            this.extQuickView4.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView4.LabelIcon")));
+            this.extQuickView4.LabelName = "GPS";
+            this.extQuickView4.LabelValue = "0.0";
+            this.extQuickView4.LabelValueUnit = "颗";
+            this.extQuickView4.Location = new System.Drawing.Point(1, 68);
+            this.extQuickView4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.extQuickView4.Name = "extQuickView4";
+            this.extQuickView4.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.extQuickView4.Size = new System.Drawing.Size(263, 40);
+            this.extQuickView4.TabIndex = 85;
+            // 
+            // extQuickView3
+            // 
+            this.extQuickView3.BackColor = System.Drawing.Color.Gainsboro;
+            this.extQuickView3.DataBindings.Add(new System.Windows.Forms.Binding("LabelExtValue", this.bindingSourceState, "battery_voltage", true));
+            this.extQuickView3.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "battery_remaining", true));
+            this.extQuickView3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.extQuickView3.LabelExtValue = null;
+            this.extQuickView3.LabelExtValueUnit = "V";
+            this.extQuickView3.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView3.LabelIcon")));
+            this.extQuickView3.LabelName = "电量";
+            this.extQuickView3.LabelValue = "0.0";
+            this.extQuickView3.LabelValueUnit = "%";
+            this.extQuickView3.Location = new System.Drawing.Point(1, 28);
+            this.extQuickView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.extQuickView3.Name = "extQuickView3";
+            this.extQuickView3.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.extQuickView3.Size = new System.Drawing.Size(263, 40);
+            this.extQuickView3.TabIndex = 84;
             // 
             // tabPage2
             // 
@@ -1220,9 +1189,6 @@
             this.metroPanel2.Controls.Add(this.metroDMButton9);
             this.metroPanel2.Controls.Add(this.metroDMButton8);
             this.metroPanel2.Controls.Add(this.metroDMButton7);
-            this.metroPanel2.Controls.Add(this.dmButtonGridUI);
-            this.metroPanel2.Controls.Add(this.dmButtonClreaGird);
-            this.metroPanel2.Controls.Add(this.dmButtonCreatGrid);
             this.metroPanel2.DM_HorizontalScrollbarBarColor = true;
             this.metroPanel2.DM_HorizontalScrollbarDM_HighlightOnWheel = false;
             this.metroPanel2.DM_HorizontalScrollbarSize = 10;
@@ -1323,63 +1289,6 @@
             this.metroToolTip1.SetToolTip(this.metroDMButton7, "绘制规划区域用于生成航线");
             this.metroDMButton7.UseVisualStyleBackColor = false;
             this.metroDMButton7.Click += new System.EventHandler(this.metroDMButton7_Click);
-            // 
-            // dmButtonGridUI
-            // 
-            this.dmButtonGridUI.BackColor = System.Drawing.Color.Transparent;
-            this.dmButtonGridUI.DM_DisabledColor = System.Drawing.Color.Empty;
-            this.dmButtonGridUI.DM_DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(140)))), ((int)(((byte)(188)))));
-            this.dmButtonGridUI.DM_MoveColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
-            this.dmButtonGridUI.DM_NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.dmButtonGridUI.DM_Radius = 5;
-            this.dmButtonGridUI.Font = new System.Drawing.Font("Microsoft YaHei", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dmButtonGridUI.Image = null;
-            this.dmButtonGridUI.Location = new System.Drawing.Point(188, 39);
-            this.dmButtonGridUI.Name = "dmButtonGridUI";
-            this.dmButtonGridUI.Size = new System.Drawing.Size(72, 33);
-            this.dmButtonGridUI.TabIndex = 90;
-            this.dmButtonGridUI.Text = "自动生成";
-            this.dmButtonGridUI.UseVisualStyleBackColor = false;
-            this.dmButtonGridUI.Visible = false;
-            this.dmButtonGridUI.Click += new System.EventHandler(this.dmButtonGridUI_Click);
-            // 
-            // dmButtonClreaGird
-            // 
-            this.dmButtonClreaGird.BackColor = System.Drawing.Color.Transparent;
-            this.dmButtonClreaGird.DM_DisabledColor = System.Drawing.Color.Empty;
-            this.dmButtonClreaGird.DM_DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(140)))), ((int)(((byte)(188)))));
-            this.dmButtonClreaGird.DM_MoveColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
-            this.dmButtonClreaGird.DM_NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.dmButtonClreaGird.DM_Radius = 5;
-            this.dmButtonClreaGird.Font = new System.Drawing.Font("Microsoft YaHei", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dmButtonClreaGird.Image = null;
-            this.dmButtonClreaGird.Location = new System.Drawing.Point(188, 39);
-            this.dmButtonClreaGird.Name = "dmButtonClreaGird";
-            this.dmButtonClreaGird.Size = new System.Drawing.Size(72, 33);
-            this.dmButtonClreaGird.TabIndex = 89;
-            this.dmButtonClreaGird.Text = "清除区域";
-            this.dmButtonClreaGird.UseVisualStyleBackColor = false;
-            this.dmButtonClreaGird.Visible = false;
-            this.dmButtonClreaGird.Click += new System.EventHandler(this.dmButtonClreaGird_Click);
-            // 
-            // dmButtonCreatGrid
-            // 
-            this.dmButtonCreatGrid.BackColor = System.Drawing.Color.Transparent;
-            this.dmButtonCreatGrid.DM_DisabledColor = System.Drawing.Color.Empty;
-            this.dmButtonCreatGrid.DM_DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(140)))), ((int)(((byte)(188)))));
-            this.dmButtonCreatGrid.DM_MoveColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
-            this.dmButtonCreatGrid.DM_NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.dmButtonCreatGrid.DM_Radius = 5;
-            this.dmButtonCreatGrid.Font = new System.Drawing.Font("Microsoft YaHei", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dmButtonCreatGrid.Image = null;
-            this.dmButtonCreatGrid.Location = new System.Drawing.Point(188, 39);
-            this.dmButtonCreatGrid.Name = "dmButtonCreatGrid";
-            this.dmButtonCreatGrid.Size = new System.Drawing.Size(72, 33);
-            this.dmButtonCreatGrid.TabIndex = 88;
-            this.dmButtonCreatGrid.Text = "绘制区域";
-            this.dmButtonCreatGrid.UseVisualStyleBackColor = false;
-            this.dmButtonCreatGrid.Visible = false;
-            this.dmButtonCreatGrid.Click += new System.EventHandler(this.addPolygonPointToolStripMenuItem_Click);
             // 
             // tabPage3
             // 
@@ -1996,6 +1905,21 @@
             this.metroComboBoxSPort.TabIndex = 102;
             this.metroToolTip1.SetToolTip(this.metroComboBoxSPort, "端口选择");
             // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroComboBox1.DM_UseSelectable = true;
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 24;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "57600",
+            "115200"});
+            this.metroComboBox1.Location = new System.Drawing.Point(911, 7);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(81, 30);
+            this.metroComboBox1.TabIndex = 103;
+            this.metroToolTip1.SetToolTip(this.metroComboBox1, "波特率");
+            // 
             // panelControl
             // 
             this.panelControl.AssociatedSplitter = null;
@@ -2131,119 +2055,6 @@
             this.BUT_Connect.UseVisualStyleBackColor = false;
             this.BUT_Connect.Click += new System.EventHandler(this.BUT_setwp_Click);
             // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroComboBox1.DM_UseSelectable = true;
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "57600",
-            "115200"});
-            this.metroComboBox1.Location = new System.Drawing.Point(911, 7);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(81, 30);
-            this.metroComboBox1.TabIndex = 103;
-            this.metroToolTip1.SetToolTip(this.metroComboBox1, "波特率");
-            // 
-            // bindingSourceHud
-            // 
-            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
-            // 
-            // extQuickView1
-            // 
-            this.extQuickView1.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "alt", true));
-            this.extQuickView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extQuickView1.LabelExtValue = null;
-            this.extQuickView1.LabelExtValueUnit = null;
-            this.extQuickView1.LabelIcon = null;
-            this.extQuickView1.LabelName = "气压高度";
-            this.extQuickView1.LabelValue = "0.0";
-            this.extQuickView1.LabelValueUnit = null;
-            this.extQuickView1.Location = new System.Drawing.Point(1, 188);
-            this.extQuickView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.extQuickView1.Name = "extQuickView1";
-            this.extQuickView1.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.extQuickView1.Size = new System.Drawing.Size(263, 38);
-            this.extQuickView1.TabIndex = 82;
-            this.extQuickView1.Visible = false;
-            // 
-            // bindingSourceState
-            // 
-            this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
-            // 
-            // extQuickView2
-            // 
-            this.extQuickView2.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "mode", true));
-            this.extQuickView2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extQuickView2.LabelExtValue = null;
-            this.extQuickView2.LabelExtValueUnit = null;
-            this.extQuickView2.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView2.LabelIcon")));
-            this.extQuickView2.LabelName = "模式";
-            this.extQuickView2.LabelValue = "无";
-            this.extQuickView2.LabelValueUnit = null;
-            this.extQuickView2.Location = new System.Drawing.Point(1, 148);
-            this.extQuickView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.extQuickView2.Name = "extQuickView2";
-            this.extQuickView2.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.extQuickView2.Size = new System.Drawing.Size(263, 40);
-            this.extQuickView2.TabIndex = 83;
-            // 
-            // extQuickView5
-            // 
-            this.extQuickView5.BackColor = System.Drawing.Color.Gainsboro;
-            this.extQuickView5.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "airspeed", true));
-            this.extQuickView5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extQuickView5.LabelExtValue = null;
-            this.extQuickView5.LabelExtValueUnit = null;
-            this.extQuickView5.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView5.LabelIcon")));
-            this.extQuickView5.LabelName = "空速";
-            this.extQuickView5.LabelValue = "0.0";
-            this.extQuickView5.LabelValueUnit = "米/秒";
-            this.extQuickView5.Location = new System.Drawing.Point(1, 108);
-            this.extQuickView5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.extQuickView5.Name = "extQuickView5";
-            this.extQuickView5.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.extQuickView5.Size = new System.Drawing.Size(263, 40);
-            this.extQuickView5.TabIndex = 86;
-            // 
-            // extQuickView4
-            // 
-            this.extQuickView4.DataBindings.Add(new System.Windows.Forms.Binding("LabelExtValue", this.bindingSourceState, "gpshdop", true));
-            this.extQuickView4.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "satcount", true));
-            this.extQuickView4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extQuickView4.LabelExtValue = null;
-            this.extQuickView4.LabelExtValueUnit = null;
-            this.extQuickView4.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView4.LabelIcon")));
-            this.extQuickView4.LabelName = "GPS";
-            this.extQuickView4.LabelValue = "0.0";
-            this.extQuickView4.LabelValueUnit = "颗";
-            this.extQuickView4.Location = new System.Drawing.Point(1, 68);
-            this.extQuickView4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.extQuickView4.Name = "extQuickView4";
-            this.extQuickView4.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.extQuickView4.Size = new System.Drawing.Size(263, 40);
-            this.extQuickView4.TabIndex = 85;
-            // 
-            // extQuickView3
-            // 
-            this.extQuickView3.BackColor = System.Drawing.Color.Gainsboro;
-            this.extQuickView3.DataBindings.Add(new System.Windows.Forms.Binding("LabelExtValue", this.bindingSourceState, "battery_voltage", true));
-            this.extQuickView3.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "battery_remaining", true));
-            this.extQuickView3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extQuickView3.LabelExtValue = null;
-            this.extQuickView3.LabelExtValueUnit = "V";
-            this.extQuickView3.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView3.LabelIcon")));
-            this.extQuickView3.LabelName = "电量";
-            this.extQuickView3.LabelValue = "0.0";
-            this.extQuickView3.LabelValueUnit = "%";
-            this.extQuickView3.Location = new System.Drawing.Point(1, 28);
-            this.extQuickView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.extQuickView3.Name = "extQuickView3";
-            this.extQuickView3.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.extQuickView3.Size = new System.Drawing.Size(263, 40);
-            this.extQuickView3.TabIndex = 84;
-            // 
             // GCSMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2270,7 +2081,9 @@
             this.tabPage1.ResumeLayout(false);
             this.panel3Command.ResumeLayout(false);
             this.panelAttitude.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             this.panelStates.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).EndInit();
             this.metroPanel1.ResumeLayout(false);
@@ -2286,8 +2099,6 @@
             this.metroTile1.ResumeLayout(false);
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2340,11 +2151,6 @@
         private DMSkin.Metro.Controls.MetroTile metroTile1;
         private DMSkin.Controls.DMButtonCloseLight dmButtonCloseLightFormClose;
         private DMSkin.Controls.DMButtonMinLight dmButtonMinLightFormMin;
-        private DMSkin.Controls.DMButton dmButton1;
-        private DMSkin.Controls.DMButton myButtonAuto;
-        private DMSkin.Controls.DMButton myButtonRTL;
-        private DMSkin.Controls.DMButton dmButton4;
-        private DMSkin.Controls.DMButton dmButton3;
         public DMSkin.Controls.DMButton BUT_Connect;
         private System.Windows.Forms.Timer timerTileDoubleClick;
         private DMSkin.Controls.DMTabControl dmTabControl1;
@@ -2353,9 +2159,6 @@
         private DMSkin.Metro.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.Panel panel2;
         private DMSkin.Metro.Controls.MetroPanel metroPanel2;
-        private DMSkin.Controls.DMButton dmButtonCreatGrid;
-        private DMSkin.Controls.DMButton dmButtonClreaGird;
-        private DMSkin.Controls.DMButton dmButtonGridUI;
         private DMSkin.Controls.DMButton dmButton5;
         private DMSkin.Controls.DMButton dmButton6;
         private DMSkin.Controls.DMButton dmButtonZoomOut;
@@ -2375,7 +2178,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Grad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dist;
         private System.Windows.Forms.DataGridViewTextBoxColumn AZ;
-        private DMSkin.Controls.DMButton dmButton2;
         private DMSkin.Metro.Controls.MetroComboBox metroComboBoxMapType;
         private System.Windows.Forms.ToolStripMenuItem measureToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
