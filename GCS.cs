@@ -1,4 +1,6 @@
-﻿using GMap.NET.MapProviders;
+﻿using GMap.NET;
+using GMap.NET.MapProviders;
+using MissionPlanner.Comms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +40,11 @@ namespace MissionPlanner
                 Priority = ThreadPriority.AboveNormal
             };
             serialreaderthread.Start();
+
+
+            //初始化端口空间
+            this.comboBoxComPort.Items.AddRange(SerialPort.GetPortNames());
+            comboBoxComPort.SelectedIndex = 0;
         }
 
 
@@ -77,11 +84,97 @@ namespace MissionPlanner
                     {
                         comPort.MAV.cs.UpdateCurrentSettings(null, false, comPort, comPort.MAV);
                     }
-                    catch (Exception ex) { }
+                    catch { }
                 }
                 catch { };
 
             }
         }
+
+        bool isPlanMode = false;
+
+        internal PointLatLng MouseDownStart;
+
+        private void gMapControl1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (!isPlanMode)
+                MouseDownStart = gMapControl1.FromLocalToLatLng(e.X, e.Y);
+        }
+
+        private void gMapControl1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && !isPlanMode)
+            {
+                PointLatLng point = gMapControl1.FromLocalToLatLng(e.X, e.Y);
+
+                double latdif = MouseDownStart.Lat - point.Lat;
+                double lngdif = MouseDownStart.Lng - point.Lng;
+
+                try
+                {
+                    gMapControl1.Position = new PointLatLng(gMapControl1.Position.Lat + latdif, gMapControl1.Position.Lng + lngdif);
+                }
+                catch { }
+            }
+        }
+
+        private void buttonConnect_Click(object sender, EventArgs e)
+        {
+            comPort.giveComport = false;
+            string comPortName = "COM4";
+            if (this.comboBoxComPort.Text != "")
+                comPortName = this.comboBoxComPort.Text;
+            string bandrate = "115200";
+            if (this.comboBoxBoundrate.Text != "")
+                bandrate = comboBoxBoundrate.Text;
+
+            if (comPort.BaseStream.IsOpen && comPort.MAV.cs.groundspeed > 4)
+            {
+                if (DialogResult.No == CustomMessageBox.Show(Strings.Stillmoving, Strings.Disconnect, MessageBoxButtons.YesNo))
+                {
+                    return;
+                }
+            }
+
+            if (comPort.BaseStream.IsOpen)
+            {
+                doDisconnect(comPort);
+            }
+            else
+            {
+                doConnect(comPort, comPortName, bandrate);
+            }
+        }
+
+        public void doConnect(MAVLinkInterface comPort, string port, string baud)
+        {
+            bool skipconnectcheck = true;
+            comPort.BaseStream = new MissionPlanner.Comms.SerialPort();
+
+            comPort.BaseStream.PortName = port;
+            try
+            {
+                comPort.BaseStream.BaudRate = int.Parse(baud);
+            }
+            catch { };
+            comPort.Open(false, skipconnectcheck);
+
+            // create a copy
+            int[] list = comPort.sysidseen.ToArray();
+
+            comPort.GetParam("MIS_TOTAL");
+        }
+        public void doDisconnect(MAVLinkInterface comPort)
+        {
+            try
+            {
+                comPort.BaseStream.DtrEnable = false;
+                comPort.Close();
+            }
+            catch
+            {
+            }
+        }
+
     }
 }

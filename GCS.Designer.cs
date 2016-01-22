@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.buttonConnect = new System.Windows.Forms.Button();
+            this.comboBoxBoundrate = new System.Windows.Forms.ComboBox();
+            this.comboBoxComPort = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // gMapControl1
@@ -58,15 +61,52 @@
             this.gMapControl1.Size = new System.Drawing.Size(916, 563);
             this.gMapControl1.TabIndex = 1;
             this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDown);
+            this.gMapControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseMove);
+            // 
+            // buttonConnect
+            // 
+            this.buttonConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonConnect.Location = new System.Drawing.Point(829, 528);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(75, 23);
+            this.buttonConnect.TabIndex = 2;
+            this.buttonConnect.Text = "连 接";
+            this.buttonConnect.UseVisualStyleBackColor = true;
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
+            // 
+            // comboBoxBoundrate
+            // 
+            this.comboBoxBoundrate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxBoundrate.FormattingEnabled = true;
+            this.comboBoxBoundrate.Items.AddRange(new object[] {
+            "57600",
+            "115200"});
+            this.comboBoxBoundrate.Location = new System.Drawing.Point(754, 529);
+            this.comboBoxBoundrate.Name = "comboBoxBoundrate";
+            this.comboBoxBoundrate.Size = new System.Drawing.Size(69, 20);
+            this.comboBoxBoundrate.TabIndex = 3;
+            // 
+            // comboBoxComPort
+            // 
+            this.comboBoxComPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxComPort.FormattingEnabled = true;
+            this.comboBoxComPort.Location = new System.Drawing.Point(679, 529);
+            this.comboBoxComPort.Name = "comboBoxComPort";
+            this.comboBoxComPort.Size = new System.Drawing.Size(69, 20);
+            this.comboBoxComPort.TabIndex = 4;
             // 
             // GCS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 563);
+            this.Controls.Add(this.comboBoxComPort);
+            this.Controls.Add(this.comboBoxBoundrate);
+            this.Controls.Add(this.buttonConnect);
             this.Controls.Add(this.gMapControl1);
             this.Name = "GCS";
-            this.Text = "GCS";
+            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
@@ -74,5 +114,8 @@
         #endregion
 
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private System.Windows.Forms.Button buttonConnect;
+        private System.Windows.Forms.ComboBox comboBoxBoundrate;
+        private System.Windows.Forms.ComboBox comboBoxComPort;
     }
 }

@@ -2297,7 +2297,7 @@ namespace MissionPlanner
             //catch (Exception) { }
 
             writeKML();
-            
+
             timer1.Start();
         }
 
