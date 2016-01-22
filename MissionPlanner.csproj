@@ -357,6 +357,12 @@
     </Compile>
     <Compile Include="Controls\Waypoints\Spline2.cs" />
     <Compile Include="Controls\Waypoints\Spline.cs" />
+    <Compile Include="DoubelLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DoubelLabel.Designer.cs">
+      <DependentUpon>DoubelLabel.cs</DependentUpon>
+    </Compile>
     <Compile Include="GCS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -712,6 +718,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ThemeColors.zh-Hans.resx">
       <DependentUpon>ThemeColors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoubelLabel.resx">
+      <DependentUpon>DoubelLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FollowMe.zh-Hant.resx">
       <DependentUpon>FollowMe.cs</DependentUpon>

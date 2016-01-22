@@ -42,9 +42,19 @@ namespace MissionPlanner
             serialreaderthread.Start();
 
 
-            //初始化端口空间
+            //初始化端口控件
             this.comboBoxComPort.Items.AddRange(SerialPort.GetPortNames());
             comboBoxBoundrate.SelectedIndex = 0;
+
+            // setup guids for droneshare
+            if (!MainV2.config.ContainsKey("plane_guid"))
+                MainV2.config["plane_guid"] = Guid.NewGuid().ToString();
+
+            if (!MainV2.config.ContainsKey("copter_guid"))
+                MainV2.config["copter_guid"] = Guid.NewGuid().ToString();
+
+            if (!MainV2.config.ContainsKey("rover_guid"))
+                MainV2.config["rover_guid"] = Guid.NewGuid().ToString();
         }
 
 
@@ -174,6 +184,26 @@ namespace MissionPlanner
             catch
             {
             }
+        }
+
+        private void buttonHideInfoPanel_Click(object sender, EventArgs e)
+        {
+            this.panelInofPanel.Visible = false;
+        }
+
+        private void buttonShowPanel_Click(object sender, EventArgs e)
+        {
+            this.panelInofPanel.Visible = true;
+        }
+
+        private void buttonHideCommandPanel_Click(object sender, EventArgs e)
+        {
+            this.panelCommand.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.panelCommand.Visible = true;
         }
 
     }
