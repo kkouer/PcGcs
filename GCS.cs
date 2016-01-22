@@ -44,7 +44,7 @@ namespace MissionPlanner
 
             //初始化端口空间
             this.comboBoxComPort.Items.AddRange(SerialPort.GetPortNames());
-            comboBoxComPort.SelectedIndex = 0;
+            comboBoxBoundrate.SelectedIndex = 0;
         }
 
 
