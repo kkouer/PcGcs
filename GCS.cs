@@ -16,6 +16,7 @@ namespace MissionPlanner
 {
     public partial class GCS : Form
     {
+        Thread thisthread;
         Thread serialreaderthread;
         bool serialThread = false;
         public static MAVLinkInterface comPort = new MAVLinkInterface();
@@ -41,6 +42,14 @@ namespace MissionPlanner
             };
             serialreaderthread.Start();
 
+            thisthread = new Thread(mainloop)
+            {
+                Name = "Mainloop",
+                IsBackground = true,
+                // Priority = ThreadPriority.BelowNormal
+            };
+            thisthread.Start();
+
 
             //初始化端口控件
             this.comboBoxComPort.Items.AddRange(SerialPort.GetPortNames());
@@ -57,6 +66,72 @@ namespace MissionPlanner
                 MainV2.config["rover_guid"] = Guid.NewGuid().ToString();
         }
 
+
+        public static bool threadrun;
+        void mainloop()
+        {
+            threadrun = true;
+
+            while (threadrun)
+            {
+                if (comPort.giveComport)
+                {
+                    Thread.Sleep(50);
+                    continue;
+                }
+                if (!comPort.logreadmode)
+                    Thread.Sleep(50); // max is only ever 10 hz but we go a little faster to empty the serial queue
+                try
+                {
+                    if (comPort.BaseStream.IsOpen)
+                        updateBindingSource();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Main Loop exception " + ex);
+                }
+
+            }
+        }
+
+        DateTime lastscreenupdate = DateTime.Now;
+        object updateBindingSourcelock = new object();
+        volatile int updateBindingSourcecount;
+
+        private void updateBindingSource()
+        {
+            if (lastscreenupdate.AddMilliseconds(40) < DateTime.Now)
+            {
+                if (updateBindingSourcecount > 0)
+                {
+                    return;
+                }
+
+                lock (updateBindingSourcelock)
+                {
+                    updateBindingSourcecount++;
+                }
+
+                BeginInvoke((MethodInvoker)delegate
+                {
+                    try
+                    {
+                        comPort.MAV.cs.UpdateCurrentSettings(bindingSourceHud, false, comPort, comPort.MAV);
+
+                        comPort.MAV.cs.UpdateCurrentSettings(bindingSourceState, false, comPort, comPort.MAV);
+                        //更新回家距离
+                        //UpdateDistanceStats();
+                    }
+                    catch { }
+                    lock (updateBindingSourcelock)
+                    {
+                        updateBindingSourcecount--;
+                    }
+                });
+
+
+            }
+        }
 
         private void SerialReader()
         {
@@ -204,6 +279,12 @@ namespace MissionPlanner
         private void button1_Click(object sender, EventArgs e)
         {
             this.panelCommand.Visible = true;
+        }
+
+        private void comboBoxComPort_Click(object sender, EventArgs e)
+        {
+            this.comboBoxComPort.Items.Clear();
+            this.comboBoxComPort.Items.AddRange(SerialPort.GetPortNames());
         }
 
     }

@@ -30,7 +30,7 @@ namespace MissionPlanner
             }
         }
         [System.ComponentModel.Browsable(true)]
-        public string LabelExtValue
+        public string LabelValue
         {
             get
             {

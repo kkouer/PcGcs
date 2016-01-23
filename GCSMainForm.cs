@@ -1736,14 +1736,6 @@ namespace MissionPlanner
                 {
                     if(comPort.BaseStream.IsOpen)
                     updateBindingSource();
-                    //回家距离
-                    //if (comPort.MAV.cs.lat != 0 && !string.IsNullOrEmpty(TXT_homelat.Text) && !string.IsNullOrEmpty(TXT_homelng.Text))
-                    //{
-                    //    PointLatLng start = new PointLatLng(comPort.MAV.cs.lat, comPort.MAV.cs.lng);
-                    //    PointLatLng end = new PointLatLng(double.Parse(TXT_homelat.Text), double.Parse(TXT_homelng.Text));
-                    //    //gMapControl1.MapProvider.Projection.GetDistance(start, end);
-                    //    this.labelDestanceToHome.Text = "回家距离:" + gMapControl1.MapProvider.Projection.GetDistance(start, end).ToString();
-                    //}
                 }
                 catch(Exception ex)
                 {

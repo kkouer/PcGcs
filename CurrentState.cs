@@ -718,10 +718,10 @@ namespace MissionPlanner
                     {
                         try
                         {
-                            mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.EXTENDED_STATUS, 1, MAV.sysid); // mode
-                            mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.POSITION,1, MAV.sysid); // request gps
-                            mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.EXTRA1, 2, MAV.sysid); // request attitude
-                            mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.EXTRA2, 2, MAV.sysid); // request vfr
+                            mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.EXTENDED_STATUS, 2, MAV.sysid); // mode
+                            mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.POSITION,4, MAV.sysid); // request gps
+                            mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.EXTRA1, 4, MAV.sysid); // request attitude
+                            mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.EXTRA2, 4, MAV.sysid); // request vfr
                             //mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.EXTRA3, MAV.cs.ratesensors, MAV.sysid); // request extra stuff - tridge
                             //mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.RAW_SENSORS, MAV.cs.ratesensors, MAV.sysid); // request raw sensor
                             //mavinterface.requestDatastream(MAVLink.MAV_DATA_STREAM.RC_CHANNELS, MAV.cs.raterc, MAV.sysid); // request rc info
