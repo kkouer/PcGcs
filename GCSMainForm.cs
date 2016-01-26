@@ -3735,5 +3735,6 @@ namespace MissionPlanner
             comPort.doCommand(MAVLink.MAV_CMD.DO_SET_RELAY, 2, Convert.ToInt16(cameraCommand3), 0, 0, 0, 0, 0);
             cameraCommand3 = !cameraCommand3;
         }
+
     }
 }

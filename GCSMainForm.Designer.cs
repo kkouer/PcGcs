@@ -58,7 +58,14 @@
             this.metroDMButton3 = new DMSkin.MetroDMButton();
             this.panelAttitude = new BSE.Windows.Forms.Panel();
             this.hud1 = new MissionPlanner.Controls.HUD();
+            this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
             this.panelStates = new BSE.Windows.Forms.Panel();
+            this.extQuickView1 = new MissionPlanner.GCSViews.ExtQuickView();
+            this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
+            this.extQuickView2 = new MissionPlanner.GCSViews.ExtQuickView();
+            this.extQuickView5 = new MissionPlanner.GCSViews.ExtQuickView();
+            this.extQuickView4 = new MissionPlanner.GCSViews.ExtQuickView();
+            this.extQuickView3 = new MissionPlanner.GCSViews.ExtQuickView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Commands = new System.Windows.Forms.DataGridView();
             this.Command = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -143,13 +150,6 @@
             this.labelHomeDisToPlane = new System.Windows.Forms.Label();
             this.dmLabel1 = new DMSkin.Controls.DMLabel();
             this.BUT_Connect = new DMSkin.Controls.DMButton();
-            this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
-            this.extQuickView1 = new MissionPlanner.GCSViews.ExtQuickView();
-            this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
-            this.extQuickView2 = new MissionPlanner.GCSViews.ExtQuickView();
-            this.extQuickView5 = new MissionPlanner.GCSViews.ExtQuickView();
-            this.extQuickView4 = new MissionPlanner.GCSViews.ExtQuickView();
-            this.extQuickView3 = new MissionPlanner.GCSViews.ExtQuickView();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -160,7 +160,9 @@
             this.tabPage1.SuspendLayout();
             this.panel3Command.SuspendLayout();
             this.panelAttitude.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             this.panelStates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -173,8 +175,6 @@
             this.panel3.SuspendLayout();
             this.metroTile1.SuspendLayout();
             this.panelControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -615,6 +615,10 @@
             this.hud1.wpno = 0;
             this.hud1.xtrack_error = 0F;
             // 
+            // bindingSourceHud
+            // 
+            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
             // panelStates
             // 
             this.panelStates.AssociatedSplitter = null;
@@ -653,6 +657,100 @@
             this.panelStates.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelStates.ToolTipTextExpandIconPanelExpanded = null;
             // 
+            // extQuickView1
+            // 
+            this.extQuickView1.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "alt", true));
+            this.extQuickView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.extQuickView1.LabelExtValue = null;
+            this.extQuickView1.LabelExtValueUnit = null;
+            this.extQuickView1.LabelIcon = null;
+            this.extQuickView1.LabelName = "气压高度";
+            this.extQuickView1.LabelValue = "0.0";
+            this.extQuickView1.LabelValueUnit = null;
+            this.extQuickView1.Location = new System.Drawing.Point(1, 188);
+            this.extQuickView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.extQuickView1.Name = "extQuickView1";
+            this.extQuickView1.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.extQuickView1.Size = new System.Drawing.Size(263, 38);
+            this.extQuickView1.TabIndex = 82;
+            this.extQuickView1.Visible = false;
+            // 
+            // bindingSourceState
+            // 
+            this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
+            // extQuickView2
+            // 
+            this.extQuickView2.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "mode", true));
+            this.extQuickView2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.extQuickView2.LabelExtValue = null;
+            this.extQuickView2.LabelExtValueUnit = null;
+            this.extQuickView2.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView2.LabelIcon")));
+            this.extQuickView2.LabelName = "模式";
+            this.extQuickView2.LabelValue = "无";
+            this.extQuickView2.LabelValueUnit = null;
+            this.extQuickView2.Location = new System.Drawing.Point(1, 148);
+            this.extQuickView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.extQuickView2.Name = "extQuickView2";
+            this.extQuickView2.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.extQuickView2.Size = new System.Drawing.Size(263, 40);
+            this.extQuickView2.TabIndex = 83;
+            // 
+            // extQuickView5
+            // 
+            this.extQuickView5.BackColor = System.Drawing.Color.Gainsboro;
+            this.extQuickView5.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "airspeed", true));
+            this.extQuickView5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.extQuickView5.LabelExtValue = null;
+            this.extQuickView5.LabelExtValueUnit = null;
+            this.extQuickView5.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView5.LabelIcon")));
+            this.extQuickView5.LabelName = "空速";
+            this.extQuickView5.LabelValue = "0.0";
+            this.extQuickView5.LabelValueUnit = "米/秒";
+            this.extQuickView5.Location = new System.Drawing.Point(1, 108);
+            this.extQuickView5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.extQuickView5.Name = "extQuickView5";
+            this.extQuickView5.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.extQuickView5.Size = new System.Drawing.Size(263, 40);
+            this.extQuickView5.TabIndex = 86;
+            // 
+            // extQuickView4
+            // 
+            this.extQuickView4.DataBindings.Add(new System.Windows.Forms.Binding("LabelExtValue", this.bindingSourceState, "gpshdop", true));
+            this.extQuickView4.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "satcount", true));
+            this.extQuickView4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.extQuickView4.LabelExtValue = null;
+            this.extQuickView4.LabelExtValueUnit = null;
+            this.extQuickView4.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView4.LabelIcon")));
+            this.extQuickView4.LabelName = "GPS";
+            this.extQuickView4.LabelValue = "0.0";
+            this.extQuickView4.LabelValueUnit = "颗";
+            this.extQuickView4.Location = new System.Drawing.Point(1, 68);
+            this.extQuickView4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.extQuickView4.Name = "extQuickView4";
+            this.extQuickView4.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.extQuickView4.Size = new System.Drawing.Size(263, 40);
+            this.extQuickView4.TabIndex = 85;
+            // 
+            // extQuickView3
+            // 
+            this.extQuickView3.BackColor = System.Drawing.Color.Gainsboro;
+            this.extQuickView3.DataBindings.Add(new System.Windows.Forms.Binding("LabelExtValue", this.bindingSourceState, "battery_voltage", true));
+            this.extQuickView3.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "battery_remaining", true));
+            this.extQuickView3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.extQuickView3.LabelExtValue = null;
+            this.extQuickView3.LabelExtValueUnit = "V";
+            this.extQuickView3.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView3.LabelIcon")));
+            this.extQuickView3.LabelName = "电量";
+            this.extQuickView3.LabelValue = "0.0";
+            this.extQuickView3.LabelValueUnit = "%";
+            this.extQuickView3.Location = new System.Drawing.Point(1, 28);
+            this.extQuickView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.extQuickView3.Name = "extQuickView3";
+            this.extQuickView3.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.extQuickView3.Size = new System.Drawing.Size(263, 40);
+            this.extQuickView3.TabIndex = 84;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.Commands);
@@ -686,7 +784,6 @@
             this.Grad,
             this.Dist,
             this.AZ});
-            this.Commands.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Commands.Location = new System.Drawing.Point(3, 303);
             this.Commands.Name = "Commands";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1121,6 +1218,7 @@
             this.metroDMButton2.TabIndex = 92;
             this.metroDMButton2.Text = "下载航点";
             this.metroDMButton2.UseVisualStyleBackColor = false;
+            this.metroDMButton2.Click += new System.EventHandler(this.metroDMButton2_Click);
             // 
             // metroDMButton1
             // 
@@ -1137,6 +1235,7 @@
             this.metroDMButton1.TabIndex = 91;
             this.metroDMButton1.Text = "上传航点";
             this.metroDMButton1.UseVisualStyleBackColor = false;
+            this.metroDMButton1.Click += new System.EventHandler(this.metroDMButton1_Click);
             // 
             // metroDMButton9
             // 
@@ -1957,104 +2056,6 @@
             this.BUT_Connect.UseVisualStyleBackColor = false;
             this.BUT_Connect.Click += new System.EventHandler(this.BUT_setwp_Click);
             // 
-            // bindingSourceHud
-            // 
-            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
-            // 
-            // extQuickView1
-            // 
-            this.extQuickView1.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "alt", true));
-            this.extQuickView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extQuickView1.LabelExtValue = null;
-            this.extQuickView1.LabelExtValueUnit = null;
-            this.extQuickView1.LabelIcon = null;
-            this.extQuickView1.LabelName = "气压高度";
-            this.extQuickView1.LabelValue = "0.0";
-            this.extQuickView1.LabelValueUnit = null;
-            this.extQuickView1.Location = new System.Drawing.Point(1, 188);
-            this.extQuickView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.extQuickView1.Name = "extQuickView1";
-            this.extQuickView1.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.extQuickView1.Size = new System.Drawing.Size(263, 38);
-            this.extQuickView1.TabIndex = 82;
-            this.extQuickView1.Visible = false;
-            // 
-            // bindingSourceState
-            // 
-            this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
-            // 
-            // extQuickView2
-            // 
-            this.extQuickView2.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "mode", true));
-            this.extQuickView2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extQuickView2.LabelExtValue = null;
-            this.extQuickView2.LabelExtValueUnit = null;
-            this.extQuickView2.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView2.LabelIcon")));
-            this.extQuickView2.LabelName = "模式";
-            this.extQuickView2.LabelValue = "无";
-            this.extQuickView2.LabelValueUnit = null;
-            this.extQuickView2.Location = new System.Drawing.Point(1, 148);
-            this.extQuickView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.extQuickView2.Name = "extQuickView2";
-            this.extQuickView2.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.extQuickView2.Size = new System.Drawing.Size(263, 40);
-            this.extQuickView2.TabIndex = 83;
-            // 
-            // extQuickView5
-            // 
-            this.extQuickView5.BackColor = System.Drawing.Color.Gainsboro;
-            this.extQuickView5.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "airspeed", true));
-            this.extQuickView5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extQuickView5.LabelExtValue = null;
-            this.extQuickView5.LabelExtValueUnit = null;
-            this.extQuickView5.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView5.LabelIcon")));
-            this.extQuickView5.LabelName = "空速";
-            this.extQuickView5.LabelValue = "0.0";
-            this.extQuickView5.LabelValueUnit = "米/秒";
-            this.extQuickView5.Location = new System.Drawing.Point(1, 108);
-            this.extQuickView5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.extQuickView5.Name = "extQuickView5";
-            this.extQuickView5.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.extQuickView5.Size = new System.Drawing.Size(263, 40);
-            this.extQuickView5.TabIndex = 86;
-            // 
-            // extQuickView4
-            // 
-            this.extQuickView4.DataBindings.Add(new System.Windows.Forms.Binding("LabelExtValue", this.bindingSourceState, "gpshdop", true));
-            this.extQuickView4.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "satcount", true));
-            this.extQuickView4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extQuickView4.LabelExtValue = null;
-            this.extQuickView4.LabelExtValueUnit = null;
-            this.extQuickView4.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView4.LabelIcon")));
-            this.extQuickView4.LabelName = "GPS";
-            this.extQuickView4.LabelValue = "0.0";
-            this.extQuickView4.LabelValueUnit = "颗";
-            this.extQuickView4.Location = new System.Drawing.Point(1, 68);
-            this.extQuickView4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.extQuickView4.Name = "extQuickView4";
-            this.extQuickView4.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.extQuickView4.Size = new System.Drawing.Size(263, 40);
-            this.extQuickView4.TabIndex = 85;
-            // 
-            // extQuickView3
-            // 
-            this.extQuickView3.BackColor = System.Drawing.Color.Gainsboro;
-            this.extQuickView3.DataBindings.Add(new System.Windows.Forms.Binding("LabelExtValue", this.bindingSourceState, "battery_voltage", true));
-            this.extQuickView3.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceState, "battery_remaining", true));
-            this.extQuickView3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.extQuickView3.LabelExtValue = null;
-            this.extQuickView3.LabelExtValueUnit = "V";
-            this.extQuickView3.LabelIcon = ((System.Drawing.Image)(resources.GetObject("extQuickView3.LabelIcon")));
-            this.extQuickView3.LabelName = "电量";
-            this.extQuickView3.LabelValue = "0.0";
-            this.extQuickView3.LabelValueUnit = "%";
-            this.extQuickView3.Location = new System.Drawing.Point(1, 28);
-            this.extQuickView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.extQuickView3.Name = "extQuickView3";
-            this.extQuickView3.numberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.extQuickView3.Size = new System.Drawing.Size(263, 40);
-            this.extQuickView3.TabIndex = 84;
-            // 
             // GCSMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2081,7 +2082,9 @@
             this.tabPage1.ResumeLayout(false);
             this.panel3Command.ResumeLayout(false);
             this.panelAttitude.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             this.panelStates.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).EndInit();
             this.metroPanel1.ResumeLayout(false);
@@ -2097,8 +2100,6 @@
             this.metroTile1.ResumeLayout(false);
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
             this.ResumeLayout(false);
 
         }

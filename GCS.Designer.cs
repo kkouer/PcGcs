@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GCS));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.comboBoxBoundrate = new System.Windows.Forms.ComboBox();
@@ -36,7 +42,6 @@
             this.buttonHideInfoPanel = new System.Windows.Forms.Button();
             this.buttonShowPanel = new System.Windows.Forms.Button();
             this.hud1 = new MissionPlanner.Controls.HUD();
-            this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
             this.panelCommand = new BSE.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -51,14 +56,48 @@
             this.buttonArmed = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelInofPanel = new BSE.Windows.Forms.Panel();
+            this.Commands = new System.Windows.Forms.DataGridView();
+            this.Command = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Param1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Up = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Down = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new BSE.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.TXT_altwarn = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Label1 = new System.Windows.Forms.Label();
+            this.TXT_homealt = new System.Windows.Forms.TextBox();
+            this.TXT_homelng = new System.Windows.Forms.TextBox();
+            this.TXT_homelat = new System.Windows.Forms.TextBox();
+            this.LBL_WPRad = new System.Windows.Forms.Label();
+            this.TXT_loiterrad = new System.Windows.Forms.TextBox();
+            this.TXT_DefaultAlt = new System.Windows.Forms.TextBox();
+            this.LBL_defalutalt = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TXT_WPRad = new System.Windows.Forms.TextBox();
             this.doubelLabel4 = new MissionPlanner.DoubelLabel();
+            this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
             this.doubelLabel1 = new MissionPlanner.DoubelLabel();
             this.doubelLabel3 = new MissionPlanner.DoubelLabel();
             this.doubelLabel2 = new MissionPlanner.DoubelLabel();
             this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             this.panelCommand.SuspendLayout();
             this.panelInofPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +125,7 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(916, 563);
+            this.gMapControl1.Size = new System.Drawing.Size(1008, 605);
             this.gMapControl1.TabIndex = 1;
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDown);
@@ -95,7 +134,7 @@
             // buttonConnect
             // 
             this.buttonConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonConnect.Location = new System.Drawing.Point(829, 528);
+            this.buttonConnect.Location = new System.Drawing.Point(925, 570);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(75, 23);
             this.buttonConnect.TabIndex = 2;
@@ -110,16 +149,16 @@
             this.comboBoxBoundrate.Items.AddRange(new object[] {
             "57600",
             "115200"});
-            this.comboBoxBoundrate.Location = new System.Drawing.Point(754, 529);
+            this.comboBoxBoundrate.Location = new System.Drawing.Point(861, 571);
             this.comboBoxBoundrate.Name = "comboBoxBoundrate";
-            this.comboBoxBoundrate.Size = new System.Drawing.Size(69, 20);
+            this.comboBoxBoundrate.Size = new System.Drawing.Size(57, 20);
             this.comboBoxBoundrate.TabIndex = 3;
             // 
             // comboBoxComPort
             // 
             this.comboBoxComPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxComPort.FormattingEnabled = true;
-            this.comboBoxComPort.Location = new System.Drawing.Point(693, 529);
+            this.comboBoxComPort.Location = new System.Drawing.Point(796, 571);
             this.comboBoxComPort.Name = "comboBoxComPort";
             this.comboBoxComPort.Size = new System.Drawing.Size(55, 20);
             this.comboBoxComPort.TabIndex = 4;
@@ -138,7 +177,7 @@
             // buttonShowPanel
             // 
             this.buttonShowPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonShowPanel.Location = new System.Drawing.Point(12, 194);
+            this.buttonShowPanel.Location = new System.Drawing.Point(12, 236);
             this.buttonShowPanel.Name = "buttonShowPanel";
             this.buttonShowPanel.Size = new System.Drawing.Size(27, 23);
             this.buttonShowPanel.TabIndex = 84;
@@ -209,10 +248,6 @@
             this.hud1.wpno = 0;
             this.hud1.xtrack_error = 0F;
             // 
-            // bindingSourceHud
-            // 
-            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
-            // 
             // panelCommand
             // 
             this.panelCommand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -246,7 +281,7 @@
             this.panelCommand.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
             this.panelCommand.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelCommand.Image = null;
-            this.panelCommand.Location = new System.Drawing.Point(742, 0);
+            this.panelCommand.Location = new System.Drawing.Point(834, 0);
             this.panelCommand.MinimumSize = new System.Drawing.Size(27, 27);
             this.panelCommand.Name = "panelCommand";
             this.panelCommand.Size = new System.Drawing.Size(174, 288);
@@ -265,6 +300,7 @@
             this.button9.TabIndex = 13;
             this.button9.Text = "下 载";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -275,6 +311,7 @@
             this.button8.TabIndex = 12;
             this.button8.Text = "上 传";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -285,6 +322,7 @@
             this.button7.TabIndex = 11;
             this.button7.Text = "回 家";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -305,6 +343,7 @@
             this.button5.TabIndex = 9;
             this.button5.Text = "开 始";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -315,6 +354,7 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "自 动";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -325,6 +365,7 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "定 点";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -335,6 +376,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "向 导";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonHideCommandPanel
             // 
@@ -355,6 +397,7 @@
             this.buttonDisarmed.TabIndex = 4;
             this.buttonDisarmed.Text = "加 锁";
             this.buttonDisarmed.UseVisualStyleBackColor = true;
+            this.buttonDisarmed.Click += new System.EventHandler(this.buttonDisarmed_Click);
             // 
             // buttonArmed
             // 
@@ -365,11 +408,12 @@
             this.buttonArmed.TabIndex = 3;
             this.buttonArmed.Text = "解 锁";
             this.buttonArmed.UseVisualStyleBackColor = true;
+            this.buttonArmed.Click += new System.EventHandler(this.buttonArmed_Click);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(880, 5);
+            this.button1.Location = new System.Drawing.Point(972, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(27, 23);
             this.button1.TabIndex = 6;
@@ -409,12 +453,384 @@
             this.panelInofPanel.MinimumSize = new System.Drawing.Size(27, 27);
             this.panelInofPanel.Name = "panelInofPanel";
             this.panelInofPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelInofPanel.Size = new System.Drawing.Size(177, 391);
+            this.panelInofPanel.Size = new System.Drawing.Size(177, 433);
             this.panelInofPanel.TabIndex = 86;
             this.panelInofPanel.Text = "参数";
             this.panelInofPanel.ToolTipTextCloseIcon = null;
             this.panelInofPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelInofPanel.ToolTipTextExpandIconPanelExpanded = null;
+            // 
+            // Commands
+            // 
+            this.Commands.AllowUserToAddRows = false;
+            this.Commands.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Commands.ColumnHeadersHeight = 30;
+            this.Commands.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Command,
+            this.Param1,
+            this.Param2,
+            this.Param3,
+            this.Param4,
+            this.Lat,
+            this.Lon,
+            this.Alt,
+            this.Delete,
+            this.Up,
+            this.Down,
+            this.Grad,
+            this.Dist,
+            this.AZ});
+            this.Commands.Location = new System.Drawing.Point(0, 81);
+            this.Commands.Name = "Commands";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = "0";
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Commands.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.Commands.RowHeadersWidth = 50;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.Commands.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.Commands.Size = new System.Drawing.Size(605, 127);
+            this.Commands.TabIndex = 87;
+            // 
+            // Command
+            // 
+            this.Command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            this.Command.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Command.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.Command.HeaderText = "命令";
+            this.Command.MinimumWidth = 60;
+            this.Command.Name = "Command";
+            this.Command.ToolTipText = "APM Command";
+            this.Command.Width = 60;
+            // 
+            // Param1
+            // 
+            this.Param1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param1.HeaderText = "P1";
+            this.Param1.MinimumWidth = 40;
+            this.Param1.Name = "Param1";
+            this.Param1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param1.Width = 40;
+            // 
+            // Param2
+            // 
+            this.Param2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param2.HeaderText = "P2";
+            this.Param2.MinimumWidth = 40;
+            this.Param2.Name = "Param2";
+            this.Param2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param2.Width = 40;
+            // 
+            // Param3
+            // 
+            this.Param3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param3.HeaderText = "P3";
+            this.Param3.MinimumWidth = 40;
+            this.Param3.Name = "Param3";
+            this.Param3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param3.Width = 40;
+            // 
+            // Param4
+            // 
+            this.Param4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param4.HeaderText = "P4";
+            this.Param4.MinimumWidth = 40;
+            this.Param4.Name = "Param4";
+            this.Param4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param4.Width = 40;
+            // 
+            // Lat
+            // 
+            this.Lat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Lat.HeaderText = "纬度";
+            this.Lat.MinimumWidth = 60;
+            this.Lat.Name = "Lat";
+            this.Lat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Lat.Width = 60;
+            // 
+            // Lon
+            // 
+            this.Lon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Lon.HeaderText = "经度";
+            this.Lon.MinimumWidth = 60;
+            this.Lon.Name = "Lon";
+            this.Lon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Lon.Width = 60;
+            // 
+            // Alt
+            // 
+            this.Alt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Alt.HeaderText = "高度";
+            this.Alt.MinimumWidth = 60;
+            this.Alt.Name = "Alt";
+            this.Alt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Alt.Width = 60;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Delete.HeaderText = "删除";
+            this.Delete.MinimumWidth = 50;
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "X";
+            this.Delete.ToolTipText = "Delete the row";
+            this.Delete.Visible = false;
+            this.Delete.Width = 50;
+            // 
+            // Up
+            // 
+            this.Up.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Up.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Up.HeaderText = "上移";
+            this.Up.Image = ((System.Drawing.Image)(resources.GetObject("Up.Image")));
+            this.Up.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Up.MinimumWidth = 40;
+            this.Up.Name = "Up";
+            this.Up.ToolTipText = "Move the row UP";
+            this.Up.Visible = false;
+            this.Up.Width = 40;
+            // 
+            // Down
+            // 
+            this.Down.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Down.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Down.HeaderText = "下移";
+            this.Down.Image = ((System.Drawing.Image)(resources.GetObject("Down.Image")));
+            this.Down.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Down.MinimumWidth = 40;
+            this.Down.Name = "Down";
+            this.Down.ToolTipText = "Move the row down";
+            this.Down.Visible = false;
+            this.Down.Width = 40;
+            // 
+            // Grad
+            // 
+            this.Grad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Grad.HeaderText = "坡度";
+            this.Grad.MinimumWidth = 50;
+            this.Grad.Name = "Grad";
+            this.Grad.ReadOnly = true;
+            this.Grad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Grad.Width = 50;
+            // 
+            // Dist
+            // 
+            this.Dist.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Dist.HeaderText = "距离";
+            this.Dist.MinimumWidth = 50;
+            this.Dist.Name = "Dist";
+            this.Dist.ReadOnly = true;
+            this.Dist.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Dist.Width = 50;
+            // 
+            // AZ
+            // 
+            this.AZ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.AZ.HeaderText = "方位角";
+            this.AZ.MinimumWidth = 50;
+            this.AZ.Name = "AZ";
+            this.AZ.ReadOnly = true;
+            this.AZ.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AZ.Width = 50;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AssociatedSplitter = null;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
+            this.panel1.CaptionHeight = 27;
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.TXT_altwarn);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.Label1);
+            this.panel1.Controls.Add(this.TXT_homealt);
+            this.panel1.Controls.Add(this.TXT_homelng);
+            this.panel1.Controls.Add(this.TXT_homelat);
+            this.panel1.Controls.Add(this.LBL_WPRad);
+            this.panel1.Controls.Add(this.TXT_loiterrad);
+            this.panel1.Controls.Add(this.TXT_DefaultAlt);
+            this.panel1.Controls.Add(this.LBL_defalutalt);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.TXT_WPRad);
+            this.panel1.Controls.Add(this.Commands);
+            this.panel1.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.panel1.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
+            this.panel1.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
+            this.panel1.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panel1.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panel1.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.panel1.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.panel1.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
+            this.panel1.CustomColors.CollapsedCaptionText = System.Drawing.SystemColors.ControlText;
+            this.panel1.CustomColors.ContentGradientBegin = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panel1.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Image = null;
+            this.panel1.Location = new System.Drawing.Point(179, 394);
+            this.panel1.MinimumSize = new System.Drawing.Size(27, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(605, 212);
+            this.panel1.TabIndex = 88;
+            this.panel1.Text = "航点";
+            this.panel1.ToolTipTextCloseIcon = null;
+            this.panel1.ToolTipTextExpandIconPanelCollapsed = null;
+            this.panel1.ToolTipTextExpandIconPanelExpanded = null;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label17.Location = new System.Drawing.Point(181, 35);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 12);
+            this.label17.TabIndex = 101;
+            this.label17.Text = "高度警告";
+            this.label17.Visible = false;
+            // 
+            // TXT_altwarn
+            // 
+            this.TXT_altwarn.Location = new System.Drawing.Point(183, 54);
+            this.TXT_altwarn.Name = "TXT_altwarn";
+            this.TXT_altwarn.Size = new System.Drawing.Size(40, 21);
+            this.TXT_altwarn.TabIndex = 89;
+            this.TXT_altwarn.Text = "0";
+            this.TXT_altwarn.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(314, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 97;
+            this.label4.TabStop = true;
+            this.label4.Text = "回家位置";
+            this.label4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.label4_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(402, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 96;
+            this.label3.Text = "高度";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(402, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 95;
+            this.label2.Text = "经度";
+            // 
+            // Label1
+            // 
+            this.Label1.AutoSize = true;
+            this.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Label1.Location = new System.Drawing.Point(273, 58);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(29, 12);
+            this.Label1.TabIndex = 94;
+            this.Label1.Text = "纬度";
+            // 
+            // TXT_homealt
+            // 
+            this.TXT_homealt.Location = new System.Drawing.Point(441, 28);
+            this.TXT_homealt.Name = "TXT_homealt";
+            this.TXT_homealt.Size = new System.Drawing.Size(65, 21);
+            this.TXT_homealt.TabIndex = 100;
+            this.TXT_homealt.Text = "100";
+            // 
+            // TXT_homelng
+            // 
+            this.TXT_homelng.Location = new System.Drawing.Point(441, 55);
+            this.TXT_homelng.Name = "TXT_homelng";
+            this.TXT_homelng.Size = new System.Drawing.Size(65, 21);
+            this.TXT_homelng.TabIndex = 99;
+            this.TXT_homelng.Text = "114.2";
+            // 
+            // TXT_homelat
+            // 
+            this.TXT_homelat.Location = new System.Drawing.Point(316, 54);
+            this.TXT_homelat.Name = "TXT_homelat";
+            this.TXT_homelat.Size = new System.Drawing.Size(65, 21);
+            this.TXT_homelat.TabIndex = 98;
+            this.TXT_homelat.Text = "22.7";
+            // 
+            // LBL_WPRad
+            // 
+            this.LBL_WPRad.AutoSize = true;
+            this.LBL_WPRad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LBL_WPRad.Location = new System.Drawing.Point(4, 35);
+            this.LBL_WPRad.Name = "LBL_WPRad";
+            this.LBL_WPRad.Size = new System.Drawing.Size(53, 12);
+            this.LBL_WPRad.TabIndex = 91;
+            this.LBL_WPRad.Text = "航点半径";
+            // 
+            // TXT_loiterrad
+            // 
+            this.TXT_loiterrad.Enabled = false;
+            this.TXT_loiterrad.Location = new System.Drawing.Point(65, 53);
+            this.TXT_loiterrad.Name = "TXT_loiterrad";
+            this.TXT_loiterrad.Size = new System.Drawing.Size(36, 21);
+            this.TXT_loiterrad.TabIndex = 89;
+            this.TXT_loiterrad.Text = "45";
+            // 
+            // TXT_DefaultAlt
+            // 
+            this.TXT_DefaultAlt.Location = new System.Drawing.Point(124, 53);
+            this.TXT_DefaultAlt.Name = "TXT_DefaultAlt";
+            this.TXT_DefaultAlt.Size = new System.Drawing.Size(40, 21);
+            this.TXT_DefaultAlt.TabIndex = 90;
+            this.TXT_DefaultAlt.Text = "100";
+            // 
+            // LBL_defalutalt
+            // 
+            this.LBL_defalutalt.AutoSize = true;
+            this.LBL_defalutalt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LBL_defalutalt.Location = new System.Drawing.Point(122, 35);
+            this.LBL_defalutalt.Name = "LBL_defalutalt";
+            this.LBL_defalutalt.Size = new System.Drawing.Size(53, 12);
+            this.LBL_defalutalt.TabIndex = 92;
+            this.LBL_defalutalt.Text = "默认高度";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(63, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 93;
+            this.label5.Text = "悬停半径";
+            // 
+            // TXT_WPRad
+            // 
+            this.TXT_WPRad.Location = new System.Drawing.Point(6, 54);
+            this.TXT_WPRad.Name = "TXT_WPRad";
+            this.TXT_WPRad.Size = new System.Drawing.Size(36, 21);
+            this.TXT_WPRad.TabIndex = 88;
+            this.TXT_WPRad.Text = "30";
             // 
             // doubelLabel4
             // 
@@ -425,8 +841,13 @@
             this.doubelLabel4.Location = new System.Drawing.Point(1, 111);
             this.doubelLabel4.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel4.Name = "doubelLabel4";
+            this.doubelLabel4.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
             this.doubelLabel4.Size = new System.Drawing.Size(175, 26);
             this.doubelLabel4.TabIndex = 4;
+            // 
+            // bindingSourceHud
+            // 
+            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
             // 
             // doubelLabel1
             // 
@@ -436,6 +857,7 @@
             this.doubelLabel1.LabelValue = "0.0";
             this.doubelLabel1.Location = new System.Drawing.Point(1, 85);
             this.doubelLabel1.Name = "doubelLabel1";
+            this.doubelLabel1.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
             this.doubelLabel1.Size = new System.Drawing.Size(175, 26);
             this.doubelLabel1.TabIndex = 1;
             // 
@@ -448,6 +870,7 @@
             this.doubelLabel3.Location = new System.Drawing.Point(1, 59);
             this.doubelLabel3.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel3.Name = "doubelLabel3";
+            this.doubelLabel3.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
             this.doubelLabel3.Size = new System.Drawing.Size(175, 26);
             this.doubelLabel3.TabIndex = 3;
             // 
@@ -460,6 +883,7 @@
             this.doubelLabel2.Location = new System.Drawing.Point(1, 33);
             this.doubelLabel2.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel2.Name = "doubelLabel2";
+            this.doubelLabel2.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
             this.doubelLabel2.Size = new System.Drawing.Size(175, 26);
             this.doubelLabel2.TabIndex = 2;
             // 
@@ -471,7 +895,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 563);
+            this.ClientSize = new System.Drawing.Size(1008, 605);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelInofPanel);
             this.Controls.Add(this.panelCommand);
             this.Controls.Add(this.hud1);
@@ -483,9 +908,12 @@
             this.Controls.Add(this.gMapControl1);
             this.Name = "GCS";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             this.panelCommand.ResumeLayout(false);
             this.panelInofPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Commands)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
             this.ResumeLayout(false);
 
@@ -520,5 +948,36 @@
         private BSE.Windows.Forms.Panel panelInofPanel;
         private System.Windows.Forms.BindingSource bindingSourceHud;
         private System.Windows.Forms.BindingSource bindingSourceState;
+        private System.Windows.Forms.DataGridView Commands;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Command;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Param1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Param2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Param3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Param4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Alt;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewImageColumn Up;
+        private System.Windows.Forms.DataGridViewImageColumn Down;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Grad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AZ;
+        private BSE.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label LBL_WPRad;
+        private System.Windows.Forms.TextBox TXT_loiterrad;
+        private System.Windows.Forms.TextBox TXT_DefaultAlt;
+        private System.Windows.Forms.Label LBL_defalutalt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TXT_WPRad;
+        private System.Windows.Forms.LinkLabel label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Label1;
+        private System.Windows.Forms.TextBox TXT_homealt;
+        private System.Windows.Forms.TextBox TXT_homelng;
+        private System.Windows.Forms.TextBox TXT_homelat;
+        private System.Windows.Forms.TextBox TXT_altwarn;
+        private System.Windows.Forms.Label label17;
     }
 }
