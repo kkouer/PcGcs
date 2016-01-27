@@ -949,7 +949,7 @@ namespace MissionPlanner.Controls
                 if (!connected)
                 {
                     whiteBrush.Color = Color.LightGray;
-                    whitePen.Color = Color.LightGray;
+                    whitePen.Color = Color.LightGreen;
                 }
                 else
                 {
@@ -963,7 +963,7 @@ namespace MissionPlanner.Controls
 
                     if (bg.Height != 0)
                     {
-                        LinearGradientBrush linearBrush = new LinearGradientBrush(bg, Color.Blue,
+                        LinearGradientBrush linearBrush = new LinearGradientBrush(bg, Color.SkyBlue,
                             Color.LightBlue, LinearGradientMode.Vertical);
 
                         graphicsObject.FillRectangle(linearBrush, bg);

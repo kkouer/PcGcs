@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GCS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.comboBoxBoundrate = new System.Windows.Forms.ComboBox();
@@ -71,7 +71,8 @@
             this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new BSE.Windows.Forms.Panel();
+            this.panelWPPanel = new BSE.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.TXT_altwarn = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.LinkLabel();
@@ -87,8 +88,15 @@
             this.LBL_defalutalt = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TXT_WPRad = new System.Windows.Forms.TextBox();
-            this.doubelLabel4 = new MissionPlanner.DoubelLabel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.coords1 = new MissionPlanner.Controls.Coords();
+            this.button12 = new System.Windows.Forms.Button();
+            this.doubelLabel8 = new MissionPlanner.DoubelLabel();
             this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
+            this.doubelLabel7 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel6 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel5 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel4 = new MissionPlanner.DoubelLabel();
             this.doubelLabel1 = new MissionPlanner.DoubelLabel();
             this.doubelLabel3 = new MissionPlanner.DoubelLabel();
             this.doubelLabel2 = new MissionPlanner.DoubelLabel();
@@ -96,7 +104,7 @@
             this.panelCommand.SuspendLayout();
             this.panelInofPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelWPPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
             this.SuspendLayout();
@@ -284,7 +292,8 @@
             this.panelCommand.Location = new System.Drawing.Point(834, 0);
             this.panelCommand.MinimumSize = new System.Drawing.Size(27, 27);
             this.panelCommand.Name = "panelCommand";
-            this.panelCommand.Size = new System.Drawing.Size(174, 288);
+            this.panelCommand.Padding = new System.Windows.Forms.Padding(5);
+            this.panelCommand.Size = new System.Drawing.Size(174, 198);
             this.panelCommand.TabIndex = 85;
             this.panelCommand.Text = "指令";
             this.panelCommand.ToolTipTextCloseIcon = null;
@@ -293,8 +302,9 @@
             // 
             // button9
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Location = new System.Drawing.Point(95, 235);
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.Location = new System.Drawing.Point(92, 163);
+            this.button9.Margin = new System.Windows.Forms.Padding(5);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 13;
@@ -304,8 +314,8 @@
             // 
             // button8
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.Location = new System.Drawing.Point(12, 235);
+            this.button8.Location = new System.Drawing.Point(9, 163);
+            this.button8.Margin = new System.Windows.Forms.Padding(5);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 12;
@@ -315,8 +325,9 @@
             // 
             // button7
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(95, 189);
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.Location = new System.Drawing.Point(90, 130);
+            this.button7.Margin = new System.Windows.Forms.Padding(5);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 11;
@@ -326,8 +337,8 @@
             // 
             // button6
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(12, 189);
+            this.button6.Location = new System.Drawing.Point(7, 130);
+            this.button6.Margin = new System.Windows.Forms.Padding(5);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 10;
@@ -336,8 +347,9 @@
             // 
             // button5
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(95, 141);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Location = new System.Drawing.Point(90, 97);
+            this.button5.Margin = new System.Windows.Forms.Padding(5);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 9;
@@ -347,8 +359,8 @@
             // 
             // button4
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(12, 141);
+            this.button4.Location = new System.Drawing.Point(7, 97);
+            this.button4.Margin = new System.Windows.Forms.Padding(5);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 8;
@@ -358,8 +370,9 @@
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(93, 93);
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(88, 66);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 7;
@@ -369,8 +382,8 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(12, 93);
+            this.button2.Location = new System.Drawing.Point(7, 66);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -390,8 +403,9 @@
             // 
             // buttonDisarmed
             // 
-            this.buttonDisarmed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDisarmed.Location = new System.Drawing.Point(93, 45);
+            this.buttonDisarmed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDisarmed.Location = new System.Drawing.Point(88, 35);
+            this.buttonDisarmed.Margin = new System.Windows.Forms.Padding(5);
             this.buttonDisarmed.Name = "buttonDisarmed";
             this.buttonDisarmed.Size = new System.Drawing.Size(75, 23);
             this.buttonDisarmed.TabIndex = 4;
@@ -401,8 +415,8 @@
             // 
             // buttonArmed
             // 
-            this.buttonArmed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonArmed.Location = new System.Drawing.Point(12, 45);
+            this.buttonArmed.Location = new System.Drawing.Point(7, 35);
+            this.buttonArmed.Margin = new System.Windows.Forms.Padding(5);
             this.buttonArmed.Name = "buttonArmed";
             this.buttonArmed.Size = new System.Drawing.Size(75, 23);
             this.buttonArmed.TabIndex = 3;
@@ -413,7 +427,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(972, 5);
+            this.button1.Location = new System.Drawing.Point(977, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(27, 23);
             this.button1.TabIndex = 6;
@@ -429,6 +443,11 @@
             this.panelInofPanel.BackColor = System.Drawing.Color.Transparent;
             this.panelInofPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
             this.panelInofPanel.CaptionHeight = 27;
+            this.panelInofPanel.Controls.Add(this.button12);
+            this.panelInofPanel.Controls.Add(this.doubelLabel8);
+            this.panelInofPanel.Controls.Add(this.doubelLabel7);
+            this.panelInofPanel.Controls.Add(this.doubelLabel6);
+            this.panelInofPanel.Controls.Add(this.doubelLabel5);
             this.panelInofPanel.Controls.Add(this.buttonHideInfoPanel);
             this.panelInofPanel.Controls.Add(this.doubelLabel4);
             this.panelInofPanel.Controls.Add(this.doubelLabel1);
@@ -483,27 +502,28 @@
             this.AZ});
             this.Commands.Location = new System.Drawing.Point(0, 81);
             this.Commands.Name = "Commands";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = "0";
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Commands.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = "0";
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Commands.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Commands.RowHeadersWidth = 50;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.Commands.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.Commands.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.Commands.Size = new System.Drawing.Size(605, 127);
             this.Commands.TabIndex = 87;
+            this.Commands.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Commands_RowsAdded);
             // 
             // Command
             // 
             this.Command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            this.Command.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.Command.DefaultCellStyle = dataGridViewCellStyle1;
             this.Command.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.Command.HeaderText = "命令";
             this.Command.MinimumWidth = 60;
@@ -588,7 +608,7 @@
             // Up
             // 
             this.Up.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Up.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Up.DefaultCellStyle = dataGridViewCellStyle2;
             this.Up.HeaderText = "上移";
             this.Up.Image = ((System.Drawing.Image)(resources.GetObject("Up.Image")));
             this.Up.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
@@ -601,8 +621,8 @@
             // Down
             // 
             this.Down.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Down.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Down.DefaultCellStyle = dataGridViewCellStyle3;
             this.Down.HeaderText = "下移";
             this.Down.Image = ((System.Drawing.Image)(resources.GetObject("Down.Image")));
             this.Down.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
@@ -642,54 +662,67 @@
             this.AZ.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.AZ.Width = 50;
             // 
-            // panel1
+            // panelWPPanel
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelWPPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AssociatedSplitter = null;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
-            this.panel1.CaptionHeight = 27;
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.TXT_altwarn);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.Label1);
-            this.panel1.Controls.Add(this.TXT_homealt);
-            this.panel1.Controls.Add(this.TXT_homelng);
-            this.panel1.Controls.Add(this.TXT_homelat);
-            this.panel1.Controls.Add(this.LBL_WPRad);
-            this.panel1.Controls.Add(this.TXT_loiterrad);
-            this.panel1.Controls.Add(this.TXT_DefaultAlt);
-            this.panel1.Controls.Add(this.LBL_defalutalt);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.TXT_WPRad);
-            this.panel1.Controls.Add(this.Commands);
-            this.panel1.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
-            this.panel1.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
-            this.panel1.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
-            this.panel1.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.panel1.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel1.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
-            this.panel1.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
-            this.panel1.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
-            this.panel1.CustomColors.CollapsedCaptionText = System.Drawing.SystemColors.ControlText;
-            this.panel1.CustomColors.ContentGradientBegin = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.panel1.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
-            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Image = null;
-            this.panel1.Location = new System.Drawing.Point(179, 394);
-            this.panel1.MinimumSize = new System.Drawing.Size(27, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(605, 212);
-            this.panel1.TabIndex = 88;
-            this.panel1.Text = "航点";
-            this.panel1.ToolTipTextCloseIcon = null;
-            this.panel1.ToolTipTextExpandIconPanelCollapsed = null;
-            this.panel1.ToolTipTextExpandIconPanelExpanded = null;
+            this.panelWPPanel.AssociatedSplitter = null;
+            this.panelWPPanel.BackColor = System.Drawing.Color.Transparent;
+            this.panelWPPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
+            this.panelWPPanel.CaptionHeight = 27;
+            this.panelWPPanel.Controls.Add(this.coords1);
+            this.panelWPPanel.Controls.Add(this.button10);
+            this.panelWPPanel.Controls.Add(this.label17);
+            this.panelWPPanel.Controls.Add(this.TXT_altwarn);
+            this.panelWPPanel.Controls.Add(this.label4);
+            this.panelWPPanel.Controls.Add(this.label3);
+            this.panelWPPanel.Controls.Add(this.label2);
+            this.panelWPPanel.Controls.Add(this.Label1);
+            this.panelWPPanel.Controls.Add(this.TXT_homealt);
+            this.panelWPPanel.Controls.Add(this.TXT_homelng);
+            this.panelWPPanel.Controls.Add(this.TXT_homelat);
+            this.panelWPPanel.Controls.Add(this.LBL_WPRad);
+            this.panelWPPanel.Controls.Add(this.TXT_loiterrad);
+            this.panelWPPanel.Controls.Add(this.TXT_DefaultAlt);
+            this.panelWPPanel.Controls.Add(this.LBL_defalutalt);
+            this.panelWPPanel.Controls.Add(this.label5);
+            this.panelWPPanel.Controls.Add(this.TXT_WPRad);
+            this.panelWPPanel.Controls.Add(this.Commands);
+            this.panelWPPanel.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.panelWPPanel.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
+            this.panelWPPanel.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
+            this.panelWPPanel.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panelWPPanel.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
+            this.panelWPPanel.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panelWPPanel.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.panelWPPanel.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.panelWPPanel.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
+            this.panelWPPanel.CustomColors.CollapsedCaptionText = System.Drawing.SystemColors.ControlText;
+            this.panelWPPanel.CustomColors.ContentGradientBegin = System.Drawing.SystemColors.ButtonFace;
+            this.panelWPPanel.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panelWPPanel.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.panelWPPanel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panelWPPanel.Image = null;
+            this.panelWPPanel.Location = new System.Drawing.Point(179, 394);
+            this.panelWPPanel.MinimumSize = new System.Drawing.Size(27, 27);
+            this.panelWPPanel.Name = "panelWPPanel";
+            this.panelWPPanel.Size = new System.Drawing.Size(605, 212);
+            this.panelWPPanel.TabIndex = 88;
+            this.panelWPPanel.Text = "航点";
+            this.panelWPPanel.ToolTipTextCloseIcon = null;
+            this.panelWPPanel.ToolTipTextExpandIconPanelCollapsed = null;
+            this.panelWPPanel.ToolTipTextExpandIconPanelExpanded = null;
+            this.panelWPPanel.Visible = false;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(574, 2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(27, 23);
+            this.button10.TabIndex = 102;
+            this.button10.Text = "X";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label17
             // 
@@ -715,7 +748,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(314, 31);
+            this.label4.Location = new System.Drawing.Point(407, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 97;
@@ -727,7 +760,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(402, 31);
+            this.label3.Location = new System.Drawing.Point(495, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 96;
@@ -737,7 +770,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(402, 58);
+            this.label2.Location = new System.Drawing.Point(495, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 95;
@@ -747,7 +780,7 @@
             // 
             this.Label1.AutoSize = true;
             this.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label1.Location = new System.Drawing.Point(273, 58);
+            this.Label1.Location = new System.Drawing.Point(366, 61);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(29, 12);
             this.Label1.TabIndex = 94;
@@ -755,7 +788,7 @@
             // 
             // TXT_homealt
             // 
-            this.TXT_homealt.Location = new System.Drawing.Point(441, 28);
+            this.TXT_homealt.Location = new System.Drawing.Point(534, 30);
             this.TXT_homealt.Name = "TXT_homealt";
             this.TXT_homealt.Size = new System.Drawing.Size(65, 21);
             this.TXT_homealt.TabIndex = 100;
@@ -763,7 +796,7 @@
             // 
             // TXT_homelng
             // 
-            this.TXT_homelng.Location = new System.Drawing.Point(441, 55);
+            this.TXT_homelng.Location = new System.Drawing.Point(534, 57);
             this.TXT_homelng.Name = "TXT_homelng";
             this.TXT_homelng.Size = new System.Drawing.Size(65, 21);
             this.TXT_homelng.TabIndex = 99;
@@ -771,7 +804,7 @@
             // 
             // TXT_homelat
             // 
-            this.TXT_homelat.Location = new System.Drawing.Point(316, 54);
+            this.TXT_homelat.Location = new System.Drawing.Point(409, 57);
             this.TXT_homelat.Name = "TXT_homelat";
             this.TXT_homelat.Size = new System.Drawing.Size(65, 21);
             this.TXT_homelat.TabIndex = 98;
@@ -790,7 +823,7 @@
             // TXT_loiterrad
             // 
             this.TXT_loiterrad.Enabled = false;
-            this.TXT_loiterrad.Location = new System.Drawing.Point(65, 53);
+            this.TXT_loiterrad.Location = new System.Drawing.Point(65, 54);
             this.TXT_loiterrad.Name = "TXT_loiterrad";
             this.TXT_loiterrad.Size = new System.Drawing.Size(36, 21);
             this.TXT_loiterrad.TabIndex = 89;
@@ -798,7 +831,7 @@
             // 
             // TXT_DefaultAlt
             // 
-            this.TXT_DefaultAlt.Location = new System.Drawing.Point(124, 53);
+            this.TXT_DefaultAlt.Location = new System.Drawing.Point(124, 54);
             this.TXT_DefaultAlt.Name = "TXT_DefaultAlt";
             this.TXT_DefaultAlt.Size = new System.Drawing.Size(40, 21);
             this.TXT_DefaultAlt.TabIndex = 90;
@@ -832,6 +865,96 @@
             this.TXT_WPRad.TabIndex = 88;
             this.TXT_WPRad.Text = "30";
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(756, 569);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(27, 23);
+            this.button11.TabIndex = 103;
+            this.button11.Text = "S";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // coords1
+            // 
+            this.coords1.Alt = 0D;
+            this.coords1.AltUnit = "m";
+            this.coords1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.coords1.Lat = 0D;
+            this.coords1.Lng = 0D;
+            this.coords1.Location = new System.Drawing.Point(240, 30);
+            this.coords1.Name = "coords1";
+            this.coords1.Size = new System.Drawing.Size(120, 50);
+            this.coords1.TabIndex = 103;
+            this.coords1.Vertical = true;
+            // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.Location = new System.Drawing.Point(98, 406);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 104;
+            this.button12.Text = "编辑航线";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // doubelLabel8
+            // 
+            this.doubelLabel8.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "wp_dist", true));
+            this.doubelLabel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel8.LabelName = "距点：";
+            this.doubelLabel8.LabelValue = "0.0";
+            this.doubelLabel8.Location = new System.Drawing.Point(1, 215);
+            this.doubelLabel8.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel8.Name = "doubelLabel8";
+            this.doubelLabel8.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel8.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel8.TabIndex = 8;
+            // 
+            // bindingSourceHud
+            // 
+            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
+            // doubelLabel7
+            // 
+            this.doubelLabel7.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "DistToHome", true));
+            this.doubelLabel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel7.LabelName = "距家：";
+            this.doubelLabel7.LabelValue = "0.0";
+            this.doubelLabel7.Location = new System.Drawing.Point(1, 189);
+            this.doubelLabel7.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel7.Name = "doubelLabel7";
+            this.doubelLabel7.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel7.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel7.TabIndex = 7;
+            // 
+            // doubelLabel6
+            // 
+            this.doubelLabel6.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "airspeed", true));
+            this.doubelLabel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel6.LabelName = "空速：";
+            this.doubelLabel6.LabelValue = "0.0";
+            this.doubelLabel6.Location = new System.Drawing.Point(1, 163);
+            this.doubelLabel6.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel6.Name = "doubelLabel6";
+            this.doubelLabel6.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel6.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel6.TabIndex = 6;
+            // 
+            // doubelLabel5
+            // 
+            this.doubelLabel5.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "mode", true));
+            this.doubelLabel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel5.LabelName = "模式：";
+            this.doubelLabel5.LabelValue = "0.0";
+            this.doubelLabel5.Location = new System.Drawing.Point(1, 137);
+            this.doubelLabel5.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel5.Name = "doubelLabel5";
+            this.doubelLabel5.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel5.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel5.TabIndex = 5;
+            // 
             // doubelLabel4
             // 
             this.doubelLabel4.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "satcount", true));
@@ -844,10 +967,6 @@
             this.doubelLabel4.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
             this.doubelLabel4.Size = new System.Drawing.Size(175, 26);
             this.doubelLabel4.TabIndex = 4;
-            // 
-            // bindingSourceHud
-            // 
-            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
             // 
             // doubelLabel1
             // 
@@ -896,7 +1015,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 605);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelWPPanel);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.panelInofPanel);
             this.Controls.Add(this.panelCommand);
             this.Controls.Add(this.hud1);
@@ -906,13 +1026,16 @@
             this.Controls.Add(this.comboBoxBoundrate);
             this.Controls.Add(this.buttonConnect);
             this.Controls.Add(this.gMapControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GCS";
+            this.ShowIcon = false;
+            this.Text = "固定翼地面站";
             this.TopMost = true;
             this.panelCommand.ResumeLayout(false);
             this.panelInofPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelWPPanel.ResumeLayout(false);
+            this.panelWPPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
             this.ResumeLayout(false);
@@ -963,7 +1086,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Grad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dist;
         private System.Windows.Forms.DataGridViewTextBoxColumn AZ;
-        private BSE.Windows.Forms.Panel panel1;
+        private BSE.Windows.Forms.Panel panelWPPanel;
         private System.Windows.Forms.Label LBL_WPRad;
         private System.Windows.Forms.TextBox TXT_loiterrad;
         private System.Windows.Forms.TextBox TXT_DefaultAlt;
@@ -979,5 +1102,13 @@
         private System.Windows.Forms.TextBox TXT_homelat;
         private System.Windows.Forms.TextBox TXT_altwarn;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private DoubelLabel doubelLabel5;
+        private DoubelLabel doubelLabel6;
+        private DoubelLabel doubelLabel8;
+        private DoubelLabel doubelLabel7;
+        private Controls.Coords coords1;
+        private System.Windows.Forms.Button button12;
     }
 }

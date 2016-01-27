@@ -41,6 +41,22 @@ namespace MissionPlanner
         public static GMapOverlay polygonsoverlay; // where the track is drawn
         GMapMarkerRect CurentRectMarker;
         public static GMapOverlay objectsoverlay; // where the markers a drawn
+
+        int selectedrow;
+        GMapMarker CurrentGMapMarker;
+        GMapMarker currentMarker;
+        GMapMarker center = new GMarkerGoogle(new PointLatLng(0.0, 0.0), GMarkerGoogleType.none);
+        bool isMouseClickOffMenu;
+        bool isMouseDown;
+        bool isMouseDraging;
+        bool splinemode;
+        internal PointLatLng MouseDownEnd;
+        List<List<Locationwp>> history = new List<List<Locationwp>>();
+
+        public bool quickadd;
+
+        PointLatLngAlt mouseposdisplay = new PointLatLngAlt(0, 0);
+
         public GCS()
         {
             InitializeComponent();
@@ -89,7 +105,711 @@ namespace MissionPlanner
             RegeneratePolygon();
             updateCMDParams();
 
+            //map events
+            gMapControl1.MouseUp += MainMap_MouseUp;
+            gMapControl1.MouseDown += MainMap_MouseDown;
+            gMapControl1.MouseMove += MainMap_MouseMove;
+            gMapControl1.OnMarkerEnter += MainMap_OnMarkerEnter;
+            gMapControl1.OnMarkerClick += MainMap_OnMarkerClick;
+            gMapControl1.OnMarkerLeave += MainMap_OnMarkerLeave;
+            gMapControl1.RoutesEnabled = true;
+
+
+            currentMarker = new GMarkerGoogle(gMapControl1.Position, GMarkerGoogleType.red);
         }
+
+
+        void MainMap_OnMarkerEnter(GMapMarker item)
+        {
+            if (!isMouseDown)
+            {
+                if (item is GMapMarkerRect)
+                {
+                    GMapMarkerRect rc = item as GMapMarkerRect;
+                    rc.Pen.Color = Color.Red;
+                    gMapControl1.Invalidate(false);
+
+                    int answer;
+                    if (item.Tag != null && rc.InnerMarker != null && int.TryParse(rc.InnerMarker.Tag.ToString(), out answer))
+                    {
+                        try
+                        {
+                            Commands.CurrentCell = Commands[0, answer - 1];
+                            item.ToolTipText = "高度: " + Commands[Alt.Index, answer - 1].Value;
+                            item.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                        }
+                        catch { }
+                    }
+
+                    CurentRectMarker = rc;
+                }
+                if (item is GMapMarkerRallyPt)
+                {
+                    CurrentRallyPt = item as GMapMarkerRallyPt;
+                }
+                if (item is GMapMarkerAirport)
+                {
+                    // do nothing - readonly
+                    return;
+                }
+                if (item is GMapMarker)
+                {
+                    CurrentGMapMarker = item;
+                }
+            }
+        }
+
+
+        void MainMap_OnMarkerLeave(GMapMarker item)
+        {
+            if (!isMouseDown)
+            {
+                if (item is GMapMarkerRect)
+                {
+                    CurentRectMarker = null;
+                    GMapMarkerRect rc = item as GMapMarkerRect;
+                    rc.ResetColor();
+                    gMapControl1.Invalidate(false);
+                }
+                if (item is GMapMarkerRallyPt)
+                {
+                    CurrentRallyPt = null;
+                }
+                if (item is GMapMarker)
+                {
+                    // when you click the context menu this triggers and causes problems
+                    CurrentGMapMarker = null;
+                }
+
+            }
+        }
+
+
+        // click on some marker
+        void MainMap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
+        {
+            int answer;
+            try // when dragging item can sometimes be null
+            {
+                if (item.Tag == null)
+                {
+                    // home.. etc
+                    return;
+                }
+
+                if (ModifierKeys == Keys.Control)
+                {
+                    try
+                    {
+                        groupmarkeradd(item);
+
+                        //log.Info("add marker to group");
+                    }
+                    catch { }
+                }
+                if (int.TryParse(item.Tag.ToString(), out answer))
+                {
+
+                    Commands.CurrentCell = Commands[0, answer - 1];
+                }
+            }
+            catch { }
+        }
+
+        
+
+        void MainMap_MouseDown(object sender, MouseEventArgs e)
+        {
+            //在规划模式下生效
+            if (isPlanMode)
+            {
+                if (isMouseClickOffMenu)
+                    return;
+                MouseDownStart = gMapControl1.FromLocalToLatLng(e.X, e.Y);
+
+
+                if (e.Button == MouseButtons.Left && (groupmarkers.Count > 0 || ModifierKeys == Keys.Control))
+                {
+                    isMouseDown = true;
+                    isMouseDraging = false;
+
+                    if (currentMarker.IsVisible)
+                        currentMarker.Position = gMapControl1.FromLocalToLatLng(e.X, e.Y);
+                }
+
+
+                if (e.Button == MouseButtons.Left && ModifierKeys != Keys.Alt && ModifierKeys != Keys.Control)
+                {
+                    isMouseDown = true;
+                    isMouseDraging = false;
+
+                    if (currentMarker.IsVisible)
+                    {
+                        currentMarker.Position = gMapControl1.FromLocalToLatLng(e.X, e.Y);
+                    }
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Used for current mouse position
+        /// </summary>
+        /// <param name="lat"></param>
+        /// <param name="lng"></param>
+        /// <param name="alt"></param>
+        public void SetMouseDisplay(double lat, double lng, int alt)
+        {
+            mouseposdisplay.Lat = lat;
+            mouseposdisplay.Lng = lng;
+            mouseposdisplay.Alt = alt;
+
+            coords1.Lat = mouseposdisplay.Lat;
+            coords1.Lng = mouseposdisplay.Lng;
+            coords1.Alt = srtm.getAltitude(mouseposdisplay.Lat, mouseposdisplay.Lng, gMapControl1.Zoom).alt;
+
+            try
+            {
+                PointLatLng last;
+
+                if (pointlist[pointlist.Count - 1] == null)
+                    return;
+
+                last = pointlist[pointlist.Count - 1];
+
+                double lastdist = gMapControl1.MapProvider.Projection.GetDistance(last, currentMarker.Position);
+
+                double lastbearing = 0;
+
+                if (pointlist.Count > 0)
+                {
+                    lastbearing = gMapControl1.MapProvider.Projection.GetBearing(last, currentMarker.Position);
+                }
+
+                //lbl_prevdist.Text = rm.GetString("lbl_prevdist.Text") + ": " + FormatDistance(lastdist, true) + " AZ: " + lastbearing.ToString("0");
+
+                // 0 is home
+                if (pointlist[0] != null)
+                {
+                    double homedist = gMapControl1.MapProvider.Projection.GetDistance(currentMarker.Position, pointlist[0]);
+
+                    //lbl_homedist.Text = rm.GetString("lbl_homedist.Text") + ": " + FormatDistance(homedist, true);
+                }
+            }
+            catch { }
+        }
+
+        DateTime lastscreenupdate = DateTime.Now;
+        object updateBindingSourcelock = new object();
+        volatile int updateBindingSourcecount;
+
+        GMapMarkerRallyPt CurrentRallyPt;
+
+        void MainMap_MouseMove(object sender, MouseEventArgs e)
+        {
+            //在规划模式下生效
+            if (isPlanMode)
+            {
+                PointLatLngAlt point = gMapControl1.FromLocalToLatLng(e.X, e.Y);
+
+                if (MouseDownStart == point)
+                    return;
+
+                currentMarker.Position = point;
+
+                if (!isMouseDown)
+                {
+                    SetMouseDisplay(point.Lat, point.Lng, 0);
+                }
+                //draging
+                if (e.Button == MouseButtons.Left && isMouseDown)
+                {
+                    isMouseDraging = true;
+                    if (CurrentRallyPt != null)
+                    {
+                        PointLatLng pnew = gMapControl1.FromLocalToLatLng(e.X, e.Y);
+
+                        CurrentRallyPt.Position = pnew;
+                    }
+                    else if (groupmarkers.Count > 0)
+                    {
+                        // group drag
+
+                        double latdif = MouseDownStart.Lat - point.Lat;
+                        double lngdif = MouseDownStart.Lng - point.Lng;
+
+                        MouseDownStart = point;
+
+                        Hashtable seen = new Hashtable();
+
+                        foreach (var markerid in groupmarkers)
+                        {
+                            if (seen.ContainsKey(markerid))
+                                continue;
+
+                            seen[markerid] = 1;
+                            for (int a = 0; a < objectsoverlay.Markers.Count; a++)
+                            {
+                                var marker = objectsoverlay.Markers[a];
+
+                                if (marker.Tag != null && marker.Tag.ToString() == markerid.ToString())
+                                {
+                                    var temp = new PointLatLng(marker.Position.Lat, marker.Position.Lng);
+                                    temp.Offset(latdif, -lngdif);
+                                    marker.Position = temp;
+                                }
+                            }
+                        }
+                    }
+                    else if (CurentRectMarker != null) // left click pan
+                    {
+                        try
+                        {
+                            // check if this is a grid point
+                            if (CurentRectMarker.InnerMarker.Tag.ToString().Contains("grid"))
+                            {
+                                drawnpolygon.Points[int.Parse(CurentRectMarker.InnerMarker.Tag.ToString().Replace("grid", "")) - 1] = new PointLatLng(point.Lat, point.Lng);
+                                gMapControl1.UpdatePolygonLocalPosition(drawnpolygon);
+                                gMapControl1.Invalidate();
+                            }
+                        }
+                        catch { }
+
+                        PointLatLng pnew = gMapControl1.FromLocalToLatLng(e.X, e.Y);
+
+                        // adjust polyline point while we drag
+                        try
+                        {
+                            if (CurrentGMapMarker != null && CurrentGMapMarker.Tag is int)
+                            {
+
+                                int? pIndex = (int?)CurentRectMarker.Tag;
+                                if (pIndex.HasValue)
+                                {
+                                    if (pIndex < wppolygon.Points.Count)
+                                    {
+                                        wppolygon.Points[pIndex.Value] = pnew;
+                                        lock (thisLock)
+                                        {
+                                            gMapControl1.UpdatePolygonLocalPosition(wppolygon);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        catch { }
+
+                        // update rect and marker pos.
+                        if (currentMarker.IsVisible)
+                        {
+                            currentMarker.Position = pnew;
+                        }
+                        CurentRectMarker.Position = pnew;
+
+                        if (CurentRectMarker.InnerMarker != null)
+                        {
+                            CurentRectMarker.InnerMarker.Position = pnew;
+                        }
+                    }
+                    else if (CurrentGMapMarker != null)
+                    {
+                        PointLatLng pnew = gMapControl1.FromLocalToLatLng(e.X, e.Y);
+
+                        CurrentGMapMarker.Position = pnew;
+                    }
+                }
+            }
+        }
+
+
+        void groupmarkeradd(GMapMarker marker)
+        {
+            groupmarkers.Add(int.Parse(marker.Tag.ToString()));
+            if (marker is GMapMarkerWP)
+            {
+                ((GMapMarkerWP)marker).selected = true;
+            }
+            if (marker is GMapMarkerRect)
+            {
+                ((GMapMarkerWP)((GMapMarkerRect)marker).InnerMarker).selected = true;
+            }
+        }
+        bool polygongridmode;
+        altmode currentaltmode = altmode.Relative;
+        bool sethome;
+        GMapOverlay top;
+        GMapOverlay drawnpolygonsoverlay;
+        /// <summary>
+        /// Used to create a new WP
+        /// </summary>
+        /// <param name="lat"></param>
+        /// <param name="lng"></param>
+        /// <param name="alt"></param>
+        public void AddWPToMap(double lat, double lng, int alt)
+        {
+            if (polygongridmode)
+            {
+                addPolygonPointToolStripMenuItem_Click(null, null);
+                return;
+            }
+
+            if (sethome)
+            {
+                sethome = false;
+                callMeDrag("H", lat, lng, alt);
+                return;
+            }
+            // creating a WP
+
+            selectedrow = Commands.Rows.Add();
+
+            if (splinemode)
+            {
+                Commands.Rows[selectedrow].Cells[Command.Index].Value = MAVLink.MAV_CMD.SPLINE_WAYPOINT.ToString();
+                ChangeColumnHeader(MAVLink.MAV_CMD.SPLINE_WAYPOINT.ToString());
+            }
+            else
+            {
+                Commands.Rows[selectedrow].Cells[Command.Index].Value = MAVLink.MAV_CMD.WAYPOINT.ToString();
+                ChangeColumnHeader(MAVLink.MAV_CMD.WAYPOINT.ToString());
+            }
+
+            setfromMap(lat, lng, alt);
+        }
+
+
+        /// <summary>
+        /// Actualy Sets the values into the datagrid and verifys height if turned on
+        /// </summary>
+        /// <param name="lat"></param>
+        /// <param name="lng"></param>
+        /// <param name="alt"></param>
+        public void setfromMap(double lat, double lng, int alt, double p1 = 0)
+        {
+            if (selectedrow > Commands.RowCount)
+            {
+                CustomMessageBox.Show("Invalid coord, How did you do this?");
+                return;
+            }
+
+            // add history
+            history.Add(GetCommandList());
+
+            // remove more than 20 revisions
+            if (history.Count > 20)
+            {
+                history.RemoveRange(0, history.Count - 20);
+            }
+
+            DataGridViewTextBoxCell cell;
+            if (Commands.Columns[Lat.Index].HeaderText.Equals(cmdParamNames["WAYPOINT"][4]/*"Lat"*/))
+            {
+                cell = Commands.Rows[selectedrow].Cells[Lat.Index] as DataGridViewTextBoxCell;
+                cell.Value = lat.ToString("0.0000000");
+                cell.DataGridView.EndEdit();
+            }
+            if (Commands.Columns[Lon.Index].HeaderText.Equals(cmdParamNames["WAYPOINT"][5]/*"Long"*/))
+            {
+                cell = Commands.Rows[selectedrow].Cells[Lon.Index] as DataGridViewTextBoxCell;
+                cell.Value = lng.ToString("0.0000000");
+                cell.DataGridView.EndEdit();
+            }
+            if (alt != -1 && Commands.Columns[Alt.Index].HeaderText.Equals(cmdParamNames["WAYPOINT"][6]/*"Alt"*/))
+            {
+                cell = Commands.Rows[selectedrow].Cells[Alt.Index] as DataGridViewTextBoxCell;
+
+                {
+                    double result;
+                    bool pass = double.TryParse(TXT_homealt.Text, out result);
+
+                    if (pass == false)
+                    {
+                        CustomMessageBox.Show("输入回家高度");
+                        string homealt = "100";
+                        if (DialogResult.Cancel == InputBox.Show("Home Alt", "Home Altitude", ref homealt))
+                            return;
+                        TXT_homealt.Text = homealt;
+                    }
+                    int results1;
+                    if (!int.TryParse(TXT_DefaultAlt.Text, out results1))
+                    {
+                        CustomMessageBox.Show("Your default alt is not valid");
+                        return;
+                    }
+
+                    if (results1 == 0)
+                    {
+                        string defalt = "100";
+                        if (DialogResult.Cancel == InputBox.Show("默认高度", "默认高度", ref defalt))
+                            return;
+                        TXT_DefaultAlt.Text = defalt;
+                    }
+                }
+
+                cell.Value = TXT_DefaultAlt.Text;
+
+                float ans;
+                if (float.TryParse(cell.Value.ToString(), out ans))
+                {
+                    ans = (int)ans;
+                    if (alt != 0) // use passed in value;
+                        cell.Value = alt.ToString();
+                    if (ans == 0) // default
+                        cell.Value = 50;
+                    if (ans == 0 && (comPort.MAV.cs.firmware == MainV2.Firmwares.ArduCopter2))
+                        cell.Value = 15;
+                    writeKML();
+                    cell.DataGridView.EndEdit();
+                }
+                else
+                {
+                    CustomMessageBox.Show("Invalid Home or wp Alt");
+                    cell.Style.BackColor = Color.Red;
+                }
+
+            }
+            // Add more for other params
+            if (Commands.Columns[Param1.Index].HeaderText.Equals(cmdParamNames["WAYPOINT"][1]/*"Delay"*/))
+            {
+                cell = Commands.Rows[selectedrow].Cells[Param1.Index] as DataGridViewTextBoxCell;
+                cell.Value = p1;
+                cell.DataGridView.EndEdit();
+            }
+
+            writeKML();
+            Commands.EndEdit();
+        }
+        
+
+        private void ChangeColumnHeader(string command)
+        {
+            try
+            {
+                if (cmdParamNames.ContainsKey(command))
+                    for (int i = 1; i <= 7; i++)
+                        Commands.Columns[i].HeaderText = cmdParamNames[command][i - 1];
+                else
+                    for (int i = 1; i <= 7; i++)
+                        Commands.Columns[i].HeaderText = "setme";
+            }
+            catch (Exception ex) { CustomMessageBox.Show(ex.ToString()); }
+        }
+        /// <summary>
+        /// used to adjust existing point in the datagrid including "H"
+        /// </summary>
+        /// <param name="pointno"></param>
+        /// <param name="lat"></param>
+        /// <param name="lng"></param>
+        /// <param name="alt"></param>
+        public void callMeDrag(string pointno, double lat, double lng, int alt)
+        {
+            if (pointno == "")
+            {
+                return;
+            }
+
+            // dragging a WP
+            if (pointno == "H")
+            {
+                TXT_homelat.Text = lat.ToString();
+                TXT_homelng.Text = lng.ToString();
+                return;
+            }
+
+            if (pointno == "Tracker Home")
+            {
+                comPort.MAV.cs.TrackerLocation = new PointLatLngAlt(lat, lng, alt, "");
+                return;
+            }
+
+            try
+            {
+                selectedrow = int.Parse(pointno) - 1;
+                Commands.CurrentCell = Commands[1, selectedrow];
+            }
+            catch
+            {
+                return;
+            }
+
+            setfromMap(lat, lng, alt);
+        }
+
+        private void addPolygonPointToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (polygongridmode == false)
+            {
+                CustomMessageBox.Show("开始规划模式,清除规划区域后结束规划模式.");
+            }
+
+            polygongridmode = true;
+
+            List<PointLatLng> polygonPoints = new List<PointLatLng>();
+            if (drawnpolygonsoverlay.Polygons.Count == 0)
+            {
+                drawnpolygon.Points.Clear();
+                drawnpolygonsoverlay.Polygons.Add(drawnpolygon);
+            }
+
+            drawnpolygon.Fill = Brushes.Transparent;
+
+            // remove full loop is exists
+            if (drawnpolygon.Points.Count > 1 && drawnpolygon.Points[0] == drawnpolygon.Points[drawnpolygon.Points.Count - 1])
+                drawnpolygon.Points.RemoveAt(drawnpolygon.Points.Count - 1); // unmake a full loop
+
+            drawnpolygon.Points.Add(new PointLatLng(MouseDownStart.Lat, MouseDownStart.Lng));
+
+            addpolygonmarkergrid(drawnpolygon.Points.Count.ToString(), MouseDownStart.Lng, MouseDownStart.Lat, 0);
+
+            gMapControl1.UpdatePolygonLocalPosition(drawnpolygon);
+
+            gMapControl1.Invalidate();
+
+        }
+
+        private void addpolygonmarkergrid(string tag, double lng, double lat, int alt)
+        {
+            try
+            {
+                PointLatLng point = new PointLatLng(lat, lng);
+                GMarkerGoogle m = new GMarkerGoogle(point, GMarkerGoogleType.red);
+                m.ToolTipMode = MarkerTooltipMode.Never;
+                m.ToolTipText = "grid" + tag;
+                m.Tag = "grid" + tag;
+
+                //MissionPlanner.GMapMarkerRectWPRad mBorders = new MissionPlanner.GMapMarkerRectWPRad(point, (int)float.Parse(TXT_WPRad.Text), MainMap);
+                GMapMarkerRect mBorders = new GMapMarkerRect(point);
+                {
+                    mBorders.InnerMarker = m;
+                }
+
+                drawnpolygonsoverlay.Markers.Add(m);
+                drawnpolygonsoverlay.Markers.Add(mBorders);
+            }
+            catch (Exception ex)
+            {
+                log.Info(ex.ToString());
+            }
+        }
+
+        void MainMap_MouseUp(object sender, MouseEventArgs e)
+        {
+            //在规划模式下生效
+            if (isPlanMode)
+            {
+                if (isMouseClickOffMenu)
+                {
+                    isMouseClickOffMenu = false;
+                    return;
+                }
+                MouseDownEnd = gMapControl1.FromLocalToLatLng(e.X, e.Y);
+
+                if (e.Button == MouseButtons.Right)
+                {
+                    return;
+                }
+                if (isMouseDown)
+                {
+                    if (e.Button == MouseButtons.Left)
+                        isMouseDown = false;
+
+                    if (ModifierKeys == Keys.Control)
+                    {
+                        // group select wps
+                        GMapPolygon poly = new GMapPolygon(new List<PointLatLng>(), "temp");
+
+                        poly.Points.Add(MouseDownStart);
+                        poly.Points.Add(new PointLatLng(MouseDownStart.Lat, MouseDownEnd.Lng));
+                        poly.Points.Add(MouseDownEnd);
+                        poly.Points.Add(new PointLatLng(MouseDownEnd.Lat, MouseDownStart.Lng));
+
+                        foreach (var marker in objectsoverlay.Markers)
+                        {
+                            if (poly.IsInside(marker.Position))
+                            {
+                                try
+                                {
+                                    if (marker.Tag != null)
+                                    {
+                                        groupmarkeradd(marker);
+                                    }
+                                }
+                                catch { }
+                            }
+                        }
+
+                        isMouseDraging = false;
+                        return;
+                    }
+                }
+                if (!isMouseDraging)
+                {
+                    if (CurentRectMarker != null)
+                    {
+
+                    }
+                    else
+                    {
+                        AddWPToMap(currentMarker.Position.Lat, currentMarker.Position.Lng, 0);
+                    }
+                }
+                else
+                {
+                    if (groupmarkers.Count > 0)
+                    {
+                        Dictionary<string, PointLatLng> dest = new Dictionary<string, PointLatLng>();
+
+                        foreach (var markerid in groupmarkers)
+                        {
+                            for (int a = 0; a < objectsoverlay.Markers.Count; a++)
+                            {
+                                var marker = objectsoverlay.Markers[a];
+
+                                if (marker.Tag != null && marker.Tag.ToString() == markerid.ToString())
+                                {
+                                    dest[marker.Tag.ToString()] = marker.Position;
+                                    break;
+                                }
+                            }
+                        }
+
+                        foreach (KeyValuePair<string, PointLatLng> item in dest)
+                        {
+                            var value = item.Value;
+                            callMeDrag(item.Key, value.Lat, value.Lng, -1);
+                        }
+
+                        gMapControl1.SelectedArea = RectLatLng.Empty;
+                        groupmarkers.Clear();
+                        // redraw to remove selection
+                        writeKML();
+
+                        CurentRectMarker = null;
+                    }
+                    if (CurentRectMarker != null)
+                    {
+                        if (CurentRectMarker.InnerMarker.Tag.ToString().Contains("grid"))
+                        {
+                            try
+                            {
+                                drawnpolygon.Points[int.Parse(CurentRectMarker.InnerMarker.Tag.ToString().Replace("grid", "")) - 1] = new PointLatLng(MouseDownEnd.Lat, MouseDownEnd.Lng);
+                                gMapControl1.UpdatePolygonLocalPosition(drawnpolygon);
+                                gMapControl1.Invalidate();
+                            }
+                            catch { }
+                        }
+                        else
+                        {
+                            callMeDrag(CurentRectMarker.InnerMarker.Tag.ToString(), currentMarker.Position.Lat, currentMarker.Position.Lng, -1);
+                        }
+                        CurentRectMarker = null;
+                    }
+                }
+            }
+            isMouseDraging = false;
+        }
+
+
         // polygons
         GMapPolygon wppolygon;
         internal GMapPolygon drawnpolygon;
@@ -271,10 +991,6 @@ namespace MissionPlanner
 
             }
         }
-
-        DateTime lastscreenupdate = DateTime.Now;
-        object updateBindingSourcelock = new object();
-        volatile int updateBindingSourcecount;
 
         private void updateBindingSource()
         {
@@ -593,7 +1309,6 @@ namespace MissionPlanner
 
             gMapControl1.Focus();
         }
-        altmode currentaltmode = altmode.Relative;
         public enum altmode
         {
             Relative = MAVLink.MAV_FRAME.GLOBAL_RELATIVE_ALT,
@@ -1208,6 +1923,114 @@ namespace MissionPlanner
             Debug.WriteLine(DateTime.Now);
         }
 
+
+        private void Commands_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < Commands.ColumnCount; i++)
+            {
+                DataGridViewCell tcell = Commands.Rows[e.RowIndex].Cells[i];
+                if (tcell.GetType() == typeof(DataGridViewTextBoxCell))
+                {
+                    if (tcell.Value == null)
+                        tcell.Value = "0";
+                }
+            }
+
+            DataGridViewComboBoxCell cell = Commands.Rows[e.RowIndex].Cells[Command.Index] as DataGridViewComboBoxCell;
+            if (cell.Value == null)
+            {
+                cell.Value = "WAYPOINT";
+                cell.DropDownWidth = 200;
+                Commands.Rows[e.RowIndex].Cells[Delete.Index].Value = "X";
+                if (!quickadd)
+                {
+                    Commands_RowEnter(sender, new DataGridViewCellEventArgs(0, e.RowIndex - 0)); // do header labels
+                    Commands_RowValidating(sender, new DataGridViewCellCancelEventArgs(0, e.RowIndex)); // do default values
+                }
+            }
+
+            if (quickadd)
+                return;
+
+            try
+            {
+                Commands.CurrentCell = Commands.Rows[e.RowIndex].Cells[0];
+
+                if (Commands.Rows.Count > 1)
+                {
+
+                    if (Commands.Rows[e.RowIndex - 1].Cells[Command.Index].Value.ToString() == "WAYPOINT")
+                    {
+                        Commands.Rows[e.RowIndex].Selected = true; // highlight row
+                    }
+                    else
+                    {
+                        Commands.CurrentCell = Commands[1, e.RowIndex - 1];
+                        //Commands_RowEnter(sender, new DataGridViewCellEventArgs(0, e.RowIndex-1));
+                    }
+                }
+            }
+            catch (Exception) { }
+        }
+
+        private void Commands_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            selectedrow = e.RowIndex;
+            Commands_RowEnter(sender, new DataGridViewCellEventArgs(0, e.RowIndex - 0)); // do header labels - encure we dont 0 out valid colums
+            int cols = Commands.Columns.Count;
+            for (int a = 1; a < cols; a++)
+            {
+                DataGridViewTextBoxCell cell;
+                cell = Commands.Rows[selectedrow].Cells[a] as DataGridViewTextBoxCell;
+
+                if (Commands.Columns[a].HeaderText.Equals("") && cell != null && cell.Value == null)
+                {
+                    cell.Value = "0";
+                }
+                else
+                {
+                    if (cell != null && (cell.Value == null || cell.Value.ToString() == ""))
+                    {
+                        cell.Value = "?";
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Used to update column headers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Commands_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (quickadd)
+                return;
+            try
+            {
+                selectedrow = e.RowIndex;
+                string option = Commands[Command.Index, selectedrow].EditedFormattedValue.ToString();
+                string cmd;
+                try
+                {
+                    cmd = Commands[Command.Index, selectedrow].Value.ToString();
+                }
+                catch { cmd = option; }
+                //Console.WriteLine("editformat " + option + " value " + cmd);
+                ChangeColumnHeader(cmd);
+
+                setgradanddistandaz();
+
+                if (cmd == "WAYPOINT")
+                {
+
+                }
+
+                //  writeKML();
+            }
+            catch (Exception ex) { CustomMessageBox.Show(ex.ToString()); }
+        }
+
         void setgradanddistandaz()
         {
             int a = 0;
@@ -1374,9 +2197,7 @@ namespace MissionPlanner
             }
         }
 
-        public bool quickadd;
         public GMapRoute route = new GMapRoute("wp route");
-        int selectedrow;
         void processToScreen(List<Locationwp> cmds, bool append = false)
         {
             quickadd = true;
@@ -1616,6 +2437,22 @@ namespace MissionPlanner
                 CustomMessageBox.Show("在户外, 连接并等待GPS定位. 点击选择回家位置.");
             }
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.panelWPPanel.Visible = false;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.panelWPPanel.Visible = true;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            isPlanMode = !isPlanMode;
+        }
+
 
     }
 }
