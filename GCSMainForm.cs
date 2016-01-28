@@ -3292,8 +3292,8 @@ namespace MissionPlanner
         {
             if (drawnpolygon.Points != null && drawnpolygon.Points.Count > 2)
             {
-                GridUI gui = new GridUI(drawnpolygon.Points, this);
-                gui.ShowDialog();
+                //GridUI gui = new GridUI(drawnpolygon.Points, this);
+                //gui.ShowDialog();
             }
             else
             {
@@ -3599,8 +3599,8 @@ namespace MissionPlanner
         {
             if (drawnpolygon.Points != null && drawnpolygon.Points.Count > 2)
             {
-                GridUI gui = new GridUI(drawnpolygon.Points, this);
-                gui.ShowDialog();
+                //GridUI gui = new GridUI(drawnpolygon.Points, this);
+                //gui.ShowDialog();
             }
             else
             {

@@ -57,20 +57,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panelInofPanel = new BSE.Windows.Forms.Panel();
             this.Commands = new System.Windows.Forms.DataGridView();
-            this.Command = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Param1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Param2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Param3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Param4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Alt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Up = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Down = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelWPPanel = new BSE.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -91,6 +77,23 @@
             this.button11 = new System.Windows.Forms.Button();
             this.coords1 = new MissionPlanner.Controls.Coords();
             this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.Command = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Param1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Up = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Down = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doubelLabel8 = new MissionPlanner.DoubelLabel();
             this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
             this.doubelLabel7 = new MissionPlanner.DoubelLabel();
@@ -263,6 +266,10 @@
             this.panelCommand.BackColor = System.Drawing.Color.Transparent;
             this.panelCommand.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
             this.panelCommand.CaptionHeight = 27;
+            this.panelCommand.Controls.Add(this.button12);
+            this.panelCommand.Controls.Add(this.button15);
+            this.panelCommand.Controls.Add(this.button14);
+            this.panelCommand.Controls.Add(this.button13);
             this.panelCommand.Controls.Add(this.button9);
             this.panelCommand.Controls.Add(this.button8);
             this.panelCommand.Controls.Add(this.button7);
@@ -293,7 +300,7 @@
             this.panelCommand.MinimumSize = new System.Drawing.Size(27, 27);
             this.panelCommand.Name = "panelCommand";
             this.panelCommand.Padding = new System.Windows.Forms.Padding(5);
-            this.panelCommand.Size = new System.Drawing.Size(174, 198);
+            this.panelCommand.Size = new System.Drawing.Size(174, 259);
             this.panelCommand.TabIndex = 85;
             this.panelCommand.Text = "指令";
             this.panelCommand.ToolTipTextCloseIcon = null;
@@ -314,7 +321,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(9, 163);
+            this.button8.Location = new System.Drawing.Point(7, 163);
             this.button8.Margin = new System.Windows.Forms.Padding(5);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
@@ -443,7 +450,6 @@
             this.panelInofPanel.BackColor = System.Drawing.Color.Transparent;
             this.panelInofPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
             this.panelInofPanel.CaptionHeight = 27;
-            this.panelInofPanel.Controls.Add(this.button12);
             this.panelInofPanel.Controls.Add(this.doubelLabel8);
             this.panelInofPanel.Controls.Add(this.doubelLabel7);
             this.panelInofPanel.Controls.Add(this.doubelLabel6);
@@ -516,151 +522,8 @@
             this.Commands.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.Commands.Size = new System.Drawing.Size(605, 127);
             this.Commands.TabIndex = 87;
+            this.Commands.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Commands_CellContentClick);
             this.Commands.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Commands_RowsAdded);
-            // 
-            // Command
-            // 
-            this.Command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.Command.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Command.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.Command.HeaderText = "命令";
-            this.Command.MinimumWidth = 60;
-            this.Command.Name = "Command";
-            this.Command.ToolTipText = "APM Command";
-            this.Command.Width = 60;
-            // 
-            // Param1
-            // 
-            this.Param1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Param1.HeaderText = "P1";
-            this.Param1.MinimumWidth = 40;
-            this.Param1.Name = "Param1";
-            this.Param1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Param1.Width = 40;
-            // 
-            // Param2
-            // 
-            this.Param2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Param2.HeaderText = "P2";
-            this.Param2.MinimumWidth = 40;
-            this.Param2.Name = "Param2";
-            this.Param2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Param2.Width = 40;
-            // 
-            // Param3
-            // 
-            this.Param3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Param3.HeaderText = "P3";
-            this.Param3.MinimumWidth = 40;
-            this.Param3.Name = "Param3";
-            this.Param3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Param3.Width = 40;
-            // 
-            // Param4
-            // 
-            this.Param4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Param4.HeaderText = "P4";
-            this.Param4.MinimumWidth = 40;
-            this.Param4.Name = "Param4";
-            this.Param4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Param4.Width = 40;
-            // 
-            // Lat
-            // 
-            this.Lat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Lat.HeaderText = "纬度";
-            this.Lat.MinimumWidth = 60;
-            this.Lat.Name = "Lat";
-            this.Lat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Lat.Width = 60;
-            // 
-            // Lon
-            // 
-            this.Lon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Lon.HeaderText = "经度";
-            this.Lon.MinimumWidth = 60;
-            this.Lon.Name = "Lon";
-            this.Lon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Lon.Width = 60;
-            // 
-            // Alt
-            // 
-            this.Alt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Alt.HeaderText = "高度";
-            this.Alt.MinimumWidth = 60;
-            this.Alt.Name = "Alt";
-            this.Alt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Alt.Width = 60;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Delete.HeaderText = "删除";
-            this.Delete.MinimumWidth = 50;
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "X";
-            this.Delete.ToolTipText = "Delete the row";
-            this.Delete.Visible = false;
-            this.Delete.Width = 50;
-            // 
-            // Up
-            // 
-            this.Up.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Up.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Up.HeaderText = "上移";
-            this.Up.Image = ((System.Drawing.Image)(resources.GetObject("Up.Image")));
-            this.Up.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Up.MinimumWidth = 40;
-            this.Up.Name = "Up";
-            this.Up.ToolTipText = "Move the row UP";
-            this.Up.Visible = false;
-            this.Up.Width = 40;
-            // 
-            // Down
-            // 
-            this.Down.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Down.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Down.HeaderText = "下移";
-            this.Down.Image = ((System.Drawing.Image)(resources.GetObject("Down.Image")));
-            this.Down.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Down.MinimumWidth = 40;
-            this.Down.Name = "Down";
-            this.Down.ToolTipText = "Move the row down";
-            this.Down.Visible = false;
-            this.Down.Width = 40;
-            // 
-            // Grad
-            // 
-            this.Grad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Grad.HeaderText = "坡度";
-            this.Grad.MinimumWidth = 50;
-            this.Grad.Name = "Grad";
-            this.Grad.ReadOnly = true;
-            this.Grad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Grad.Width = 50;
-            // 
-            // Dist
-            // 
-            this.Dist.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Dist.HeaderText = "距离";
-            this.Dist.MinimumWidth = 50;
-            this.Dist.Name = "Dist";
-            this.Dist.ReadOnly = true;
-            this.Dist.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Dist.Width = 50;
-            // 
-            // AZ
-            // 
-            this.AZ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.AZ.HeaderText = "方位角";
-            this.AZ.MinimumWidth = 50;
-            this.AZ.Name = "AZ";
-            this.AZ.ReadOnly = true;
-            this.AZ.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.AZ.Width = 50;
             // 
             // panelWPPanel
             // 
@@ -716,6 +579,7 @@
             // 
             // button10
             // 
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button10.Location = new System.Drawing.Point(574, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(27, 23);
@@ -867,6 +731,7 @@
             // 
             // button11
             // 
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button11.Location = new System.Drawing.Point(756, 569);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(27, 23);
@@ -891,13 +756,192 @@
             // button12
             // 
             this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.Location = new System.Drawing.Point(98, 406);
+            this.button12.Location = new System.Drawing.Point(7, 194);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 23);
             this.button12.TabIndex = 104;
             this.button12.Text = "编辑航线";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button13
+            // 
+            this.button13.Enabled = false;
+            this.button13.Location = new System.Drawing.Point(92, 194);
+            this.button13.Margin = new System.Windows.Forms.Padding(5);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 14;
+            this.button13.Text = "规划范围";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(7, 229);
+            this.button14.Margin = new System.Windows.Forms.Padding(5);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 15;
+            this.button14.Text = "取消规划";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(92, 229);
+            this.button15.Margin = new System.Windows.Forms.Padding(5);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 16;
+            this.button15.Text = "生成航线";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // Command
+            // 
+            this.Command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.Command.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Command.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.Command.Frozen = true;
+            this.Command.HeaderText = "命令";
+            this.Command.MinimumWidth = 60;
+            this.Command.Name = "Command";
+            this.Command.ToolTipText = "APM Command";
+            this.Command.Width = 60;
+            // 
+            // Param1
+            // 
+            this.Param1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param1.Frozen = true;
+            this.Param1.HeaderText = "P1";
+            this.Param1.MinimumWidth = 40;
+            this.Param1.Name = "Param1";
+            this.Param1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param1.Width = 40;
+            // 
+            // Param2
+            // 
+            this.Param2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param2.HeaderText = "P2";
+            this.Param2.MinimumWidth = 40;
+            this.Param2.Name = "Param2";
+            this.Param2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param2.Width = 40;
+            // 
+            // Param3
+            // 
+            this.Param3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param3.HeaderText = "P3";
+            this.Param3.MinimumWidth = 40;
+            this.Param3.Name = "Param3";
+            this.Param3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param3.Width = 40;
+            // 
+            // Param4
+            // 
+            this.Param4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param4.HeaderText = "P4";
+            this.Param4.MinimumWidth = 40;
+            this.Param4.Name = "Param4";
+            this.Param4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param4.Width = 40;
+            // 
+            // Lat
+            // 
+            this.Lat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Lat.HeaderText = "纬度";
+            this.Lat.MinimumWidth = 60;
+            this.Lat.Name = "Lat";
+            this.Lat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Lat.Width = 60;
+            // 
+            // Lon
+            // 
+            this.Lon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Lon.HeaderText = "经度";
+            this.Lon.MinimumWidth = 60;
+            this.Lon.Name = "Lon";
+            this.Lon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Lon.Width = 60;
+            // 
+            // Alt
+            // 
+            this.Alt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Alt.HeaderText = "高度";
+            this.Alt.MinimumWidth = 60;
+            this.Alt.Name = "Alt";
+            this.Alt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Alt.Width = 60;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Delete.HeaderText = "删除";
+            this.Delete.MinimumWidth = 50;
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "X";
+            this.Delete.ToolTipText = "删除航点";
+            this.Delete.Width = 50;
+            // 
+            // Up
+            // 
+            this.Up.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Up.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Up.HeaderText = "上移";
+            this.Up.Image = ((System.Drawing.Image)(resources.GetObject("Up.Image")));
+            this.Up.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Up.MinimumWidth = 40;
+            this.Up.Name = "Up";
+            this.Up.ToolTipText = "上移一行";
+            this.Up.Visible = false;
+            this.Up.Width = 40;
+            // 
+            // Down
+            // 
+            this.Down.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Down.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Down.HeaderText = "下移";
+            this.Down.Image = ((System.Drawing.Image)(resources.GetObject("Down.Image")));
+            this.Down.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Down.MinimumWidth = 40;
+            this.Down.Name = "Down";
+            this.Down.ToolTipText = "下移一行";
+            this.Down.Visible = false;
+            this.Down.Width = 40;
+            // 
+            // Grad
+            // 
+            this.Grad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Grad.HeaderText = "坡度";
+            this.Grad.MinimumWidth = 50;
+            this.Grad.Name = "Grad";
+            this.Grad.ReadOnly = true;
+            this.Grad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Grad.Width = 50;
+            // 
+            // Dist
+            // 
+            this.Dist.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Dist.HeaderText = "距离";
+            this.Dist.MinimumWidth = 50;
+            this.Dist.Name = "Dist";
+            this.Dist.ReadOnly = true;
+            this.Dist.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Dist.Width = 50;
+            // 
+            // AZ
+            // 
+            this.AZ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.AZ.HeaderText = "方位角";
+            this.AZ.MinimumWidth = 50;
+            this.AZ.Name = "AZ";
+            this.AZ.ReadOnly = true;
+            this.AZ.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AZ.Width = 50;
             // 
             // doubelLabel8
             // 
@@ -1072,20 +1116,6 @@
         private System.Windows.Forms.BindingSource bindingSourceHud;
         private System.Windows.Forms.BindingSource bindingSourceState;
         private System.Windows.Forms.DataGridView Commands;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Command;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Param1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Param2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Param3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Param4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Alt;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.DataGridViewImageColumn Up;
-        private System.Windows.Forms.DataGridViewImageColumn Down;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Grad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AZ;
         private BSE.Windows.Forms.Panel panelWPPanel;
         private System.Windows.Forms.Label LBL_WPRad;
         private System.Windows.Forms.TextBox TXT_loiterrad;
@@ -1110,5 +1140,22 @@
         private DoubelLabel doubelLabel7;
         private Controls.Coords coords1;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Command;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Param1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Param2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Param3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Param4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Alt;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewImageColumn Up;
+        private System.Windows.Forms.DataGridViewImageColumn Down;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Grad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AZ;
     }
 }

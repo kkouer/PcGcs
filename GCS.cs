@@ -116,6 +116,32 @@ namespace MissionPlanner
 
 
             currentMarker = new GMarkerGoogle(gMapControl1.Position, GMarkerGoogleType.red);
+
+
+            routesoverlay = new GMapOverlay("routes");
+            gMapControl1.Overlays.Add(routesoverlay);
+
+            polygonsoverlay = new GMapOverlay("polygons");
+            gMapControl1.Overlays.Add(polygonsoverlay);
+
+            //airportsoverlay = new GMapOverlay("airports");
+            //MainMap.Overlays.Add(airportsoverlay);
+
+            objectsoverlay = new GMapOverlay("objects");
+            gMapControl1.Overlays.Add(objectsoverlay);
+
+            drawnpolygonsoverlay = new GMapOverlay("drawnpolygons");
+            gMapControl1.Overlays.Add(drawnpolygonsoverlay);
+
+            gMapControl1.Overlays.Add(poioverlay);
+
+            //setup drawnpolgon
+            List<PointLatLng> polygonPoints2 = new List<PointLatLng>();
+            drawnpolygon = new GMapPolygon(polygonPoints2, "drawnpoly");
+            drawnpolygon.Stroke = new Pen(Color.Red, 2);
+            drawnpolygon.Fill = Brushes.Transparent;
+
+            updateCMDParams();
         }
 
 
@@ -1654,6 +1680,46 @@ namespace MissionPlanner
         }
 
         /// <summary>
+        /// used to control buttons in the datagrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Commands_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex < 0)
+                    return;
+                if (e.ColumnIndex == Delete.Index && (e.RowIndex + 0) < Commands.RowCount) // delete
+                {
+                    quickadd = true;
+                    Commands.Rows.RemoveAt(e.RowIndex);
+                    quickadd = false;
+                    writeKML();
+                }
+                if (e.ColumnIndex == Up.Index && e.RowIndex != 0) // up
+                {
+                    DataGridViewRow myrow = Commands.CurrentRow;
+                    Commands.Rows.Remove(myrow);
+                    Commands.Rows.Insert(e.RowIndex - 1, myrow);
+                    writeKML();
+                }
+                if (e.ColumnIndex == Down.Index && e.RowIndex < Commands.RowCount - 1) // down
+                {
+                    DataGridViewRow myrow = Commands.CurrentRow;
+                    Commands.Rows.Remove(myrow);
+                    Commands.Rows.Insert(e.RowIndex + 1, myrow);
+                    writeKML();
+                }
+                setgradanddistandaz();
+            }
+            catch (Exception)
+            {
+                CustomMessageBox.Show("Row error");
+            }
+        }
+
+        /// <summary>
         /// used to write a KML, update the Map view polygon, and update the row headers
         /// </summary>
         public void writeKML()
@@ -2451,6 +2517,111 @@ namespace MissionPlanner
         private void button12_Click(object sender, EventArgs e)
         {
             isPlanMode = !isPlanMode;
+            if (isPlanMode)
+                button13.Enabled = true;
+            else
+                button13.Enabled = false;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (polygongridmode == false)
+            {
+                CustomMessageBox.Show("开始规划模式,清除规划区域后结束规划模式.");
+            }
+
+            polygongridmode = true;
+
+            List<PointLatLng> polygonPoints = new List<PointLatLng>();
+            if (drawnpolygonsoverlay.Polygons.Count == 0)
+            {
+                drawnpolygon.Points.Clear();
+                drawnpolygonsoverlay.Polygons.Add(drawnpolygon);
+            }
+
+            drawnpolygon.Fill = Brushes.Transparent;
+
+            // remove full loop is exists
+            if (drawnpolygon.Points.Count > 1 && drawnpolygon.Points[0] == drawnpolygon.Points[drawnpolygon.Points.Count - 1])
+                drawnpolygon.Points.RemoveAt(drawnpolygon.Points.Count - 1); // unmake a full loop
+
+            drawnpolygon.Points.Add(new PointLatLng(MouseDownStart.Lat, MouseDownStart.Lng));
+
+            addpolygonmarkergrid(drawnpolygon.Points.Count.ToString(), MouseDownStart.Lng, MouseDownStart.Lat, 0);
+
+            gMapControl1.UpdatePolygonLocalPosition(drawnpolygon);
+
+            gMapControl1.Invalidate();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            polygongridmode = false;
+            if (drawnpolygon == null)
+                return;
+            drawnpolygon.Points.Clear();
+            drawnpolygonsoverlay.Markers.Clear();
+
+            writeKML();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (drawnpolygon.Points != null && drawnpolygon.Points.Count > 2)
+            {
+                GridUI gui = new GridUI(drawnpolygon.Points, this);
+                gui.ShowDialog();
+            }
+            else
+            {
+                CustomMessageBox.Show("请先添加航线范围.");
+            }
+        }
+
+        public PointLatLng HomeLocation
+        {
+            get
+            {
+                if (comPort.MAV.cs.HomeLocation.Lat != null && comPort.MAV.cs.HomeLocation.Lat > 0)
+                {
+                    return new PointLatLng(comPort.MAV.cs.HomeLocation.Lat, comPort.MAV.cs.HomeLocation.Lng);
+                }
+                else
+                    return new PointLatLng(double.Parse(TXT_homelat.Text), double.Parse(TXT_homelng.Text));
+            }
+        }
+
+
+        public void AddCommand(MAVLink.MAV_CMD cmd, double p1, double p2, double p3, double p4, double x, double y, double z)
+        {
+            selectedrow = Commands.Rows.Add();
+
+            Commands.Rows[selectedrow].Cells[Command.Index].Value = cmd.ToString();
+            ChangeColumnHeader(cmd.ToString());
+
+            // switch wp to spline if spline checked
+            if (splinemode && cmd == MAVLink.MAV_CMD.WAYPOINT)
+            {
+                Commands.Rows[selectedrow].Cells[Command.Index].Value = MAVLink.MAV_CMD.SPLINE_WAYPOINT.ToString();
+                ChangeColumnHeader(MAVLink.MAV_CMD.SPLINE_WAYPOINT.ToString());
+            }
+
+            if (cmd == MAVLink.MAV_CMD.WAYPOINT)
+            {
+                setfromMap(y, x, (int)z, Math.Round(p1, 1));
+            }
+            else
+            {
+                Commands.Rows[selectedrow].Cells[Param1.Index].Value = p1;
+                Commands.Rows[selectedrow].Cells[Param2.Index].Value = p2;
+                Commands.Rows[selectedrow].Cells[Param3.Index].Value = p3;
+                Commands.Rows[selectedrow].Cells[Param4.Index].Value = p4;
+                Commands.Rows[selectedrow].Cells[Lat.Index].Value = y;
+                Commands.Rows[selectedrow].Cells[Lon.Index].Value = x;
+                Commands.Rows[selectedrow].Cells[Alt.Index].Value = z;
+            }
+
+            writeKML();
         }
 
 

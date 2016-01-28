@@ -55,7 +55,7 @@ namespace MissionPlanner
         int CurrentGMapMarkerIndex = 0;
         bool isMouseDown = false;
         bool isMouseDraging = false;
-        GCSMainForm gcs;
+        GCS gcs;
 
         // Structures
         public struct camerainfo
@@ -136,7 +136,38 @@ namespace MissionPlanner
             TXT_headinghold.Text = (Math.Round(NUM_angle.Value)).ToString();
         }
 
-        public GridUI(List<PointLatLng> points,GCSMainForm gcs)
+        //public GridUI(List<PointLatLng> points,GCSMainForm gcs)
+        //{
+        //    isAddByGCSMainForm = true;
+        //    this.gcs = gcs;
+        //    InitializeComponent();
+
+        //    map.MapProvider = GMapProviders.AMapStatelite; ;
+
+        //    routesOverlay = new GMapOverlay("routes");
+        //    map.Overlays.Add(routesOverlay);
+
+        //    // Map Events
+        //    map.OnMapZoomChanged += new MapZoomChanged(map_OnMapZoomChanged);
+        //    map.OnMarkerEnter += new MarkerEnter(map_OnMarkerEnter);
+        //    map.OnMarkerLeave += new MarkerLeave(map_OnMarkerLeave);
+        //    map.MouseUp += new MouseEventHandler(map_MouseUp);
+
+        //    map.OnRouteEnter += new RouteEnter(map_OnRouteEnter);
+        //    map.OnRouteLeave += new RouteLeave(map_OnRouteLeave);
+        //    List<PointLatLng> ps = points;
+        //    ps.ForEach(x => { list.Add(x); });
+            
+
+        //    CMB_startfrom.DataSource = Enum.GetNames(typeof(Grid.StartPosition));
+        //    CMB_startfrom.SelectedIndex = 1;
+
+        //    // set and angle that is good
+        //    NUM_angle.Value = (decimal)((getAngleOfLongestSide(list) + 360) % 360);
+        //    TXT_headinghold.Text = (Math.Round(NUM_angle.Value)).ToString();
+
+        //}
+        public GridUI(List<PointLatLng> points, GCS gcs)
         {
             isAddByGCSMainForm = true;
             this.gcs = gcs;
@@ -157,7 +188,7 @@ namespace MissionPlanner
             map.OnRouteLeave += new RouteLeave(map_OnRouteLeave);
             List<PointLatLng> ps = points;
             ps.ForEach(x => { list.Add(x); });
-            
+
 
             CMB_startfrom.DataSource = Enum.GetNames(typeof(Grid.StartPosition));
             CMB_startfrom.SelectedIndex = 1;
