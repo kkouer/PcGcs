@@ -66,8 +66,8 @@ namespace MissionPlanner
             gMapControl1.MapProvider = GMapProviders.AMap;
             gMapControl1.MinZoom = 0;
             gMapControl1.MaxZoom = 24;
-            gMapControl1.Zoom = 3;
-
+            gMapControl1.Zoom = 4;
+            gMapControl1.Position = new PointLatLng(36, 103);
 
             // setup main serial reader
             serialreaderthread = new Thread(SerialReader)
@@ -1261,6 +1261,44 @@ namespace MissionPlanner
         private void button7_Click(object sender, EventArgs e)
         {
             comPort.setMode("rtl");
+        }
+        private void TXT_homelat_TextChanged(object sender, EventArgs e)
+        {
+            sethome = false;
+            try
+            {
+                comPort.MAV.cs.HomeLocation.Lat = double.Parse(TXT_homelat.Text);
+            }
+            catch { }
+            writeKML();
+        }
+
+        private void TXT_homelng_TextChanged(object sender, EventArgs e)
+        {
+            sethome = false;
+            try
+            {
+                comPort.MAV.cs.HomeLocation.Lng = double.Parse(TXT_homelng.Text);
+            }
+            catch { }
+            writeKML();
+        }
+
+        private void TXT_homealt_TextChanged(object sender, EventArgs e)
+        {
+            sethome = false;
+            try
+            {
+                comPort.MAV.cs.HomeLocation.Alt = double.Parse(TXT_homealt.Text);
+            }
+            catch { }
+            writeKML();
+        }
+
+        private void TXT_homelat_Enter(object sender, EventArgs e)
+        {
+            sethome = true;
+            CustomMessageBox.Show("在地图上点选回家点. ");
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -2627,6 +2665,35 @@ namespace MissionPlanner
         private void button6_Click(object sender, EventArgs e)
         {
             comPort.doCommand(MAVLink.MAV_CMD.DO_DIGICAM_CONTROL, 0, 0, 0, 0, 1, 0, 0);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (comPort != null && comPort.BaseStream.IsOpen)
+            {
+                if (comPort.MAV.cs.lat != null && comPort.MAV.cs.lat > 0)
+                {
+                    gMapControl1.Position = new PointLatLng(comPort.MAV.cs.lat, comPort.MAV.cs.lng);
+                    gMapControl1.Zoom = 18;
+                }
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            // define the home point
+            Locationwp home = new Locationwp();
+            try
+            {
+                home.id = (byte)MAVLink.MAV_CMD.WAYPOINT;
+                home.lat = (double.Parse(TXT_homelat.Text));
+                home.lng = (double.Parse(TXT_homelng.Text));
+                home.alt = (float.Parse(TXT_homealt.Text) / CurrentState.multiplierdist); // use saved home
+            }
+            catch { throw new Exception("Your home location is invalid"); }
+
+            gMapControl1.Position = new PointLatLng(home.lat, home.lng);
+            gMapControl1.Zoom = 18;
         }
 
 
