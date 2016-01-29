@@ -42,7 +42,12 @@
             this.buttonHideInfoPanel = new System.Windows.Forms.Button();
             this.buttonShowPanel = new System.Windows.Forms.Button();
             this.hud1 = new MissionPlanner.Controls.HUD();
+            this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
             this.panelCommand = new BSE.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -56,8 +61,31 @@
             this.buttonArmed = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelInofPanel = new BSE.Windows.Forms.Panel();
+            this.doubelLabel8 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel7 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel6 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel5 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel4 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel1 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel3 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel2 = new MissionPlanner.DoubelLabel();
             this.Commands = new System.Windows.Forms.DataGridView();
+            this.Command = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Param1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Up = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Down = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelWPPanel = new BSE.Windows.Forms.Panel();
+            this.coords1 = new MissionPlanner.Controls.Coords();
             this.button10 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.TXT_altwarn = new System.Windows.Forms.TextBox();
@@ -75,40 +103,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TXT_WPRad = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
-            this.coords1 = new MissionPlanner.Controls.Coords();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.Command = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Param1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Param2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Param3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Param4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Alt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Up = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Down = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doubelLabel8 = new MissionPlanner.DoubelLabel();
-            this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
-            this.doubelLabel7 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel6 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel5 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel4 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel1 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel3 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel2 = new MissionPlanner.DoubelLabel();
             this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             this.panelCommand.SuspendLayout();
             this.panelInofPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.panelWPPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
             this.SuspendLayout();
             // 
@@ -259,6 +259,10 @@
             this.hud1.wpno = 0;
             this.hud1.xtrack_error = 0F;
             // 
+            // bindingSourceHud
+            // 
+            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
             // panelCommand
             // 
             this.panelCommand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -307,6 +311,51 @@
             this.panelCommand.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelCommand.ToolTipTextExpandIconPanelExpanded = null;
             // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.Location = new System.Drawing.Point(7, 194);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 104;
+            this.button12.Text = "编辑航线";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(92, 229);
+            this.button15.Margin = new System.Windows.Forms.Padding(5);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 16;
+            this.button15.Text = "生成航线";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(7, 229);
+            this.button14.Margin = new System.Windows.Forms.Padding(5);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 15;
+            this.button14.Text = "取消规划";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button13
+            // 
+            this.button13.Enabled = false;
+            this.button13.Location = new System.Drawing.Point(92, 194);
+            this.button13.Margin = new System.Windows.Forms.Padding(5);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 14;
+            this.button13.Text = "规划范围";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // button9
             // 
             this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -351,6 +400,7 @@
             this.button6.TabIndex = 10;
             this.button6.Text = "拍 照";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -485,6 +535,109 @@
             this.panelInofPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelInofPanel.ToolTipTextExpandIconPanelExpanded = null;
             // 
+            // doubelLabel8
+            // 
+            this.doubelLabel8.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "wp_dist", true));
+            this.doubelLabel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel8.LabelName = "距点：";
+            this.doubelLabel8.LabelValue = "0.0";
+            this.doubelLabel8.Location = new System.Drawing.Point(1, 215);
+            this.doubelLabel8.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel8.Name = "doubelLabel8";
+            this.doubelLabel8.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel8.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel8.TabIndex = 8;
+            // 
+            // doubelLabel7
+            // 
+            this.doubelLabel7.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "DistToHome", true));
+            this.doubelLabel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel7.LabelName = "距家：";
+            this.doubelLabel7.LabelValue = "0.0";
+            this.doubelLabel7.Location = new System.Drawing.Point(1, 189);
+            this.doubelLabel7.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel7.Name = "doubelLabel7";
+            this.doubelLabel7.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel7.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel7.TabIndex = 7;
+            // 
+            // doubelLabel6
+            // 
+            this.doubelLabel6.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "airspeed", true));
+            this.doubelLabel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel6.LabelName = "空速：";
+            this.doubelLabel6.LabelValue = "0.0";
+            this.doubelLabel6.Location = new System.Drawing.Point(1, 163);
+            this.doubelLabel6.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel6.Name = "doubelLabel6";
+            this.doubelLabel6.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel6.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel6.TabIndex = 6;
+            // 
+            // doubelLabel5
+            // 
+            this.doubelLabel5.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "mode", true));
+            this.doubelLabel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel5.LabelName = "模式：";
+            this.doubelLabel5.LabelValue = "0.0";
+            this.doubelLabel5.Location = new System.Drawing.Point(1, 137);
+            this.doubelLabel5.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel5.Name = "doubelLabel5";
+            this.doubelLabel5.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel5.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel5.TabIndex = 5;
+            // 
+            // doubelLabel4
+            // 
+            this.doubelLabel4.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "satcount", true));
+            this.doubelLabel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel4.LabelName = "GPS：";
+            this.doubelLabel4.LabelValue = "0.0";
+            this.doubelLabel4.Location = new System.Drawing.Point(1, 111);
+            this.doubelLabel4.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel4.Name = "doubelLabel4";
+            this.doubelLabel4.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel4.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel4.TabIndex = 4;
+            // 
+            // doubelLabel1
+            // 
+            this.doubelLabel1.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "battery_voltage", true));
+            this.doubelLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel1.LabelName = "电压：";
+            this.doubelLabel1.LabelValue = "0.0";
+            this.doubelLabel1.Location = new System.Drawing.Point(1, 85);
+            this.doubelLabel1.Name = "doubelLabel1";
+            this.doubelLabel1.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel1.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel1.TabIndex = 1;
+            // 
+            // doubelLabel3
+            // 
+            this.doubelLabel3.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "HomeAlt", true));
+            this.doubelLabel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel3.LabelName = "高度：";
+            this.doubelLabel3.LabelValue = "0.0";
+            this.doubelLabel3.Location = new System.Drawing.Point(1, 59);
+            this.doubelLabel3.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel3.Name = "doubelLabel3";
+            this.doubelLabel3.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel3.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel3.TabIndex = 3;
+            // 
+            // doubelLabel2
+            // 
+            this.doubelLabel2.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "current", true));
+            this.doubelLabel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel2.LabelName = "电流：";
+            this.doubelLabel2.LabelValue = "0.0";
+            this.doubelLabel2.Location = new System.Drawing.Point(1, 33);
+            this.doubelLabel2.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel2.Name = "doubelLabel2";
+            this.doubelLabel2.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel2.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel2.TabIndex = 2;
+            // 
             // Commands
             // 
             this.Commands.AllowUserToAddRows = false;
@@ -524,6 +677,151 @@
             this.Commands.TabIndex = 87;
             this.Commands.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Commands_CellContentClick);
             this.Commands.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Commands_RowsAdded);
+            // 
+            // Command
+            // 
+            this.Command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.Command.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Command.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.Command.Frozen = true;
+            this.Command.HeaderText = "命令";
+            this.Command.MinimumWidth = 60;
+            this.Command.Name = "Command";
+            this.Command.ToolTipText = "APM Command";
+            this.Command.Width = 60;
+            // 
+            // Param1
+            // 
+            this.Param1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param1.Frozen = true;
+            this.Param1.HeaderText = "P1";
+            this.Param1.MinimumWidth = 40;
+            this.Param1.Name = "Param1";
+            this.Param1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param1.Width = 40;
+            // 
+            // Param2
+            // 
+            this.Param2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param2.HeaderText = "P2";
+            this.Param2.MinimumWidth = 40;
+            this.Param2.Name = "Param2";
+            this.Param2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param2.Width = 40;
+            // 
+            // Param3
+            // 
+            this.Param3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param3.HeaderText = "P3";
+            this.Param3.MinimumWidth = 40;
+            this.Param3.Name = "Param3";
+            this.Param3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param3.Width = 40;
+            // 
+            // Param4
+            // 
+            this.Param4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Param4.HeaderText = "P4";
+            this.Param4.MinimumWidth = 40;
+            this.Param4.Name = "Param4";
+            this.Param4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Param4.Width = 40;
+            // 
+            // Lat
+            // 
+            this.Lat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Lat.HeaderText = "纬度";
+            this.Lat.MinimumWidth = 60;
+            this.Lat.Name = "Lat";
+            this.Lat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Lat.Width = 60;
+            // 
+            // Lon
+            // 
+            this.Lon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Lon.HeaderText = "经度";
+            this.Lon.MinimumWidth = 60;
+            this.Lon.Name = "Lon";
+            this.Lon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Lon.Width = 60;
+            // 
+            // Alt
+            // 
+            this.Alt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Alt.HeaderText = "高度";
+            this.Alt.MinimumWidth = 60;
+            this.Alt.Name = "Alt";
+            this.Alt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Alt.Width = 60;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Delete.HeaderText = "删除";
+            this.Delete.MinimumWidth = 50;
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "X";
+            this.Delete.ToolTipText = "删除航点";
+            this.Delete.Width = 50;
+            // 
+            // Up
+            // 
+            this.Up.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Up.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Up.HeaderText = "上移";
+            this.Up.Image = ((System.Drawing.Image)(resources.GetObject("Up.Image")));
+            this.Up.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Up.MinimumWidth = 40;
+            this.Up.Name = "Up";
+            this.Up.ToolTipText = "上移一行";
+            this.Up.Visible = false;
+            this.Up.Width = 40;
+            // 
+            // Down
+            // 
+            this.Down.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Down.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Down.HeaderText = "下移";
+            this.Down.Image = ((System.Drawing.Image)(resources.GetObject("Down.Image")));
+            this.Down.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Down.MinimumWidth = 40;
+            this.Down.Name = "Down";
+            this.Down.ToolTipText = "下移一行";
+            this.Down.Visible = false;
+            this.Down.Width = 40;
+            // 
+            // Grad
+            // 
+            this.Grad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Grad.HeaderText = "坡度";
+            this.Grad.MinimumWidth = 50;
+            this.Grad.Name = "Grad";
+            this.Grad.ReadOnly = true;
+            this.Grad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Grad.Width = 50;
+            // 
+            // Dist
+            // 
+            this.Dist.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Dist.HeaderText = "距离";
+            this.Dist.MinimumWidth = 50;
+            this.Dist.Name = "Dist";
+            this.Dist.ReadOnly = true;
+            this.Dist.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Dist.Width = 50;
+            // 
+            // AZ
+            // 
+            this.AZ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.AZ.HeaderText = "方位角";
+            this.AZ.MinimumWidth = 50;
+            this.AZ.Name = "AZ";
+            this.AZ.ReadOnly = true;
+            this.AZ.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AZ.Width = 50;
             // 
             // panelWPPanel
             // 
@@ -576,6 +874,19 @@
             this.panelWPPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelWPPanel.ToolTipTextExpandIconPanelExpanded = null;
             this.panelWPPanel.Visible = false;
+            // 
+            // coords1
+            // 
+            this.coords1.Alt = 0D;
+            this.coords1.AltUnit = "m";
+            this.coords1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.coords1.Lat = 0D;
+            this.coords1.Lng = 0D;
+            this.coords1.Location = new System.Drawing.Point(240, 30);
+            this.coords1.Name = "coords1";
+            this.coords1.Size = new System.Drawing.Size(120, 50);
+            this.coords1.TabIndex = 103;
+            this.coords1.Vertical = true;
             // 
             // button10
             // 
@@ -740,316 +1051,6 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // coords1
-            // 
-            this.coords1.Alt = 0D;
-            this.coords1.AltUnit = "m";
-            this.coords1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.coords1.Lat = 0D;
-            this.coords1.Lng = 0D;
-            this.coords1.Location = new System.Drawing.Point(240, 30);
-            this.coords1.Name = "coords1";
-            this.coords1.Size = new System.Drawing.Size(120, 50);
-            this.coords1.TabIndex = 103;
-            this.coords1.Vertical = true;
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.Location = new System.Drawing.Point(7, 194);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 104;
-            this.button12.Text = "编辑航线";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button13
-            // 
-            this.button13.Enabled = false;
-            this.button13.Location = new System.Drawing.Point(92, 194);
-            this.button13.Margin = new System.Windows.Forms.Padding(5);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "规划范围";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(7, 229);
-            this.button14.Margin = new System.Windows.Forms.Padding(5);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 15;
-            this.button14.Text = "取消规划";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(92, 229);
-            this.button15.Margin = new System.Windows.Forms.Padding(5);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 16;
-            this.button15.Text = "生成航线";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // Command
-            // 
-            this.Command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.Command.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Command.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.Command.Frozen = true;
-            this.Command.HeaderText = "命令";
-            this.Command.MinimumWidth = 60;
-            this.Command.Name = "Command";
-            this.Command.ToolTipText = "APM Command";
-            this.Command.Width = 60;
-            // 
-            // Param1
-            // 
-            this.Param1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Param1.Frozen = true;
-            this.Param1.HeaderText = "P1";
-            this.Param1.MinimumWidth = 40;
-            this.Param1.Name = "Param1";
-            this.Param1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Param1.Width = 40;
-            // 
-            // Param2
-            // 
-            this.Param2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Param2.HeaderText = "P2";
-            this.Param2.MinimumWidth = 40;
-            this.Param2.Name = "Param2";
-            this.Param2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Param2.Width = 40;
-            // 
-            // Param3
-            // 
-            this.Param3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Param3.HeaderText = "P3";
-            this.Param3.MinimumWidth = 40;
-            this.Param3.Name = "Param3";
-            this.Param3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Param3.Width = 40;
-            // 
-            // Param4
-            // 
-            this.Param4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Param4.HeaderText = "P4";
-            this.Param4.MinimumWidth = 40;
-            this.Param4.Name = "Param4";
-            this.Param4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Param4.Width = 40;
-            // 
-            // Lat
-            // 
-            this.Lat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Lat.HeaderText = "纬度";
-            this.Lat.MinimumWidth = 60;
-            this.Lat.Name = "Lat";
-            this.Lat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Lat.Width = 60;
-            // 
-            // Lon
-            // 
-            this.Lon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Lon.HeaderText = "经度";
-            this.Lon.MinimumWidth = 60;
-            this.Lon.Name = "Lon";
-            this.Lon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Lon.Width = 60;
-            // 
-            // Alt
-            // 
-            this.Alt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Alt.HeaderText = "高度";
-            this.Alt.MinimumWidth = 60;
-            this.Alt.Name = "Alt";
-            this.Alt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Alt.Width = 60;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Delete.HeaderText = "删除";
-            this.Delete.MinimumWidth = 50;
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "X";
-            this.Delete.ToolTipText = "删除航点";
-            this.Delete.Width = 50;
-            // 
-            // Up
-            // 
-            this.Up.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Up.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Up.HeaderText = "上移";
-            this.Up.Image = ((System.Drawing.Image)(resources.GetObject("Up.Image")));
-            this.Up.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Up.MinimumWidth = 40;
-            this.Up.Name = "Up";
-            this.Up.ToolTipText = "上移一行";
-            this.Up.Visible = false;
-            this.Up.Width = 40;
-            // 
-            // Down
-            // 
-            this.Down.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Down.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Down.HeaderText = "下移";
-            this.Down.Image = ((System.Drawing.Image)(resources.GetObject("Down.Image")));
-            this.Down.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Down.MinimumWidth = 40;
-            this.Down.Name = "Down";
-            this.Down.ToolTipText = "下移一行";
-            this.Down.Visible = false;
-            this.Down.Width = 40;
-            // 
-            // Grad
-            // 
-            this.Grad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Grad.HeaderText = "坡度";
-            this.Grad.MinimumWidth = 50;
-            this.Grad.Name = "Grad";
-            this.Grad.ReadOnly = true;
-            this.Grad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Grad.Width = 50;
-            // 
-            // Dist
-            // 
-            this.Dist.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Dist.HeaderText = "距离";
-            this.Dist.MinimumWidth = 50;
-            this.Dist.Name = "Dist";
-            this.Dist.ReadOnly = true;
-            this.Dist.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Dist.Width = 50;
-            // 
-            // AZ
-            // 
-            this.AZ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.AZ.HeaderText = "方位角";
-            this.AZ.MinimumWidth = 50;
-            this.AZ.Name = "AZ";
-            this.AZ.ReadOnly = true;
-            this.AZ.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.AZ.Width = 50;
-            // 
-            // doubelLabel8
-            // 
-            this.doubelLabel8.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "wp_dist", true));
-            this.doubelLabel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel8.LabelName = "距点：";
-            this.doubelLabel8.LabelValue = "0.0";
-            this.doubelLabel8.Location = new System.Drawing.Point(1, 215);
-            this.doubelLabel8.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel8.Name = "doubelLabel8";
-            this.doubelLabel8.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel8.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel8.TabIndex = 8;
-            // 
-            // bindingSourceHud
-            // 
-            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
-            // 
-            // doubelLabel7
-            // 
-            this.doubelLabel7.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "DistToHome", true));
-            this.doubelLabel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel7.LabelName = "距家：";
-            this.doubelLabel7.LabelValue = "0.0";
-            this.doubelLabel7.Location = new System.Drawing.Point(1, 189);
-            this.doubelLabel7.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel7.Name = "doubelLabel7";
-            this.doubelLabel7.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel7.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel7.TabIndex = 7;
-            // 
-            // doubelLabel6
-            // 
-            this.doubelLabel6.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "airspeed", true));
-            this.doubelLabel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel6.LabelName = "空速：";
-            this.doubelLabel6.LabelValue = "0.0";
-            this.doubelLabel6.Location = new System.Drawing.Point(1, 163);
-            this.doubelLabel6.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel6.Name = "doubelLabel6";
-            this.doubelLabel6.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel6.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel6.TabIndex = 6;
-            // 
-            // doubelLabel5
-            // 
-            this.doubelLabel5.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "mode", true));
-            this.doubelLabel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel5.LabelName = "模式：";
-            this.doubelLabel5.LabelValue = "0.0";
-            this.doubelLabel5.Location = new System.Drawing.Point(1, 137);
-            this.doubelLabel5.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel5.Name = "doubelLabel5";
-            this.doubelLabel5.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel5.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel5.TabIndex = 5;
-            // 
-            // doubelLabel4
-            // 
-            this.doubelLabel4.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "satcount", true));
-            this.doubelLabel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel4.LabelName = "GPS：";
-            this.doubelLabel4.LabelValue = "0.0";
-            this.doubelLabel4.Location = new System.Drawing.Point(1, 111);
-            this.doubelLabel4.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel4.Name = "doubelLabel4";
-            this.doubelLabel4.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel4.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel4.TabIndex = 4;
-            // 
-            // doubelLabel1
-            // 
-            this.doubelLabel1.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "battery_voltage", true));
-            this.doubelLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel1.LabelName = "电压：";
-            this.doubelLabel1.LabelValue = "0.0";
-            this.doubelLabel1.Location = new System.Drawing.Point(1, 85);
-            this.doubelLabel1.Name = "doubelLabel1";
-            this.doubelLabel1.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel1.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel1.TabIndex = 1;
-            // 
-            // doubelLabel3
-            // 
-            this.doubelLabel3.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "HomeAlt", true));
-            this.doubelLabel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel3.LabelName = "高度：";
-            this.doubelLabel3.LabelValue = "0.0";
-            this.doubelLabel3.Location = new System.Drawing.Point(1, 59);
-            this.doubelLabel3.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel3.Name = "doubelLabel3";
-            this.doubelLabel3.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel3.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel3.TabIndex = 3;
-            // 
-            // doubelLabel2
-            // 
-            this.doubelLabel2.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "current", true));
-            this.doubelLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel2.LabelName = "电流：";
-            this.doubelLabel2.LabelValue = "0.0";
-            this.doubelLabel2.Location = new System.Drawing.Point(1, 33);
-            this.doubelLabel2.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel2.Name = "doubelLabel2";
-            this.doubelLabel2.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel2.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel2.TabIndex = 2;
-            // 
             // bindingSourceState
             // 
             this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
@@ -1075,12 +1076,12 @@
             this.ShowIcon = false;
             this.Text = "固定翼地面站";
             this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             this.panelCommand.ResumeLayout(false);
             this.panelInofPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).EndInit();
             this.panelWPPanel.ResumeLayout(false);
             this.panelWPPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
             this.ResumeLayout(false);
 

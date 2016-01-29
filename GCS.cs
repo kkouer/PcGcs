@@ -2624,6 +2624,11 @@ namespace MissionPlanner
             writeKML();
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            comPort.doCommand(MAVLink.MAV_CMD.DO_DIGICAM_CONTROL, 0, 0, 0, 0, 1, 0, 0);
+        }
+
 
     }
 }
