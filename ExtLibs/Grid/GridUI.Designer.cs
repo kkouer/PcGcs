@@ -518,12 +518,12 @@
             // NUM_focallength
             // 
             this.NUM_focallength.DecimalPlaces = 1;
+            resources.ApplyResources(this.NUM_focallength, "NUM_focallength");
             this.NUM_focallength.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            resources.ApplyResources(this.NUM_focallength, "NUM_focallength");
             this.NUM_focallength.Maximum = new decimal(new int[] {
             180,
             0,
@@ -576,9 +576,9 @@
             // 
             // tabGrid
             // 
+            this.tabGrid.Controls.Add(this.groupBox1);
             this.tabGrid.Controls.Add(this.groupBox7);
             this.tabGrid.Controls.Add(this.groupBox_copter);
-            this.tabGrid.Controls.Add(this.groupBox1);
             resources.ApplyResources(this.tabGrid, "tabGrid");
             this.tabGrid.Name = "tabGrid";
             this.tabGrid.UseVisualStyleBackColor = true;
@@ -909,7 +909,7 @@
             0});
             this.NUM_UpDownFlySpeed.Name = "NUM_UpDownFlySpeed";
             this.NUM_UpDownFlySpeed.Value = new decimal(new int[] {
-            16,
+            14,
             0,
             0,
             0});

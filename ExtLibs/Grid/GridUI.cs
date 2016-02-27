@@ -780,13 +780,14 @@ namespace MissionPlanner
             else
             {
                 // Meters
-                lbl_area.Text = calcpolygonarea(list).ToString("#") + " m^2";
-                lbl_distance.Text = routetotal.ToString("0.##") + " km";
-                lbl_spacing.Text = NUM_spacing.Value.ToString("#") + " m";
+                lbl_area.Text = (calcpolygonarea(list)/1000000).ToString("0.000#") + " 平方公里";
+                lbl_distance.Text = routetotal.ToString("0.##") + " 公里";
+                TotalRoute = routetotal;
+                lbl_spacing.Text = NUM_spacing.Value.ToString("#") + " 米";
                 lbl_grndres.Text = TXT_cmpixel.Text;
-                lbl_distbetweenlines.Text = NUM_Distance.Value.ToString("0.##") + " m";
-                lbl_footprint.Text = TXT_fovH.Text + " x " + TXT_fovV.Text + " m";
-                lbl_turnrad.Text = (turnrad * 2).ToString("0") + " m";
+                lbl_distbetweenlines.Text = NUM_Distance.Value.ToString("0.##") + " 米";
+                lbl_footprint.Text = TXT_fovH.Text + " x " + TXT_fovV.Text + " 平方米";
+                lbl_turnrad.Text = (turnrad * 2).ToString("0") + " 米";
             }
 
             double flyspeedms = CurrentState.fromSpeedDisplayUnit((double)NUM_UpDownFlySpeed.Value);
@@ -989,7 +990,7 @@ namespace MissionPlanner
                 float fovv = (float)(Math.Atan(sensorheight / (2 * focallen)) * rad2deg * 2);
 
                 //    mm  / pixels * 100
-                TXT_cmpixel.Text = ((viewheight / imageheight) * 100).ToString("0.00 cm");
+                TXT_cmpixel.Text = ((viewheight / imageheight) * 100).ToString("0.00");
                 // Imperial
                 inchpixel = (((viewheight / imageheight) * 100) * 0.393701).ToString("0.00 inches");
 
@@ -1046,7 +1047,7 @@ namespace MissionPlanner
             }
             else
             {
-                dist = ((float)item.Distance * 1000f).ToString("0.##") + " m";
+                dist = ((float)item.Distance * 1000f).ToString("0.##") + " 米";
             }
             if (marker != null)
             {
@@ -1059,7 +1060,7 @@ namespace MissionPlanner
             marker = new GMapMarkerRect(point);
             marker.ToolTip = new GMapToolTip(marker);
             marker.ToolTipMode = MarkerTooltipMode.Always;
-            marker.ToolTipText = "Line: " + dist;
+            marker.ToolTipText = "航线长度: " + dist;
             routesOverlay.Markers.Add(marker);
         }
 
@@ -1479,10 +1480,19 @@ namespace MissionPlanner
 
         //航点点号
         int WPNo = 0;
-
+        //总航程
+        float TotalRoute = 0;
 
         private void BUT_Accept_Click(object sender, EventArgs e)
         {
+
+            //航程限制
+
+            if (TotalRoute > 50)
+            {
+                CustomMessageBox.Show("超出最大航程50公里!", "确定", MessageBoxButtons.OK);
+                return;
+            }
             WPNo = 0;
             if (!isAddByGCSMainForm)
             {
@@ -1498,7 +1508,7 @@ namespace MissionPlanner
                         }
                         else
                         {
-                            plugin.Host.AddWPtoList(MAVLink.MAV_CMD.TAKEOFF, 20, 0, 0, 0, 0, 0, (int)(30 * CurrentState.multiplierdist));
+                            plugin.Host.AddWPtoList(MAVLink.MAV_CMD.TAKEOFF, 12, 0, 0, 0, 0, 0, (int)(30 * CurrentState.multiplierdist));
                         }
                     }
 

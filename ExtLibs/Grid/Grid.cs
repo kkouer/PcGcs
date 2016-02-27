@@ -36,10 +36,14 @@ namespace MissionPlanner
         public enum StartPosition
         {
             //Home = 0,
-            BottomLeft = 1,
-            TopLeft = 2,
-            BottomRight = 3,
-            TopRight = 4
+            //BottomLeft = 1,
+            //TopLeft = 2,
+            //BottomRight = 3,
+            //TopRight = 4
+            左下 = 1,
+            左上 = 2,
+            右下 = 3,
+            右上 = 4
         }
 
         static void addtomap(linelatlng pos)
@@ -284,16 +288,16 @@ namespace MissionPlanner
                 //case StartPosition.Home:
                 //    startposutm = new utmpos(Host2.cs.HomeLocation);
                 //    break;
-                case StartPosition.BottomLeft:
+                case StartPosition.左下:
                     startposutm = new utmpos(area.Left, area.Bottom, utmzone);
                     break;
-                case StartPosition.BottomRight:
+                case StartPosition.右下:
                     startposutm = new utmpos(area.Right, area.Bottom, utmzone);
                     break;
-                case StartPosition.TopLeft:
+                case StartPosition.左上:
                     startposutm = new utmpos(area.Left, area.Top, utmzone);
                     break;
-                case StartPosition.TopRight:
+                case StartPosition.右上:
                     startposutm = new utmpos(area.Right, area.Top, utmzone);
                     break;
 
