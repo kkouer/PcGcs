@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace MissionPlanner
 {
@@ -38,10 +39,54 @@ namespace MissionPlanner
             }
             set
             {
-                if (labelValue.Text == value)
+                //if (labelValue.Text == value)
+                //    return;
+                //labelValue.Text = value;
+
+                if (value == null)
                     return;
-                labelValue.Text = value;
+
+                string ans = value.ToString();
+                if (labelValue.Text == ans)
+                    return;
+
+                switch (ans.ToLower())
+                {
+                    case "manual":
+                        ans = "手动";
+                        break;
+                    case "unknown":
+                        ans = "未知";
+                        break;
+                    case "stabilize":
+                        ans = "RC";
+                        break;
+                    case "auto":
+                        ans = "自主";
+                        break;
+                    case "rtl":
+                        ans = "回家";
+                        break;
+                    case "loiter":
+                        ans = "增稳";
+                        break;
+
+                    default:
+                        break;
+                }
+
+                if (IsNumeric(ans))
+                    ans = Math.Round(Convert.ToDouble(ans), 2).ToString();
+                labelValue.Text = ans ;
+
+
             }
         }
+
+        public static bool IsNumeric(string value)
+        {
+            return Regex.IsMatch(value, @"^[+-]?\d*[.]?\d*$");
+        }
+
     }
 }

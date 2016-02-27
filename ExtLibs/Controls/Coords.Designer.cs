@@ -43,7 +43,6 @@
             this.CMB_coordsystem.Size = new System.Drawing.Size(54, 20);
             this.CMB_coordsystem.TabIndex = 0;
             this.CMB_coordsystem.Text = "GEO";
-            this.CMB_coordsystem.Visible = false;
             this.CMB_coordsystem.SelectedIndexChanged += new System.EventHandler(this.CMB_coordsystem_SelectedIndexChanged);
             // 
             // Coords

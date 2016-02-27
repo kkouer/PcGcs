@@ -528,19 +528,19 @@ namespace MissionPlanner
             }
 
             DataGridViewTextBoxCell cell;
-            if (Commands.Columns[Lat.Index].HeaderText.Equals(cmdParamNames["WAYPOINT"][4]/*"Lat"*/))
+            if (Commands.Columns[Lat.Index].HeaderText.Equals(cmdParamNames["WAYPOINT"][4]/*"Lat"*/) || Commands.Columns[Lat.Index].HeaderText.Equals("纬度"))
             {
                 cell = Commands.Rows[selectedrow].Cells[Lat.Index] as DataGridViewTextBoxCell;
                 cell.Value = lat.ToString("0.0000000");
                 cell.DataGridView.EndEdit();
             }
-            if (Commands.Columns[Lon.Index].HeaderText.Equals(cmdParamNames["WAYPOINT"][5]/*"Long"*/))
+            if (Commands.Columns[Lon.Index].HeaderText.Equals(cmdParamNames["WAYPOINT"][5]/*"Long"*/) || Commands.Columns[Lon.Index].HeaderText.Equals("经度"))
             {
                 cell = Commands.Rows[selectedrow].Cells[Lon.Index] as DataGridViewTextBoxCell;
                 cell.Value = lng.ToString("0.0000000");
                 cell.DataGridView.EndEdit();
             }
-            if (alt != -1 && Commands.Columns[Alt.Index].HeaderText.Equals(cmdParamNames["WAYPOINT"][6]/*"Alt"*/))
+            if (alt != -1 && Commands.Columns[Alt.Index].HeaderText.Equals(cmdParamNames["WAYPOINT"][6]/*"Alt"*/) || alt != -1 && Commands.Columns[Alt.Index].HeaderText.Equals("高度"))
             {
                 cell = Commands.Rows[selectedrow].Cells[Alt.Index] as DataGridViewTextBoxCell;
 
@@ -613,7 +613,21 @@ namespace MissionPlanner
             {
                 if (cmdParamNames.ContainsKey(command))
                     for (int i = 1; i <= 7; i++)
+                    {
                         Commands.Columns[i].HeaderText = cmdParamNames[command][i - 1];
+                        if (Commands.Columns[i].HeaderText == "Lat")
+                            Commands.Columns[i].HeaderText = "纬度";
+                        if (Commands.Columns[i].HeaderText == "Long")
+                            Commands.Columns[i].HeaderText = "经度";
+                        if (Commands.Columns[i].HeaderText == "Delay")
+                            Commands.Columns[i].HeaderText = "延时";
+                        if (Commands.Columns[i].HeaderText == "Alt")
+                            Commands.Columns[i].HeaderText = "高度";
+                        if (Commands.Columns[i].HeaderText == "speed m/s")
+                            Commands.Columns[i].HeaderText = "速度";
+                        if (Commands.Columns[i].HeaderText == "Dist (m)")
+                            Commands.Columns[i].HeaderText = "距离(米)";
+                    }
                 else
                     for (int i = 1; i <= 7; i++)
                         Commands.Columns[i].HeaderText = "setme";
@@ -1211,6 +1225,10 @@ namespace MissionPlanner
         {
             if (!comPort.BaseStream.IsOpen)
                 return;
+
+            //启用开始任务按钮
+
+            button5.Enabled = true;
             // arm the MAV
             try
             {
@@ -1255,6 +1273,12 @@ namespace MissionPlanner
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //切换到最后一个航点
+            if (comPort.MAV.param["MIS_TOTAL"] != null)
+            {
+                int wps = int.Parse(comPort.MAV.param["MIS_TOTAL"].ToString()) - 1;
+                comPort.setWPCurrent((ushort)wps);
+            }
             comPort.setMode("auto");
         }
 
@@ -1321,6 +1345,14 @@ namespace MissionPlanner
 
         private void button8_Click(object sender, EventArgs e)
         {
+
+            //启用解锁按钮
+            if (!comPort.BaseStream.IsOpen)
+                return;
+
+            buttonArmed.Enabled = true;
+            buttonDisarmed.Enabled = true;
+
             for (int a = 0; a < Commands.Rows.Count - 0; a++)
             {
                 for (int b = 0; b < Commands.ColumnCount - 0; b++)
@@ -1670,7 +1702,9 @@ namespace MissionPlanner
                 {
                     mBorders.InnerMarker = m;
                     mBorders.Tag = tag;
-                    mBorders.wprad = (int)(float.Parse(TXT_WPRad.Text) / CurrentState.multiplierdist);
+
+                    //隐藏到达航点半径
+                    //mBorders.wprad = (int)(float.Parse(TXT_WPRad.Text) / CurrentState.multiplierdist);
                     if (color.HasValue)
                     {
                         mBorders.Color = color.Value;
@@ -2556,9 +2590,17 @@ namespace MissionPlanner
         {
             isPlanMode = !isPlanMode;
             if (isPlanMode)
+            {
                 button13.Enabled = true;
+                button14.Enabled = true;
+                button15.Enabled = true;
+            }
             else
+            {
                 button13.Enabled = false;
+                button14.Enabled = false;
+                button15.Enabled = false;
+            }
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -2694,6 +2736,20 @@ namespace MissionPlanner
 
             gMapControl1.Position = new PointLatLng(home.lat, home.lng);
             gMapControl1.Zoom = 18;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            quickadd = true;
+
+            // mono fix
+            Commands.CurrentCell = null;
+
+            Commands.Rows.Clear();
+
+            selectedrow = 0;
+            quickadd = false;
+            writeKML();
         }
 
 

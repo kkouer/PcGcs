@@ -35,48 +35,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GCS));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.comboBoxBoundrate = new System.Windows.Forms.ComboBox();
             this.comboBoxComPort = new System.Windows.Forms.ComboBox();
-            this.buttonHideInfoPanel = new System.Windows.Forms.Button();
             this.buttonShowPanel = new System.Windows.Forms.Button();
-            this.hud1 = new MissionPlanner.Controls.HUD();
-            this.panelCommand = new BSE.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.buttonHideCommandPanel = new System.Windows.Forms.Button();
-            this.buttonDisarmed = new System.Windows.Forms.Button();
-            this.buttonArmed = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panelInofPanel = new BSE.Windows.Forms.Panel();
-            this.Commands = new System.Windows.Forms.DataGridView();
-            this.Command = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Param1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Param2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Param3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Param4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Alt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Up = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Down = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button11 = new System.Windows.Forms.Button();
             this.panelWPPanel = new BSE.Windows.Forms.Panel();
-            this.coords1 = new MissionPlanner.Controls.Coords();
             this.button10 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.TXT_altwarn = new System.Windows.Forms.TextBox();
@@ -93,9 +58,44 @@
             this.LBL_defalutalt = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TXT_WPRad = new System.Windows.Forms.TextBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.Commands = new System.Windows.Forms.DataGridView();
+            this.Command = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Param1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Param4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Up = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Down = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelInofPanel = new BSE.Windows.Forms.Panel();
+            this.buttonHideInfoPanel = new System.Windows.Forms.Button();
+            this.panelCommand = new BSE.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.buttonHideCommandPanel = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.buttonDisarmed = new System.Windows.Forms.Button();
+            this.buttonArmed = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.coords1 = new MissionPlanner.Controls.Coords();
+            this.hud1 = new MissionPlanner.Controls.HUD();
             this.doubelLabel8 = new MissionPlanner.DoubelLabel();
             this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
             this.doubelLabel7 = new MissionPlanner.DoubelLabel();
@@ -106,43 +106,13 @@
             this.doubelLabel3 = new MissionPlanner.DoubelLabel();
             this.doubelLabel2 = new MissionPlanner.DoubelLabel();
             this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
-            this.panelCommand.SuspendLayout();
-            this.panelInofPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.panelWPPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
+            this.panelInofPanel.SuspendLayout();
+            this.panelCommand.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gMapControl1
-            // 
-            this.gMapControl1.BackColor = System.Drawing.Color.Transparent;
-            this.gMapControl1.Bearing = 0F;
-            this.gMapControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gMapControl1.CanDragMap = true;
-            this.gMapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
-            this.gMapControl1.GrayScaleMode = false;
-            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(0, 0);
-            this.gMapControl1.MarkersEnabled = true;
-            this.gMapControl1.MaxZoom = 2;
-            this.gMapControl1.MinZoom = 2;
-            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            this.gMapControl1.Name = "gMapControl1";
-            this.gMapControl1.NegativeMode = false;
-            this.gMapControl1.PolygonsEnabled = true;
-            this.gMapControl1.RetryLoadTile = 0;
-            this.gMapControl1.RoutesEnabled = true;
-            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-            this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(1008, 605);
-            this.gMapControl1.TabIndex = 1;
-            this.gMapControl1.Zoom = 0D;
-            this.gMapControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDown);
-            this.gMapControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseMove);
             // 
             // buttonConnect
             // 
@@ -177,16 +147,6 @@
             this.comboBoxComPort.TabIndex = 4;
             this.comboBoxComPort.Click += new System.EventHandler(this.comboBoxComPort_Click);
             // 
-            // buttonHideInfoPanel
-            // 
-            this.buttonHideInfoPanel.Location = new System.Drawing.Point(146, 3);
-            this.buttonHideInfoPanel.Name = "buttonHideInfoPanel";
-            this.buttonHideInfoPanel.Size = new System.Drawing.Size(27, 23);
-            this.buttonHideInfoPanel.TabIndex = 0;
-            this.buttonHideInfoPanel.Text = "X";
-            this.buttonHideInfoPanel.UseVisualStyleBackColor = true;
-            this.buttonHideInfoPanel.Click += new System.EventHandler(this.buttonHideInfoPanel_Click);
-            // 
             // buttonShowPanel
             // 
             this.buttonShowPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -197,288 +157,6 @@
             this.buttonShowPanel.Text = "S";
             this.buttonShowPanel.UseVisualStyleBackColor = true;
             this.buttonShowPanel.Click += new System.EventHandler(this.buttonShowPanel_Click);
-            // 
-            // hud1
-            // 
-            this.hud1.airspeed = 0F;
-            this.hud1.alt = 0F;
-            this.hud1.BackColor = System.Drawing.Color.Black;
-            this.hud1.batterylevel = 0F;
-            this.hud1.batteryon = false;
-            this.hud1.batteryremaining = 0F;
-            this.hud1.connected = false;
-            this.hud1.current = 0F;
-            this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSourceHud, "roll", true));
-            this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("pitch", this.bindingSourceHud, "pitch", true));
-            this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("roll", this.bindingSourceHud, "roll", true));
-            this.hud1.datetime = new System.DateTime(((long)(0)));
-            this.hud1.displayalt = false;
-            this.hud1.displayArmInfo = false;
-            this.hud1.displayconninfo = false;
-            this.hud1.displayFailesafeInfo = false;
-            this.hud1.displayFlyMode = false;
-            this.hud1.displaygps = false;
-            this.hud1.displayheading = false;
-            this.hud1.displayMessage = false;
-            this.hud1.displayspeed = false;
-            this.hud1.displayTartgetWp = false;
-            this.hud1.displayxtrack = false;
-            this.hud1.disttowp = 0F;
-            this.hud1.failsafe = false;
-            this.hud1.gpsfix = 0F;
-            this.hud1.gpshdop = 0F;
-            this.hud1.groundalt = 0F;
-            this.hud1.groundcourse = 0F;
-            this.hud1.groundspeed = 0F;
-            this.hud1.heading = 0F;
-            this.hud1.hudcolor = System.Drawing.Color.White;
-            this.hud1.linkqualitygcs = 0F;
-            this.hud1.Location = new System.Drawing.Point(0, 0);
-            this.hud1.lowairspeed = false;
-            this.hud1.lowgroundspeed = false;
-            this.hud1.lowvoltagealert = false;
-            this.hud1.message = "";
-            this.hud1.messagetime = new System.DateTime(((long)(0)));
-            this.hud1.mode = "Unknown";
-            this.hud1.Name = "hud1";
-            this.hud1.navpitch = 0F;
-            this.hud1.navroll = 0F;
-            this.hud1.opengl = true;
-            this.hud1.pitch = 0F;
-            this.hud1.roll = 0F;
-            this.hud1.Russian = false;
-            this.hud1.Size = new System.Drawing.Size(177, 190);
-            this.hud1.status = false;
-            this.hud1.streamjpg = null;
-            this.hud1.TabIndex = 82;
-            this.hud1.targetalt = 0F;
-            this.hud1.targetheading = 0F;
-            this.hud1.targetspeed = 0F;
-            this.hud1.turnrate = 0F;
-            this.hud1.UseOpenGL = true;
-            this.hud1.verticalspeed = 0F;
-            this.hud1.VSync = true;
-            this.hud1.wpno = 0;
-            this.hud1.xtrack_error = 0F;
-            // 
-            // panelCommand
-            // 
-            this.panelCommand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelCommand.AssociatedSplitter = null;
-            this.panelCommand.BackColor = System.Drawing.Color.Transparent;
-            this.panelCommand.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
-            this.panelCommand.CaptionHeight = 27;
-            this.panelCommand.Controls.Add(this.button17);
-            this.panelCommand.Controls.Add(this.button16);
-            this.panelCommand.Controls.Add(this.button12);
-            this.panelCommand.Controls.Add(this.button15);
-            this.panelCommand.Controls.Add(this.button14);
-            this.panelCommand.Controls.Add(this.button13);
-            this.panelCommand.Controls.Add(this.button9);
-            this.panelCommand.Controls.Add(this.button8);
-            this.panelCommand.Controls.Add(this.button7);
-            this.panelCommand.Controls.Add(this.button6);
-            this.panelCommand.Controls.Add(this.button5);
-            this.panelCommand.Controls.Add(this.button4);
-            this.panelCommand.Controls.Add(this.button3);
-            this.panelCommand.Controls.Add(this.button2);
-            this.panelCommand.Controls.Add(this.buttonHideCommandPanel);
-            this.panelCommand.Controls.Add(this.buttonDisarmed);
-            this.panelCommand.Controls.Add(this.buttonArmed);
-            this.panelCommand.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
-            this.panelCommand.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
-            this.panelCommand.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
-            this.panelCommand.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.panelCommand.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
-            this.panelCommand.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panelCommand.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
-            this.panelCommand.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
-            this.panelCommand.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
-            this.panelCommand.CustomColors.CollapsedCaptionText = System.Drawing.SystemColors.ControlText;
-            this.panelCommand.CustomColors.ContentGradientBegin = System.Drawing.SystemColors.ButtonFace;
-            this.panelCommand.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.panelCommand.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
-            this.panelCommand.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelCommand.Image = null;
-            this.panelCommand.Location = new System.Drawing.Point(834, 0);
-            this.panelCommand.MinimumSize = new System.Drawing.Size(27, 27);
-            this.panelCommand.Name = "panelCommand";
-            this.panelCommand.Padding = new System.Windows.Forms.Padding(5);
-            this.panelCommand.Size = new System.Drawing.Size(174, 289);
-            this.panelCommand.TabIndex = 85;
-            this.panelCommand.Text = "指令";
-            this.panelCommand.ToolTipTextCloseIcon = null;
-            this.panelCommand.ToolTipTextExpandIconPanelCollapsed = null;
-            this.panelCommand.ToolTipTextExpandIconPanelExpanded = null;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(7, 194);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 104;
-            this.button12.Text = "编辑航线";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(92, 229);
-            this.button15.Margin = new System.Windows.Forms.Padding(5);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 16;
-            this.button15.Text = "生成航线";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(7, 229);
-            this.button14.Margin = new System.Windows.Forms.Padding(5);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 15;
-            this.button14.Text = "取消规划";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button13
-            // 
-            this.button13.Enabled = false;
-            this.button13.Location = new System.Drawing.Point(92, 194);
-            this.button13.Margin = new System.Windows.Forms.Padding(5);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "规划范围";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Location = new System.Drawing.Point(92, 163);
-            this.button9.Margin = new System.Windows.Forms.Padding(5);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "下 载";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(7, 163);
-            this.button8.Margin = new System.Windows.Forms.Padding(5);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "上 传";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(90, 130);
-            this.button7.Margin = new System.Windows.Forms.Padding(5);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "回 家";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(7, 130);
-            this.button6.Margin = new System.Windows.Forms.Padding(5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "拍 照";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(90, 97);
-            this.button5.Margin = new System.Windows.Forms.Padding(5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "开 始";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(7, 97);
-            this.button4.Margin = new System.Windows.Forms.Padding(5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "自 动";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(88, 66);
-            this.button3.Margin = new System.Windows.Forms.Padding(5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "定 点";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(7, 66);
-            this.button2.Margin = new System.Windows.Forms.Padding(5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "向 导";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // buttonHideCommandPanel
-            // 
-            this.buttonHideCommandPanel.Location = new System.Drawing.Point(143, 3);
-            this.buttonHideCommandPanel.Name = "buttonHideCommandPanel";
-            this.buttonHideCommandPanel.Size = new System.Drawing.Size(27, 23);
-            this.buttonHideCommandPanel.TabIndex = 5;
-            this.buttonHideCommandPanel.Text = "X";
-            this.buttonHideCommandPanel.UseVisualStyleBackColor = true;
-            this.buttonHideCommandPanel.Click += new System.EventHandler(this.buttonHideCommandPanel_Click);
-            // 
-            // buttonDisarmed
-            // 
-            this.buttonDisarmed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDisarmed.Location = new System.Drawing.Point(88, 35);
-            this.buttonDisarmed.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonDisarmed.Name = "buttonDisarmed";
-            this.buttonDisarmed.Size = new System.Drawing.Size(75, 23);
-            this.buttonDisarmed.TabIndex = 4;
-            this.buttonDisarmed.Text = "加 锁";
-            this.buttonDisarmed.UseVisualStyleBackColor = true;
-            this.buttonDisarmed.Click += new System.EventHandler(this.buttonDisarmed_Click);
-            // 
-            // buttonArmed
-            // 
-            this.buttonArmed.Location = new System.Drawing.Point(7, 35);
-            this.buttonArmed.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonArmed.Name = "buttonArmed";
-            this.buttonArmed.Size = new System.Drawing.Size(75, 23);
-            this.buttonArmed.TabIndex = 3;
-            this.buttonArmed.Text = "解 锁";
-            this.buttonArmed.UseVisualStyleBackColor = true;
-            this.buttonArmed.Click += new System.EventHandler(this.buttonArmed_Click);
             // 
             // button1
             // 
@@ -491,48 +169,224 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panelInofPanel
+            // button11
             // 
-            this.panelInofPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelInofPanel.AssociatedSplitter = null;
-            this.panelInofPanel.BackColor = System.Drawing.Color.Transparent;
-            this.panelInofPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
-            this.panelInofPanel.CaptionHeight = 27;
-            this.panelInofPanel.Controls.Add(this.doubelLabel8);
-            this.panelInofPanel.Controls.Add(this.doubelLabel7);
-            this.panelInofPanel.Controls.Add(this.doubelLabel6);
-            this.panelInofPanel.Controls.Add(this.doubelLabel5);
-            this.panelInofPanel.Controls.Add(this.buttonHideInfoPanel);
-            this.panelInofPanel.Controls.Add(this.doubelLabel4);
-            this.panelInofPanel.Controls.Add(this.doubelLabel1);
-            this.panelInofPanel.Controls.Add(this.doubelLabel3);
-            this.panelInofPanel.Controls.Add(this.doubelLabel2);
-            this.panelInofPanel.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
-            this.panelInofPanel.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
-            this.panelInofPanel.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
-            this.panelInofPanel.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.panelInofPanel.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
-            this.panelInofPanel.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panelInofPanel.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
-            this.panelInofPanel.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
-            this.panelInofPanel.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
-            this.panelInofPanel.CustomColors.CollapsedCaptionText = System.Drawing.SystemColors.ControlText;
-            this.panelInofPanel.CustomColors.ContentGradientBegin = System.Drawing.SystemColors.ButtonFace;
-            this.panelInofPanel.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.panelInofPanel.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
-            this.panelInofPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelInofPanel.Image = null;
-            this.panelInofPanel.Location = new System.Drawing.Point(0, 172);
-            this.panelInofPanel.MinimumSize = new System.Drawing.Size(27, 27);
-            this.panelInofPanel.Name = "panelInofPanel";
-            this.panelInofPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelInofPanel.Size = new System.Drawing.Size(177, 433);
-            this.panelInofPanel.TabIndex = 86;
-            this.panelInofPanel.Text = "参数";
-            this.panelInofPanel.ToolTipTextCloseIcon = null;
-            this.panelInofPanel.ToolTipTextExpandIconPanelCollapsed = null;
-            this.panelInofPanel.ToolTipTextExpandIconPanelExpanded = null;
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.Location = new System.Drawing.Point(752, 569);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(27, 23);
+            this.button11.TabIndex = 103;
+            this.button11.Text = "S";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // panelWPPanel
+            // 
+            this.panelWPPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelWPPanel.AssociatedSplitter = null;
+            this.panelWPPanel.BackColor = System.Drawing.Color.Transparent;
+            this.panelWPPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
+            this.panelWPPanel.CaptionHeight = 27;
+            this.panelWPPanel.Controls.Add(this.coords1);
+            this.panelWPPanel.Controls.Add(this.button10);
+            this.panelWPPanel.Controls.Add(this.label17);
+            this.panelWPPanel.Controls.Add(this.TXT_altwarn);
+            this.panelWPPanel.Controls.Add(this.label4);
+            this.panelWPPanel.Controls.Add(this.label3);
+            this.panelWPPanel.Controls.Add(this.label2);
+            this.panelWPPanel.Controls.Add(this.Label1);
+            this.panelWPPanel.Controls.Add(this.TXT_homealt);
+            this.panelWPPanel.Controls.Add(this.TXT_homelng);
+            this.panelWPPanel.Controls.Add(this.TXT_homelat);
+            this.panelWPPanel.Controls.Add(this.LBL_WPRad);
+            this.panelWPPanel.Controls.Add(this.TXT_loiterrad);
+            this.panelWPPanel.Controls.Add(this.TXT_DefaultAlt);
+            this.panelWPPanel.Controls.Add(this.LBL_defalutalt);
+            this.panelWPPanel.Controls.Add(this.label5);
+            this.panelWPPanel.Controls.Add(this.TXT_WPRad);
+            this.panelWPPanel.Controls.Add(this.Commands);
+            this.panelWPPanel.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.panelWPPanel.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
+            this.panelWPPanel.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
+            this.panelWPPanel.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panelWPPanel.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
+            this.panelWPPanel.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panelWPPanel.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.panelWPPanel.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.panelWPPanel.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
+            this.panelWPPanel.CustomColors.CollapsedCaptionText = System.Drawing.SystemColors.ControlText;
+            this.panelWPPanel.CustomColors.ContentGradientBegin = System.Drawing.SystemColors.ButtonFace;
+            this.panelWPPanel.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panelWPPanel.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.panelWPPanel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panelWPPanel.Image = null;
+            this.panelWPPanel.Location = new System.Drawing.Point(177, 394);
+            this.panelWPPanel.MinimumSize = new System.Drawing.Size(27, 27);
+            this.panelWPPanel.Name = "panelWPPanel";
+            this.panelWPPanel.Size = new System.Drawing.Size(605, 212);
+            this.panelWPPanel.TabIndex = 88;
+            this.panelWPPanel.Text = "航点";
+            this.panelWPPanel.ToolTipTextCloseIcon = null;
+            this.panelWPPanel.ToolTipTextExpandIconPanelCollapsed = null;
+            this.panelWPPanel.ToolTipTextExpandIconPanelExpanded = null;
+            this.panelWPPanel.Visible = false;
+            // 
+            // button10
+            // 
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button10.Location = new System.Drawing.Point(574, 2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(27, 23);
+            this.button10.TabIndex = 102;
+            this.button10.Text = "X";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label17.Location = new System.Drawing.Point(181, 35);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 12);
+            this.label17.TabIndex = 101;
+            this.label17.Text = "高度警告";
+            this.label17.Visible = false;
+            // 
+            // TXT_altwarn
+            // 
+            this.TXT_altwarn.Location = new System.Drawing.Point(183, 54);
+            this.TXT_altwarn.Name = "TXT_altwarn";
+            this.TXT_altwarn.Size = new System.Drawing.Size(40, 21);
+            this.TXT_altwarn.TabIndex = 89;
+            this.TXT_altwarn.Text = "0";
+            this.TXT_altwarn.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(407, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 97;
+            this.label4.TabStop = true;
+            this.label4.Text = "回家位置";
+            this.label4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.label4_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(495, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 96;
+            this.label3.Text = "高度";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(495, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 95;
+            this.label2.Text = "经度";
+            // 
+            // Label1
+            // 
+            this.Label1.AutoSize = true;
+            this.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Label1.Location = new System.Drawing.Point(366, 61);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(29, 12);
+            this.Label1.TabIndex = 94;
+            this.Label1.Text = "纬度";
+            // 
+            // TXT_homealt
+            // 
+            this.TXT_homealt.Location = new System.Drawing.Point(534, 30);
+            this.TXT_homealt.Name = "TXT_homealt";
+            this.TXT_homealt.Size = new System.Drawing.Size(65, 21);
+            this.TXT_homealt.TabIndex = 100;
+            this.TXT_homealt.Text = "100";
+            this.TXT_homealt.TextChanged += new System.EventHandler(this.TXT_homealt_TextChanged);
+            // 
+            // TXT_homelng
+            // 
+            this.TXT_homelng.Location = new System.Drawing.Point(534, 57);
+            this.TXT_homelng.Name = "TXT_homelng";
+            this.TXT_homelng.Size = new System.Drawing.Size(65, 21);
+            this.TXT_homelng.TabIndex = 99;
+            this.TXT_homelng.Text = "114.2";
+            this.TXT_homelng.TextChanged += new System.EventHandler(this.TXT_homelng_TextChanged);
+            // 
+            // TXT_homelat
+            // 
+            this.TXT_homelat.Location = new System.Drawing.Point(409, 57);
+            this.TXT_homelat.Name = "TXT_homelat";
+            this.TXT_homelat.Size = new System.Drawing.Size(65, 21);
+            this.TXT_homelat.TabIndex = 98;
+            this.TXT_homelat.Text = "22.7";
+            this.TXT_homelat.TextChanged += new System.EventHandler(this.TXT_homelat_TextChanged);
+            this.TXT_homelat.Enter += new System.EventHandler(this.TXT_homelat_Enter);
+            // 
+            // LBL_WPRad
+            // 
+            this.LBL_WPRad.AutoSize = true;
+            this.LBL_WPRad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LBL_WPRad.Location = new System.Drawing.Point(4, 35);
+            this.LBL_WPRad.Name = "LBL_WPRad";
+            this.LBL_WPRad.Size = new System.Drawing.Size(53, 12);
+            this.LBL_WPRad.TabIndex = 91;
+            this.LBL_WPRad.Text = "航点半径";
+            // 
+            // TXT_loiterrad
+            // 
+            this.TXT_loiterrad.Enabled = false;
+            this.TXT_loiterrad.Location = new System.Drawing.Point(65, 54);
+            this.TXT_loiterrad.Name = "TXT_loiterrad";
+            this.TXT_loiterrad.Size = new System.Drawing.Size(36, 21);
+            this.TXT_loiterrad.TabIndex = 89;
+            this.TXT_loiterrad.Text = "45";
+            // 
+            // TXT_DefaultAlt
+            // 
+            this.TXT_DefaultAlt.Location = new System.Drawing.Point(124, 54);
+            this.TXT_DefaultAlt.Name = "TXT_DefaultAlt";
+            this.TXT_DefaultAlt.Size = new System.Drawing.Size(40, 21);
+            this.TXT_DefaultAlt.TabIndex = 90;
+            this.TXT_DefaultAlt.Text = "100";
+            // 
+            // LBL_defalutalt
+            // 
+            this.LBL_defalutalt.AutoSize = true;
+            this.LBL_defalutalt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LBL_defalutalt.Location = new System.Drawing.Point(122, 35);
+            this.LBL_defalutalt.Name = "LBL_defalutalt";
+            this.LBL_defalutalt.Size = new System.Drawing.Size(53, 12);
+            this.LBL_defalutalt.TabIndex = 92;
+            this.LBL_defalutalt.Text = "默认高度";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(63, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 93;
+            this.label5.Text = "悬停半径";
+            // 
+            // TXT_WPRad
+            // 
+            this.TXT_WPRad.Location = new System.Drawing.Point(6, 54);
+            this.TXT_WPRad.Name = "TXT_WPRad";
+            this.TXT_WPRad.Size = new System.Drawing.Size(36, 21);
+            this.TXT_WPRad.TabIndex = 88;
+            this.TXT_WPRad.Text = "30";
             // 
             // Commands
             // 
@@ -719,266 +573,415 @@
             this.AZ.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.AZ.Width = 50;
             // 
-            // panelWPPanel
+            // panelInofPanel
             // 
-            this.panelWPPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelWPPanel.AssociatedSplitter = null;
-            this.panelWPPanel.BackColor = System.Drawing.Color.Transparent;
-            this.panelWPPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
-            this.panelWPPanel.CaptionHeight = 27;
-            this.panelWPPanel.Controls.Add(this.coords1);
-            this.panelWPPanel.Controls.Add(this.button10);
-            this.panelWPPanel.Controls.Add(this.label17);
-            this.panelWPPanel.Controls.Add(this.TXT_altwarn);
-            this.panelWPPanel.Controls.Add(this.label4);
-            this.panelWPPanel.Controls.Add(this.label3);
-            this.panelWPPanel.Controls.Add(this.label2);
-            this.panelWPPanel.Controls.Add(this.Label1);
-            this.panelWPPanel.Controls.Add(this.TXT_homealt);
-            this.panelWPPanel.Controls.Add(this.TXT_homelng);
-            this.panelWPPanel.Controls.Add(this.TXT_homelat);
-            this.panelWPPanel.Controls.Add(this.LBL_WPRad);
-            this.panelWPPanel.Controls.Add(this.TXT_loiterrad);
-            this.panelWPPanel.Controls.Add(this.TXT_DefaultAlt);
-            this.panelWPPanel.Controls.Add(this.LBL_defalutalt);
-            this.panelWPPanel.Controls.Add(this.label5);
-            this.panelWPPanel.Controls.Add(this.TXT_WPRad);
-            this.panelWPPanel.Controls.Add(this.Commands);
-            this.panelWPPanel.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
-            this.panelWPPanel.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
-            this.panelWPPanel.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
-            this.panelWPPanel.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.panelWPPanel.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
-            this.panelWPPanel.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panelWPPanel.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
-            this.panelWPPanel.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
-            this.panelWPPanel.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
-            this.panelWPPanel.CustomColors.CollapsedCaptionText = System.Drawing.SystemColors.ControlText;
-            this.panelWPPanel.CustomColors.ContentGradientBegin = System.Drawing.SystemColors.ButtonFace;
-            this.panelWPPanel.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.panelWPPanel.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
-            this.panelWPPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelWPPanel.Image = null;
-            this.panelWPPanel.Location = new System.Drawing.Point(177, 394);
-            this.panelWPPanel.MinimumSize = new System.Drawing.Size(27, 27);
-            this.panelWPPanel.Name = "panelWPPanel";
-            this.panelWPPanel.Size = new System.Drawing.Size(605, 212);
-            this.panelWPPanel.TabIndex = 88;
-            this.panelWPPanel.Text = "航点";
-            this.panelWPPanel.ToolTipTextCloseIcon = null;
-            this.panelWPPanel.ToolTipTextExpandIconPanelCollapsed = null;
-            this.panelWPPanel.ToolTipTextExpandIconPanelExpanded = null;
-            this.panelWPPanel.Visible = false;
+            this.panelInofPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelInofPanel.AssociatedSplitter = null;
+            this.panelInofPanel.BackColor = System.Drawing.Color.Transparent;
+            this.panelInofPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
+            this.panelInofPanel.CaptionHeight = 27;
+            this.panelInofPanel.Controls.Add(this.doubelLabel8);
+            this.panelInofPanel.Controls.Add(this.doubelLabel7);
+            this.panelInofPanel.Controls.Add(this.doubelLabel6);
+            this.panelInofPanel.Controls.Add(this.doubelLabel5);
+            this.panelInofPanel.Controls.Add(this.buttonHideInfoPanel);
+            this.panelInofPanel.Controls.Add(this.doubelLabel4);
+            this.panelInofPanel.Controls.Add(this.doubelLabel1);
+            this.panelInofPanel.Controls.Add(this.doubelLabel3);
+            this.panelInofPanel.Controls.Add(this.doubelLabel2);
+            this.panelInofPanel.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.panelInofPanel.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
+            this.panelInofPanel.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
+            this.panelInofPanel.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panelInofPanel.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
+            this.panelInofPanel.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panelInofPanel.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.panelInofPanel.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.panelInofPanel.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
+            this.panelInofPanel.CustomColors.CollapsedCaptionText = System.Drawing.SystemColors.ControlText;
+            this.panelInofPanel.CustomColors.ContentGradientBegin = System.Drawing.SystemColors.ButtonFace;
+            this.panelInofPanel.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panelInofPanel.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.panelInofPanel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panelInofPanel.Image = null;
+            this.panelInofPanel.Location = new System.Drawing.Point(0, 172);
+            this.panelInofPanel.MinimumSize = new System.Drawing.Size(27, 27);
+            this.panelInofPanel.Name = "panelInofPanel";
+            this.panelInofPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panelInofPanel.Size = new System.Drawing.Size(177, 433);
+            this.panelInofPanel.TabIndex = 86;
+            this.panelInofPanel.Text = "参数";
+            this.panelInofPanel.ToolTipTextCloseIcon = null;
+            this.panelInofPanel.ToolTipTextExpandIconPanelCollapsed = null;
+            this.panelInofPanel.ToolTipTextExpandIconPanelExpanded = null;
             // 
-            // coords1
+            // buttonHideInfoPanel
             // 
-            this.coords1.Alt = 0D;
-            this.coords1.AltUnit = "m";
-            this.coords1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.coords1.Lat = 0D;
-            this.coords1.Lng = 0D;
-            this.coords1.Location = new System.Drawing.Point(240, 30);
-            this.coords1.Name = "coords1";
-            this.coords1.Size = new System.Drawing.Size(120, 50);
-            this.coords1.TabIndex = 103;
-            this.coords1.Vertical = true;
+            this.buttonHideInfoPanel.Location = new System.Drawing.Point(146, 3);
+            this.buttonHideInfoPanel.Name = "buttonHideInfoPanel";
+            this.buttonHideInfoPanel.Size = new System.Drawing.Size(27, 23);
+            this.buttonHideInfoPanel.TabIndex = 0;
+            this.buttonHideInfoPanel.Text = "X";
+            this.buttonHideInfoPanel.UseVisualStyleBackColor = true;
+            this.buttonHideInfoPanel.Click += new System.EventHandler(this.buttonHideInfoPanel_Click);
             // 
-            // button10
+            // panelCommand
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.Location = new System.Drawing.Point(574, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(27, 23);
-            this.button10.TabIndex = 102;
-            this.button10.Text = "X";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.panelCommand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCommand.AssociatedSplitter = null;
+            this.panelCommand.BackColor = System.Drawing.Color.Transparent;
+            this.panelCommand.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
+            this.panelCommand.CaptionHeight = 27;
+            this.panelCommand.Controls.Add(this.button3);
+            this.panelCommand.Controls.Add(this.button2);
+            this.panelCommand.Controls.Add(this.button17);
+            this.panelCommand.Controls.Add(this.button16);
+            this.panelCommand.Controls.Add(this.button7);
+            this.panelCommand.Controls.Add(this.button6);
+            this.panelCommand.Controls.Add(this.button12);
+            this.panelCommand.Controls.Add(this.button5);
+            this.panelCommand.Controls.Add(this.button4);
+            this.panelCommand.Controls.Add(this.button15);
+            this.panelCommand.Controls.Add(this.buttonHideCommandPanel);
+            this.panelCommand.Controls.Add(this.button14);
+            this.panelCommand.Controls.Add(this.buttonDisarmed);
+            this.panelCommand.Controls.Add(this.buttonArmed);
+            this.panelCommand.Controls.Add(this.button13);
+            this.panelCommand.Controls.Add(this.button8);
+            this.panelCommand.Controls.Add(this.button9);
+            this.panelCommand.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.panelCommand.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
+            this.panelCommand.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
+            this.panelCommand.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panelCommand.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
+            this.panelCommand.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panelCommand.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.panelCommand.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.panelCommand.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
+            this.panelCommand.CustomColors.CollapsedCaptionText = System.Drawing.SystemColors.ControlText;
+            this.panelCommand.CustomColors.ContentGradientBegin = System.Drawing.SystemColors.ButtonFace;
+            this.panelCommand.CustomColors.ContentGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.panelCommand.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.panelCommand.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panelCommand.Image = null;
+            this.panelCommand.Location = new System.Drawing.Point(834, 0);
+            this.panelCommand.MinimumSize = new System.Drawing.Size(27, 27);
+            this.panelCommand.Name = "panelCommand";
+            this.panelCommand.Padding = new System.Windows.Forms.Padding(5);
+            this.panelCommand.Size = new System.Drawing.Size(174, 289);
+            this.panelCommand.TabIndex = 85;
+            this.panelCommand.Text = "指令";
+            this.panelCommand.ToolTipTextCloseIcon = null;
+            this.panelCommand.ToolTipTextExpandIconPanelCollapsed = null;
+            this.panelCommand.ToolTipTextExpandIconPanelExpanded = null;
             // 
-            // label17
+            // button3
             // 
-            this.label17.AutoSize = true;
-            this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label17.Location = new System.Drawing.Point(181, 35);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(53, 12);
-            this.label17.TabIndex = 101;
-            this.label17.Text = "高度警告";
-            this.label17.Visible = false;
+            this.button3.Location = new System.Drawing.Point(11, 128);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 108;
+            this.button3.Text = "清空航线";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
-            // TXT_altwarn
+            // button2
             // 
-            this.TXT_altwarn.Location = new System.Drawing.Point(183, 54);
-            this.TXT_altwarn.Name = "TXT_altwarn";
-            this.TXT_altwarn.Size = new System.Drawing.Size(40, 21);
-            this.TXT_altwarn.TabIndex = 89;
-            this.TXT_altwarn.Text = "0";
-            this.TXT_altwarn.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(407, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
-            this.label4.TabIndex = 97;
-            this.label4.TabStop = true;
-            this.label4.Text = "回家位置";
-            this.label4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.label4_LinkClicked);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(495, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
-            this.label3.TabIndex = 96;
-            this.label3.Text = "高度";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(495, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
-            this.label2.TabIndex = 95;
-            this.label2.Text = "经度";
-            // 
-            // Label1
-            // 
-            this.Label1.AutoSize = true;
-            this.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label1.Location = new System.Drawing.Point(366, 61);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(29, 12);
-            this.Label1.TabIndex = 94;
-            this.Label1.Text = "纬度";
-            // 
-            // TXT_homealt
-            // 
-            this.TXT_homealt.Location = new System.Drawing.Point(534, 30);
-            this.TXT_homealt.Name = "TXT_homealt";
-            this.TXT_homealt.Size = new System.Drawing.Size(65, 21);
-            this.TXT_homealt.TabIndex = 100;
-            this.TXT_homealt.Text = "100";
-            this.TXT_homealt.TextChanged += new System.EventHandler(this.TXT_homealt_TextChanged);
-            // 
-            // TXT_homelng
-            // 
-            this.TXT_homelng.Location = new System.Drawing.Point(534, 57);
-            this.TXT_homelng.Name = "TXT_homelng";
-            this.TXT_homelng.Size = new System.Drawing.Size(65, 21);
-            this.TXT_homelng.TabIndex = 99;
-            this.TXT_homelng.Text = "114.2";
-            this.TXT_homelng.TextChanged += new System.EventHandler(this.TXT_homelng_TextChanged);
-            // 
-            // TXT_homelat
-            // 
-            this.TXT_homelat.Location = new System.Drawing.Point(409, 57);
-            this.TXT_homelat.Name = "TXT_homelat";
-            this.TXT_homelat.Size = new System.Drawing.Size(65, 21);
-            this.TXT_homelat.TabIndex = 98;
-            this.TXT_homelat.Text = "22.7";
-            this.TXT_homelat.TextChanged += new System.EventHandler(this.TXT_homelat_TextChanged);
-            this.TXT_homelat.Enter += new System.EventHandler(this.TXT_homelat_Enter);
-            // 
-            // LBL_WPRad
-            // 
-            this.LBL_WPRad.AutoSize = true;
-            this.LBL_WPRad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LBL_WPRad.Location = new System.Drawing.Point(4, 35);
-            this.LBL_WPRad.Name = "LBL_WPRad";
-            this.LBL_WPRad.Size = new System.Drawing.Size(53, 12);
-            this.LBL_WPRad.TabIndex = 91;
-            this.LBL_WPRad.Text = "航点半径";
-            // 
-            // TXT_loiterrad
-            // 
-            this.TXT_loiterrad.Enabled = false;
-            this.TXT_loiterrad.Location = new System.Drawing.Point(65, 54);
-            this.TXT_loiterrad.Name = "TXT_loiterrad";
-            this.TXT_loiterrad.Size = new System.Drawing.Size(36, 21);
-            this.TXT_loiterrad.TabIndex = 89;
-            this.TXT_loiterrad.Text = "45";
-            // 
-            // TXT_DefaultAlt
-            // 
-            this.TXT_DefaultAlt.Location = new System.Drawing.Point(124, 54);
-            this.TXT_DefaultAlt.Name = "TXT_DefaultAlt";
-            this.TXT_DefaultAlt.Size = new System.Drawing.Size(40, 21);
-            this.TXT_DefaultAlt.TabIndex = 90;
-            this.TXT_DefaultAlt.Text = "100";
-            // 
-            // LBL_defalutalt
-            // 
-            this.LBL_defalutalt.AutoSize = true;
-            this.LBL_defalutalt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LBL_defalutalt.Location = new System.Drawing.Point(122, 35);
-            this.LBL_defalutalt.Name = "LBL_defalutalt";
-            this.LBL_defalutalt.Size = new System.Drawing.Size(53, 12);
-            this.LBL_defalutalt.TabIndex = 92;
-            this.LBL_defalutalt.Text = "默认高度";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(63, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 93;
-            this.label5.Text = "悬停半径";
-            // 
-            // TXT_WPRad
-            // 
-            this.TXT_WPRad.Location = new System.Drawing.Point(6, 54);
-            this.TXT_WPRad.Name = "TXT_WPRad";
-            this.TXT_WPRad.Size = new System.Drawing.Size(36, 21);
-            this.TXT_WPRad.TabIndex = 88;
-            this.TXT_WPRad.Text = "30";
-            // 
-            // button11
-            // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.Location = new System.Drawing.Point(752, 569);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(27, 23);
-            this.button11.TabIndex = 103;
-            this.button11.Text = "S";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(7, 260);
-            this.button16.Margin = new System.Windows.Forms.Padding(5);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 105;
-            this.button16.Text = "回家点";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.button2.Location = new System.Drawing.Point(11, 96);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 107;
+            this.button2.Text = "相机开机";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(92, 260);
+            this.button17.Location = new System.Drawing.Point(96, 32);
             this.button17.Margin = new System.Windows.Forms.Padding(5);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 23);
             this.button17.TabIndex = 106;
-            this.button17.Text = "飞机点";
+            this.button17.Text = "定位飞机";
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(11, 32);
+            this.button16.Margin = new System.Windows.Forms.Padding(5);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.TabIndex = 105;
+            this.button16.Text = "定位回家";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.ForeColor = System.Drawing.Color.Tomato;
+            this.button7.Location = new System.Drawing.Point(11, 256);
+            this.button7.Margin = new System.Windows.Forms.Padding(5);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "返 航";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(96, 96);
+            this.button6.Margin = new System.Windows.Forms.Padding(5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "拍 照";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(11, 192);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 104;
+            this.button12.Text = "航线规划";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Enabled = false;
+            this.button5.Location = new System.Drawing.Point(96, 128);
+            this.button5.Margin = new System.Windows.Forms.Padding(5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "开始任务";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.Tomato;
+            this.button4.Location = new System.Drawing.Point(96, 256);
+            this.button4.Margin = new System.Windows.Forms.Padding(5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "降 落";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(96, 224);
+            this.button15.Margin = new System.Windows.Forms.Padding(5);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 16;
+            this.button15.Text = "生成航线";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // buttonHideCommandPanel
+            // 
+            this.buttonHideCommandPanel.Location = new System.Drawing.Point(143, 3);
+            this.buttonHideCommandPanel.Name = "buttonHideCommandPanel";
+            this.buttonHideCommandPanel.Size = new System.Drawing.Size(27, 23);
+            this.buttonHideCommandPanel.TabIndex = 5;
+            this.buttonHideCommandPanel.Text = "X";
+            this.buttonHideCommandPanel.UseVisualStyleBackColor = true;
+            this.buttonHideCommandPanel.Click += new System.EventHandler(this.buttonHideCommandPanel_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(11, 224);
+            this.button14.Margin = new System.Windows.Forms.Padding(5);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 15;
+            this.button14.Text = "取消规划";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // buttonDisarmed
+            // 
+            this.buttonDisarmed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDisarmed.Enabled = false;
+            this.buttonDisarmed.Location = new System.Drawing.Point(96, 64);
+            this.buttonDisarmed.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonDisarmed.Name = "buttonDisarmed";
+            this.buttonDisarmed.Size = new System.Drawing.Size(75, 23);
+            this.buttonDisarmed.TabIndex = 4;
+            this.buttonDisarmed.Text = "加 锁";
+            this.buttonDisarmed.UseVisualStyleBackColor = true;
+            this.buttonDisarmed.Click += new System.EventHandler(this.buttonDisarmed_Click);
+            // 
+            // buttonArmed
+            // 
+            this.buttonArmed.Enabled = false;
+            this.buttonArmed.Location = new System.Drawing.Point(11, 64);
+            this.buttonArmed.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonArmed.Name = "buttonArmed";
+            this.buttonArmed.Size = new System.Drawing.Size(75, 23);
+            this.buttonArmed.TabIndex = 3;
+            this.buttonArmed.Text = "解 锁";
+            this.buttonArmed.UseVisualStyleBackColor = true;
+            this.buttonArmed.Click += new System.EventHandler(this.buttonArmed_Click);
+            // 
+            // button13
+            // 
+            this.button13.Enabled = false;
+            this.button13.Location = new System.Drawing.Point(96, 192);
+            this.button13.Margin = new System.Windows.Forms.Padding(5);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 14;
+            this.button13.Text = "规划范围";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(11, 160);
+            this.button8.Margin = new System.Windows.Forms.Padding(5);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "上传航线";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.Location = new System.Drawing.Point(96, 160);
+            this.button9.Margin = new System.Windows.Forms.Padding(5);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 13;
+            this.button9.Text = "下载航线";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // gMapControl1
+            // 
+            this.gMapControl1.BackColor = System.Drawing.Color.Transparent;
+            this.gMapControl1.Bearing = 0F;
+            this.gMapControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gMapControl1.CanDragMap = true;
+            this.gMapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapControl1.GrayScaleMode = false;
+            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapControl1.LevelsKeepInMemmory = 5;
+            this.gMapControl1.Location = new System.Drawing.Point(0, 0);
+            this.gMapControl1.MarkersEnabled = true;
+            this.gMapControl1.MaxZoom = 2;
+            this.gMapControl1.MinZoom = 2;
+            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapControl1.Name = "gMapControl1";
+            this.gMapControl1.NegativeMode = false;
+            this.gMapControl1.PolygonsEnabled = true;
+            this.gMapControl1.RetryLoadTile = 0;
+            this.gMapControl1.RoutesEnabled = true;
+            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapControl1.ShowTileGridLines = false;
+            this.gMapControl1.Size = new System.Drawing.Size(1008, 605);
+            this.gMapControl1.TabIndex = 1;
+            this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDown);
+            this.gMapControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseMove);
+            // 
+            // coords1
+            // 
+            this.coords1.Alt = 0D;
+            this.coords1.AltUnit = "米";
+            this.coords1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.coords1.Lat = 0D;
+            this.coords1.Lng = 0D;
+            this.coords1.Location = new System.Drawing.Point(217, 30);
+            this.coords1.Name = "coords1";
+            this.coords1.Size = new System.Drawing.Size(143, 50);
+            this.coords1.TabIndex = 103;
+            this.coords1.Vertical = true;
+            // 
+            // hud1
+            // 
+            this.hud1.airspeed = 0F;
+            this.hud1.alt = 0F;
+            this.hud1.BackColor = System.Drawing.Color.Black;
+            this.hud1.batterylevel = 0F;
+            this.hud1.batteryon = false;
+            this.hud1.batteryremaining = 0F;
+            this.hud1.connected = false;
+            this.hud1.current = 0F;
+            this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSourceHud, "roll", true));
+            this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("pitch", this.bindingSourceHud, "pitch", true));
+            this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("roll", this.bindingSourceHud, "roll", true));
+            this.hud1.datetime = new System.DateTime(((long)(0)));
+            this.hud1.displayalt = false;
+            this.hud1.displayArmInfo = false;
+            this.hud1.displayconninfo = false;
+            this.hud1.displayFailesafeInfo = false;
+            this.hud1.displayFlyMode = false;
+            this.hud1.displaygps = false;
+            this.hud1.displayheading = false;
+            this.hud1.displayMessage = false;
+            this.hud1.displayspeed = false;
+            this.hud1.displayTartgetWp = false;
+            this.hud1.displayxtrack = false;
+            this.hud1.disttowp = 0F;
+            this.hud1.failsafe = false;
+            this.hud1.gpsfix = 0F;
+            this.hud1.gpshdop = 0F;
+            this.hud1.groundalt = 0F;
+            this.hud1.groundcourse = 0F;
+            this.hud1.groundspeed = 0F;
+            this.hud1.heading = 0F;
+            this.hud1.hudcolor = System.Drawing.Color.White;
+            this.hud1.linkqualitygcs = 0F;
+            this.hud1.Location = new System.Drawing.Point(0, 0);
+            this.hud1.lowairspeed = false;
+            this.hud1.lowgroundspeed = false;
+            this.hud1.lowvoltagealert = false;
+            this.hud1.message = "";
+            this.hud1.messagetime = new System.DateTime(((long)(0)));
+            this.hud1.mode = "Unknown";
+            this.hud1.Name = "hud1";
+            this.hud1.navpitch = 0F;
+            this.hud1.navroll = 0F;
+            this.hud1.opengl = true;
+            this.hud1.pitch = 0F;
+            this.hud1.roll = 0F;
+            this.hud1.Russian = false;
+            this.hud1.Size = new System.Drawing.Size(177, 190);
+            this.hud1.status = false;
+            this.hud1.streamjpg = null;
+            this.hud1.TabIndex = 82;
+            this.hud1.targetalt = 0F;
+            this.hud1.targetheading = 0F;
+            this.hud1.targetspeed = 0F;
+            this.hud1.turnrate = 0F;
+            this.hud1.UseOpenGL = true;
+            this.hud1.verticalspeed = 0F;
+            this.hud1.VSync = true;
+            this.hud1.wpno = 0;
+            this.hud1.xtrack_error = 0F;
             // 
             // doubelLabel8
             // 
             this.doubelLabel8.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "wp_dist", true));
             this.doubelLabel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel8.LabelName = "距点：";
-            this.doubelLabel8.LabelValue = "0.0";
+            this.doubelLabel8.LabelValue = "0";
             this.doubelLabel8.Location = new System.Drawing.Point(1, 215);
             this.doubelLabel8.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel8.Name = "doubelLabel8";
@@ -995,7 +998,7 @@
             this.doubelLabel7.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "DistToHome", true));
             this.doubelLabel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel7.LabelName = "距家：";
-            this.doubelLabel7.LabelValue = "0.0";
+            this.doubelLabel7.LabelValue = "0";
             this.doubelLabel7.Location = new System.Drawing.Point(1, 189);
             this.doubelLabel7.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel7.Name = "doubelLabel7";
@@ -1008,7 +1011,7 @@
             this.doubelLabel6.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "airspeed", true));
             this.doubelLabel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel6.LabelName = "空速：";
-            this.doubelLabel6.LabelValue = "0.0";
+            this.doubelLabel6.LabelValue = "0";
             this.doubelLabel6.Location = new System.Drawing.Point(1, 163);
             this.doubelLabel6.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel6.Name = "doubelLabel6";
@@ -1021,7 +1024,7 @@
             this.doubelLabel5.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "mode", true));
             this.doubelLabel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel5.LabelName = "模式：";
-            this.doubelLabel5.LabelValue = "0.0";
+            this.doubelLabel5.LabelValue = "0";
             this.doubelLabel5.Location = new System.Drawing.Point(1, 137);
             this.doubelLabel5.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel5.Name = "doubelLabel5";
@@ -1034,7 +1037,7 @@
             this.doubelLabel4.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "satcount", true));
             this.doubelLabel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel4.LabelName = "GPS：";
-            this.doubelLabel4.LabelValue = "0.0";
+            this.doubelLabel4.LabelValue = "0";
             this.doubelLabel4.Location = new System.Drawing.Point(1, 111);
             this.doubelLabel4.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel4.Name = "doubelLabel4";
@@ -1047,7 +1050,7 @@
             this.doubelLabel1.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "battery_voltage", true));
             this.doubelLabel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel1.LabelName = "电压：";
-            this.doubelLabel1.LabelValue = "0.0";
+            this.doubelLabel1.LabelValue = "0";
             this.doubelLabel1.Location = new System.Drawing.Point(1, 85);
             this.doubelLabel1.Name = "doubelLabel1";
             this.doubelLabel1.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
@@ -1059,7 +1062,7 @@
             this.doubelLabel3.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "HomeAlt", true));
             this.doubelLabel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel3.LabelName = "高度：";
-            this.doubelLabel3.LabelValue = "0.0";
+            this.doubelLabel3.LabelValue = "0";
             this.doubelLabel3.Location = new System.Drawing.Point(1, 59);
             this.doubelLabel3.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel3.Name = "doubelLabel3";
@@ -1072,7 +1075,7 @@
             this.doubelLabel2.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "current", true));
             this.doubelLabel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel2.LabelName = "电流：";
-            this.doubelLabel2.LabelValue = "0.0";
+            this.doubelLabel2.LabelValue = "0";
             this.doubelLabel2.Location = new System.Drawing.Point(1, 33);
             this.doubelLabel2.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel2.Name = "doubelLabel2";
@@ -1104,12 +1107,11 @@
             this.Name = "GCS";
             this.ShowIcon = false;
             this.Text = "固定翼地面站";
-            this.TopMost = true;
-            this.panelCommand.ResumeLayout(false);
-            this.panelInofPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Commands)).EndInit();
             this.panelWPPanel.ResumeLayout(false);
             this.panelWPPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Commands)).EndInit();
+            this.panelInofPanel.ResumeLayout(false);
+            this.panelCommand.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
             this.ResumeLayout(false);
@@ -1138,8 +1140,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private BSE.Windows.Forms.Panel panelInofPanel;
@@ -1189,5 +1189,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AZ;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
