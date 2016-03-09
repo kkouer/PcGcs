@@ -1077,7 +1077,7 @@ namespace MissionPlanner
                 try
                 {
                     Thread.Sleep(1); // was 5
-
+                    UpdateConnectIcon();
                     // if not connected or busy, sleep and loop
                     if (!comPort.BaseStream.IsOpen || comPort.giveComport == true)
                     {
@@ -1108,6 +1108,29 @@ namespace MissionPlanner
                 catch { };
 
             }
+        }
+
+        private void UpdateConnectIcon()
+        {
+            //                        Console.WriteLine(DateTime.Now.Millisecond);
+            if (comPort.BaseStream.IsOpen)
+            {
+                this.BeginInvoke((MethodInvoker)delegate
+                {
+                    this.buttonConnect.Text = "断开";
+                    this.buttonConnect.BackColor = Color.Red;
+                });
+            }
+            else
+            {
+
+                this.BeginInvoke((MethodInvoker)delegate
+                {
+                    this.buttonConnect.Text = "连接";
+                    this.buttonConnect.BackColor = Color.LimeGreen;
+                });
+            }
+
         }
 
         bool isPlanMode = false;
@@ -1273,9 +1296,13 @@ namespace MissionPlanner
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             //切换到最后一个航点
             if (comPort.MAV.param["MIS_TOTAL"] != null)
             {
+
+                if (CustomMessageBox.Show("确定降落?", "降落?", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
                 int wps = int.Parse(comPort.MAV.param["MIS_TOTAL"].ToString()) - 1;
                 comPort.setWPCurrent((ushort)wps);
             }
@@ -1284,6 +1311,8 @@ namespace MissionPlanner
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (CustomMessageBox.Show("确定返航?", "返航?", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
             comPort.setMode("rtl");
         }
         private void TXT_homelat_TextChanged(object sender, EventArgs e)
@@ -2575,15 +2604,10 @@ namespace MissionPlanner
                 CustomMessageBox.Show("在户外, 连接并等待GPS定位. 点击选择回家位置.");
             }
         }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            this.panelWPPanel.Visible = false;
-        }
-
+        
         private void button11_Click(object sender, EventArgs e)
         {
-            this.panelWPPanel.Visible = true;
+            this.panelWPPanel.Visible = !this.panelWPPanel.Visible;
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -2649,6 +2673,17 @@ namespace MissionPlanner
         {
             if (drawnpolygon.Points != null && drawnpolygon.Points.Count > 2)
             {
+
+                //生成之前清除所有航点
+                quickadd = true;
+                // mono fix
+                Commands.CurrentCell = null;
+                Commands.Rows.Clear();
+                selectedrow = 0;
+                quickadd = false;
+                writeKML();
+                ///清除完成
+                
                 GridUI gui = new GridUI(drawnpolygon.Points, this);
                 gui.ShowDialog();
             }
@@ -2750,6 +2785,20 @@ namespace MissionPlanner
             selectedrow = 0;
             quickadd = false;
             writeKML();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (comPort.MAV.cs.lat != 0)
+            {
+                TXT_homealt.Text = comPort.MAV.cs.altasl.ToString("0");
+                TXT_homelat.Text = comPort.MAV.cs.lat.ToString();
+                TXT_homelng.Text = comPort.MAV.cs.lng.ToString();
+            }
+            else
+            {
+                CustomMessageBox.Show("在户外, 连接并等待GPS定位. 点击选择回家位置.");
+            }
         }
 
 

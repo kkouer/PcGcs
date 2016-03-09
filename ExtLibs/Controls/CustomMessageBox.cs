@@ -10,8 +10,8 @@ namespace System
 {
     public static class CustomMessageBox
     {
-        const int FORM_Y_MARGIN = 10;
-        const int FORM_X_MARGIN = 16;
+        const int FORM_Y_MARGIN = 20;
+        const int FORM_X_MARGIN = 26;
 
        public delegate void ThemeManager(Control ctl);
 
