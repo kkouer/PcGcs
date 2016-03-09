@@ -246,7 +246,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label17.Location = new System.Drawing.Point(181, 35);
+            this.label17.Location = new System.Drawing.Point(199, 35);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 12);
             this.label17.TabIndex = 101;
@@ -255,7 +255,7 @@
             // 
             // TXT_altwarn
             // 
-            this.TXT_altwarn.Location = new System.Drawing.Point(183, 54);
+            this.TXT_altwarn.Location = new System.Drawing.Point(201, 54);
             this.TXT_altwarn.Name = "TXT_altwarn";
             this.TXT_altwarn.Size = new System.Drawing.Size(40, 21);
             this.TXT_altwarn.TabIndex = 89;
@@ -339,22 +339,23 @@
             this.LBL_WPRad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LBL_WPRad.Location = new System.Drawing.Point(4, 35);
             this.LBL_WPRad.Name = "LBL_WPRad";
-            this.LBL_WPRad.Size = new System.Drawing.Size(53, 12);
+            this.LBL_WPRad.Size = new System.Drawing.Size(77, 12);
             this.LBL_WPRad.TabIndex = 91;
-            this.LBL_WPRad.Text = "航点半径";
+            this.LBL_WPRad.Text = "航点半径(米)";
             // 
             // TXT_loiterrad
             // 
             this.TXT_loiterrad.Enabled = false;
-            this.TXT_loiterrad.Location = new System.Drawing.Point(65, 54);
+            this.TXT_loiterrad.Location = new System.Drawing.Point(70, 54);
             this.TXT_loiterrad.Name = "TXT_loiterrad";
             this.TXT_loiterrad.Size = new System.Drawing.Size(36, 21);
             this.TXT_loiterrad.TabIndex = 89;
             this.TXT_loiterrad.Text = "45";
+            this.TXT_loiterrad.Visible = false;
             // 
             // TXT_DefaultAlt
             // 
-            this.TXT_DefaultAlt.Location = new System.Drawing.Point(124, 54);
+            this.TXT_DefaultAlt.Location = new System.Drawing.Point(140, 54);
             this.TXT_DefaultAlt.Name = "TXT_DefaultAlt";
             this.TXT_DefaultAlt.Size = new System.Drawing.Size(40, 21);
             this.TXT_DefaultAlt.TabIndex = 90;
@@ -364,25 +365,26 @@
             // 
             this.LBL_defalutalt.AutoSize = true;
             this.LBL_defalutalt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LBL_defalutalt.Location = new System.Drawing.Point(122, 35);
+            this.LBL_defalutalt.Location = new System.Drawing.Point(127, 35);
             this.LBL_defalutalt.Name = "LBL_defalutalt";
-            this.LBL_defalutalt.Size = new System.Drawing.Size(53, 12);
+            this.LBL_defalutalt.Size = new System.Drawing.Size(77, 12);
             this.LBL_defalutalt.TabIndex = 92;
-            this.LBL_defalutalt.Text = "默认高度";
+            this.LBL_defalutalt.Text = "默认高度(米)";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(63, 35);
+            this.label5.Location = new System.Drawing.Point(68, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 93;
             this.label5.Text = "悬停半径";
+            this.label5.Visible = false;
             // 
             // TXT_WPRad
             // 
-            this.TXT_WPRad.Location = new System.Drawing.Point(6, 54);
+            this.TXT_WPRad.Location = new System.Drawing.Point(13, 54);
             this.TXT_WPRad.Name = "TXT_WPRad";
             this.TXT_WPRad.Size = new System.Drawing.Size(36, 21);
             this.TXT_WPRad.TabIndex = 88;
