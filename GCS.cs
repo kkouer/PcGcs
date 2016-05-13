@@ -1360,6 +1360,12 @@ namespace MissionPlanner
             {
                 try
                 {
+                    if (comPort.MAV.cs.alt > 20)
+                    {
+                        CustomMessageBox.Show("飞机已经在执行任务!");
+                        return;
+                    }
+
                     ((Button)sender).Enabled = false;
 
                     int param1 = 0;
@@ -1381,6 +1387,13 @@ namespace MissionPlanner
 
             buttonArmed.Enabled = true;
             buttonDisarmed.Enabled = true;
+
+            //航线上传提示
+            if (comPort.MAV.cs.alt > 20)
+            {
+                if (CustomMessageBox.Show("飞机已经在执行任务,是否继续上传并覆盖已有航线?", "覆盖航线", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                    return;
+            }
 
             for (int a = 0; a < Commands.Rows.Count - 0; a++)
             {
@@ -2775,6 +2788,11 @@ namespace MissionPlanner
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            if (comPort.BaseStream.IsOpen && comPort.MAV.cs.alt > 20)
+            {
+                CustomMessageBox.Show("飞机正在执行任务,无法清除已规划航线!");
+                return;
+            }
             quickadd = true;
 
             // mono fix
@@ -2799,6 +2817,52 @@ namespace MissionPlanner
             {
                 CustomMessageBox.Show("在户外, 连接并等待GPS定位. 点击选择回家位置.");
             }
+        }
+
+        private void CMB_setwp_Click(object sender, EventArgs e)
+        {
+            CMB_setwp.Items.Clear();
+
+            CMB_setwp.Items.Add("0(回家)");
+
+            //comPort.GetParam("MIS_TOTAL");
+
+            if (comPort.MAV.param["CMD_TOTAL"] != null)
+            {
+                int wps = int.Parse(comPort.MAV.param["CMD_TOTAL"].ToString());
+                for (int z = 1; z < wps; z++)
+                {
+                    CMB_setwp.Items.Add(z.ToString());
+                }
+            }
+
+            if (comPort.MAV.param["WP_TOTAL"] != null)
+            {
+                int wps = int.Parse(comPort.MAV.param["WP_TOTAL"].ToString());
+                for (int z = 1; z <= wps; z++)
+                {
+                    CMB_setwp.Items.Add(z.ToString());
+                }
+            }
+            if (comPort.MAV.param["MIS_TOTAL"] != null)
+            {
+                int wps = int.Parse(comPort.MAV.param["MIS_TOTAL"].ToString()) - 1;
+                for (int z = 1; z <= wps; z++)
+                {
+                    CMB_setwp.Items.Add(z.ToString());
+                }
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ((Button)sender).Enabled = false;
+                comPort.setWPCurrent((ushort)CMB_setwp.SelectedIndex); // set nav to
+            }
+            catch { CustomMessageBox.Show(Strings.CommandFailed, Strings.ERROR); }
+            ((Button)sender).Enabled = true;
         }
 
 

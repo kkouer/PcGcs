@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GCS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.comboBoxBoundrate = new System.Windows.Forms.ComboBox();
             this.comboBoxComPort = new System.Windows.Forms.ComboBox();
@@ -42,6 +42,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.panelWPPanel = new BSE.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.coords1 = new MissionPlanner.Controls.Coords();
             this.label17 = new System.Windows.Forms.Label();
             this.TXT_altwarn = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.LinkLabel();
@@ -75,34 +77,35 @@
             this.panelInofPanel = new BSE.Windows.Forms.Panel();
             this.buttonHideInfoPanel = new System.Windows.Forms.Button();
             this.panelCommand = new BSE.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.buttonHideCommandPanel = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button18 = new System.Windows.Forms.Button();
+            this.CMB_setwp = new System.Windows.Forms.ComboBox();
             this.buttonDisarmed = new System.Windows.Forms.Button();
             this.buttonArmed = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.coords1 = new MissionPlanner.Controls.Coords();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.buttonHideCommandPanel = new System.Windows.Forms.Button();
+            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.hud1 = new MissionPlanner.Controls.HUD();
-            this.button10 = new System.Windows.Forms.Button();
-            this.doubelLabel8 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel9 = new MissionPlanner.DoubelLabel();
             this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
+            this.doubelLabel8 = new MissionPlanner.DoubelLabel();
             this.doubelLabel7 = new MissionPlanner.DoubelLabel();
             this.doubelLabel6 = new MissionPlanner.DoubelLabel();
             this.doubelLabel5 = new MissionPlanner.DoubelLabel();
@@ -115,11 +118,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.panelInofPanel.SuspendLayout();
             this.panelCommand.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
             this.SuspendLayout();
@@ -242,6 +245,31 @@
             this.panelWPPanel.ToolTipTextExpandIconPanelExpanded = null;
             this.panelWPPanel.Visible = false;
             // 
+            // button10
+            // 
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button10.Location = new System.Drawing.Point(393, 30);
+            this.button10.Margin = new System.Windows.Forms.Padding(5);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 108;
+            this.button10.Text = "回家位置";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // coords1
+            // 
+            this.coords1.Alt = 0D;
+            this.coords1.AltUnit = "米";
+            this.coords1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.coords1.Lat = 0D;
+            this.coords1.Lng = 0D;
+            this.coords1.Location = new System.Drawing.Point(210, 30);
+            this.coords1.Name = "coords1";
+            this.coords1.Size = new System.Drawing.Size(127, 50);
+            this.coords1.TabIndex = 103;
+            this.coords1.Vertical = true;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -279,7 +307,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(480, 34);
+            this.label3.Location = new System.Drawing.Point(481, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 96;
@@ -289,7 +317,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(350, 63);
+            this.label2.Location = new System.Drawing.Point(344, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 95;
@@ -299,7 +327,7 @@
             // 
             this.Label1.AutoSize = true;
             this.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Label1.Location = new System.Drawing.Point(480, 63);
+            this.Label1.Location = new System.Drawing.Point(481, 63);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(53, 12);
             this.Label1.TabIndex = 94;
@@ -307,7 +335,7 @@
             // 
             // TXT_homealt
             // 
-            this.TXT_homealt.Location = new System.Drawing.Point(534, 30);
+            this.TXT_homealt.Location = new System.Drawing.Point(535, 30);
             this.TXT_homealt.Name = "TXT_homealt";
             this.TXT_homealt.Size = new System.Drawing.Size(65, 21);
             this.TXT_homealt.TabIndex = 100;
@@ -316,7 +344,7 @@
             // 
             // TXT_homelng
             // 
-            this.TXT_homelng.Location = new System.Drawing.Point(409, 59);
+            this.TXT_homelng.Location = new System.Drawing.Point(403, 59);
             this.TXT_homelng.Name = "TXT_homelng";
             this.TXT_homelng.Size = new System.Drawing.Size(65, 21);
             this.TXT_homelng.TabIndex = 99;
@@ -325,7 +353,7 @@
             // 
             // TXT_homelat
             // 
-            this.TXT_homelat.Location = new System.Drawing.Point(534, 59);
+            this.TXT_homelat.Location = new System.Drawing.Point(535, 59);
             this.TXT_homelat.Name = "TXT_homelat";
             this.TXT_homelat.Size = new System.Drawing.Size(65, 21);
             this.TXT_homelat.TabIndex = 98;
@@ -337,7 +365,7 @@
             // 
             this.LBL_WPRad.AutoSize = true;
             this.LBL_WPRad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LBL_WPRad.Location = new System.Drawing.Point(4, 35);
+            this.LBL_WPRad.Location = new System.Drawing.Point(11, 35);
             this.LBL_WPRad.Name = "LBL_WPRad";
             this.LBL_WPRad.Size = new System.Drawing.Size(77, 12);
             this.LBL_WPRad.TabIndex = 91;
@@ -355,7 +383,7 @@
             // 
             // TXT_DefaultAlt
             // 
-            this.TXT_DefaultAlt.Location = new System.Drawing.Point(140, 54);
+            this.TXT_DefaultAlt.Location = new System.Drawing.Point(132, 54);
             this.TXT_DefaultAlt.Name = "TXT_DefaultAlt";
             this.TXT_DefaultAlt.Size = new System.Drawing.Size(40, 21);
             this.TXT_DefaultAlt.TabIndex = 90;
@@ -365,7 +393,7 @@
             // 
             this.LBL_defalutalt.AutoSize = true;
             this.LBL_defalutalt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LBL_defalutalt.Location = new System.Drawing.Point(127, 35);
+            this.LBL_defalutalt.Location = new System.Drawing.Point(119, 35);
             this.LBL_defalutalt.Name = "LBL_defalutalt";
             this.LBL_defalutalt.Size = new System.Drawing.Size(77, 12);
             this.LBL_defalutalt.TabIndex = 92;
@@ -384,7 +412,7 @@
             // 
             // TXT_WPRad
             // 
-            this.TXT_WPRad.Location = new System.Drawing.Point(13, 54);
+            this.TXT_WPRad.Location = new System.Drawing.Point(20, 54);
             this.TXT_WPRad.Name = "TXT_WPRad";
             this.TXT_WPRad.Size = new System.Drawing.Size(36, 21);
             this.TXT_WPRad.TabIndex = 88;
@@ -413,18 +441,18 @@
             this.AZ});
             this.Commands.Location = new System.Drawing.Point(0, 81);
             this.Commands.Name = "Commands";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = "0";
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Commands.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = "0";
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Commands.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.Commands.RowHeadersWidth = 50;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.Commands.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.Commands.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.Commands.Size = new System.Drawing.Size(613, 127);
             this.Commands.TabIndex = 87;
             this.Commands.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Commands_CellContentClick);
@@ -433,9 +461,9 @@
             // Command
             // 
             this.Command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.Command.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            this.Command.DefaultCellStyle = dataGridViewCellStyle6;
             this.Command.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.Command.Frozen = true;
             this.Command.HeaderText = "命令";
@@ -521,7 +549,7 @@
             // Up
             // 
             this.Up.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Up.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Up.DefaultCellStyle = dataGridViewCellStyle7;
             this.Up.HeaderText = "上移";
             this.Up.Image = ((System.Drawing.Image)(resources.GetObject("Up.Image")));
             this.Up.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
@@ -534,8 +562,8 @@
             // Down
             // 
             this.Down.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Down.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Down.DefaultCellStyle = dataGridViewCellStyle8;
             this.Down.HeaderText = "下移";
             this.Down.Image = ((System.Drawing.Image)(resources.GetObject("Down.Image")));
             this.Down.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
@@ -583,6 +611,7 @@
             this.panelInofPanel.BackColor = System.Drawing.Color.Transparent;
             this.panelInofPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
             this.panelInofPanel.CaptionHeight = 27;
+            this.panelInofPanel.Controls.Add(this.doubelLabel9);
             this.panelInofPanel.Controls.Add(this.doubelLabel8);
             this.panelInofPanel.Controls.Add(this.doubelLabel7);
             this.panelInofPanel.Controls.Add(this.doubelLabel6);
@@ -660,54 +689,23 @@
             this.panelCommand.MinimumSize = new System.Drawing.Size(27, 27);
             this.panelCommand.Name = "panelCommand";
             this.panelCommand.Padding = new System.Windows.Forms.Padding(5);
-            this.panelCommand.Size = new System.Drawing.Size(198, 467);
+            this.panelCommand.Size = new System.Drawing.Size(198, 494);
             this.panelCommand.TabIndex = 85;
             this.panelCommand.ToolTipTextCloseIcon = null;
             this.panelCommand.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelCommand.ToolTipTextExpandIconPanelExpanded = null;
             // 
-            // button3
+            // groupBox5
             // 
-            this.button3.Location = new System.Drawing.Point(96, 22);
-            this.button3.Margin = new System.Windows.Forms.Padding(5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 108;
-            this.button3.Text = "清空航线";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(11, 18);
-            this.button2.Margin = new System.Windows.Forms.Padding(5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 107;
-            this.button2.Text = "开 关";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(96, 19);
-            this.button17.Margin = new System.Windows.Forms.Padding(5);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 23);
-            this.button17.TabIndex = 106;
-            this.button17.Text = "定位飞机";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(11, 19);
-            this.button16.Margin = new System.Windows.Forms.Padding(5);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 105;
-            this.button16.Text = "定位回家";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.groupBox5.Controls.Add(this.button7);
+            this.groupBox5.Controls.Add(this.button4);
+            this.groupBox5.ForeColor = System.Drawing.Color.Tomato;
+            this.groupBox5.Location = new System.Drawing.Point(11, 432);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(179, 53);
+            this.groupBox5.TabIndex = 113;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "应急处理";
             // 
             // button7
             // 
@@ -720,41 +718,6 @@
             this.button7.Text = "返 航";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(96, 18);
-            this.button6.Margin = new System.Windows.Forms.Padding(5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "拍 照";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(11, 22);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 104;
-            this.button12.Text = "航线规划";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(11, 76);
-            this.button5.Margin = new System.Windows.Forms.Padding(5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "开始任务";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -769,6 +732,66 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button12);
+            this.groupBox3.Controls.Add(this.button11);
+            this.groupBox3.Controls.Add(this.button13);
+            this.groupBox3.Controls.Add(this.button14);
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.button15);
+            this.groupBox3.Location = new System.Drawing.Point(11, 304);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(179, 122);
+            this.groupBox3.TabIndex = 111;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "航线规划";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(11, 22);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 104;
+            this.button12.Text = "航线规划";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button13
+            // 
+            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button13.Enabled = false;
+            this.button13.Location = new System.Drawing.Point(11, 53);
+            this.button13.Margin = new System.Windows.Forms.Padding(5);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 14;
+            this.button13.Text = "规划范围";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(96, 53);
+            this.button14.Margin = new System.Windows.Forms.Padding(5);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 15;
+            this.button14.Text = "取消规划";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(96, 22);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 108;
+            this.button3.Text = "清空航线";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // button15
             // 
             this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -781,26 +804,76 @@
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // buttonHideCommandPanel
+            // groupBox4
             // 
-            this.buttonHideCommandPanel.Location = new System.Drawing.Point(165, 3);
-            this.buttonHideCommandPanel.Name = "buttonHideCommandPanel";
-            this.buttonHideCommandPanel.Size = new System.Drawing.Size(27, 23);
-            this.buttonHideCommandPanel.TabIndex = 5;
-            this.buttonHideCommandPanel.Text = "X";
-            this.buttonHideCommandPanel.UseVisualStyleBackColor = true;
-            this.buttonHideCommandPanel.Click += new System.EventHandler(this.buttonHideCommandPanel_Click);
+            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Location = new System.Drawing.Point(11, 238);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(179, 53);
+            this.groupBox4.TabIndex = 112;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "相机控制";
             // 
-            // button14
+            // button2
             // 
-            this.button14.Location = new System.Drawing.Point(96, 53);
-            this.button14.Margin = new System.Windows.Forms.Padding(5);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 15;
-            this.button14.Text = "取消规划";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.button2.Location = new System.Drawing.Point(11, 18);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 107;
+            this.button2.Text = "开 关";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.Location = new System.Drawing.Point(96, 18);
+            this.button6.Margin = new System.Windows.Forms.Padding(5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "拍 照";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button18);
+            this.groupBox2.Controls.Add(this.CMB_setwp);
+            this.groupBox2.Controls.Add(this.buttonDisarmed);
+            this.groupBox2.Controls.Add(this.buttonArmed);
+            this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Controls.Add(this.button9);
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Location = new System.Drawing.Point(11, 95);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(179, 136);
+            this.groupBox2.TabIndex = 110;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "指令";
+            // 
+            // button18
+            // 
+            this.button18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button18.Location = new System.Drawing.Point(96, 106);
+            this.button18.Margin = new System.Windows.Forms.Padding(5);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(75, 23);
+            this.button18.TabIndex = 15;
+            this.button18.Text = "航点切换";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // CMB_setwp
+            // 
+            this.CMB_setwp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CMB_setwp.FormattingEnabled = true;
+            this.CMB_setwp.Location = new System.Drawing.Point(11, 108);
+            this.CMB_setwp.Name = "CMB_setwp";
+            this.CMB_setwp.Size = new System.Drawing.Size(75, 20);
+            this.CMB_setwp.TabIndex = 14;
+            this.CMB_setwp.Click += new System.EventHandler(this.CMB_setwp_Click);
             // 
             // buttonDisarmed
             // 
@@ -827,19 +900,6 @@
             this.buttonArmed.UseVisualStyleBackColor = true;
             this.buttonArmed.Click += new System.EventHandler(this.buttonArmed_Click);
             // 
-            // button13
-            // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.Enabled = false;
-            this.button13.Location = new System.Drawing.Point(11, 53);
-            this.button13.Margin = new System.Windows.Forms.Padding(5);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "规划范围";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(11, 44);
@@ -862,6 +922,62 @@
             this.button9.Text = "下载航线";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Enabled = false;
+            this.button5.Location = new System.Drawing.Point(11, 76);
+            this.button5.Margin = new System.Windows.Forms.Padding(5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "开始任务";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button17);
+            this.groupBox1.Controls.Add(this.button16);
+            this.groupBox1.Location = new System.Drawing.Point(11, 36);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(179, 53);
+            this.groupBox1.TabIndex = 109;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "地图定位";
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(96, 19);
+            this.button17.Margin = new System.Windows.Forms.Padding(5);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 23);
+            this.button17.TabIndex = 106;
+            this.button17.Text = "定位飞机";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(11, 19);
+            this.button16.Margin = new System.Windows.Forms.Padding(5);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.TabIndex = 105;
+            this.button16.Text = "定位回家";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // buttonHideCommandPanel
+            // 
+            this.buttonHideCommandPanel.Location = new System.Drawing.Point(165, 3);
+            this.buttonHideCommandPanel.Name = "buttonHideCommandPanel";
+            this.buttonHideCommandPanel.Size = new System.Drawing.Size(27, 23);
+            this.buttonHideCommandPanel.TabIndex = 5;
+            this.buttonHideCommandPanel.Text = "X";
+            this.buttonHideCommandPanel.UseVisualStyleBackColor = true;
+            this.buttonHideCommandPanel.Click += new System.EventHandler(this.buttonHideCommandPanel_Click);
             // 
             // gMapControl1
             // 
@@ -892,82 +1008,6 @@
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDown);
             this.gMapControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseMove);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button17);
-            this.groupBox1.Controls.Add(this.button16);
-            this.groupBox1.Location = new System.Drawing.Point(11, 36);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(179, 53);
-            this.groupBox1.TabIndex = 109;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "地图定位";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.buttonDisarmed);
-            this.groupBox2.Controls.Add(this.buttonArmed);
-            this.groupBox2.Controls.Add(this.button8);
-            this.groupBox2.Controls.Add(this.button9);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Location = new System.Drawing.Point(11, 95);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(179, 110);
-            this.groupBox2.TabIndex = 110;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "指令";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button12);
-            this.groupBox3.Controls.Add(this.button11);
-            this.groupBox3.Controls.Add(this.button13);
-            this.groupBox3.Controls.Add(this.button14);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button15);
-            this.groupBox3.Location = new System.Drawing.Point(11, 277);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(179, 122);
-            this.groupBox3.TabIndex = 111;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "航线规划";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Location = new System.Drawing.Point(11, 211);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(179, 53);
-            this.groupBox4.TabIndex = 112;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "相机控制";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.button7);
-            this.groupBox5.Controls.Add(this.button4);
-            this.groupBox5.ForeColor = System.Drawing.Color.Tomato;
-            this.groupBox5.Location = new System.Drawing.Point(11, 405);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(179, 53);
-            this.groupBox5.TabIndex = 113;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "应急处理";
-            // 
-            // coords1
-            // 
-            this.coords1.Alt = 0D;
-            this.coords1.AltUnit = "米";
-            this.coords1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.coords1.Lat = 0D;
-            this.coords1.Lng = 0D;
-            this.coords1.Location = new System.Drawing.Point(217, 30);
-            this.coords1.Name = "coords1";
-            this.coords1.Size = new System.Drawing.Size(127, 50);
-            this.coords1.TabIndex = 103;
-            this.coords1.Vertical = true;
             // 
             // hud1
             // 
@@ -1032,17 +1072,22 @@
             this.hud1.wpno = 0;
             this.hud1.xtrack_error = 0F;
             // 
-            // button10
+            // doubelLabel9
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.Location = new System.Drawing.Point(399, 30);
-            this.button10.Margin = new System.Windows.Forms.Padding(5);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 108;
-            this.button10.Text = "回家位置";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.doubelLabel9.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "wpno", true));
+            this.doubelLabel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel9.LabelName = "目标点：";
+            this.doubelLabel9.LabelValue = "0";
+            this.doubelLabel9.Location = new System.Drawing.Point(1, 241);
+            this.doubelLabel9.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel9.Name = "doubelLabel9";
+            this.doubelLabel9.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel9.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel9.TabIndex = 9;
+            // 
+            // bindingSourceHud
+            // 
+            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
             // 
             // doubelLabel8
             // 
@@ -1056,10 +1101,6 @@
             this.doubelLabel8.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
             this.doubelLabel8.Size = new System.Drawing.Size(175, 26);
             this.doubelLabel8.TabIndex = 8;
-            // 
-            // bindingSourceHud
-            // 
-            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
             // 
             // doubelLabel7
             // 
@@ -1179,11 +1220,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).EndInit();
             this.panelInofPanel.ResumeLayout(false);
             this.panelCommand.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
             this.ResumeLayout(false);
@@ -1268,5 +1309,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button10;
+        private DoubelLabel doubelLabel9;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.ComboBox CMB_setwp;
     }
 }

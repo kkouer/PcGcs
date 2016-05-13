@@ -14,6 +14,7 @@ using MissionPlanner;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
+using System.Reflection;
 
 namespace MissionPlanner
 {
@@ -40,12 +41,38 @@ namespace MissionPlanner
 
 
 
+        public static Process RunningInstance()
+        {
+            Process current = Process.GetCurrentProcess();
+            Process[] processes = Process.GetProcessesByName(current.ProcessName);
+            foreach (Process process in processes)
+            {
+                if (process.Id != current.Id)
+                {
+                    if (Assembly.GetExecutingAssembly().Location.Replace("/ ", "\\ ") == current.MainModule.FileName)
+                    {
+                        return process;
+                    }
+                }
+            }
+            return null;
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         public static void Main(string[] args)
         {
+
+            //单例验证
+            Process instance = RunningInstance();
+            if (instance != null)
+            {
+                MessageBox.Show("程序已启动");
+                return;
+            }
+
 #if !DEBUG
             ShowWindow(FindWindow(null, Console.Title), 0); // hide window
 #endif
