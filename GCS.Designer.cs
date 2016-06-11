@@ -118,7 +118,6 @@
             this.hud1 = new MissionPlanner.Controls.HUD();
             this.windMap1 = new MissionPlanner.GCSViews.WindMap();
             this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
-            this.myLabel1 = new MissionPlanner.Controls.MyLabel();
             this.panelWPPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.panelInofPanel.SuspendLayout();
@@ -1254,21 +1253,11 @@
             // 
             this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
             // 
-            // myLabel1
-            // 
-            this.myLabel1.Location = new System.Drawing.Point(510, 170);
-            this.myLabel1.Name = "myLabel1";
-            this.myLabel1.resize = false;
-            this.myLabel1.Size = new System.Drawing.Size(75, 23);
-            this.myLabel1.TabIndex = 90;
-            this.myLabel1.Text = "myLabel1";
-            // 
             // GCS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1104, 641);
-            this.Controls.Add(this.myLabel1);
             this.Controls.Add(this.windMap1);
             this.Controls.Add(this.panelWPPanel);
             this.Controls.Add(this.panelInofPanel);
@@ -1385,6 +1374,5 @@
         private System.Windows.Forms.Button button19;
         private GCSViews.WindMap windMap1;
         private DoubelLabel doubelLabel10;
-        private Controls.MyLabel myLabel1;
     }
 }
