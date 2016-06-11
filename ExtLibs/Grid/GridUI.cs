@@ -1686,6 +1686,7 @@ namespace MissionPlanner
                         else
                         {
                             //this.gcs.AddCommand(MAVLink.MAV_CMD.LAND, 0, 0, 0, 0, plugin.Host.cs.HomeLocation.Lng, plugin.Host.cs.HomeLocation.Lat, 0);
+                            this.gcs.AddCommand(MAVLink.MAV_CMD.LOITER_TO_ALT, 0, 0, 0, 0, gcs.HomeLocation.Lng, gcs.HomeLocation.Lat + 0.002, 30); 
                             this.gcs.AddCommand(MAVLink.MAV_CMD.LAND, 0, 0, 0, 0, gcs.HomeLocation.Lng, gcs.HomeLocation.Lat, 0);
                             WPNo++;
                         }

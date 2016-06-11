@@ -1597,6 +1597,16 @@ namespace MissionPlanner.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap wind80_80 {
+            get {
+                object obj = ResourceManager.GetObject("wind80_80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap wizardicon {
             get {
                 object obj = ResourceManager.GetObject("wizardicon", resourceCulture);

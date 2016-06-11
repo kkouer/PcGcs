@@ -77,6 +77,11 @@ namespace MissionPlanner
 
                 if (IsNumeric(ans))
                     ans = Math.Round(Convert.ToDouble(ans), 2).ToString();
+                if (labelName.Text.Contains("温度"))
+                {
+                    labelValue.Text = Convert.ToString(Convert.ToDouble(value) / 100);
+                    return;
+                }
                 labelValue.Text = ans ;
 
 

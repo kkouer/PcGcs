@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GCS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.comboBoxBoundrate = new System.Windows.Forms.ComboBox();
             this.comboBoxComPort = new System.Windows.Forms.ComboBox();
@@ -75,12 +75,14 @@
             this.Dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelInofPanel = new BSE.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.buttonHideInfoPanel = new System.Windows.Forms.Button();
             this.panelCommand = new BSE.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button19 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -103,8 +105,11 @@
             this.buttonHideCommandPanel = new System.Windows.Forms.Button();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.hud1 = new MissionPlanner.Controls.HUD();
-            this.doubelLabel9 = new MissionPlanner.DoubelLabel();
+            this.windMap1 = new MissionPlanner.GCSViews.WindMap();
+            this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
+            this.doubelLabel10 = new MissionPlanner.DoubelLabel();
             this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
+            this.doubelLabel9 = new MissionPlanner.DoubelLabel();
             this.doubelLabel8 = new MissionPlanner.DoubelLabel();
             this.doubelLabel7 = new MissionPlanner.DoubelLabel();
             this.doubelLabel6 = new MissionPlanner.DoubelLabel();
@@ -113,7 +118,6 @@
             this.doubelLabel1 = new MissionPlanner.DoubelLabel();
             this.doubelLabel3 = new MissionPlanner.DoubelLabel();
             this.doubelLabel2 = new MissionPlanner.DoubelLabel();
-            this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
             this.panelWPPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.panelInofPanel.SuspendLayout();
@@ -123,14 +127,14 @@
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonConnect
             // 
             this.buttonConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonConnect.Location = new System.Drawing.Point(925, 570);
+            this.buttonConnect.Location = new System.Drawing.Point(1021, 606);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(75, 23);
             this.buttonConnect.TabIndex = 2;
@@ -145,7 +149,7 @@
             this.comboBoxBoundrate.Items.AddRange(new object[] {
             "57600",
             "115200"});
-            this.comboBoxBoundrate.Location = new System.Drawing.Point(861, 571);
+            this.comboBoxBoundrate.Location = new System.Drawing.Point(957, 607);
             this.comboBoxBoundrate.Name = "comboBoxBoundrate";
             this.comboBoxBoundrate.Size = new System.Drawing.Size(57, 20);
             this.comboBoxBoundrate.TabIndex = 3;
@@ -154,7 +158,7 @@
             // 
             this.comboBoxComPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxComPort.FormattingEnabled = true;
-            this.comboBoxComPort.Location = new System.Drawing.Point(796, 571);
+            this.comboBoxComPort.Location = new System.Drawing.Point(892, 607);
             this.comboBoxComPort.Name = "comboBoxComPort";
             this.comboBoxComPort.Size = new System.Drawing.Size(55, 20);
             this.comboBoxComPort.TabIndex = 4;
@@ -162,7 +166,6 @@
             // 
             // buttonShowPanel
             // 
-            this.buttonShowPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonShowPanel.Location = new System.Drawing.Point(12, 200);
             this.buttonShowPanel.Name = "buttonShowPanel";
             this.buttonShowPanel.Size = new System.Drawing.Size(27, 23);
@@ -174,7 +177,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(977, 4);
+            this.button1.Location = new System.Drawing.Point(1073, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(27, 23);
             this.button1.TabIndex = 6;
@@ -184,7 +187,7 @@
             // 
             // button11
             // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button11.Location = new System.Drawing.Point(96, 86);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 23);
@@ -234,10 +237,10 @@
             this.panelWPPanel.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
             this.panelWPPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelWPPanel.Image = null;
-            this.panelWPPanel.Location = new System.Drawing.Point(177, 394);
+            this.panelWPPanel.Location = new System.Drawing.Point(177, 430);
             this.panelWPPanel.MinimumSize = new System.Drawing.Size(27, 27);
             this.panelWPPanel.Name = "panelWPPanel";
-            this.panelWPPanel.Size = new System.Drawing.Size(613, 212);
+            this.panelWPPanel.Size = new System.Drawing.Size(709, 212);
             this.panelWPPanel.TabIndex = 88;
             this.panelWPPanel.Text = "航点";
             this.panelWPPanel.ToolTipTextCloseIcon = null;
@@ -247,8 +250,7 @@
             // 
             // button10
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.Location = new System.Drawing.Point(393, 30);
+            this.button10.Location = new System.Drawing.Point(349, 30);
             this.button10.Margin = new System.Windows.Forms.Padding(5);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
@@ -307,11 +309,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(481, 34);
+            this.label3.Location = new System.Drawing.Point(458, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.Size = new System.Drawing.Size(77, 12);
             this.label3.TabIndex = 96;
-            this.label3.Text = "高度(米)";
+            this.label3.Text = "海拔高度(米)";
             // 
             // label2
             // 
@@ -335,6 +337,7 @@
             // 
             // TXT_homealt
             // 
+            this.TXT_homealt.Enabled = false;
             this.TXT_homealt.Location = new System.Drawing.Point(535, 30);
             this.TXT_homealt.Name = "TXT_homealt";
             this.TXT_homealt.Size = new System.Drawing.Size(65, 21);
@@ -441,19 +444,19 @@
             this.AZ});
             this.Commands.Location = new System.Drawing.Point(0, 81);
             this.Commands.Name = "Commands";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = "0";
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Commands.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = "0";
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Commands.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Commands.RowHeadersWidth = 50;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.Commands.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.Commands.Size = new System.Drawing.Size(613, 127);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.Commands.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.Commands.Size = new System.Drawing.Size(709, 127);
             this.Commands.TabIndex = 87;
             this.Commands.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Commands_CellContentClick);
             this.Commands.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Commands_RowsAdded);
@@ -461,9 +464,9 @@
             // Command
             // 
             this.Command.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            this.Command.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(68)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.Command.DefaultCellStyle = dataGridViewCellStyle1;
             this.Command.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.Command.Frozen = true;
             this.Command.HeaderText = "命令";
@@ -549,7 +552,7 @@
             // Up
             // 
             this.Up.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.Up.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Up.DefaultCellStyle = dataGridViewCellStyle2;
             this.Up.HeaderText = "上移";
             this.Up.Image = ((System.Drawing.Image)(resources.GetObject("Up.Image")));
             this.Up.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
@@ -562,8 +565,8 @@
             // Down
             // 
             this.Down.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Down.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Down.DefaultCellStyle = dataGridViewCellStyle3;
             this.Down.HeaderText = "下移";
             this.Down.Image = ((System.Drawing.Image)(resources.GetObject("Down.Image")));
             this.Down.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
@@ -611,6 +614,8 @@
             this.panelInofPanel.BackColor = System.Drawing.Color.Transparent;
             this.panelInofPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
             this.panelInofPanel.CaptionHeight = 27;
+            this.panelInofPanel.Controls.Add(this.doubelLabel10);
+            this.panelInofPanel.Controls.Add(this.comboBox1);
             this.panelInofPanel.Controls.Add(this.doubelLabel9);
             this.panelInofPanel.Controls.Add(this.doubelLabel8);
             this.panelInofPanel.Controls.Add(this.doubelLabel7);
@@ -640,12 +645,26 @@
             this.panelInofPanel.MinimumSize = new System.Drawing.Size(27, 27);
             this.panelInofPanel.Name = "panelInofPanel";
             this.panelInofPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelInofPanel.Size = new System.Drawing.Size(177, 433);
+            this.panelInofPanel.Size = new System.Drawing.Size(177, 469);
             this.panelInofPanel.TabIndex = 86;
             this.panelInofPanel.Text = "参数";
             this.panelInofPanel.ToolTipTextCloseIcon = null;
             this.panelInofPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelInofPanel.ToolTipTextExpandIconPanelExpanded = null;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "高德卫星",
+            "高德地图"});
+            this.comboBox1.Location = new System.Drawing.Point(4, 445);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(75, 20);
+            this.comboBox1.TabIndex = 15;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // buttonHideInfoPanel
             // 
@@ -685,11 +704,11 @@
             this.panelCommand.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
             this.panelCommand.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelCommand.Image = null;
-            this.panelCommand.Location = new System.Drawing.Point(810, 0);
+            this.panelCommand.Location = new System.Drawing.Point(906, 0);
             this.panelCommand.MinimumSize = new System.Drawing.Size(27, 27);
             this.panelCommand.Name = "panelCommand";
             this.panelCommand.Padding = new System.Windows.Forms.Padding(5);
-            this.panelCommand.Size = new System.Drawing.Size(198, 494);
+            this.panelCommand.Size = new System.Drawing.Size(198, 520);
             this.panelCommand.TabIndex = 85;
             this.panelCommand.ToolTipTextCloseIcon = null;
             this.panelCommand.ToolTipTextExpandIconPanelCollapsed = null;
@@ -700,7 +719,7 @@
             this.groupBox5.Controls.Add(this.button7);
             this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.ForeColor = System.Drawing.Color.Tomato;
-            this.groupBox5.Location = new System.Drawing.Point(11, 432);
+            this.groupBox5.Location = new System.Drawing.Point(11, 455);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(179, 53);
             this.groupBox5.TabIndex = 113;
@@ -734,6 +753,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button19);
             this.groupBox3.Controls.Add(this.button12);
             this.groupBox3.Controls.Add(this.button11);
             this.groupBox3.Controls.Add(this.button13);
@@ -742,10 +762,22 @@
             this.groupBox3.Controls.Add(this.button15);
             this.groupBox3.Location = new System.Drawing.Point(11, 304);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(179, 122);
+            this.groupBox3.Size = new System.Drawing.Size(179, 143);
             this.groupBox3.TabIndex = 111;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "航线规划";
+            // 
+            // button19
+            // 
+            this.button19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button19.Location = new System.Drawing.Point(11, 117);
+            this.button19.Margin = new System.Windows.Forms.Padding(5);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(75, 23);
+            this.button19.TabIndex = 109;
+            this.button19.Text = "计算返航";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button12
             // 
@@ -1003,7 +1035,7 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(1008, 605);
+            this.gMapControl1.Size = new System.Drawing.Size(1104, 641);
             this.gMapControl1.TabIndex = 1;
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDown);
@@ -1072,6 +1104,39 @@
             this.hud1.wpno = 0;
             this.hud1.xtrack_error = 0F;
             // 
+            // windMap1
+            // 
+            this.windMap1.DataBindings.Add(new System.Windows.Forms.Binding("WindDirectionValue", this.bindingSourceState, "wind_dir", true));
+            this.windMap1.DataBindings.Add(new System.Windows.Forms.Binding("WindSpeedValue", this.bindingSourceState, "wind_vel", true));
+            this.windMap1.Location = new System.Drawing.Point(177, 1);
+            this.windMap1.Name = "windMap1";
+            this.windMap1.Size = new System.Drawing.Size(86, 136);
+            this.windMap1.TabIndex = 89;
+            this.windMap1.TileString = "估算风向:";
+            this.windMap1.WindDirectionValue = 0F;
+            this.windMap1.WindSpeedValue = "0";
+            // 
+            // bindingSourceState
+            // 
+            this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
+            // doubelLabel10
+            // 
+            this.doubelLabel10.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "raw_temp", true));
+            this.doubelLabel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel10.LabelName = "温度：";
+            this.doubelLabel10.LabelValue = "0";
+            this.doubelLabel10.Location = new System.Drawing.Point(1, 267);
+            this.doubelLabel10.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel10.Name = "doubelLabel10";
+            this.doubelLabel10.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel10.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel10.TabIndex = 16;
+            // 
+            // bindingSourceHud
+            // 
+            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
             // doubelLabel9
             // 
             this.doubelLabel9.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "wpno", true));
@@ -1084,10 +1149,6 @@
             this.doubelLabel9.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
             this.doubelLabel9.Size = new System.Drawing.Size(175, 26);
             this.doubelLabel9.TabIndex = 9;
-            // 
-            // bindingSourceHud
-            // 
-            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
             // 
             // doubelLabel8
             // 
@@ -1192,15 +1253,12 @@
             this.doubelLabel2.Size = new System.Drawing.Size(175, 26);
             this.doubelLabel2.TabIndex = 2;
             // 
-            // bindingSourceState
-            // 
-            this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
-            // 
             // GCS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 605);
+            this.ClientSize = new System.Drawing.Size(1104, 641);
+            this.Controls.Add(this.windMap1);
             this.Controls.Add(this.panelWPPanel);
             this.Controls.Add(this.panelInofPanel);
             this.Controls.Add(this.panelCommand);
@@ -1225,8 +1283,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1312,5 +1370,9 @@
         private DoubelLabel doubelLabel9;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.ComboBox CMB_setwp;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button19;
+        private GCSViews.WindMap windMap1;
+        private DoubelLabel doubelLabel10;
     }
 }

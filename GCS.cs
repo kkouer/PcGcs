@@ -142,6 +142,8 @@ namespace MissionPlanner
             drawnpolygon.Fill = Brushes.Transparent;
 
             updateCMDParams();
+
+            comboBox1.SelectedIndex = 1;
         }
 
 
@@ -2662,9 +2664,9 @@ namespace MissionPlanner
             if (drawnpolygon.Points.Count > 1 && drawnpolygon.Points[0] == drawnpolygon.Points[drawnpolygon.Points.Count - 1])
                 drawnpolygon.Points.RemoveAt(drawnpolygon.Points.Count - 1); // unmake a full loop
 
-            drawnpolygon.Points.Add(new PointLatLng(MouseDownStart.Lat, MouseDownStart.Lng));
+            //drawnpolygon.Points.Add(new PointLatLng(MouseDownStart.Lat, MouseDownStart.Lng));
 
-            addpolygonmarkergrid(drawnpolygon.Points.Count.ToString(), MouseDownStart.Lng, MouseDownStart.Lat, 0);
+            //addpolygonmarkergrid(drawnpolygon.Points.Count.ToString(), MouseDownStart.Lng, MouseDownStart.Lat, 0);
 
             gMapControl1.UpdatePolygonLocalPosition(drawnpolygon);
 
@@ -2863,6 +2865,64 @@ namespace MissionPlanner
             }
             catch { CustomMessageBox.Show(Strings.CommandFailed, Strings.ERROR); }
             ((Button)sender).Enabled = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                gMapControl1.MapProvider = GMapProviders.AMapStatelite;
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                gMapControl1.MapProvider = GMapProviders.AMap;
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (Commands.RowCount <= 3)
+            {
+                CustomMessageBox.Show("未发现航点!");
+                return;
+            }
+            //float a = comPort.MAV.cs.wind_dir;
+            if (Commands.Rows[Commands.RowCount - 1].Cells[0].Value.ToString() != "LAND")
+            {
+                CustomMessageBox.Show("未找到降落点!请确保最后一个航点为降落点!");
+                return;
+            }
+            PointLatLng LandingPoint = new PointLatLng(Convert.ToDouble(Commands.Rows[Commands.RowCount - 1].Cells[Lat.Index].Value.ToString()), Convert.ToDouble(Commands.Rows[Commands.RowCount - 1].Cells[Lon.Index].Value));
+            float AntiWind = comPort.MAV.cs.wind_dir + 180 > 360 ? comPort.MAV.cs.wind_dir + 180 - 360 : comPort.MAV.cs.wind_dir + 180;
+            PointLatLng ReturnPoint = calDistanceToLogLat(0.24f, LandingPoint, AntiWind);
+            CustomMessageBox.Show(" 风向 : " + comPort.MAV.cs.wind_dir.ToString() + " 度\n 风力 : " + comPort.MAV.cs.wind_vel.ToString() + " 米/秒");
+
+            //this.trackBar1.Value = (int)(AntiWind) / 10;
+
+            if (Commands.Rows[Commands.RowCount - 2].Cells[0].Value.ToString() != "LOITER_TO_ALT")
+            {
+                CustomMessageBox.Show("未找到返航点!");
+                return;
+            }
+            Commands.Rows[Commands.RowCount - 2].Cells[Lon.Index].Value = ReturnPoint.Lng.ToString("0.0000000");
+            Commands.Rows[Commands.RowCount - 2].Cells[Lat.Index].Value = ReturnPoint.Lat.ToString("0.0000000");
+            writeKML();
+            CustomMessageBox.Show("返航点位置已经计算完成,请根据实际风向情况上传航点信息!");
+            //this.trackBar1.Enabled = true;
+        }
+
+        /// <summary>
+        /// 根据已知点,距离,角度,求未知点经纬度
+        /// </summary>
+        /// <param name="distance">距离,单位千米</param>
+        /// <param name="startPoint">起点经纬度</param>
+        /// <param name="angle">角度,单位度数</param>
+        /// <returns></returns>
+        private PointLatLng calDistanceToLogLat(float distance, PointLatLng startPoint, double angle)
+        {
+            double lng1 = startPoint.Lng + (distance * Math.Sin(angle * Math.PI / 180)) / (111 * Math.Cos(startPoint.Lat * Math.PI / 180));
+            double lat1 = startPoint.Lat + (distance * Math.Cos(angle * Math.PI / 180)) / 111;
+            return new PointLatLng(lat1, lng1);
         }
 
 

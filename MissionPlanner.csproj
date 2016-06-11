@@ -441,6 +441,12 @@
     <Compile Include="GCSViews\welcomeForm.designer.cs">
       <DependentUpon>welcomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GCSViews\WindMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GCSViews\WindMap.designer.cs">
+      <DependentUpon>WindMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="georefimage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -997,6 +1003,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\welcomeForm.resx">
       <DependentUpon>welcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\WindMap.resx">
+      <DependentUpon>WindMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Georefimage.de-DE.resx">
       <DependentUpon>georefimage.cs</DependentUpon>
@@ -2913,6 +2922,7 @@
     <None Include="Resources\gcs.png" />
     <None Include="Resources\max.png" />
     <None Include="Resources\min.png" />
+    <None Include="Resources\wind80_80.png" />
     <Content Include="Scripts\example5 inject data.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
