@@ -1299,13 +1299,13 @@ namespace MissionPlanner
         private void button4_Click(object sender, EventArgs e)
         {
 
-            //切换到最后一个航点
+            //切换到最后二个航点
             if (comPort.MAV.param["MIS_TOTAL"] != null)
             {
 
                 if (CustomMessageBox.Show("确定降落?", "降落?", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;
-                int wps = int.Parse(comPort.MAV.param["MIS_TOTAL"].ToString()) - 1;
+                int wps = int.Parse(comPort.MAV.param["MIS_TOTAL"].ToString()) - 2;
                 comPort.setWPCurrent((ushort)wps);
             }
             comPort.setMode("auto");
@@ -2877,6 +2877,10 @@ namespace MissionPlanner
             {
                 gMapControl1.MapProvider = GMapProviders.AMap;
             }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                gMapControl1.MapProvider = GMapProviders.GoogleChinaSatelliteMap;
+            }
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -2923,6 +2927,24 @@ namespace MissionPlanner
             double lng1 = startPoint.Lng + (distance * Math.Sin(angle * Math.PI / 180)) / (111 * Math.Cos(startPoint.Lat * Math.PI / 180));
             double lat1 = startPoint.Lat + (distance * Math.Cos(angle * Math.PI / 180)) / 111;
             return new PointLatLng(lat1, lng1);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (CustomMessageBox.Show("确定开伞?", "开伞?", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+            if (!comPort.BaseStream.IsOpen)
+                return;
+            comPort.doCommand(MAVLink.MAV_CMD.DO_PARACHUTE, 2, 0, 0, 0, 0, 0, 0);
+        }
+
+        bool cameraCommand2 = false;
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (!comPort.BaseStream.IsOpen)
+                return;
+            comPort.doCommand(MAVLink.MAV_CMD.DO_SET_RELAY, 1, Convert.ToInt16(cameraCommand2), 0, 0, 0, 0, 0);
+            cameraCommand2 = !cameraCommand2;
         }
 
 
