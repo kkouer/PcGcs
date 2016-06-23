@@ -6,6 +6,7 @@ using log4net;
 using MissionPlanner.Comms;
 using MissionPlanner.Controls;
 using MissionPlanner.Controls.Waypoints;
+using MissionPlanner.Maps;
 using MissionPlanner.Utilities;
 using System;
 using System.Collections;
@@ -56,18 +57,18 @@ namespace MissionPlanner
         public bool quickadd;
 
         PointLatLngAlt mouseposdisplay = new PointLatLngAlt(0, 0);
-
+        public static GMapControl mymap;
         public GCS()
         {
             InitializeComponent();
-
+            mymap = gMapControl1;
             //config map
             gMapControl1.CacheLocation = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + "mapCache" + Path.DirectorySeparatorChar;
             gMapControl1.MapProvider = GMapProviders.AMap;
+            gMapControl1.Manager.Mode = AccessMode.ServerAndCache;
             gMapControl1.MinZoom = 0;
             gMapControl1.MaxZoom = 24;
-            gMapControl1.Zoom = 4;
-            gMapControl1.Position = new PointLatLng(36, 103);
+            gMapControl1.Zoom = 3;
 
             // setup main serial reader
             serialreaderthread = new Thread(SerialReader)
@@ -113,10 +114,7 @@ namespace MissionPlanner
             gMapControl1.OnMarkerClick += MainMap_OnMarkerClick;
             gMapControl1.OnMarkerLeave += MainMap_OnMarkerLeave;
             gMapControl1.RoutesEnabled = true;
-
-
-            currentMarker = new GMarkerGoogle(gMapControl1.Position, GMarkerGoogleType.red);
-
+            
 
             routesoverlay = new GMapOverlay("routes");
             gMapControl1.Overlays.Add(routesoverlay);
@@ -135,13 +133,14 @@ namespace MissionPlanner
 
             gMapControl1.Overlays.Add(poioverlay);
 
-            //setup drawnpolgon
-            List<PointLatLng> polygonPoints2 = new List<PointLatLng>();
-            drawnpolygon = new GMapPolygon(polygonPoints2, "drawnpoly");
-            drawnpolygon.Stroke = new Pen(Color.Red, 2);
-            drawnpolygon.Fill = Brushes.Transparent;
 
-            updateCMDParams();
+            objectsoverlay.Markers.Clear();
+
+            gMapControl1.Position = new PointLatLng(36, 103);
+            gMapControl1.Zoom = 4;
+            currentMarker = new GMarkerGoogle(gMapControl1.Position, GMarkerGoogleType.red);
+            this.Commands.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
 
             comboBox1.SelectedIndex = 1;
         }
@@ -465,7 +464,6 @@ namespace MissionPlanner
         bool polygongridmode;
         altmode currentaltmode = altmode.Relative;
         bool sethome;
-        GMapOverlay top;
         GMapOverlay drawnpolygonsoverlay;
         /// <summary>
         /// Used to create a new WP
@@ -2925,6 +2923,209 @@ namespace MissionPlanner
             return new PointLatLng(lat1, lng1);
         }
 
+        private void gMapControl1_Load(object sender, EventArgs e)
+        {
+            quickadd = true;
+
+            config(false);
+
+            quickadd = false;
+
+            POI.POIModified += POI_POIModified;
+
+            if (MainV2.config["WMSserver"] != null)
+                WMSProvider.CustomWMSURL = MainV2.config["WMSserver"].ToString();
+
+          
+
+            //// setup geofence
+            List<PointLatLng> polygonPoints = new List<PointLatLng>();
+            geofencepolygon = new GMapPolygon(polygonPoints, "geofence");
+            geofencepolygon.Stroke = new Pen(Color.Pink, 5);
+            geofencepolygon.Fill = Brushes.Transparent;
+
+            //setup drawnpolgon
+            List<PointLatLng> polygonPoints2 = new List<PointLatLng>();
+            drawnpolygon = new GMapPolygon(polygonPoints2, "drawnpoly");
+            drawnpolygon.Stroke = new Pen(Color.Red, 2);
+            drawnpolygon.Fill = Brushes.Transparent;
+
+            updateCMDParams();
+
+
+            writeKML();
+
+            timer1.Start();
+        }
+
+        void POI_POIModified(object sender, EventArgs e)
+        {
+            POI.UpdateOverlay(poioverlay);
+        }
+
+        private void config(bool write)
+        {
+            if (write)
+            {
+                MainV2.config["TXT_homelat"] = TXT_homelat.Text;
+                MainV2.config["TXT_homelng"] = TXT_homelng.Text;
+                MainV2.config["TXT_homealt"] = TXT_homealt.Text;
+
+
+                MainV2.config["TXT_WPRad"] = TXT_WPRad.Text;
+
+                MainV2.config["TXT_loiterrad"] = TXT_loiterrad.Text;
+
+                MainV2.config["TXT_DefaultAlt"] = TXT_DefaultAlt.Text;
+
+                //MainV2.config["CMB_altmode"] = CMB_altmode.Text;
+
+                MainV2.config["fpminaltwarning"] = TXT_altwarn.Text;
+
+                MainV2.config["fpcoordmouse"] = coords1.System;
+            }
+            else
+            {
+                Hashtable temp = new Hashtable((Hashtable)MainV2.config.Clone());
+
+                foreach (string key in temp.Keys)
+                {
+                    switch (key)
+                    {
+                        case "TXT_WPRad":
+                            TXT_WPRad.Text = MainV2.config[key].ToString();
+                            break;
+                        case "TXT_loiterrad":
+                            TXT_loiterrad.Text = MainV2.config[key].ToString();
+                            break;
+                        case "TXT_DefaultAlt":
+                            TXT_DefaultAlt.Text = MainV2.config[key].ToString();
+                            break;
+                        //case "CMB_altmode":
+                        //    CMB_altmode.Text = MainV2.config[key].ToString();
+                        //    break;
+                        case "fpminaltwarning":
+                            TXT_altwarn.Text = MainV2.getConfig("fpminaltwarning");
+                            break;
+                        case "fpcoordmouse":
+                            coords1.System = MainV2.config[key].ToString();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (isMouseDown)
+                    return;
+
+                routesoverlay.Markers.Clear();
+
+                if (comPort.MAV.cs.TrackerLocation != comPort.MAV.cs.HomeLocation && comPort.MAV.cs.TrackerLocation.Lng != 0)
+                {
+                    addpolygonmarker("Tracker Home", comPort.MAV.cs.TrackerLocation.Lng, comPort.MAV.cs.TrackerLocation.Lat, (int)comPort.MAV.cs.TrackerLocation.Alt, Color.Blue, routesoverlay);
+                }
+
+                if (comPort.MAV.cs.lat == 0 || comPort.MAV.cs.lng == 0)
+                    return;
+
+                PointLatLng currentloc = new PointLatLng(comPort.MAV.cs.lat, comPort.MAV.cs.lng);
+
+                if (comPort.MAV.cs.firmware == MainV2.Firmwares.ArduPlane || comPort.MAV.cs.firmware == MainV2.Firmwares.Ateryx)
+                {
+                    routesoverlay.Markers.Add(new GMapMarkerPlane(currentloc, comPort.MAV.cs.yaw, comPort.MAV.cs.groundcourse, comPort.MAV.cs.nav_bearing, comPort.MAV.cs.target_bearing));
+                }
+                else if (comPort.MAV.cs.firmware == MainV2.Firmwares.ArduRover)
+                {
+                    routesoverlay.Markers.Add(new GMapMarkerRover(currentloc, comPort.MAV.cs.yaw, comPort.MAV.cs.groundcourse, comPort.MAV.cs.nav_bearing, comPort.MAV.cs.target_bearing));
+                }
+                else if (comPort.MAV.aptype == MAVLink.MAV_TYPE.HELICOPTER)
+                {
+                    routesoverlay.Markers.Add((new GMapMarkerHeli(currentloc, comPort.MAV.cs.yaw, comPort.MAV.cs.groundcourse, comPort.MAV.cs.nav_bearing)));
+                }
+                else if (comPort.MAV.aptype == MAVLink.MAV_TYPE.ANTENNA_TRACKER)
+                {
+                    routesoverlay.Markers.Add(new GMapMarkerAntennaTracker(currentloc, comPort.MAV.cs.yaw, comPort.MAV.cs.target_bearing));
+                }
+                else
+                {
+                    routesoverlay.Markers.Add(new GMapMarkerQuad(currentloc, comPort.MAV.cs.yaw, comPort.MAV.cs.groundcourse, comPort.MAV.cs.nav_bearing, comPort.MAV.sysid));
+                }
+
+                //if (comPort.MAV.cs.mode.ToLower() == "guided" && comPort.MAV.GuidedMode.x != 0)
+                //{
+                //    addpolygonmarker("Guided Mode", comPort.MAV.GuidedMode.y, comPort.MAV.GuidedMode.x, (int)comPort.MAV.GuidedMode.z, Color.Blue, routesoverlay);
+                //}
+
+                //autopan
+                if (autopan)
+                {
+                    if (route.Points[route.Points.Count - 1].Lat != 0 && (mapupdate.AddSeconds(3) < DateTime.Now))
+                    {
+                        updateMapPosition(currentloc);
+                        mapupdate = DateTime.Now;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Warn(ex);
+            }
+        }
+
+        DateTime lastmapposchange = DateTime.MinValue;
+
+        private void updateMapPosition(PointLatLng currentloc)
+        {
+            BeginInvoke((MethodInvoker)delegate
+            {
+                try
+                {
+                    if (lastmapposchange.Second != DateTime.Now.Second)
+                    {
+                        gMapControl1.Position = currentloc;
+                        lastmapposchange = DateTime.Now;
+                    }
+                }
+                catch { }
+            });
+        }
+
+        private void addpolygonmarker(string tag, double lng, double lat, int alt, Color? color, GMapOverlay overlay)
+        {
+            try
+            {
+                PointLatLng point = new PointLatLng(lat, lng);
+                GMarkerGoogle m = new GMarkerGoogle(point, GMarkerGoogleType.green);
+                m.ToolTipMode = MarkerTooltipMode.Always;
+                m.ToolTipText = tag;
+                m.Tag = tag;
+
+                GMapMarkerRect mBorders = new GMapMarkerRect(point);
+                {
+                    mBorders.InnerMarker = m;
+                    try
+                    {
+                        mBorders.wprad = (int)(float.Parse(MainV2.config["TXT_WPRad"].ToString()) / CurrentState.multiplierdist);
+                    }
+                    catch { }
+                    if (color.HasValue)
+                    {
+                        mBorders.Color = color.Value;
+                    }
+                }
+
+                overlay.Markers.Add(m);
+                overlay.Markers.Add(mBorders);
+            }
+            catch (Exception) { }
+        }
 
     }
 }

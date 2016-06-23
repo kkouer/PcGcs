@@ -118,6 +118,7 @@
             this.hud1 = new MissionPlanner.Controls.HUD();
             this.windMap1 = new MissionPlanner.GCSViews.WindMap();
             this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelWPPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.panelInofPanel.SuspendLayout();
@@ -1171,6 +1172,7 @@
             this.gMapControl1.Size = new System.Drawing.Size(1104, 641);
             this.gMapControl1.TabIndex = 1;
             this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
             this.gMapControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDown);
             this.gMapControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseMove);
             // 
@@ -1252,6 +1254,11 @@
             // bindingSourceState
             // 
             this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // GCS
             // 
@@ -1374,5 +1381,6 @@
         private System.Windows.Forms.Button button19;
         private GCSViews.WindMap windMap1;
         private DoubelLabel doubelLabel10;
+        private System.Windows.Forms.Timer timer1;
     }
 }
