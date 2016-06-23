@@ -78,6 +78,7 @@
             this.buttonHideInfoPanel = new System.Windows.Forms.Button();
             this.panelCommand = new BSE.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button20 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -92,7 +93,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button20 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.CMB_setwp = new System.Windows.Forms.ComboBox();
             this.buttonDisarmed = new System.Windows.Forms.Button();
@@ -106,10 +106,12 @@
             this.buttonHideCommandPanel = new System.Windows.Forms.Button();
             this.hud1 = new MissionPlanner.Controls.HUD();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.windMap1 = new MissionPlanner.GCSViews.WindMap();
             this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
-            this.doubelLabel10 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel11 = new MissionPlanner.DoubelLabel();
             this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
+            this.doubelLabel10 = new MissionPlanner.DoubelLabel();
             this.doubelLabel9 = new MissionPlanner.DoubelLabel();
             this.doubelLabel8 = new MissionPlanner.DoubelLabel();
             this.doubelLabel7 = new MissionPlanner.DoubelLabel();
@@ -186,7 +188,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button11
+            // panelWPPanel
             // 
             this.panelWPPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -604,6 +606,7 @@
             this.panelInofPanel.BackColor = System.Drawing.Color.Transparent;
             this.panelInofPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
             this.panelInofPanel.CaptionHeight = 27;
+            this.panelInofPanel.Controls.Add(this.doubelLabel11);
             this.panelInofPanel.Controls.Add(this.doubelLabel10);
             this.panelInofPanel.Controls.Add(this.comboBox1);
             this.panelInofPanel.Controls.Add(this.doubelLabel9);
@@ -612,9 +615,9 @@
             this.panelInofPanel.Controls.Add(this.doubelLabel6);
             this.panelInofPanel.Controls.Add(this.doubelLabel5);
             this.panelInofPanel.Controls.Add(this.buttonHideInfoPanel);
+            this.panelInofPanel.Controls.Add(this.doubelLabel3);
             this.panelInofPanel.Controls.Add(this.doubelLabel4);
             this.panelInofPanel.Controls.Add(this.doubelLabel1);
-            this.panelInofPanel.Controls.Add(this.doubelLabel3);
             this.panelInofPanel.Controls.Add(this.doubelLabel2);
             this.panelInofPanel.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.panelInofPanel.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
@@ -642,7 +645,7 @@
             this.panelInofPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelInofPanel.ToolTipTextExpandIconPanelExpanded = null;
             // 
-            // doubelLabel10
+            // comboBox1
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -657,7 +660,7 @@
             this.comboBox1.TabIndex = 15;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // doubelLabel9
+            // buttonHideInfoPanel
             // 
             this.buttonHideInfoPanel.Location = new System.Drawing.Point(146, 3);
             this.buttonHideInfoPanel.Name = "buttonHideInfoPanel";
@@ -667,7 +670,7 @@
             this.buttonHideInfoPanel.UseVisualStyleBackColor = true;
             this.buttonHideInfoPanel.Click += new System.EventHandler(this.buttonHideInfoPanel_Click);
             // 
-            // doubelLabel4
+            // panelCommand
             // 
             this.panelCommand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCommand.AssociatedSplitter = null;
@@ -717,6 +720,18 @@
             this.groupBox5.TabIndex = 113;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "应急处理";
+            // 
+            // button20
+            // 
+            this.button20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button20.Location = new System.Drawing.Point(96, 17);
+            this.button20.Margin = new System.Windows.Forms.Padding(5);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(75, 23);
+            this.button20.TabIndex = 16;
+            this.button20.Text = "开伞";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button7
             // 
@@ -782,7 +797,7 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button13
+            // button11
             // 
             this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button11.Location = new System.Drawing.Point(96, 86);
@@ -889,18 +904,6 @@
             this.groupBox2.TabIndex = 110;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "指令";
-            // 
-            // button18
-            // 
-            this.button20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button20.Location = new System.Drawing.Point(96, 17);
-            this.button20.Margin = new System.Windows.Forms.Padding(5);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
-            this.button20.TabIndex = 16;
-            this.button20.Text = "开伞";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button18
             // 
@@ -1028,7 +1031,7 @@
             this.buttonHideCommandPanel.UseVisualStyleBackColor = true;
             this.buttonHideCommandPanel.Click += new System.EventHandler(this.buttonHideCommandPanel_Click);
             // 
-            // gMapControl1
+            // hud1
             // 
             this.hud1.airspeed = 0F;
             this.hud1.alt = 0F;
@@ -1092,7 +1095,7 @@
             this.hud1.wpno = 0;
             this.hud1.xtrack_error = 0F;
             // 
-            // windMap1
+            // gMapControl1
             // 
             this.gMapControl1.BackColor = System.Drawing.Color.Transparent;
             this.gMapControl1.Bearing = 0F;
@@ -1119,8 +1122,14 @@
             this.gMapControl1.Size = new System.Drawing.Size(1049, 591);
             this.gMapControl1.TabIndex = 1;
             this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
             this.gMapControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDown);
             this.gMapControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseMove);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // windMap1
             // 
@@ -1139,6 +1148,23 @@
             // 
             this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
             // 
+            // doubelLabel11
+            // 
+            this.doubelLabel11.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "linkqualitygcs", true));
+            this.doubelLabel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel11.LabelName = "电台信号：";
+            this.doubelLabel11.LabelValue = "0";
+            this.doubelLabel11.Location = new System.Drawing.Point(1, 293);
+            this.doubelLabel11.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel11.Name = "doubelLabel11";
+            this.doubelLabel11.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel11.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel11.TabIndex = 17;
+            // 
+            // bindingSourceHud
+            // 
+            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
+            // 
             // doubelLabel10
             // 
             this.doubelLabel10.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "raw_temp", true));
@@ -1151,10 +1177,6 @@
             this.doubelLabel10.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
             this.doubelLabel10.Size = new System.Drawing.Size(175, 26);
             this.doubelLabel10.TabIndex = 16;
-            // 
-            // bindingSourceHud
-            // 
-            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
             // 
             // doubelLabel9
             // 
@@ -1227,7 +1249,7 @@
             this.doubelLabel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel4.LabelName = "GPS：";
             this.doubelLabel4.LabelValue = "0";
-            this.doubelLabel4.Location = new System.Drawing.Point(1, 111);
+            this.doubelLabel4.Location = new System.Drawing.Point(1, 85);
             this.doubelLabel4.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel4.Name = "doubelLabel4";
             this.doubelLabel4.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
@@ -1240,7 +1262,7 @@
             this.doubelLabel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel1.LabelName = "电压：";
             this.doubelLabel1.LabelValue = "0";
-            this.doubelLabel1.Location = new System.Drawing.Point(1, 85);
+            this.doubelLabel1.Location = new System.Drawing.Point(1, 59);
             this.doubelLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.doubelLabel1.Name = "doubelLabel1";
             this.doubelLabel1.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
@@ -1253,7 +1275,7 @@
             this.doubelLabel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.doubelLabel3.LabelName = "高度：";
             this.doubelLabel3.LabelValue = "0";
-            this.doubelLabel3.Location = new System.Drawing.Point(1, 59);
+            this.doubelLabel3.Location = new System.Drawing.Point(1, 111);
             this.doubelLabel3.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.doubelLabel3.Name = "doubelLabel3";
             this.doubelLabel3.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
@@ -1395,5 +1417,7 @@
         private GCSViews.WindMap windMap1;
         private DoubelLabel doubelLabel10;
         private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Timer timer1;
+        private DoubelLabel doubelLabel11;
     }
 }

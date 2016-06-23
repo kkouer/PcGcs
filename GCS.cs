@@ -3114,5 +3114,99 @@ namespace MissionPlanner
             catch (Exception) { }
         }
 
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (isMouseDown)
+                    return;
+
+                routesoverlay.Markers.Clear();
+
+                if (comPort.MAV.cs.TrackerLocation != comPort.MAV.cs.HomeLocation && comPort.MAV.cs.TrackerLocation.Lng != 0)
+                {
+                    addpolygonmarker("Tracker Home", comPort.MAV.cs.TrackerLocation.Lng, comPort.MAV.cs.TrackerLocation.Lat, (int)comPort.MAV.cs.TrackerLocation.Alt, Color.Blue, routesoverlay);
+                }
+
+                if (comPort.MAV.cs.lat == 0 || comPort.MAV.cs.lng == 0)
+                    return;
+
+                PointLatLng currentloc = new PointLatLng(comPort.MAV.cs.lat, comPort.MAV.cs.lng);
+
+                if (comPort.MAV.cs.firmware == MainV2.Firmwares.ArduPlane || comPort.MAV.cs.firmware == MainV2.Firmwares.Ateryx)
+                {
+                    routesoverlay.Markers.Add(new GMapMarkerPlane(currentloc, comPort.MAV.cs.yaw, comPort.MAV.cs.groundcourse, comPort.MAV.cs.nav_bearing, comPort.MAV.cs.target_bearing));
+                }
+                else if (comPort.MAV.cs.firmware == MainV2.Firmwares.ArduRover)
+                {
+                    routesoverlay.Markers.Add(new GMapMarkerRover(currentloc, comPort.MAV.cs.yaw, comPort.MAV.cs.groundcourse, comPort.MAV.cs.nav_bearing, comPort.MAV.cs.target_bearing));
+                }
+                else if (comPort.MAV.aptype == MAVLink.MAV_TYPE.HELICOPTER)
+                {
+                    routesoverlay.Markers.Add((new GMapMarkerHeli(currentloc, comPort.MAV.cs.yaw, comPort.MAV.cs.groundcourse, comPort.MAV.cs.nav_bearing)));
+                }
+                else if (comPort.MAV.aptype == MAVLink.MAV_TYPE.ANTENNA_TRACKER)
+                {
+                    routesoverlay.Markers.Add(new GMapMarkerAntennaTracker(currentloc, comPort.MAV.cs.yaw, comPort.MAV.cs.target_bearing));
+                }
+                else
+                {
+                    routesoverlay.Markers.Add(new GMapMarkerQuad(currentloc, comPort.MAV.cs.yaw, comPort.MAV.cs.groundcourse, comPort.MAV.cs.nav_bearing, comPort.MAV.sysid));
+                }
+
+                //if (comPort.MAV.cs.mode.ToLower() == "guided" && comPort.MAV.GuidedMode.x != 0)
+                //{
+                //    addpolygonmarker("Guided Mode", comPort.MAV.GuidedMode.y, comPort.MAV.GuidedMode.x, (int)comPort.MAV.GuidedMode.z, Color.Blue, routesoverlay);
+                //}
+
+                //autopan
+                if (autopan)
+                {
+                    if (route.Points[route.Points.Count - 1].Lat != 0 && (mapupdate.AddSeconds(3) < DateTime.Now))
+                    {
+                        updateMapPosition(currentloc);
+                        mapupdate = DateTime.Now;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Warn(ex);
+            }
+        }
+
+        private void gMapControl1_Load(object sender, EventArgs e)
+        {
+            quickadd = true;
+
+            config(false);
+
+            quickadd = false;
+
+            POI.POIModified += POI_POIModified;
+
+            if (MainV2.config["WMSserver"] != null)
+                WMSProvider.CustomWMSURL = MainV2.config["WMSserver"].ToString();
+
+            //// setup geofence
+            List<PointLatLng> polygonPoints = new List<PointLatLng>();
+            geofencepolygon = new GMapPolygon(polygonPoints, "geofence");
+            geofencepolygon.Stroke = new Pen(Color.Pink, 5);
+            geofencepolygon.Fill = Brushes.Transparent;
+
+            //setup drawnpolgon
+            List<PointLatLng> polygonPoints2 = new List<PointLatLng>();
+            drawnpolygon = new GMapPolygon(polygonPoints2, "drawnpoly");
+            drawnpolygon.Stroke = new Pen(Color.Red, 2);
+            drawnpolygon.Fill = Brushes.Transparent;
+
+            updateCMDParams();
+
+
+            writeKML();
+
+            timer1.Start();
+        }
+
     }
 }
