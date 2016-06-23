@@ -1303,7 +1303,7 @@ namespace MissionPlanner
 
                 if (CustomMessageBox.Show("确定降落?", "降落?", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;
-                int wps = int.Parse(comPort.MAV.param["MIS_TOTAL"].ToString()) - 1;
+                int wps = int.Parse(comPort.MAV.param["MIS_TOTAL"].ToString()) - 2;
                 comPort.setWPCurrent((ushort)wps);
             }
             comPort.setMode("auto");
@@ -2875,6 +2875,10 @@ namespace MissionPlanner
             {
                 gMapControl1.MapProvider = GMapProviders.AMap;
             }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                gMapControl1.MapProvider = GMapProviders.GoogleChinaSatelliteMap;
+        }
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -2923,39 +2927,22 @@ namespace MissionPlanner
             return new PointLatLng(lat1, lng1);
         }
 
-        private void gMapControl1_Load(object sender, EventArgs e)
+        private void button20_Click(object sender, EventArgs e)
         {
-            quickadd = true;
+            if (CustomMessageBox.Show("确定开伞?", "开伞?", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+            if (!comPort.BaseStream.IsOpen)
+                return;
+            comPort.doCommand(MAVLink.MAV_CMD.DO_PARACHUTE, 2, 0, 0, 0, 0, 0, 0);
+        }
 
-            config(false);
-
-            quickadd = false;
-
-            POI.POIModified += POI_POIModified;
-
-            if (MainV2.config["WMSserver"] != null)
-                WMSProvider.CustomWMSURL = MainV2.config["WMSserver"].ToString();
-
-          
-
-            //// setup geofence
-            List<PointLatLng> polygonPoints = new List<PointLatLng>();
-            geofencepolygon = new GMapPolygon(polygonPoints, "geofence");
-            geofencepolygon.Stroke = new Pen(Color.Pink, 5);
-            geofencepolygon.Fill = Brushes.Transparent;
-
-            //setup drawnpolgon
-            List<PointLatLng> polygonPoints2 = new List<PointLatLng>();
-            drawnpolygon = new GMapPolygon(polygonPoints2, "drawnpoly");
-            drawnpolygon.Stroke = new Pen(Color.Red, 2);
-            drawnpolygon.Fill = Brushes.Transparent;
-
-            updateCMDParams();
-
-
-            writeKML();
-
-            timer1.Start();
+        bool cameraCommand2 = false;
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (!comPort.BaseStream.IsOpen)
+                return;
+            comPort.doCommand(MAVLink.MAV_CMD.DO_SET_RELAY, 1, Convert.ToInt16(cameraCommand2), 0, 0, 0, 0, 0);
+            cameraCommand2 = !cameraCommand2;
         }
 
         void POI_POIModified(object sender, EventArgs e)
