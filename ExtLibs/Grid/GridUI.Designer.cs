@@ -84,19 +84,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.BUT_save = new MissionPlanner.Controls.MyButton();
             this.tabGrid = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.LBL_Alternating_lanes = new System.Windows.Forms.Label();
-            this.LBL_Lane_Dist = new System.Windows.Forms.Label();
-            this.NUM_Lane_Dist = new System.Windows.Forms.NumericUpDown();
-            this.label28 = new System.Windows.Forms.Label();
-            this.groupBox_copter = new System.Windows.Forms.GroupBox();
-            this.TXT_headinghold = new System.Windows.Forms.TextBox();
-            this.BUT_headingholdminus = new System.Windows.Forms.Button();
-            this.BUT_headingholdplus = new System.Windows.Forms.Button();
-            this.CHK_copter_headingholdlock = new System.Windows.Forms.CheckBox();
-            this.CHK_copter_headinghold = new System.Windows.Forms.CheckBox();
-            this.LBL_copter_delay = new System.Windows.Forms.Label();
-            this.NUM_copter_delay = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label32 = new System.Windows.Forms.Label();
             this.NUM_leadin = new System.Windows.Forms.NumericUpDown();
@@ -114,6 +101,19 @@
             this.NUM_overshoot = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.NUM_Distance = new System.Windows.Forms.NumericUpDown();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.LBL_Alternating_lanes = new System.Windows.Forms.Label();
+            this.LBL_Lane_Dist = new System.Windows.Forms.Label();
+            this.NUM_Lane_Dist = new System.Windows.Forms.NumericUpDown();
+            this.label28 = new System.Windows.Forms.Label();
+            this.groupBox_copter = new System.Windows.Forms.GroupBox();
+            this.TXT_headinghold = new System.Windows.Forms.TextBox();
+            this.BUT_headingholdminus = new System.Windows.Forms.Button();
+            this.BUT_headingholdplus = new System.Windows.Forms.Button();
+            this.CHK_copter_headingholdlock = new System.Windows.Forms.CheckBox();
+            this.CHK_copter_headinghold = new System.Windows.Forms.CheckBox();
+            this.LBL_copter_delay = new System.Windows.Forms.Label();
+            this.NUM_copter_delay = new System.Windows.Forms.NumericUpDown();
             this.tabSimple = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.CHK_usespeed = new System.Windows.Forms.CheckBox();
@@ -148,10 +148,6 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_focallength)).BeginInit();
             this.tabGrid.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUM_Lane_Dist)).BeginInit();
-            this.groupBox_copter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUM_copter_delay)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_leadin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_spacing)).BeginInit();
@@ -160,6 +156,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_sidelap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_overshoot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_Distance)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_Lane_Dist)).BeginInit();
+            this.groupBox_copter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_copter_delay)).BeginInit();
             this.tabSimple.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_UpDownFlySpeed)).BeginInit();
@@ -583,110 +583,6 @@
             this.tabGrid.Name = "tabGrid";
             this.tabGrid.UseVisualStyleBackColor = true;
             // 
-            // groupBox7
-            // 
-            resources.ApplyResources(this.groupBox7, "groupBox7");
-            this.groupBox7.Controls.Add(this.LBL_Alternating_lanes);
-            this.groupBox7.Controls.Add(this.LBL_Lane_Dist);
-            this.groupBox7.Controls.Add(this.NUM_Lane_Dist);
-            this.groupBox7.Controls.Add(this.label28);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.TabStop = false;
-            // 
-            // LBL_Alternating_lanes
-            // 
-            resources.ApplyResources(this.LBL_Alternating_lanes, "LBL_Alternating_lanes");
-            this.LBL_Alternating_lanes.Name = "LBL_Alternating_lanes";
-            // 
-            // LBL_Lane_Dist
-            // 
-            resources.ApplyResources(this.LBL_Lane_Dist, "LBL_Lane_Dist");
-            this.LBL_Lane_Dist.Name = "LBL_Lane_Dist";
-            // 
-            // NUM_Lane_Dist
-            // 
-            resources.ApplyResources(this.NUM_Lane_Dist, "NUM_Lane_Dist");
-            this.NUM_Lane_Dist.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.NUM_Lane_Dist.Name = "NUM_Lane_Dist";
-            this.NUM_Lane_Dist.ValueChanged += new System.EventHandler(this.NUM_Lane_Dist_ValueChanged);
-            // 
-            // label28
-            // 
-            resources.ApplyResources(this.label28, "label28");
-            this.label28.Name = "label28";
-            // 
-            // groupBox_copter
-            // 
-            resources.ApplyResources(this.groupBox_copter, "groupBox_copter");
-            this.groupBox_copter.Controls.Add(this.TXT_headinghold);
-            this.groupBox_copter.Controls.Add(this.BUT_headingholdminus);
-            this.groupBox_copter.Controls.Add(this.BUT_headingholdplus);
-            this.groupBox_copter.Controls.Add(this.CHK_copter_headingholdlock);
-            this.groupBox_copter.Controls.Add(this.CHK_copter_headinghold);
-            this.groupBox_copter.Controls.Add(this.LBL_copter_delay);
-            this.groupBox_copter.Controls.Add(this.NUM_copter_delay);
-            this.groupBox_copter.Name = "groupBox_copter";
-            this.groupBox_copter.TabStop = false;
-            // 
-            // TXT_headinghold
-            // 
-            resources.ApplyResources(this.TXT_headinghold, "TXT_headinghold");
-            this.TXT_headinghold.Name = "TXT_headinghold";
-            this.TXT_headinghold.ReadOnly = true;
-            // 
-            // BUT_headingholdminus
-            // 
-            resources.ApplyResources(this.BUT_headingholdminus, "BUT_headingholdminus");
-            this.BUT_headingholdminus.Name = "BUT_headingholdminus";
-            this.BUT_headingholdminus.UseVisualStyleBackColor = true;
-            this.BUT_headingholdminus.Click += new System.EventHandler(this.BUT_headingholdminus_Click);
-            // 
-            // BUT_headingholdplus
-            // 
-            resources.ApplyResources(this.BUT_headingholdplus, "BUT_headingholdplus");
-            this.BUT_headingholdplus.Name = "BUT_headingholdplus";
-            this.BUT_headingholdplus.UseVisualStyleBackColor = true;
-            this.BUT_headingholdplus.Click += new System.EventHandler(this.BUT_headingholdplus_Click);
-            // 
-            // CHK_copter_headingholdlock
-            // 
-            resources.ApplyResources(this.CHK_copter_headingholdlock, "CHK_copter_headingholdlock");
-            this.CHK_copter_headingholdlock.Name = "CHK_copter_headingholdlock";
-            this.CHK_copter_headingholdlock.UseVisualStyleBackColor = true;
-            this.CHK_copter_headingholdlock.CheckedChanged += new System.EventHandler(this.CHK_copter_headingholdlock_CheckedChanged);
-            // 
-            // CHK_copter_headinghold
-            // 
-            resources.ApplyResources(this.CHK_copter_headinghold, "CHK_copter_headinghold");
-            this.CHK_copter_headinghold.Name = "CHK_copter_headinghold";
-            this.CHK_copter_headinghold.UseVisualStyleBackColor = true;
-            this.CHK_copter_headinghold.CheckedChanged += new System.EventHandler(this.CHK_copter_headinghold_CheckedChanged);
-            // 
-            // LBL_copter_delay
-            // 
-            resources.ApplyResources(this.LBL_copter_delay, "LBL_copter_delay");
-            this.LBL_copter_delay.Name = "LBL_copter_delay";
-            // 
-            // NUM_copter_delay
-            // 
-            this.NUM_copter_delay.DecimalPlaces = 1;
-            this.NUM_copter_delay.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            resources.ApplyResources(this.NUM_copter_delay, "NUM_copter_delay");
-            this.NUM_copter_delay.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.NUM_copter_delay.Name = "NUM_copter_delay";
-            // 
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
@@ -845,6 +741,110 @@
             0});
             this.NUM_Distance.ValueChanged += new System.EventHandler(this.domainUpDown1_ValueChanged);
             // 
+            // groupBox7
+            // 
+            resources.ApplyResources(this.groupBox7, "groupBox7");
+            this.groupBox7.Controls.Add(this.LBL_Alternating_lanes);
+            this.groupBox7.Controls.Add(this.LBL_Lane_Dist);
+            this.groupBox7.Controls.Add(this.NUM_Lane_Dist);
+            this.groupBox7.Controls.Add(this.label28);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.TabStop = false;
+            // 
+            // LBL_Alternating_lanes
+            // 
+            resources.ApplyResources(this.LBL_Alternating_lanes, "LBL_Alternating_lanes");
+            this.LBL_Alternating_lanes.Name = "LBL_Alternating_lanes";
+            // 
+            // LBL_Lane_Dist
+            // 
+            resources.ApplyResources(this.LBL_Lane_Dist, "LBL_Lane_Dist");
+            this.LBL_Lane_Dist.Name = "LBL_Lane_Dist";
+            // 
+            // NUM_Lane_Dist
+            // 
+            resources.ApplyResources(this.NUM_Lane_Dist, "NUM_Lane_Dist");
+            this.NUM_Lane_Dist.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.NUM_Lane_Dist.Name = "NUM_Lane_Dist";
+            this.NUM_Lane_Dist.ValueChanged += new System.EventHandler(this.NUM_Lane_Dist_ValueChanged);
+            // 
+            // label28
+            // 
+            resources.ApplyResources(this.label28, "label28");
+            this.label28.Name = "label28";
+            // 
+            // groupBox_copter
+            // 
+            resources.ApplyResources(this.groupBox_copter, "groupBox_copter");
+            this.groupBox_copter.Controls.Add(this.TXT_headinghold);
+            this.groupBox_copter.Controls.Add(this.BUT_headingholdminus);
+            this.groupBox_copter.Controls.Add(this.BUT_headingholdplus);
+            this.groupBox_copter.Controls.Add(this.CHK_copter_headingholdlock);
+            this.groupBox_copter.Controls.Add(this.CHK_copter_headinghold);
+            this.groupBox_copter.Controls.Add(this.LBL_copter_delay);
+            this.groupBox_copter.Controls.Add(this.NUM_copter_delay);
+            this.groupBox_copter.Name = "groupBox_copter";
+            this.groupBox_copter.TabStop = false;
+            // 
+            // TXT_headinghold
+            // 
+            resources.ApplyResources(this.TXT_headinghold, "TXT_headinghold");
+            this.TXT_headinghold.Name = "TXT_headinghold";
+            this.TXT_headinghold.ReadOnly = true;
+            // 
+            // BUT_headingholdminus
+            // 
+            resources.ApplyResources(this.BUT_headingholdminus, "BUT_headingholdminus");
+            this.BUT_headingholdminus.Name = "BUT_headingholdminus";
+            this.BUT_headingholdminus.UseVisualStyleBackColor = true;
+            this.BUT_headingholdminus.Click += new System.EventHandler(this.BUT_headingholdminus_Click);
+            // 
+            // BUT_headingholdplus
+            // 
+            resources.ApplyResources(this.BUT_headingholdplus, "BUT_headingholdplus");
+            this.BUT_headingholdplus.Name = "BUT_headingholdplus";
+            this.BUT_headingholdplus.UseVisualStyleBackColor = true;
+            this.BUT_headingholdplus.Click += new System.EventHandler(this.BUT_headingholdplus_Click);
+            // 
+            // CHK_copter_headingholdlock
+            // 
+            resources.ApplyResources(this.CHK_copter_headingholdlock, "CHK_copter_headingholdlock");
+            this.CHK_copter_headingholdlock.Name = "CHK_copter_headingholdlock";
+            this.CHK_copter_headingholdlock.UseVisualStyleBackColor = true;
+            this.CHK_copter_headingholdlock.CheckedChanged += new System.EventHandler(this.CHK_copter_headingholdlock_CheckedChanged);
+            // 
+            // CHK_copter_headinghold
+            // 
+            resources.ApplyResources(this.CHK_copter_headinghold, "CHK_copter_headinghold");
+            this.CHK_copter_headinghold.Name = "CHK_copter_headinghold";
+            this.CHK_copter_headinghold.UseVisualStyleBackColor = true;
+            this.CHK_copter_headinghold.CheckedChanged += new System.EventHandler(this.CHK_copter_headinghold_CheckedChanged);
+            // 
+            // LBL_copter_delay
+            // 
+            resources.ApplyResources(this.LBL_copter_delay, "LBL_copter_delay");
+            this.LBL_copter_delay.Name = "LBL_copter_delay";
+            // 
+            // NUM_copter_delay
+            // 
+            this.NUM_copter_delay.DecimalPlaces = 1;
+            this.NUM_copter_delay.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            resources.ApplyResources(this.NUM_copter_delay, "NUM_copter_delay");
+            this.NUM_copter_delay.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.NUM_copter_delay.Name = "NUM_copter_delay";
+            // 
             // tabSimple
             // 
             this.tabSimple.Controls.Add(this.groupBox6);
@@ -909,7 +909,7 @@
             0});
             this.NUM_UpDownFlySpeed.Name = "NUM_UpDownFlySpeed";
             this.NUM_UpDownFlySpeed.Value = new decimal(new int[] {
-            14,
+            15,
             0,
             0,
             0});
@@ -1120,12 +1120,6 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_focallength)).EndInit();
             this.tabGrid.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUM_Lane_Dist)).EndInit();
-            this.groupBox_copter.ResumeLayout(false);
-            this.groupBox_copter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUM_copter_delay)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_leadin)).EndInit();
@@ -1135,6 +1129,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_sidelap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_overshoot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_Distance)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_Lane_Dist)).EndInit();
+            this.groupBox_copter.ResumeLayout(false);
+            this.groupBox_copter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_copter_delay)).EndInit();
             this.tabSimple.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();

@@ -113,6 +113,15 @@
       <Y></Y>
       <Z></Z>
     </DO_REPEAT_RELAY>
+	<DO_PARACHUTE>
+      <P1>Enable(1)/Release(2)</P1>
+      <P2></P2>
+      <P3></P3>
+      <P4></P4>
+      <X></X>
+      <Y></Y>
+      <Z></Z>
+    </DO_PARACHUTE>
 
   </AC2>
   <!-- -->
@@ -378,6 +387,15 @@
       <Y></Y>
       <Z></Z>
     </DO_MOUNT_CONTROL>
+	<DO_PARACHUTE>
+      <P1>Enable(1)/Release(2)</P1>
+      <P2></P2>
+      <P3></P3>
+      <P4></P4>
+      <X></X>
+      <Y></Y>
+      <Z></Z>
+    </DO_PARACHUTE>
   </APM>
   <!-- -->
   <APRover>
@@ -615,5 +633,14 @@
       <Y></Y>
       <Z></Z>
     </DO_MOUNT_CONTROL>
+	<DO_PARACHUTE>
+      <P1>Enable(1)/Release(2)</P1>
+      <P2></P2>
+      <P3></P3>
+      <P4></P4>
+      <X></X>
+      <Y></Y>
+      <Z></Z>
+    </DO_PARACHUTE>
   </APRover>
 </CMD>

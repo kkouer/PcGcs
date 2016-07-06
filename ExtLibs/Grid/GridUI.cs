@@ -1493,135 +1493,34 @@ namespace MissionPlanner
                 CustomMessageBox.Show("超出最大航程50公里!", "确定", MessageBoxButtons.OK);
                 return;
             }
-            WPNo = 0;
-            if (!isAddByGCSMainForm)
-            {
-                if (grid != null && grid.Count > 0)
-                {
-                    MainV2.instance.FlightPlanner.quickadd = true;
-
-                    if (CHK_toandland.Checked)
-                    {
-                        if (plugin.Host.cs.firmware == MainV2.Firmwares.ArduCopter2)
-                        {
-                            plugin.Host.AddWPtoList(MAVLink.MAV_CMD.TAKEOFF, 0, 0, 0, 0, 0, 0, (int)(30 * CurrentState.multiplierdist));
-                        }
-                        else
-                        {
-                            plugin.Host.AddWPtoList(MAVLink.MAV_CMD.TAKEOFF, 12, 0, 0, 0, 0, 0, (int)(30 * CurrentState.multiplierdist));
-                        }
-                    }
-
-                    if (CHK_usespeed.Checked)
-                    {
-                        plugin.Host.AddWPtoList(MAVLink.MAV_CMD.DO_CHANGE_SPEED, 0, (int)((float)NUM_UpDownFlySpeed.Value / CurrentState.multiplierspeed), 0, 0, 0, 0, 0);
-                    }
-
-                    int i = 0;
-                    grid.ForEach(plla =>
-                    {
-                        if (i > 0)
-                        {
-                            if (plla.Tag == "M")
-                            {
-                                if (rad_repeatservo.Checked)
-                                {
-                                    AddWP(plla.Lng, plla.Lat, plla.Alt);
-                                    plugin.Host.AddWPtoList(MAVLink.MAV_CMD.DO_REPEAT_SERVO, (float)NUM_reptservo.Value, (float)num_reptpwm.Value, 999, (float)NUM_repttime.Value, 0, 0, 0);
-                                }
-                                if (rad_digicam.Checked)
-                                {
-                                    AddWP(plla.Lng, plla.Lat, plla.Alt);
-                                    plugin.Host.AddWPtoList(MAVLink.MAV_CMD.DO_DIGICAM_CONTROL, 0, 0, 0, 0, 0, 0, 0);
-                                }
-                            }
-                            else
-                            {
-                                AddWP(plla.Lng, plla.Lat, plla.Alt);
-                            }
-                        }
-                        else
-                        {
-                            AddWP(plla.Lng, plla.Lat, plla.Alt);
-                            if (rad_trigdist.Checked)
-                            {
-                                plugin.Host.AddWPtoList(MAVLink.MAV_CMD.DO_SET_CAM_TRIGG_DIST, (float)NUM_spacing.Value, 0, 0, 0, 0, 0, 0);
-                            }
-                        }
-                        ++i;
-                    });
-
-                    if (rad_trigdist.Checked)
-                    {
-                        plugin.Host.AddWPtoList(MAVLink.MAV_CMD.DO_SET_CAM_TRIGG_DIST, 0, 0, 0, 0, 0, 0, 0);
-                    }
-
-                    if (CHK_usespeed.Checked)
-                    {
-                        if (MainV2.comPort.MAV.param["WPNAV_SPEED"] != null)
-                        {
-                            float speed = ((float)MainV2.comPort.MAV.param["WPNAV_SPEED"]);
-                            speed = speed / 100;
-                            plugin.Host.AddWPtoList(MAVLink.MAV_CMD.DO_CHANGE_SPEED, 0, speed, 0, 0, 0, 0, 0);
-                        }
-                    }
-
-                    if (CHK_toandland.Checked)
-                    {
-                        if (CHK_toandland_RTL.Checked)
-                        {
-                            plugin.Host.AddWPtoList(MAVLink.MAV_CMD.RETURN_TO_LAUNCH, 0, 0, 0, 0, 0, 0, 0);
-                        }
-                        else
-                        {
-                            plugin.Host.AddWPtoList(MAVLink.MAV_CMD.LAND, 0, 0, 0, 0, plugin.Host.cs.HomeLocation.Lng, plugin.Host.cs.HomeLocation.Lat, 0);
-                            //plugin.Host.AddWPtoList(MAVLink.MAV_CMD.LAND, 0, 0, 0, 0, gcs.HomeLocation.Lng, gcs.HomeLocation.Lat, 0);
-                        }
-                    }
-
-                    // Redraw the polygon in FP
-                    plugin.Host.RedrawFPPolygon(list);
-
-                    savesettings();
-
-                    MainV2.instance.FlightPlanner.quickadd = false;
-
-                    MainV2.instance.FlightPlanner.writeKML();
-
-                    this.Close();
-                }
-                else
-                {
-                    CustomMessageBox.Show("Bad Grid", "Error");
-                }
-            }
-            else
+            if (isAddByGCSMainForm)
             {
                 if (grid != null && grid.Count > 0)
                 {
 
                     if (CHK_toandland.Checked)
                     {
-                        if (GCSMainForm.comPort.MAV.cs.firmware == MainV2.Firmwares.ArduCopter2)
+                        if (GCS.comPort.MAV.cs.firmware == MainV2.Firmwares.ArduCopter2)
                         {
                             this.gcs.AddCommand(MAVLink.MAV_CMD.TAKEOFF, 0, 0, 0, 0, 0, 0, (int)(15 * CurrentState.multiplierdist));
-                            WPNo++;
                         }
                         else
                         {
                             this.gcs.AddCommand(MAVLink.MAV_CMD.TAKEOFF, 12, 0, 0, 0, 0, 0, (int)(50 * CurrentState.multiplierdist));
-                            WPNo++;
                         }
                     }
+
+
+
+                    this.gcs.AddCommand(MAVLink.MAV_CMD.LOITER_TO_ALT, 0, 0, 0, 0, gcs.HomeLocation.Lng, gcs.HomeLocation.Lat, (double)NUM_altitude.Value);
 
                     if (CHK_usespeed.Checked)
                     {
                         this.gcs.AddCommand(MAVLink.MAV_CMD.DO_CHANGE_SPEED, 0, (int)((float)NUM_UpDownFlySpeed.Value / CurrentState.multiplierspeed), 0, 0, 0, 0, 0);
-                        //WPNo+=2;
                     }
 
                     int i = 0;
-                    
+                    bool isaddCameraStart = false;
                     grid.ForEach(plla =>
                     {
                         if (i > 0)
@@ -1632,13 +1531,11 @@ namespace MissionPlanner
                                 {
                                     AddWP(plla.Lng, plla.Lat, plla.Alt);
                                     this.gcs.AddCommand(MAVLink.MAV_CMD.DO_REPEAT_SERVO, (float)NUM_reptservo.Value, (float)num_reptpwm.Value, 999, (float)NUM_repttime.Value, 0, 0, 0);
-                                    WPNo++;
                                 }
                                 if (rad_digicam.Checked )
                                 {
                                     AddWP(plla.Lng, plla.Lat, plla.Alt);
                                     this.gcs.AddCommand(MAVLink.MAV_CMD.DO_DIGICAM_CONTROL, 0, 0, 0, 0, 0, 0, 0);
-                                    WPNo++;
                                 }
                             }
                             else
@@ -1646,10 +1543,10 @@ namespace MissionPlanner
                                 AddWP(plla.Lng, plla.Lat, plla.Alt);
                             }
 
-                            if (rad_trigdist.Checked && WPNo == 4)
+                            if (rad_trigdist.Checked && !isaddCameraStart)
                             {
                                 this.gcs.AddCommand(MAVLink.MAV_CMD.DO_SET_CAM_TRIGG_DIST, (float)NUM_spacing.Value, 0, 0, 0, 0, 0, 0);
-                                WPNo++;
+                                isaddCameraStart = true;
                             }
                         }
                         else
@@ -1662,7 +1559,6 @@ namespace MissionPlanner
                     if (rad_trigdist.Checked)
                     {
                         this.gcs.AddCommand(MAVLink.MAV_CMD.DO_SET_CAM_TRIGG_DIST, 0, 0, 0, 0, 0, 0, 0);
-                        WPNo++;
                     }
 
                     if (CHK_usespeed.Checked)
@@ -1672,7 +1568,6 @@ namespace MissionPlanner
                             float speed = ((float)MainV2.comPort.MAV.param["WPNAV_SPEED"]);
                             speed = speed / 100;
                             this.gcs.AddCommand(MAVLink.MAV_CMD.DO_CHANGE_SPEED, 0, speed, 0, 0, 0, 0, 0);
-                            WPNo++;
                         }
                     }
 
@@ -1681,29 +1576,22 @@ namespace MissionPlanner
                         if (CHK_toandland_RTL.Checked)
                         {
                             this.gcs.AddCommand(MAVLink.MAV_CMD.RETURN_TO_LAUNCH, 0, 0, 0, 0, 0, 0, 0);
-                            WPNo++;
                         }
                         else
                         {
                             //this.gcs.AddCommand(MAVLink.MAV_CMD.LAND, 0, 0, 0, 0, plugin.Host.cs.HomeLocation.Lng, plugin.Host.cs.HomeLocation.Lat, 0);
-                            this.gcs.AddCommand(MAVLink.MAV_CMD.LOITER_TO_ALT, 0, 0, 0, 0, gcs.HomeLocation.Lng, gcs.HomeLocation.Lat + 0.002, 30); 
-                            this.gcs.AddCommand(MAVLink.MAV_CMD.LAND, 0, 0, 0, 0, gcs.HomeLocation.Lng, gcs.HomeLocation.Lat, 0);
-                            WPNo++;
+                            this.gcs.AddCommand(MAVLink.MAV_CMD.LOITER_TO_ALT, 0, 0, 0, 0, gcs.HomeLocation.Lng, gcs.HomeLocation.Lat + 0.002, 50);
+                            this.gcs.AddCommand(MAVLink.MAV_CMD.WAYPOINT, 0, 0, 0, 0, gcs.HomeLocation.Lng, gcs.HomeLocation.Lat, 50);
+                            this.gcs.AddCommand(MAVLink.MAV_CMD.DO_PARACHUTE, 2, 0, 0, 0, gcs.HomeLocation.Lng, gcs.HomeLocation.Lat, 0);
                         }
                     }
 
                     // Redraw the polygon in FP
-                    if(!isAddByGCSMainForm)
-                    plugin.Host.RedrawFPPolygon(list);
+                    if (!isAddByGCSMainForm)
+                        plugin.Host.RedrawFPPolygon(list);
 
                     savesettings();
-                    if (!isAddByGCSMainForm)
-                    {
-                        MainV2.instance.FlightPlanner.quickadd = false;
-
-                        MainV2.instance.FlightPlanner.writeKML();
-                    }
-                    else
+                    if (isAddByGCSMainForm)
                     {
                         this.gcs.quickadd = false;
                         this.gcs.writeKML();
