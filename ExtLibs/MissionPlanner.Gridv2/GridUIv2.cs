@@ -296,7 +296,7 @@ namespace MissionPlanner
 
             boxpoly.Points.ForEach(x => { newlist.Add(x); });
 
-            grid = Grid.CreateGrid(newlist, (double)NUM_altitude.Value, (double)NUM_Distance, (double)NUM_spacing, (double)NUM_angle.Value, 0, 0, Grid.StartPosition.TopLeft, false, 0);
+            grid = Grid.CreateGrid(newlist, (double)NUM_altitude.Value, (double)NUM_Distance, (double)NUM_spacing, (double)NUM_angle.Value, 0, 0, Grid.StartPosition.左上, false, 0);
 
             List<PointLatLng> list2 = new List<PointLatLng>();
 

@@ -8,6 +8,8 @@ using MissionPlanner.Controls;
 using MissionPlanner.Controls.Waypoints;
 using MissionPlanner.Maps;
 using MissionPlanner.Utilities;
+using ProjNet.CoordinateSystems;
+using ProjNet.CoordinateSystems.Transformations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -143,6 +145,8 @@ namespace MissionPlanner
 
 
             comboBox1.SelectedIndex = 1;
+
+            gMapControl1.ContextMenuStrip = this.contextMenuStrip1;
         }
 
 
@@ -1202,6 +1206,27 @@ namespace MissionPlanner
                 comPort.BaseStream.BaudRate = int.Parse(baud);
             }
             catch { };
+
+            // 记录tlog文件
+            try
+            {
+                Directory.CreateDirectory("D://LogFiles");
+                //Directory.CreateDirectory(MainV2.LogDir);
+                comPort.logfile =
+                    new BufferedStream(
+                        File.Open(
+                            "D://LogFiles" + Path.DirectorySeparatorChar +
+                            DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".tlog", FileMode.CreateNew,
+                            FileAccess.ReadWrite, FileShare.None));
+
+            }
+            catch (Exception exp2)
+            {
+                log.Error(exp2);
+                CustomMessageBox.Show(Strings.Failclog);
+            } // soft fail
+
+
             comPort.Open(false, skipconnectcheck);
 
             // create a copy
@@ -2939,7 +2964,7 @@ namespace MissionPlanner
             comPort.doCommand(MAVLink.MAV_CMD.DO_PARACHUTE, 2, 0, 0, 0, 0, 0, 0);
         }
 
-        bool cameraCommand2 = false;
+        bool cameraCommand2 = true;
         private void button2_Click_1(object sender, EventArgs e)
         {
             if (!comPort.BaseStream.IsOpen)
@@ -3210,6 +3235,409 @@ namespace MissionPlanner
 
             timer1.Start();
         }
+
+        PointLatLng startmeasure;
+
+        private void measureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (startmeasure.IsEmpty)
+            {
+                startmeasure = MouseDownStart;
+                polygonsoverlay.Markers.Add(new GMarkerGoogle(MouseDownStart, GMarkerGoogleType.red));
+                gMapControl1.Invalidate();
+                Common.MessageShowAgain("量尺工具", "量尺起点已经选定,再次点击量尺工具计算距离.");
+            }
+            else
+            {
+                List<PointLatLng> polygonPoints = new List<PointLatLng>();
+                polygonPoints.Add(startmeasure);
+                polygonPoints.Add(MouseDownStart);
+
+                GMapPolygon line = new GMapPolygon(polygonPoints, "measure dist");
+                line.Stroke.Color = Color.Green;
+
+                polygonsoverlay.Polygons.Add(line);
+
+                polygonsoverlay.Markers.Add(new GMarkerGoogle(MouseDownStart, GMarkerGoogleType.red));
+                gMapControl1.Invalidate();
+                CustomMessageBox.Show("距离: " + FormatDistance(gMapControl1.MapProvider.Projection.GetDistance(startmeasure, MouseDownStart), true) + " 方位角: " + (gMapControl1.MapProvider.Projection.GetBearing(startmeasure, MouseDownStart).ToString("0")));
+                polygonsoverlay.Polygons.Remove(line);
+                polygonsoverlay.Markers.Clear();
+                startmeasure = new PointLatLng();
+            }
+        }
+
+        /// <summary>
+        /// Format distance according to prefer distance unit
+        /// </summary>
+        /// <param name="distInKM">distance in kilometers</param>
+        /// <param name="toMeterOrFeet">convert distance to meter or feet if true, covert to km or miles if false</param>
+        /// <returns>formatted distance with unit</returns>
+        private string FormatDistance(double distInKM, bool toMeterOrFeet)
+        {
+            string sunits = MainV2.getConfig("distunits");
+            Common.distances units = Common.distances.Meters;
+
+            if (sunits != "")
+                try
+                {
+                    units = (Common.distances)Enum.Parse(typeof(Common.distances), sunits);
+                }
+                catch (Exception) { }
+
+            switch (units)
+            {
+                case Common.distances.Feet:
+                    return toMeterOrFeet ? string.Format((distInKM * 3280.8399).ToString("0.00 ft")) :
+                        string.Format((distInKM * 0.621371).ToString("0.0000 miles"));
+                case Common.distances.Meters:
+                default:
+                    return toMeterOrFeet ? string.Format((distInKM * 1000).ToString("0.00 m")) :
+                        string.Format(distInKM.ToString("0.0000 km"));
+            }
+        }
+
+        private void flyToHereToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!comPort.BaseStream.IsOpen)
+            {
+                CustomMessageBox.Show(Strings.PleaseConnect, Strings.ERROR);
+                return;
+            }
+
+            if (comPort.MAV.GuidedMode.z == 0)
+            {
+                flyToAltToolStripMenuItem_Click(null, null);
+
+                if (comPort.MAV.GuidedMode.z == 0)
+                    return;
+            }
+
+            if (MouseDownStart.Lat == 0 || MouseDownStart.Lng == 0)
+            {
+                CustomMessageBox.Show(Strings.BadCoords, Strings.ERROR);
+                return;
+            }
+
+            Locationwp gotohere = new Locationwp();
+
+            gotohere.id = (byte)MAVLink.MAV_CMD.WAYPOINT;
+            gotohere.alt = comPort.MAV.GuidedMode.z; // back to m
+            gotohere.lat = (MouseDownStart.Lat);
+            gotohere.lng = (MouseDownStart.Lng);
+
+            try
+            {
+                comPort.setGuidedModeWP(gotohere);
+            }
+            catch (Exception ex) { comPort.giveComport = false; CustomMessageBox.Show(Strings.CommandFailed + ex.Message, Strings.ERROR); }
+
+        }
+
+        private void flyToAltToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string alt = "100";
+
+            if (comPort.MAV.cs.firmware == MainV2.Firmwares.ArduCopter2)
+            {
+                alt = (10 * CurrentState.multiplierdist).ToString("0");
+            }
+            else
+            {
+                alt = (100 * CurrentState.multiplierdist).ToString("0");
+            }
+
+            if (MainV2.config.ContainsKey("guided_alt"))
+                alt = MainV2.config["guided_alt"].ToString();
+
+            if (DialogResult.Cancel == InputBox.Show("输入高度", "输入向导模式高度", ref alt))
+                return;
+
+            MainV2.config["guided_alt"] = alt;
+
+            int intalt = (int)(100 * CurrentState.multiplierdist);
+            if (!int.TryParse(alt, out intalt))
+            {
+                CustomMessageBox.Show("Bad Alt");
+                return;
+            }
+
+            comPort.MAV.GuidedMode.z = intalt / CurrentState.multiplierdist;
+
+            if (comPort.MAV.cs.mode == "Guided")
+            {
+                comPort.setGuidedModeWP(new Locationwp { alt = comPort.MAV.GuidedMode.z, lat = comPort.MAV.GuidedMode.x, lng = comPort.MAV.GuidedMode.y });
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            comPort.setMode(comboBoxmode.Text);
+        }
+
+        private void comboBoxmode_Click(object sender, EventArgs e)
+        {
+            comboBoxmode.DataSource = Common.getModesList(comPort.MAV.cs);
+            comboBoxmode.ValueMember = "Key";
+            comboBoxmode.DisplayMember = "Value";
+        }
+
+        /// <summary>
+        /// 绘制比例尺
+        /// </summary>
+        void DrawRule(Graphics g, double scale)
+        {
+            try
+            {
+                int dpiy = (int)(g.DpiY / 2.54);
+                Point centerPoint = new Point(180, Size.Height - 80);
+
+                Pen arrowpen2 = new Pen(Color.FromArgb(250, Color.LightYellow), 2);
+
+                string dig = "";
+
+                StringFormat stringFormat = new StringFormat();
+                stringFormat.Alignment = StringAlignment.Center;
+                stringFormat.LineAlignment = StringAlignment.Near;
+
+                g.TranslateTransform(centerPoint.X, centerPoint.Y);
+                g.ResetTransform();
+
+                PointLatLng p1, p2;
+                p1 = gMapControl1.FromLocalToLatLng(centerPoint.X, centerPoint.Y);
+                p2 = gMapControl1.FromLocalToLatLng(centerPoint.X + dpiy * 5, centerPoint.Y);
+
+                double dist = gMapControl1.MapProvider.Projection.GetDistance(p1, p2);
+                dist = dist * 1000;
+                double[] distarray = new double[21];//;
+                int i3 = 0;
+                for (int i = 0; i < 7; i++)
+                {
+                    i3 = i * 3;
+                    distarray[i3] = 10 * Math.Pow(10, i - 1);
+                    distarray[i3 + 1] = 20 * Math.Pow(10, i - 1);
+                    distarray[i3 + 2] = 50 * Math.Pow(10, i - 1);
+                }
+
+                double minDist = double.MaxValue;
+                double distTopInt = 10;
+
+                for (int j = 0; j < distarray.Length; j++)
+                {
+                    if (Math.Abs(distarray[j] - dist) < minDist)
+                    {
+                        minDist = Math.Abs(distarray[j] - dist);
+                        distTopInt = distarray[j];
+                    }
+                }
+                PointLatLng EndPointLatLng = calDistanceToLogLat((float)distTopInt / 1000f, p1, 90.0);
+                GPoint EndPointG = gMapControl1.FromLatLngToLocal(EndPointLatLng);
+                PointF EndPoint = new PointF(EndPointG.X, EndPointG.Y);
+                if (distTopInt < 1000)
+                    dig = string.Format("{0:0} 米", distTopInt);
+                else
+                    dig = string.Format(" {0:0} 公里", distTopInt / 1000);
+                System.Drawing.PointF cpt = new System.Drawing.PointF((centerPoint.X + EndPoint.X) / 2, EndPoint.Y - 20);
+
+                SolidBrush BackGoundBrush = new SolidBrush(Color.FromArgb(100, Color.Black));
+                Font font = new Font("SimSun", (int)(12), FontStyle.Bold);
+                SizeF sizeF = g.MeasureString(dig, font);
+                g.DrawString(dig, font, Brushes.LightYellow, cpt, stringFormat);
+
+                g.DrawLine(arrowpen2, new PointF(centerPoint.X, centerPoint.Y - dpiy / 4), new PointF(centerPoint.X, centerPoint.Y));
+                g.DrawLine(arrowpen2, new PointF(centerPoint.X, centerPoint.Y), EndPoint);
+                g.DrawLine(arrowpen2, new PointF(EndPoint.X, EndPoint.Y - dpiy / 4), EndPoint);
+
+
+            }
+            catch { }
+
+        }
+
+        private void gMapControl1_Paint(object sender, PaintEventArgs e)
+        {
+            DrawRule(e.Graphics, 1);
+
+            DrawAreaNum(e.Graphics, 1);
+        }
+
+        void DrawAreaNum(Graphics g, double scale)
+        {
+            if (drawnpolygon.Points.Count >= 3)
+            {
+                double distTopInt = calcpolygonarea(drawnpolygon.Points);
+
+                StringFormat stringFormat = new StringFormat();
+                stringFormat.Alignment = StringAlignment.Center;
+                stringFormat.LineAlignment = StringAlignment.Near;
+
+                string dig = "";
+
+                if (distTopInt < 1000000)
+                    dig = string.Format("{0:0} 平方米", distTopInt);
+                else
+                    dig = string.Format(" {0:0.00} 平方公里", distTopInt / 1000000);
+
+                float posX, posY;
+                posX = 0;
+                posY = 0;
+
+                for (int i = 0; i < drawnpolygon.Points.Count; i++)
+                {
+                    GPoint Pt = gMapControl1.FromLatLngToLocal(drawnpolygon.Points[i]);
+                    posX += Pt.X;
+                    posY += Pt.Y;
+                }
+                posX = posX / drawnpolygon.Points.Count;
+                posY = posY / drawnpolygon.Points.Count;
+
+                System.Drawing.PointF cpt = new System.Drawing.PointF(posX, posY);
+
+                Font font = new Font("SimSun", (int)(12), FontStyle.Bold);
+                SizeF sizeF = g.MeasureString(dig, font);
+                g.DrawString(dig, font, Brushes.LightYellow, cpt, stringFormat);
+            }
+        }
+        //计算面积方法
+        double calcpolygonarea(List<PointLatLng> polygon)
+        {
+            // should be a closed polygon
+            // coords are in lat long
+            // need utm to calc area
+
+            if (polygon.Count == 0)
+            {
+                CustomMessageBox.Show("Please define a polygon!");
+                return 0;
+            }
+
+            // close the polygon
+            if (polygon[0] != polygon[polygon.Count - 1])
+                polygon.Add(polygon[0]); // make a full loop
+
+            CoordinateTransformationFactory ctfac = new CoordinateTransformationFactory();
+
+            GeographicCoordinateSystem wgs84 = GeographicCoordinateSystem.WGS84;
+
+            int utmzone = (int)((polygon[0].Lng - -186.0) / 6.0);
+
+            IProjectedCoordinateSystem utm = ProjectedCoordinateSystem.WGS84_UTM(utmzone, polygon[0].Lat < 0 ? false : true);
+
+            ICoordinateTransformation trans = ctfac.CreateFromCoordinateSystems(wgs84, utm);
+
+            double prod1 = 0;
+            double prod2 = 0;
+
+            for (int a = 0; a < (polygon.Count - 1); a++)
+            {
+                double[] pll1 = { polygon[a].Lng, polygon[a].Lat };
+                double[] pll2 = { polygon[a + 1].Lng, polygon[a + 1].Lat };
+
+                double[] p1 = trans.MathTransform.Transform(pll1);
+                double[] p2 = trans.MathTransform.Transform(pll2);
+
+                prod1 += p1[0] * p2[1];
+                prod2 += p1[1] * p2[0];
+            }
+
+            double answer = (prod1 - prod2) / 2;
+
+            if (polygon[0] == polygon[polygon.Count - 1])
+                polygon.RemoveAt(polygon.Count - 1); // unmake a full loop
+
+            return Math.Abs(answer);
+        }
+
+        double LogPlayBackSpeed = 1.0;
+
+        bool playingLog;
+
+        private void BUT_speed1_4_Click(object sender, EventArgs e)
+        {
+            LogPlayBackSpeed = double.Parse(((MyButton)sender).Tag.ToString(), CultureInfo.InvariantCulture);
+            lbl_playbackspeed.Text = "x " + LogPlayBackSpeed;
+        }
+
+        private void BUT_loadtelem_Click(object sender, EventArgs e)
+        {
+            if (comPort.BaseStream.IsOpen)
+            {
+
+                if (CustomMessageBox.Show("回放时需要将链路断开,是否继续?.", "回放", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                if (comPort.BaseStream.IsOpen)
+                {
+                    doDisconnect(comPort);
+                }
+            }
+
+            LBL_logfn.Text = "";
+
+            if (comPort.logplaybackfile != null)
+            {
+                try
+                {
+                    comPort.logplaybackfile.Close();
+                    comPort.logplaybackfile = null;
+                }
+                catch { }
+            }
+
+            using (OpenFileDialog fd = new OpenFileDialog())
+            {
+                fd.AddExtension = true;
+                fd.Filter = "遥测log (*.tlog)|*.tlog";
+                fd.InitialDirectory = "D:\\LogFiles";
+                fd.DefaultExt = ".tlog";
+                DialogResult result = fd.ShowDialog();
+                string file = fd.FileName;
+                LoadLogFile(file);
+            }
+        }
+
+        public void LoadLogFile(string file)
+        {
+            if (file != "")
+            {
+                try
+                {
+                    comPort.logreadmode = true;
+                    comPort.logplaybackfile = new BinaryReader(File.OpenRead(file));
+                    comPort.lastlogread = DateTime.MinValue;
+
+                    LBL_logfn.Text = Path.GetFileName(file);
+
+                    comPort.getHeartBeat();
+
+                    tracklog.Value = 0;
+                    tracklog.Minimum = 0;
+                    tracklog.Maximum = 100;
+                }
+                catch { CustomMessageBox.Show(Strings.PleaseLoadValidFile, Strings.ERROR); }
+            }
+        }
+
+        private void BUT_playlog_Click(object sender, EventArgs e)
+        {
+            if (comPort.logreadmode)
+            {
+                comPort.logreadmode = false;
+                playingLog = false;
+            }
+            else
+            {
+                // BUT_clear_track_Click(sender, e);
+                comPort.logreadmode = true;
+
+                playingLog = true;
+            }
+        }
+
+        private void buttonReplay_Click(object sender, EventArgs e)
+        {
+            groupBoxReplay.Visible = !groupBoxReplay.Visible;
+        }
+
 
     }
 }

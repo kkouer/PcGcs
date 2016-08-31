@@ -8,4 +8,12 @@
     <senh>15.4</senh>
     <senw>23.2</senw>
   </Camera>
+  <Camera>
+    <name>SONY QX1_16</name>
+    <flen>16</flen>
+    <imgh>3632</imgh>
+    <imgw>5456</imgw>
+    <senh>15.4</senh>
+    <senw>23.2</senw>
+  </Camera>
 </Cameras>
