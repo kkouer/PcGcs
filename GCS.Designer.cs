@@ -74,14 +74,34 @@
             this.Dist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelInofPanel = new BSE.Windows.Forms.Panel();
+            this.doubelLabel16 = new MissionPlanner.DoubelLabel();
+            this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.doubelLabel11 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel9 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel10 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel15 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel8 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel7 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel6 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel5 = new MissionPlanner.DoubelLabel();
             this.buttonHideInfoPanel = new System.Windows.Forms.Button();
+            this.doubelLabel3 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel4 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel1 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel2 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel14 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel13 = new MissionPlanner.DoubelLabel();
+            this.doubelLabel12 = new MissionPlanner.DoubelLabel();
             this.panelCommand = new BSE.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button20 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.buttonReplay = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -93,6 +113,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button24 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.comboBoxmode = new System.Windows.Forms.ComboBox();
             this.button18 = new System.Windows.Forms.Button();
@@ -128,28 +149,12 @@
             this.BUT_speed5 = new MissionPlanner.Controls.MyButton();
             this.BUT_playlog = new MissionPlanner.Controls.MyButton();
             this.BUT_speed2 = new MissionPlanner.Controls.MyButton();
-            this.buttonReplay = new System.Windows.Forms.Button();
             this.windMap1 = new MissionPlanner.GCSViews.WindMap();
             this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
-            this.doubelLabel11 = new MissionPlanner.DoubelLabel();
-            this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
-            this.doubelLabel9 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel10 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel15 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel8 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel7 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel6 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel5 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel3 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel4 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel1 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel2 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel14 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel13 = new MissionPlanner.DoubelLabel();
-            this.doubelLabel12 = new MissionPlanner.DoubelLabel();
             this.panelWPPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.panelInofPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             this.panelCommand.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -160,7 +165,6 @@
             this.groupBoxReplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracklog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonConnect
@@ -635,6 +639,7 @@
             this.panelInofPanel.BackColor = System.Drawing.Color.Transparent;
             this.panelInofPanel.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 11.75F, System.Drawing.FontStyle.Bold);
             this.panelInofPanel.CaptionHeight = 27;
+            this.panelInofPanel.Controls.Add(this.doubelLabel16);
             this.panelInofPanel.Controls.Add(this.comboBox1);
             this.panelInofPanel.Controls.Add(this.doubelLabel11);
             this.panelInofPanel.Controls.Add(this.doubelLabel9);
@@ -667,16 +672,33 @@
             this.panelInofPanel.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
             this.panelInofPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelInofPanel.Image = null;
-            this.panelInofPanel.Location = new System.Drawing.Point(0, 172);
+            this.panelInofPanel.Location = new System.Drawing.Point(0, 160);
             this.panelInofPanel.MinimumSize = new System.Drawing.Size(27, 27);
             this.panelInofPanel.Name = "panelInofPanel";
             this.panelInofPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelInofPanel.Size = new System.Drawing.Size(177, 461);
+            this.panelInofPanel.Size = new System.Drawing.Size(177, 473);
             this.panelInofPanel.TabIndex = 86;
             this.panelInofPanel.Text = "参数";
             this.panelInofPanel.ToolTipTextCloseIcon = null;
             this.panelInofPanel.ToolTipTextExpandIconPanelCollapsed = null;
             this.panelInofPanel.ToolTipTextExpandIconPanelExpanded = null;
+            // 
+            // doubelLabel16
+            // 
+            this.doubelLabel16.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "timeInAir", true));
+            this.doubelLabel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel16.LabelName = "飞行时间：";
+            this.doubelLabel16.LabelValue = "0";
+            this.doubelLabel16.Location = new System.Drawing.Point(1, 423);
+            this.doubelLabel16.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel16.Name = "doubelLabel16";
+            this.doubelLabel16.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel16.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel16.TabIndex = 22;
+            // 
+            // bindingSourceHud
+            // 
+            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
             // 
             // comboBox1
             // 
@@ -687,11 +709,115 @@
             "高德卫星",
             "高德地图",
             "谷歌卫星"});
-            this.comboBox1.Location = new System.Drawing.Point(4, 437);
+            this.comboBox1.Location = new System.Drawing.Point(4, 449);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(75, 20);
             this.comboBox1.TabIndex = 15;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // doubelLabel11
+            // 
+            this.doubelLabel11.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "linkqualitygcs", true));
+            this.doubelLabel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel11.LabelName = "电台信号：";
+            this.doubelLabel11.LabelValue = "0";
+            this.doubelLabel11.Location = new System.Drawing.Point(1, 397);
+            this.doubelLabel11.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel11.Name = "doubelLabel11";
+            this.doubelLabel11.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel11.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel11.TabIndex = 17;
+            // 
+            // doubelLabel9
+            // 
+            this.doubelLabel9.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "wpno", true));
+            this.doubelLabel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel9.LabelName = "目标点：";
+            this.doubelLabel9.LabelValue = "0";
+            this.doubelLabel9.Location = new System.Drawing.Point(1, 371);
+            this.doubelLabel9.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel9.Name = "doubelLabel9";
+            this.doubelLabel9.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel9.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel9.TabIndex = 9;
+            // 
+            // doubelLabel10
+            // 
+            this.doubelLabel10.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "raw_temp", true));
+            this.doubelLabel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel10.LabelName = "温度：";
+            this.doubelLabel10.LabelValue = "0";
+            this.doubelLabel10.Location = new System.Drawing.Point(1, 345);
+            this.doubelLabel10.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel10.Name = "doubelLabel10";
+            this.doubelLabel10.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel10.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel10.TabIndex = 16;
+            // 
+            // doubelLabel15
+            // 
+            this.doubelLabel15.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "ch3percent", true));
+            this.doubelLabel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel15.LabelName = "油门：";
+            this.doubelLabel15.LabelValue = "0";
+            this.doubelLabel15.Location = new System.Drawing.Point(1, 319);
+            this.doubelLabel15.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel15.Name = "doubelLabel15";
+            this.doubelLabel15.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel15.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel15.TabIndex = 21;
+            // 
+            // doubelLabel8
+            // 
+            this.doubelLabel8.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "wp_dist", true));
+            this.doubelLabel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel8.LabelName = "距点：";
+            this.doubelLabel8.LabelValue = "0";
+            this.doubelLabel8.Location = new System.Drawing.Point(1, 293);
+            this.doubelLabel8.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel8.Name = "doubelLabel8";
+            this.doubelLabel8.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel8.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel8.TabIndex = 8;
+            // 
+            // doubelLabel7
+            // 
+            this.doubelLabel7.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "DistToHome", true));
+            this.doubelLabel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel7.LabelName = "距家：";
+            this.doubelLabel7.LabelValue = "0";
+            this.doubelLabel7.Location = new System.Drawing.Point(1, 267);
+            this.doubelLabel7.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel7.Name = "doubelLabel7";
+            this.doubelLabel7.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel7.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel7.TabIndex = 7;
+            // 
+            // doubelLabel6
+            // 
+            this.doubelLabel6.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "airspeed", true));
+            this.doubelLabel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel6.LabelName = "空速：";
+            this.doubelLabel6.LabelValue = "0";
+            this.doubelLabel6.Location = new System.Drawing.Point(1, 241);
+            this.doubelLabel6.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel6.Name = "doubelLabel6";
+            this.doubelLabel6.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel6.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel6.TabIndex = 6;
+            // 
+            // doubelLabel5
+            // 
+            this.doubelLabel5.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "mode", true));
+            this.doubelLabel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel5.LabelName = "模式：";
+            this.doubelLabel5.LabelValue = "0";
+            this.doubelLabel5.Location = new System.Drawing.Point(1, 215);
+            this.doubelLabel5.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel5.Name = "doubelLabel5";
+            this.doubelLabel5.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel5.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel5.TabIndex = 5;
             // 
             // buttonHideInfoPanel
             // 
@@ -702,6 +828,97 @@
             this.buttonHideInfoPanel.Text = "X";
             this.buttonHideInfoPanel.UseVisualStyleBackColor = true;
             this.buttonHideInfoPanel.Click += new System.EventHandler(this.buttonHideInfoPanel_Click);
+            // 
+            // doubelLabel3
+            // 
+            this.doubelLabel3.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "alt", true));
+            this.doubelLabel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel3.LabelName = "高度：";
+            this.doubelLabel3.LabelValue = "0";
+            this.doubelLabel3.Location = new System.Drawing.Point(1, 189);
+            this.doubelLabel3.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel3.Name = "doubelLabel3";
+            this.doubelLabel3.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel3.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel3.TabIndex = 3;
+            // 
+            // doubelLabel4
+            // 
+            this.doubelLabel4.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "satcount", true));
+            this.doubelLabel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel4.LabelName = "GPS：";
+            this.doubelLabel4.LabelValue = "0";
+            this.doubelLabel4.Location = new System.Drawing.Point(1, 163);
+            this.doubelLabel4.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel4.Name = "doubelLabel4";
+            this.doubelLabel4.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel4.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel4.TabIndex = 4;
+            // 
+            // doubelLabel1
+            // 
+            this.doubelLabel1.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "battery_voltage", true));
+            this.doubelLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel1.LabelName = "电压：";
+            this.doubelLabel1.LabelValue = "0";
+            this.doubelLabel1.Location = new System.Drawing.Point(1, 137);
+            this.doubelLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.doubelLabel1.Name = "doubelLabel1";
+            this.doubelLabel1.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel1.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel1.TabIndex = 1;
+            // 
+            // doubelLabel2
+            // 
+            this.doubelLabel2.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "groundspeed", true));
+            this.doubelLabel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel2.LabelName = "地速：";
+            this.doubelLabel2.LabelValue = "0";
+            this.doubelLabel2.Location = new System.Drawing.Point(1, 111);
+            this.doubelLabel2.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel2.Name = "doubelLabel2";
+            this.doubelLabel2.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel2.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel2.TabIndex = 2;
+            // 
+            // doubelLabel14
+            // 
+            this.doubelLabel14.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "yaw", true));
+            this.doubelLabel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel14.LabelName = "旋偏：";
+            this.doubelLabel14.LabelValue = "0";
+            this.doubelLabel14.Location = new System.Drawing.Point(1, 85);
+            this.doubelLabel14.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel14.Name = "doubelLabel14";
+            this.doubelLabel14.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel14.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel14.TabIndex = 20;
+            // 
+            // doubelLabel13
+            // 
+            this.doubelLabel13.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "pitch", true));
+            this.doubelLabel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel13.LabelName = "俯仰：";
+            this.doubelLabel13.LabelValue = "0";
+            this.doubelLabel13.Location = new System.Drawing.Point(1, 59);
+            this.doubelLabel13.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel13.Name = "doubelLabel13";
+            this.doubelLabel13.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel13.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel13.TabIndex = 19;
+            // 
+            // doubelLabel12
+            // 
+            this.doubelLabel12.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "roll", true));
+            this.doubelLabel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.doubelLabel12.LabelName = "横滚：";
+            this.doubelLabel12.LabelValue = "0";
+            this.doubelLabel12.Location = new System.Drawing.Point(1, 33);
+            this.doubelLabel12.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
+            this.doubelLabel12.Name = "doubelLabel12";
+            this.doubelLabel12.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
+            this.doubelLabel12.Size = new System.Drawing.Size(175, 26);
+            this.doubelLabel12.TabIndex = 18;
             // 
             // panelCommand
             // 
@@ -735,7 +952,7 @@
             this.panelCommand.MinimumSize = new System.Drawing.Size(27, 27);
             this.panelCommand.Name = "panelCommand";
             this.panelCommand.Padding = new System.Windows.Forms.Padding(5);
-            this.panelCommand.Size = new System.Drawing.Size(198, 569);
+            this.panelCommand.Size = new System.Drawing.Size(198, 552);
             this.panelCommand.TabIndex = 85;
             this.panelCommand.ToolTipTextCloseIcon = null;
             this.panelCommand.ToolTipTextExpandIconPanelCollapsed = null;
@@ -747,7 +964,7 @@
             this.groupBox5.Controls.Add(this.button7);
             this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.ForeColor = System.Drawing.Color.Tomato;
-            this.groupBox5.Location = new System.Drawing.Point(11, 506);
+            this.groupBox5.Location = new System.Drawing.Point(11, 485);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(179, 53);
             this.groupBox5.TabIndex = 113;
@@ -794,6 +1011,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button23);
+            this.groupBox3.Controls.Add(this.button22);
             this.groupBox3.Controls.Add(this.buttonReplay);
             this.groupBox3.Controls.Add(this.button19);
             this.groupBox3.Controls.Add(this.button12);
@@ -802,12 +1021,48 @@
             this.groupBox3.Controls.Add(this.button14);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.button15);
-            this.groupBox3.Location = new System.Drawing.Point(11, 324);
+            this.groupBox3.Location = new System.Drawing.Point(11, 307);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(179, 178);
             this.groupBox3.TabIndex = 111;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "航线规划";
+            // 
+            // button23
+            // 
+            this.button23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button23.Location = new System.Drawing.Point(96, 147);
+            this.button23.Margin = new System.Windows.Forms.Padding(5);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(75, 23);
+            this.button23.TabIndex = 112;
+            this.button23.Text = "保存航线";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button22
+            // 
+            this.button22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button22.Location = new System.Drawing.Point(11, 147);
+            this.button22.Margin = new System.Windows.Forms.Padding(5);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(75, 23);
+            this.button22.TabIndex = 111;
+            this.button22.Text = "读取航线";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // buttonReplay
+            // 
+            this.buttonReplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonReplay.Location = new System.Drawing.Point(96, 117);
+            this.buttonReplay.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonReplay.Name = "buttonReplay";
+            this.buttonReplay.Size = new System.Drawing.Size(75, 23);
+            this.buttonReplay.TabIndex = 110;
+            this.buttonReplay.Text = "数据回放";
+            this.buttonReplay.UseVisualStyleBackColor = true;
+            this.buttonReplay.Click += new System.EventHandler(this.buttonReplay_Click);
             // 
             // button19
             // 
@@ -893,7 +1148,7 @@
             // 
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Location = new System.Drawing.Point(11, 266);
+            this.groupBox4.Location = new System.Drawing.Point(11, 254);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(179, 53);
             this.groupBox4.TabIndex = 112;
@@ -925,6 +1180,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button24);
             this.groupBox2.Controls.Add(this.button21);
             this.groupBox2.Controls.Add(this.comboBoxmode);
             this.groupBox2.Controls.Add(this.button18);
@@ -934,12 +1190,24 @@
             this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Controls.Add(this.button9);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Location = new System.Drawing.Point(11, 90);
+            this.groupBox2.Location = new System.Drawing.Point(11, 84);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(179, 170);
             this.groupBox2.TabIndex = 110;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "指令";
+            // 
+            // button24
+            // 
+            this.button24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button24.Location = new System.Drawing.Point(96, 76);
+            this.button24.Margin = new System.Windows.Forms.Padding(5);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(75, 23);
+            this.button24.TabIndex = 18;
+            this.button24.Text = "shp文件";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // button21
             // 
@@ -1416,18 +1684,6 @@
             this.BUT_speed2.UseVisualStyleBackColor = true;
             this.BUT_speed2.Click += new System.EventHandler(this.BUT_speed1_4_Click);
             // 
-            // buttonReplay
-            // 
-            this.buttonReplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonReplay.Location = new System.Drawing.Point(96, 117);
-            this.buttonReplay.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonReplay.Name = "buttonReplay";
-            this.buttonReplay.Size = new System.Drawing.Size(75, 23);
-            this.buttonReplay.TabIndex = 110;
-            this.buttonReplay.Text = "数据回放";
-            this.buttonReplay.UseVisualStyleBackColor = true;
-            this.buttonReplay.Click += new System.EventHandler(this.buttonReplay_Click);
-            // 
             // windMap1
             // 
             this.windMap1.DataBindings.Add(new System.Windows.Forms.Binding("WindDirectionValue", this.bindingSourceState, "wind_dir", true));
@@ -1444,205 +1700,6 @@
             // bindingSourceState
             // 
             this.bindingSourceState.DataSource = typeof(MissionPlanner.CurrentState);
-            // 
-            // doubelLabel11
-            // 
-            this.doubelLabel11.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "linkqualitygcs", true));
-            this.doubelLabel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel11.LabelName = "电台信号：";
-            this.doubelLabel11.LabelValue = "0";
-            this.doubelLabel11.Location = new System.Drawing.Point(1, 397);
-            this.doubelLabel11.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel11.Name = "doubelLabel11";
-            this.doubelLabel11.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel11.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel11.TabIndex = 17;
-            // 
-            // bindingSourceHud
-            // 
-            this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
-            // 
-            // doubelLabel9
-            // 
-            this.doubelLabel9.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "wpno", true));
-            this.doubelLabel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel9.LabelName = "目标点：";
-            this.doubelLabel9.LabelValue = "0";
-            this.doubelLabel9.Location = new System.Drawing.Point(1, 371);
-            this.doubelLabel9.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel9.Name = "doubelLabel9";
-            this.doubelLabel9.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel9.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel9.TabIndex = 9;
-            // 
-            // doubelLabel10
-            // 
-            this.doubelLabel10.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "raw_temp", true));
-            this.doubelLabel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel10.LabelName = "温度：";
-            this.doubelLabel10.LabelValue = "0";
-            this.doubelLabel10.Location = new System.Drawing.Point(1, 345);
-            this.doubelLabel10.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel10.Name = "doubelLabel10";
-            this.doubelLabel10.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel10.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel10.TabIndex = 16;
-            // 
-            // doubelLabel15
-            // 
-            this.doubelLabel15.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "ch3percent", true));
-            this.doubelLabel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel15.LabelName = "油门：";
-            this.doubelLabel15.LabelValue = "0";
-            this.doubelLabel15.Location = new System.Drawing.Point(1, 319);
-            this.doubelLabel15.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel15.Name = "doubelLabel15";
-            this.doubelLabel15.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel15.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel15.TabIndex = 21;
-            // 
-            // doubelLabel8
-            // 
-            this.doubelLabel8.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "wp_dist", true));
-            this.doubelLabel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel8.LabelName = "距点：";
-            this.doubelLabel8.LabelValue = "0";
-            this.doubelLabel8.Location = new System.Drawing.Point(1, 293);
-            this.doubelLabel8.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel8.Name = "doubelLabel8";
-            this.doubelLabel8.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel8.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel8.TabIndex = 8;
-            // 
-            // doubelLabel7
-            // 
-            this.doubelLabel7.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "DistToHome", true));
-            this.doubelLabel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel7.LabelName = "距家：";
-            this.doubelLabel7.LabelValue = "0";
-            this.doubelLabel7.Location = new System.Drawing.Point(1, 267);
-            this.doubelLabel7.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel7.Name = "doubelLabel7";
-            this.doubelLabel7.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel7.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel7.TabIndex = 7;
-            // 
-            // doubelLabel6
-            // 
-            this.doubelLabel6.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "airspeed", true));
-            this.doubelLabel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel6.LabelName = "空速：";
-            this.doubelLabel6.LabelValue = "0";
-            this.doubelLabel6.Location = new System.Drawing.Point(1, 241);
-            this.doubelLabel6.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel6.Name = "doubelLabel6";
-            this.doubelLabel6.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel6.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel6.TabIndex = 6;
-            // 
-            // doubelLabel5
-            // 
-            this.doubelLabel5.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "mode", true));
-            this.doubelLabel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel5.LabelName = "模式：";
-            this.doubelLabel5.LabelValue = "0";
-            this.doubelLabel5.Location = new System.Drawing.Point(1, 215);
-            this.doubelLabel5.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel5.Name = "doubelLabel5";
-            this.doubelLabel5.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel5.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel5.TabIndex = 5;
-            // 
-            // doubelLabel3
-            // 
-            this.doubelLabel3.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "alt", true));
-            this.doubelLabel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel3.LabelName = "高度：";
-            this.doubelLabel3.LabelValue = "0";
-            this.doubelLabel3.Location = new System.Drawing.Point(1, 189);
-            this.doubelLabel3.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel3.Name = "doubelLabel3";
-            this.doubelLabel3.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel3.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel3.TabIndex = 3;
-            // 
-            // doubelLabel4
-            // 
-            this.doubelLabel4.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "satcount", true));
-            this.doubelLabel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel4.LabelName = "GPS：";
-            this.doubelLabel4.LabelValue = "0";
-            this.doubelLabel4.Location = new System.Drawing.Point(1, 163);
-            this.doubelLabel4.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel4.Name = "doubelLabel4";
-            this.doubelLabel4.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel4.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel4.TabIndex = 4;
-            // 
-            // doubelLabel1
-            // 
-            this.doubelLabel1.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "battery_voltage", true));
-            this.doubelLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel1.LabelName = "电压：";
-            this.doubelLabel1.LabelValue = "0";
-            this.doubelLabel1.Location = new System.Drawing.Point(1, 137);
-            this.doubelLabel1.Margin = new System.Windows.Forms.Padding(4);
-            this.doubelLabel1.Name = "doubelLabel1";
-            this.doubelLabel1.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel1.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel1.TabIndex = 1;
-            // 
-            // doubelLabel2
-            // 
-            this.doubelLabel2.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "current", true));
-            this.doubelLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel2.LabelName = "电流：";
-            this.doubelLabel2.LabelValue = "0";
-            this.doubelLabel2.Location = new System.Drawing.Point(1, 111);
-            this.doubelLabel2.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel2.Name = "doubelLabel2";
-            this.doubelLabel2.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel2.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel2.TabIndex = 2;
-            // 
-            // doubelLabel14
-            // 
-            this.doubelLabel14.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "yaw", true));
-            this.doubelLabel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel14.LabelName = "旋偏：";
-            this.doubelLabel14.LabelValue = "0";
-            this.doubelLabel14.Location = new System.Drawing.Point(1, 85);
-            this.doubelLabel14.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel14.Name = "doubelLabel14";
-            this.doubelLabel14.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel14.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel14.TabIndex = 20;
-            // 
-            // doubelLabel13
-            // 
-            this.doubelLabel13.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "pitch", true));
-            this.doubelLabel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel13.LabelName = "俯仰：";
-            this.doubelLabel13.LabelValue = "0";
-            this.doubelLabel13.Location = new System.Drawing.Point(1, 59);
-            this.doubelLabel13.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel13.Name = "doubelLabel13";
-            this.doubelLabel13.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel13.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel13.TabIndex = 19;
-            // 
-            // doubelLabel12
-            // 
-            this.doubelLabel12.DataBindings.Add(new System.Windows.Forms.Binding("LabelValue", this.bindingSourceHud, "roll", true));
-            this.doubelLabel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.doubelLabel12.LabelName = "横滚：";
-            this.doubelLabel12.LabelValue = "0";
-            this.doubelLabel12.Location = new System.Drawing.Point(1, 33);
-            this.doubelLabel12.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
-            this.doubelLabel12.Name = "doubelLabel12";
-            this.doubelLabel12.Padding = new System.Windows.Forms.Padding(2, 2, 5, 2);
-            this.doubelLabel12.Size = new System.Drawing.Size(175, 26);
-            this.doubelLabel12.TabIndex = 18;
             // 
             // GCS
             // 
@@ -1669,6 +1726,7 @@
             this.panelWPPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).EndInit();
             this.panelInofPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             this.panelCommand.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -1680,7 +1738,6 @@
             this.groupBoxReplay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tracklog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1799,5 +1856,9 @@
         private Controls.MyButton BUT_speed5;
         private Controls.MyButton BUT_playlog;
         private Controls.MyButton BUT_speed2;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button22;
+        private DoubelLabel doubelLabel16;
+        private System.Windows.Forms.Button button24;
     }
 }

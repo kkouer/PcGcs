@@ -1488,11 +1488,11 @@ namespace MissionPlanner
 
             //航程限制
 
-            if (TotalRoute > 50)
-            {
-                CustomMessageBox.Show("超出最大航程50公里!", "确定", MessageBoxButtons.OK);
-                return;
-            }
+            //if (TotalRoute > 50)
+            //{
+            //    CustomMessageBox.Show("超出最大航程50公里!", "确定", MessageBoxButtons.OK);
+            //    return;
+            //}
             if (isAddByGCSMainForm)
             {
                 if (grid != null && grid.Count > 0)

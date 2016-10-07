@@ -1,4 +1,6 @@
-﻿using GMap.NET;
+﻿using DotSpatial.Data;
+using DotSpatial.Projections;
+using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
@@ -26,6 +28,8 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
+using ILog = log4net.ILog;
+
 
 namespace MissionPlanner
 {
@@ -2957,11 +2961,12 @@ namespace MissionPlanner
 
         private void button20_Click(object sender, EventArgs e)
         {
-            if (CustomMessageBox.Show("确定开伞?", "开伞?", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-            if (!comPort.BaseStream.IsOpen)
-                return;
-            comPort.doCommand(MAVLink.MAV_CMD.DO_PARACHUTE, 2, 0, 0, 0, 0, 0, 0);
+            if (CustomMessageBox.Show("确定开伞?", "开伞?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (!comPort.BaseStream.IsOpen)
+                    return;
+                comPort.doCommand(MAVLink.MAV_CMD.DO_PARACHUTE, 2, 0, 0, 0, 0, 0, 0);
+            }
         }
 
         bool cameraCommand2 = true;
@@ -2993,7 +2998,6 @@ namespace MissionPlanner
 
                 MainV2.config["TXT_DefaultAlt"] = TXT_DefaultAlt.Text;
 
-                //MainV2.config["CMB_altmode"] = CMB_altmode.Text;
 
                 MainV2.config["fpminaltwarning"] = TXT_altwarn.Text;
 
@@ -3636,6 +3640,263 @@ namespace MissionPlanner
         private void buttonReplay_Click(object sender, EventArgs e)
         {
             groupBoxReplay.Visible = !groupBoxReplay.Visible;
+        }
+
+        internal string wpfilename;
+        private void button22_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog fd = new OpenFileDialog())
+            {
+                fd.Filter = "航线文件|*.txt;*.waypoints";
+                DialogResult result = fd.ShowDialog();
+                string file = fd.FileName;
+
+                if (File.Exists(file))
+                {
+                    wpfilename = file;
+                    readQGC110wpfile(file);
+                }
+            }
+        }
+
+        public void readQGC110wpfile(string file, bool append = false)
+        {
+            int wp_count = 0;
+            bool error = false;
+            List<Locationwp> cmds = new List<Locationwp>();
+
+            try
+            {
+                StreamReader sr = new StreamReader(file); //"defines.h"
+                string header = sr.ReadLine();
+                if (header == null || !header.Contains("QGC WPL"))
+                {
+                    CustomMessageBox.Show("无效航线文件");
+                    return;
+                }
+
+                while (!error && !sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    // waypoints
+
+                    if (line.StartsWith("#"))
+                        continue;
+
+                    string[] items = line.Split(new[] { '\t', ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    if (items.Length <= 9)
+                        continue;
+
+                    try
+                    {
+                        Locationwp temp = new Locationwp();
+                        if (items[2] == "3")
+                        {
+                            // abs MAV_FRAME_GLOBAL_RELATIVE_ALT=3
+                            temp.options = 1;
+                        }
+                        else
+                        {
+                            temp.options = 0;
+                        }
+                        temp.id = (byte)(int)Enum.Parse(typeof(MAVLink.MAV_CMD), items[3], false);
+                        temp.p1 = float.Parse(items[4], new CultureInfo("en-US"));
+
+                        if (temp.id == 99)
+                            temp.id = 0;
+
+                        temp.alt = (float)(double.Parse(items[10], new CultureInfo("en-US")));
+                        temp.lat = (double.Parse(items[8], new CultureInfo("en-US")));
+                        temp.lng = (double.Parse(items[9], new CultureInfo("en-US")));
+
+                        temp.p2 = (float)(double.Parse(items[5], new CultureInfo("en-US")));
+                        temp.p3 = (float)(double.Parse(items[6], new CultureInfo("en-US")));
+                        temp.p4 = (float)(double.Parse(items[7], new CultureInfo("en-US")));
+
+                        cmds.Add(temp);
+
+                        wp_count++;
+                    }
+                    catch
+                    {
+                        CustomMessageBox.Show("Line invalid\n" + line);
+                    }
+                }
+
+                sr.Close();
+
+                processToScreen(cmds, append);
+
+                writeKML();
+
+                gMapControl1.ZoomAndCenterMarkers("objects");
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show("Can't open file! " + ex);
+            }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            savewaypoints();
+            writeKML();
+        }
+
+        /// <summary>
+        /// Saves a waypoint writer file
+        /// </summary>
+        private void savewaypoints()
+        {
+            using (SaveFileDialog fd = new SaveFileDialog())
+            {
+                fd.Filter = "航线文件|*.waypoints;*.txt";
+                fd.DefaultExt = ".waypoints";
+                fd.FileName = wpfilename;
+                DialogResult result = fd.ShowDialog();
+                string file = fd.FileName;
+                if (file != "")
+                {
+                    try
+                    {
+                        StreamWriter sw = new StreamWriter(file);
+                        sw.WriteLine("QGC WPL 110");
+                        try
+                        {
+                            sw.WriteLine("0\t1\t0\t16\t0\t0\t0\t0\t" +
+                                         double.Parse(TXT_homelat.Text).ToString("0.000000", new CultureInfo("en-US")) +
+                                         "\t" +
+                                         double.Parse(TXT_homelng.Text).ToString("0.000000", new CultureInfo("en-US")) +
+                                         "\t" +
+                                         double.Parse(TXT_homealt.Text).ToString("0.000000", new CultureInfo("en-US")) +
+                                         "\t1");
+                        }
+                        catch
+                        {
+                            sw.WriteLine("0\t1\t0\t0\t0\t0\t0\t0\t0\t0\t0\t1");
+                        }
+                        for (int a = 0; a < Commands.Rows.Count - 0; a++)
+                        {
+                            byte mode =
+                                (byte)
+                                    (MAVLink.MAV_CMD)
+                                        Enum.Parse(typeof(MAVLink.MAV_CMD), Commands.Rows[a].Cells[0].Value.ToString());
+
+                            sw.Write((a + 1)); // seq
+                            sw.Write("\t" + 0); // current
+                            sw.Write("\t" + 1); //frame 
+                            sw.Write("\t" + mode);
+                            sw.Write("\t" +
+                                     double.Parse(Commands.Rows[a].Cells[Param1.Index].Value.ToString())
+                                         .ToString("0.000000", new CultureInfo("en-US")));
+                            sw.Write("\t" +
+                                     double.Parse(Commands.Rows[a].Cells[Param2.Index].Value.ToString())
+                                         .ToString("0.000000", new CultureInfo("en-US")));
+                            sw.Write("\t" +
+                                     double.Parse(Commands.Rows[a].Cells[Param3.Index].Value.ToString())
+                                         .ToString("0.000000", new CultureInfo("en-US")));
+                            sw.Write("\t" +
+                                     double.Parse(Commands.Rows[a].Cells[Param4.Index].Value.ToString())
+                                         .ToString("0.000000", new CultureInfo("en-US")));
+                            sw.Write("\t" +
+                                     double.Parse(Commands.Rows[a].Cells[Lat.Index].Value.ToString())
+                                         .ToString("0.000000", new CultureInfo("en-US")));
+                            sw.Write("\t" +
+                                     double.Parse(Commands.Rows[a].Cells[Lon.Index].Value.ToString())
+                                         .ToString("0.000000", new CultureInfo("en-US")));
+                            sw.Write("\t" +
+                                     (double.Parse(Commands.Rows[a].Cells[Alt.Index].Value.ToString()) /
+                                      CurrentState.multiplierdist).ToString("0.000000", new CultureInfo("en-US")));
+                            sw.Write("\t" + 1);
+                            sw.WriteLine("");
+                        }
+                        sw.Close();
+
+                        //lbl_wpfile.Text = "Saved " + Path.GetFileName(file);
+                    }
+                    catch (Exception)
+                    {
+                        CustomMessageBox.Show(Strings.ERROR);
+                    }
+                }
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog fd = new OpenFileDialog())
+            {
+                fd.Filter = "Shape 文件|*.shp";
+                DialogResult result = fd.ShowDialog();
+                string file = fd.FileName;
+                ProjectionInfo pStart = new ProjectionInfo();
+                ProjectionInfo pESRIEnd = KnownCoordinateSystems.Geographic.World.WGS1984;
+                bool reproject = false;
+                // Poly Clear
+                drawnpolygonsoverlay.Markers.Clear();
+                drawnpolygonsoverlay.Polygons.Clear();
+                drawnpolygon.Points.Clear();
+                if (File.Exists(file))
+                {
+                    string prjfile = Path.GetDirectoryName(file) + Path.DirectorySeparatorChar +
+                                     Path.GetFileNameWithoutExtension(file) + ".prj";
+                    if (File.Exists(prjfile))
+                    {
+                        using (
+                            StreamReader re =
+                                File.OpenText(Path.GetDirectoryName(file) + Path.DirectorySeparatorChar +
+                                              Path.GetFileNameWithoutExtension(file) + ".prj"))
+                        {
+                            pStart.ParseEsriString(re.ReadLine());
+                            reproject = true;
+                        }
+                    }
+                    try
+                    {
+                        IFeatureSet fs = FeatureSet.Open(file);
+                        fs.FillAttributes();
+                        int rows = fs.NumRows();
+                        DataTable dtOriginal = fs.DataTable;
+                        for (int row = 0; row < dtOriginal.Rows.Count; row++)
+                        {
+                            object[] original = dtOriginal.Rows[row].ItemArray;
+                        }
+                        string path = Path.GetDirectoryName(file);
+                        foreach (var feature in fs.Features)
+                        {
+                            foreach (var point in feature.Coordinates)
+                            {
+                                if (reproject)
+                                {
+                                    double[] xyarray = { point.X, point.Y };
+                                    double[] zarray = { point.Z };
+                                    Reproject.ReprojectPoints(xyarray, zarray, pStart, pESRIEnd, 0, 1);
+                                    point.X = xyarray[0];
+                                    point.Y = xyarray[1];
+                                    point.Z = zarray[0];
+                                }
+                                drawnpolygon.Points.Add(new PointLatLng(point.Y, point.X));
+                                addpolygonmarkergrid(drawnpolygon.Points.Count.ToString(), point.X, point.Y, 0);
+                            }
+                            // remove loop close
+                            if (drawnpolygon.Points.Count > 1 &&
+                                drawnpolygon.Points[0] == drawnpolygon.Points[drawnpolygon.Points.Count - 1])
+                            {
+                                drawnpolygon.Points.RemoveAt(drawnpolygon.Points.Count - 1);
+                            }
+                            drawnpolygonsoverlay.Polygons.Add(drawnpolygon);
+                            gMapControl1.UpdatePolygonLocalPosition(drawnpolygon);
+                            gMapControl1.Invalidate();
+                            gMapControl1.ZoomAndCenterMarkers(drawnpolygonsoverlay.Id);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        CustomMessageBox.Show(Strings.ERROR + "\n" + ex, Strings.ERROR);
+                    }
+                }
+            }
         }
 
 
